@@ -1,0 +1,428 @@
+body{
+	font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	margin: 0;
+	padding: 0;
+}
+
+img{
+	width: 100%;
+}
+
+ul{
+	padding: 0;
+}
+
+.hero{
+	position: relative;
+	height: 100vh;
+	box-sizing: border-box
+}
+
+.hero .header{
+	padding: 2em 4em;
+}
+
+.hero .header .contenedor{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.hero .header .contenedor .logo{
+	width: 35%;
+}
+
+.hero .header .contenedor .burger{
+	background: none;
+	border: none;
+	color: #007993;
+	font-size: 32px;
+	font-size: 2rem;
+}
+
+.hero .header .contenedor .burger:focus{
+	outline: none;
+}
+
+.hero .header > .menu{
+	background: #007993;
+	position: absolute;
+	width: 60%;
+	height: 100vh;
+	top: 0;
+	right: 100%;
+	padding: 2em 4em;
+	box-sizing: border-box;
+}
+
+.hero .header > .menu .contenedor{
+	position: relative;
+	height: 100%;
+}
+
+.hero .header > .menu .close{
+	background: none;
+	border: none;
+	color: white;
+	font-size: 32px;
+	font-size: 2rem;
+	position: absolute;
+	top: 0;
+	right: 0;
+}
+
+.hero .header > .menu .grid{
+	display: grid;
+	width: 100%;
+	grid-template-columns: 1fr 1fr;
+	height: 100%;
+	align-self: center;
+}
+
+.hero .header > .menu .grid > .item:nth-of-type(1){
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding-right: 2em;
+}
+
+.hero .header > .menu .grid > .item:nth-of-type(2){
+	border-left: 1px solid white;
+}
+
+.hero .header > .menu .grid > .item:nth-of-type(2) .navbar{
+	height: 100%;
+}
+
+.hero .header > .menu .grid > .item:nth-of-type(2) .menu{
+	list-style: none;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	flex-direction: column;
+	justify-content: space-evenly;
+	height: 100%;
+}
+
+.hero .header > .menu .grid > .item:nth-of-type(2) .menu .item a{
+	color: white;
+	text-decoration: none;
+	font-size: 32px;
+	font-size: 2rem;
+	text-transform: uppercase;
+}
+
+.hero #particles-js{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: -1;
+}
+
+.hero .copy{
+	display: grid;
+	grid-template-columns: 3fr 2fr;
+	padding: 0 4em;
+}
+
+.hero .copy .item .title{
+	font-family: 'Dolce Vita Heavy Bold';
+	font-size: 112px;
+	font-size: 7rem;
+	color: #007993;
+	margin: 0;
+}
+
+.hero .copy .item .subtitle{
+	text-transform: uppercase;
+	color: #007993;
+	color: rgba(0, 121, 147, 0.8);
+	font-weight: 600;
+	font-size: 24px;
+	font-size: 1.5rem;
+	margin: 0 0 2em;
+}
+
+.hero .copy .item .btn{
+	background: #009270;
+	color: white;
+	padding: 1em 2em;
+	text-transform: uppercase;
+	font-family: 'Dolce Vita Heavy Bold';
+	text-decoration: none;
+	border-radius: 2em;
+	font-size: 19.2px;
+	font-size: 1.2rem;
+}
+
+.about{
+	background: #007993;
+	height: 100vh;
+	display: flex;
+	align-items: center
+}
+
+.about .grid{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 3fr 1fr;
+	grid-gap: 3em;
+	padding: 2em 4em;
+	height: 100vh;
+	color: white;
+	align-items: center;
+	align-self: center;
+	height: 80%;
+}
+
+.about .grid .item:nth-of-type(2){
+	grid-row: 2 span;
+}
+
+.about .grid .cualidades{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 2em;
+}
+
+.about .grid .cualidades .cualidad{
+	display: flex;
+	align-items: center;
+}
+
+.about .grid .cualidades .cualidad img{
+	width: 20%;
+}
+
+.about .grid .cualidades .cualidad .cualidad-nombre{
+	margin-left: 1em;
+}
+
+.about .grid .btn{
+	background: #009270;
+	color: white;
+	padding: 1em 2em;
+	text-transform: uppercase;
+	font-family: 'Dolce Vita Heavy Bold';
+	text-decoration: none;
+	border-radius: 2em;
+	font-size: 19.2px;
+	font-size: 1.2rem;
+	background: white;
+	color: #007993;
+}
+
+.servicios{
+	padding: 2em 4em;
+	height: 100vh;
+	display: flex;
+	align-items: center
+}
+
+.servicios .grid{
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	grid-gap: 5em;
+	text-align: center;
+}
+
+.servicios .grid .item:nth-of-type(2){
+	margin-top: 2.5em;
+}
+
+.servicios .grid .item:nth-of-type(3){
+	margin-top: 5em;
+}
+
+.servicios .grid .item:nth-of-type(4){
+	margin-top: 7.5em;
+}
+
+.servicios .grid .nombre-servicios{
+	color: #007993;
+	font-family: 'Dolce Vita Heavy Bold';
+}
+
+.servicios .grid .descripcion{
+	color: #009270;
+}
+
+.portafolio{
+	height: 100vh;
+	background: #009270;
+	padding: .5em 4em
+}
+
+.portafolio .grid{
+	display: grid;
+	grid-template-columns: 2fr 4fr;
+	height: 100%;
+}
+
+.portafolio .grid .item:first-child{
+	display: flex;
+	align-items: center;
+}
+
+.portafolio .grid .portafolio-servicios{
+	list-style: none;
+}
+
+.portafolio .grid .portafolio-servicios .servicio{
+	font-size: 22.4px;
+	font-size: 1.4rem;
+	margin-bottom: 1em;
+	color: white;
+}
+
+.portafolio .grid .portafolio-servicios .servicio a{
+	color: white;
+	text-decoration: none;
+	margin-right: 1em;
+	font-family: 'Dolce Vita Heavy Bold';
+}
+
+.portafolio .grid .proyectos{
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	height: 100%;
+}
+
+.portafolio .grid .proyectos .proyecto{
+	border: 1px solid white;
+	text-align: center;
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+	color: white;
+	text-decoration: none;
+}
+
+.portafolio .grid .proyectos .proyecto .nombre{
+	z-index: 1000;
+}
+
+.portafolio .grid .proyectos .proyecto:before{
+	content: '';
+	width: 0;
+	height: 0;
+	left: 50%;
+	background: #007993;
+	border-radius: 50%;
+	position: absolute;
+	z-index: 1;
+	transition: .3s;
+}
+
+.portafolio .grid .proyectos .proyecto:hover:before{
+	width: 12em;
+	height: 12em;
+	left: calc(50% - 6em);
+}
+
+.contacto{
+	padding: 2em 4em;
+	height: 100vh;
+	overflow: hidden
+}
+
+.contacto .grid{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 4em;
+}
+
+.contacto .grid .animanos{
+	color: #009270;
+	font-size: 32px;
+	font-size: 2rem;
+}
+
+.contacto .grid .informacion{
+	list-style: none;
+}
+
+.contacto .grid .informacion li{
+	margin-bottom: 1em;
+}
+
+.contacto .grid .informacion li a{
+	color: #009270;
+	font-weight: 600;
+	text-decoration: none;
+}
+
+.contacto .grid .sociales{
+	display: flex;
+	list-style: none;
+	width: 40%;
+	margin-top: 2em;
+}
+
+.contacto .grid .sociales .item{
+	margin-right: 1em;
+}
+
+.contacto .grid > .item:last-child{
+	background: #007993;
+	height: 80%;
+	box-sizing: border-box;
+	padding: 2em 3em;
+	border-radius: 2em;
+}
+
+.contacto .grid > .item:last-child .title{
+	color: white;
+}
+
+.contacto .grid > .item:last-child .contacto{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	margin: 0;
+	padding: 0;
+}
+
+.contacto .grid > .item:last-child .contacto input, .contacto .grid > .item:last-child .contacto textarea{
+	background: none;
+	border: none;
+	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+	font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	padding: 1em;
+	transition: .3s;
+	color: white;
+	font-size: 16px;
+	font-size: 1rem;
+}
+
+.contacto .grid > .item:last-child .contacto input::placeholder,.contacto .grid > .item:last-child .contacto textarea::placeholder{
+	color: #ffffff;
+	color: rgba(255, 255, 255, 0.5);
+}
+
+.contacto .grid > .item:last-child .contacto input:focus,.contacto .grid > .item:last-child .contacto textarea:focus{
+	border-bottom-color: white;
+	outline: none;
+}
+
+.contacto .grid > .item:last-child .contacto .btn{
+	background: #009270;
+	color: white;
+	padding: 1em 2em;
+	text-transform: uppercase;
+	font-family: 'Dolce Vita Heavy Bold';
+	text-decoration: none;
+	border-radius: 2em;
+	font-size: 19.2px;
+	font-size: 1.2rem;
+	color: #007993;
+	background: white;
+	border: none;
+	margin-top: 2em;
+}

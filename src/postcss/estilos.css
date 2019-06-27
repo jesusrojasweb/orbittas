@@ -1,0 +1,363 @@
+:root{
+	--colorPrincipal: #007993;
+	--colorSecundario: #009270;
+	--fuentePrincipal: 'Dolce Vita Heavy Bold';
+	--fuenteSecundaria:'Montserrat', system-ui;
+	--btn: {
+		background: var(--colorSecundario);
+		color: white;
+		padding: 1em 2em;
+		text-transform: uppercase;
+		font-family: var(--fuentePrincipal);
+		text-decoration: none;
+		border-radius: 2em;
+		font-size: 1.2rem;
+	};
+}
+
+body{
+	font-family: 'Montserrat', system-ui;
+	margin: 0;
+	padding: 0;
+}
+
+img{
+	width: 100%;
+}
+ul{
+	padding: 0;
+}
+.hero{
+	position: relative;
+	height: 100vh;
+	box-sizing: border-box;
+	& .header{
+		padding: 2em 4em;
+		& .contenedor{
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			& .logo{
+				width: 35%;
+			}
+			& .burger{
+				background: none;
+				border: none;
+				color: var(--colorPrincipal);
+				font-size: 2rem;
+				&:focus{
+					outline: none;
+				}
+			}
+		}
+		& > .menu{
+			background: #007993;
+		    position: absolute;
+		    width: 60%;
+		    height: 100vh;
+		    top: 0;
+		    right: 100%;
+		    padding: 2em 4em;
+		    box-sizing: border-box;
+		    & .contenedor{
+		    	position: relative;
+		    	height: 100%;
+		    }
+			& .close{
+				background: none; 
+				border: none;
+				color: white;
+				font-size: 2rem;
+				position: absolute;
+				top: 0;
+				right: 0;
+			}
+			& .grid{
+				display: grid;
+				width: 100%;
+				grid-template-columns: 1fr 1fr;
+				height: 100%;
+				align-self: center;
+				& > .item:nth-of-type(1){
+					color: white;
+					display: flex;
+					flex-direction: column;
+					justify-content: center;
+					padding-right: 2em;
+				}
+				& > .item:nth-of-type(2){
+					border-left: 1px solid white;
+					& .navbar{
+						height: 100%;
+					}
+					& .menu{
+						list-style: none;
+						display: flex;
+						justify-content: center;
+						text-align: center;
+						flex-direction: column;
+						justify-content: space-evenly;
+						height: 100%;
+						& .item{
+							& a{
+								color: white;
+								text-decoration: none;
+								font-size: 2rem;
+								text-transform: uppercase;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	& #particles-js{
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+	& .copy{
+		display: grid;
+		grid-template-columns: 3fr 2fr;
+		padding: 0 4em;
+		& .item{
+			& .title{
+				font-family: var(--fuentePrincipal);
+				font-size: 7rem;
+				color: var(--colorPrincipal);
+				margin: 0;
+			}
+			& .subtitle{
+				text-transform: uppercase;
+				color: color(var(--colorPrincipal) a(80%));
+				font-weight: 600;
+				font-size: 1.5rem;
+				margin: 0 0 2em;
+			}
+			& .btn{
+				background: var(--colorSecundario);
+				color: white;
+				padding: 1em 2em;
+				text-transform: uppercase;
+				font-family: var(--fuentePrincipal);
+				text-decoration: none;
+				border-radius: 2em;
+				font-size: 1.2rem;
+			}
+		}
+	}
+}
+.about{
+	background: var(--colorPrincipal);
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	& .grid{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 3fr 1fr;
+		grid-gap: 3em;
+		padding: 2em 4em;
+		height: 100vh;
+		color: white;
+		align-items: center;
+		align-self: center;
+		height: 80%;
+		& .item:nth-of-type(2){
+			grid-row: 2 span;
+		}
+		& .cualidades{
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 2em;
+			& .cualidad{
+				display: flex;
+				align-items: center;
+				& img{
+					width: 20%;
+				}
+				& .cualidad-nombre{
+					margin-left: 1em;
+				}
+			}
+		}
+		& .btn{
+			@apply --btn;
+			background: white;
+			color: var(--colorPrincipal);
+		}
+	}
+}
+.servicios{
+	padding: 2em 4em;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	& .grid{
+		display: grid;
+		grid-template-columns: repeat(4,1fr);
+		grid-gap: 5em;
+		text-align: center;
+		& .item:nth-of-type(2){
+			margin-top: 2.5em;
+		}
+		& .item:nth-of-type(3){
+			margin-top: 5em;
+		}
+		& .item:nth-of-type(4){
+			margin-top: 7.5em;
+		}
+		& .nombre-servicios{
+			color: var(--colorPrincipal);
+			font-family: var(--fuentePrincipal);
+		}
+		& .descripcion{
+			color: var(--colorSecundario);
+		}
+	}
+}
+.portafolio{
+	height: 100vh;
+	background: var(--colorSecundario);
+	padding: .5em 4em;
+	& .grid{
+		display: grid;
+		grid-template-columns: 2fr 4fr;
+		height: 100%;
+		& .item:first-child{
+			display: flex;
+			align-items: center;
+		}
+		& .portafolio-servicios{
+			list-style: none;
+			& .servicio{
+				font-size: 1.4rem;
+				margin-bottom: 1em;
+				color: white;
+				& a{
+					color: white;
+					text-decoration: none;
+					margin-right: 1em;
+					font-family: var(--fuentePrincipal);
+				}
+			}
+		}
+		& .proyectos{
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			grid-template-rows: 1fr 1fr;
+			height: 100%;
+			& .proyecto{
+				border: 1px solid white;
+				text-align: center;
+				padding: 2em;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				position: relative;
+				color: white;
+				text-decoration: none;
+				& .nombre{
+					z-index: 1000;
+				}
+				&:before{
+					content: '';
+					width: 0;
+					height: 0;
+					left: 50%;
+					background: var(--colorPrincipal);
+					border-radius: 50%;
+					position: absolute;
+					z-index: 1;
+					transition: .3s;
+				}
+				&:hover{
+					&:before{
+						width: 12em;
+						height: 12em;
+						left: calc((100% - 12em)/2);
+					}
+				}
+			}
+		}
+	}
+}
+.contacto{
+	padding: 2em 4em;
+	height: 100vh;
+	overflow: hidden;
+	& .grid{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 4em;
+		& .animanos{
+			color: var(--colorSecundario);
+			font-size: 2rem;
+		}
+		& .informacion{
+			list-style: none;
+			& li{
+				margin-bottom: 1em;
+				& a{
+					color: var(--colorSecundario);
+					font-weight: 600;
+					text-decoration: none;
+				}
+			}
+		}
+		& .sociales{
+			display: flex;
+			list-style: none;
+			width: 40%;
+			margin-top: 2em;
+			& .item{
+				margin-right: 1em;
+			}
+		}
+		& > .item:last-child{
+			background: var(--colorPrincipal);
+			height: 80%;
+			box-sizing: border-box;
+			padding: 2em 3em;
+			border-radius: 2em;
+			& .title{
+				color: white;
+			}
+			& .contacto{
+				width: 100%;
+				display: flex;
+				flex-direction: column;
+				margin: 0;
+				padding: 0;
+				& input, & textarea{
+					background: none;
+					border: none;
+					border-bottom: 1px solid color(white a(50%));
+					font-family: var(--fuenteSecundaria);
+					padding: 1em;
+					transition: .3s;
+					color: white;
+					font-size: 1rem;
+					&::placeholder{
+						color: color(white a(50%));
+					}
+					&:focus{
+						border-bottom-color: white;
+						outline: none;
+					}
+				}
+				& .btn{
+					@apply --btn;
+					color: var(--colorPrincipal);
+					background: white;
+					border: none;
+					margin-top: 2em;
+
+				}
+			}
+		}
+	}
+}
