@@ -2,7 +2,8 @@ body{
 	font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	margin: 0;
 	padding: 0;
-	overflow-x: hidden;
+	overflow: hidden;
+	position: relative;
 }
 img{
 	width: 100%;
@@ -11,10 +12,17 @@ ul,figure{
 	margin: 0;
 	padding: 0;
 }
+.slide{
+	position: absolute;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  z-index: 5;
+}
 .hero{
-	position: relative;
 	height: 100vh;
-	box-sizing: border-box
+	box-sizing: border-box;
+	background: white
 }
 .hero .header{
 	padding: 2em 4em;
@@ -23,6 +31,7 @@ ul,figure{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	position: relative;
 }
 .hero .header .contenedor .logo{
 	width: 35%;
@@ -172,7 +181,7 @@ ul,figure{
 	align-items: center;
 }
 .about .grid .cualidades .cualidad img{
-	width: 13%;
+	width: 20%;
 }
 .about .grid .cualidades .cualidad .cualidad-nombre{
 	margin-left: 1em;
@@ -195,6 +204,7 @@ ul,figure{
 	height: 100vh;
 	display: flex;
 	align-items: center;
+	background: white;
 }
 .servicios .grid{
 	display: grid;
@@ -287,6 +297,7 @@ ul,figure{
 	padding: 2em 4em;
 	height: 100vh;
 	overflow: hidden;
+	background: white;
 }
 .contacto .grid{
 	display: grid;
@@ -329,7 +340,7 @@ ul,figure{
 .contacto .grid .formulario .title{
 	color: white;
 }
-.contacto .grid .formulario .contacto{
+.contacto .grid .formulario .contact{
 	width: 100%;
 	height: 100%;
 	display: flex;
@@ -337,7 +348,7 @@ ul,figure{
 	margin: 0;
 	padding: 0;
 }
-.contacto .grid .formulario .contacto input, .contacto .grid .formulario .contacto textarea{
+.contacto .grid .formulario .contact input, .contacto .grid .formulario .contact textarea{
 	background: none;
 	border: none;
 	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
@@ -348,15 +359,15 @@ ul,figure{
 	font-size: 16px;
 	font-size: 1rem;
 }
-.contacto .grid .formulario .contacto input::placeholder,.contacto .grid .formulario .contacto textarea::placeholder{
+.contacto .grid .formulario .contact input::placeholder,.contacto .grid .formulario .contact textarea::placeholder{
 	color: #ffffff;
 	color: rgba(255, 255, 255, 0.5);
 }
-.contacto .grid .formulario .contacto input:focus,.contacto .grid .formulario .contacto textarea:focus{
+.contacto .grid .formulario .contact input:focus,.contacto .grid .formulario .contact textarea:focus{
 	border-bottom-color: white;
 	outline: none;
 }
-.contacto .grid .formulario .contacto .btn{
+.contacto .grid .formulario .contact .btn{
 	background: #009270;
 	color: white;
 	padding: 1em 2em;
@@ -371,6 +382,30 @@ ul,figure{
 	border: none;
 	margin-top: 2em;
 }
+.active{
+  animation: slideDown .8s forwards;
+  z-index: 1000;
+  
+}
+.prev{
+  z-index: 50;
+}
+@keyframes slideDown{
+  0%{
+    left: 100%
+  }
+  100%{
+    left: 0;
+  }
+}
+@keyframes salir{
+  0%{
+    transform: translatex(0) scale(0);
+  }
+  100%{
+    transform: scale(0.2) translatex(-100%);
+  }
+}
 @media (max-width: 500px){
 	.hero .header{
 		padding: 2em;
@@ -382,7 +417,8 @@ ul,figure{
 		padding: 0 2em;
 	}
 	.hero .copy .item{
-		align-self: start;
+		align-self: center;
+		margin-bottom: 70%;
 	}
 	.hero .copy .item .title{
 		font-size: 4rem;
@@ -468,5 +504,15 @@ ul,figure{
 	}
 	.contacto .grid{
 		grid-template-columns: 1fr;
+	}
+}
+@media (min-width: 801px){
+	.about .grid .cualidades{
+		margin-top: 4em;
+	}
+}
+@media (max-width: 360px){
+	.portafolio .grid .portafolio-servicios .servicio{
+		font-size: 1.1rem;
 	}
 }
