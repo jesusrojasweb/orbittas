@@ -1,4 +1,11 @@
 const $sliderList = document.querySelectorAll('.slider')
+const $botones = document.querySelector('.botones')
+const $burger = document.getElementById('burger')
+const $close = document.getElementById('close')
+const $menu = document.getElementById('menu')
+const $header = document.getElementById('header')
+let botonesList
+let $boton
 const padre = $sliderList[0].children;
 let lastScrollTop = 0;
 let touchstartY = 0;
@@ -6,13 +13,66 @@ let touchstartX = 0;
 let touchendX = 0;
 let touchendY = 0;
 let alto = window.screen.availHeight;
-console.log(alto)
 
 let gesuredZone = document.querySelector('body');
 
+$burger.addEventListener('click',function () {
+  $menu.classList.add('activo')
+})
+$close.addEventListener('click',function () {
+  $menu.classList.remove('activo')
+})
+
+//botones
+for(let i = 0; i < padre.length; i++){
+  const $boton = document.createElement('a');
+  if(i == 0){
+    setAttributes($boton, {
+      href: '#',
+      class: 'boton activo',
+      id: i
+    })
+    
+  } else{
+    setAttributes($boton, {
+      href: '#',
+      class: 'boton',
+      id: i
+    })
+  }
+  $boton.addEventListener('click', function (e) {
+    e.preventDefault()
+    let button = e.toElement
+    let botonClick = button.attributes[2].value
+    console.log(botonesList)
+    for(let i = 0; i < padre.length; i++){
+      let hijo = padre[i].classList.remove('prev')
+      hijo = padre[i].classList.remove('active')
+    }
+    for(let i = 0; i < botonesList[0].children.length; i++){
+      botonesList[0].children[i].classList.remove('activo')
+    }
+    padre[botonClick].classList.add('active')
+    button.classList.add('activo')
+  })
+  $botones.append($boton)
+}
+botonesList = document.querySelectorAll('.botones')
+$boton = document.querySelectorAll('.boton')
+console.log($boton)
+let botonPadre = botonesList[0].children
+
+function setAttributes($element,attributes) {
+  for(const attribute in attributes){
+    $element.setAttribute(attribute, attributes[attribute])
+  }
+}
+
+
+//detectando scroll en desktop
 window.addEventListener( 'mousewheel',function(e){
   for(let i = 0; i < padre.length; i++){
-    let hijo = padre[i].classList.remove('prev')
+    padre[i].classList.remove('prev')
   }
   if(e.deltaY > 0){
     slide(true,false)
@@ -24,6 +84,7 @@ window.addEventListener( 'mousewheel',function(e){
 function slide(direccion, movil) {
   for(let i = 0; i < $sliderList[0].children.length; i++){
     let hijo = padre[i];
+    let boton = botonPadre[i]
     let coords = hijo.getBoundingClientRect();
     hijo.styles
     let next
@@ -39,7 +100,7 @@ function slide(direccion, movil) {
     if(direccion){
       //detectamos si es un dispositivo movil
       if(movil){
-        if(false){
+        if(true){
           next = i + 1
           if(next >= padre.length ){
             next = i;
@@ -47,7 +108,7 @@ function slide(direccion, movil) {
             console.log("estamos en next")
           }
         } 
-        if(true){
+        if(false){
           console.log("salimos")
           break;
         }
@@ -56,6 +117,7 @@ function slide(direccion, movil) {
       if(next >= padre.length ){
         next = i;
       }
+      
     }
     if(!direccion){
       next = i - 1 
@@ -63,22 +125,36 @@ function slide(direccion, movil) {
         next = i;
       }
     }
+    if(next == 1 || next == 3){
+      $header.classList.add('scroll')
+      $header.classList.remove('scrollContacto')
+    }
+    if(next== 0 || next == 2 || next == 4){
+     $header.classList.remove('scroll')
+    }
+    if(next ==4){
+      $header.classList.add('scrollContacto')
+    }
     console.log(next)
     let siguiente = padre[next];
+    let botonSiguiente = botonPadre[next]
     if(hijo.classList[2] == "active" || hijo.classList[3] == "active"){
 
-      scroll(hijo,siguiente)
+      scroll(hijo,siguiente,boton,botonSiguiente)
       break;
     }
   }
 }
 
-function scroll(hijo, siguiente){
+function scroll(hijo, siguiente,boton,botonSiguiente){
   hijo.classList.remove('active')
   hijo.classList.add('prev')
+  boton.classList.remove('activo')
   siguiente.classList.add('active')
+  botonSiguiente.classList.add('activo')
 }
 
+//detectando scroll en movil
 gesuredZone.addEventListener('touchstart', function(event) {
     touchstartX = touchendX = event.changedTouches[0].screenX;
     touchstartY = event.changedTouches[0].screenY;
@@ -88,7 +164,7 @@ gesuredZone.addEventListener('touchend', function(event) {
     touchendY = event.changedTouches[0].screenY;
     handleGesure();
 }, false); 
-
+//gestos
 function handleGesure() {
     for(let i = 0; i < padre.length; i++){
       let hijo = padre[i].classList.remove('prev')
@@ -104,3 +180,4 @@ function handleGesure() {
       arriba()
     }
 }
+
