@@ -107,14 +107,6 @@ ul,figure{
 			filter: brightness(0) invert(1);
 		}
 	}
-	&.scrollContacto{
-		& .contenedor{
-
-			& .burger{
-				color: white;
-			}
-		}
-	}
 	& .contenedor{
 		display: flex;
 		justify-content: space-between;
@@ -134,9 +126,10 @@ ul,figure{
 		& .burger{
 			background: none;
 			border: none;
-			color: var(--colorPrincipal);
-			font-size: 2rem;
 			cursor: pointer;
+			& img{
+				width: 2.5rem;
+			}
 			&:focus{
 				outline: none;
 			}
@@ -167,13 +160,14 @@ ul,figure{
 			background: none; 
 			border: none;
 			color: white;
-			font-size: 2rem;
+			width: 2.5rem;
 			position: absolute;
-			top: 3%;
+			top: 4%;
 			right: 0;
 			cursor: pointer;
-			right: -2em;
-			@media(--mobile){
+			right: -4em;
+			&:focus{
+				outline: none;
 			}
 		}
 		& .grid{

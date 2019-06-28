@@ -73,9 +73,6 @@ ul,figure{
 	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
 	filter: brightness(0) invert(1);
 }
-.header.scrollContacto .contenedor .burger{
-	color: white;
-}
 .header .contenedor{
 	display: flex;
 	justify-content: space-between;
@@ -92,10 +89,11 @@ ul,figure{
 .header .contenedor .burger{
 	background: none;
 	border: none;
-	color: #007993;
-	font-size: 32px;
-	font-size: 2rem;
 	cursor: pointer
+}
+.header .contenedor .burger img{
+	width: 40px;
+	width: 2.5rem;
 }
 .header .contenedor .burger:focus{
 	outline: none;
@@ -123,13 +121,16 @@ ul,figure{
 	background: none;
 	border: none;
 	color: white;
-	font-size: 32px;
-	font-size: 2rem;
+	width: 40px;
+	width: 2.5rem;
 	position: absolute;
-	top: 3%;
+	top: 4%;
 	right: 0;
 	cursor: pointer;
-	right: -2em
+	right: -4em
+}
+.header > .menu .close:focus{
+	outline: none;
 }
 .header > .menu .grid{
 	display: grid;
@@ -857,7 +858,6 @@ slideRight
 	.header .contenedor .logo{
 		width: 60%
 	}
-	.header > .menu .close{}
 	.header > .menu .grid{
 		grid-template-columns: 1fr
 	}
