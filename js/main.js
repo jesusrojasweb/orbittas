@@ -107,6 +107,7 @@ for(let i = 0; i < padre.length; i++){
      $botones.classList.remove('scroll')
     }
     padre[botonClick].classList.add('active')
+    padre[botonClick].classList.add('animacion')
     button.classList.add('activo')
   })
   $botones.append($boton)
@@ -182,10 +183,12 @@ function slide(direccion, movil) {
     if(next == 1 || next == 3){
       $header.classList.add('scroll')
       $botones.classList.add('scroll')
+      $menu.classList.add('fondo')
     }
     if(next== 0 || next == 2 || next == 4){
      $header.classList.remove('scroll')
      $botones.classList.remove('scroll')
+     $menu.classList.add('fondo')
     }
     console.log(next)
     let siguiente = padre[next];
