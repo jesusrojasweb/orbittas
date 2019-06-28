@@ -4,6 +4,16 @@ const $burger = document.getElementById('burger')
 const $close = document.getElementById('close')
 const $menu = document.getElementById('menu')
 const $header = document.getElementById('header')
+const $luz = document.querySelector('.cls-25')
+const $copy = document.getElementById('copy')
+const $pro = document.getElementById('pro')
+const $elec = document.getElementById('elec')
+const $web = document.getElementById('web')
+const $movil = document.getElementById('movil')
+const $hoverPro = document.getElementById('hoverPro')
+const $hoverElec = document.getElementById('hoverElec')
+const $hoverWeb = document.getElementById('hoverWeb')
+const $hoverMovil = document.getElementById('hoverMovil')
 let botonesList
 let $boton
 const padre = $sliderList[0].children;
@@ -16,11 +26,47 @@ let alto = window.screen.availHeight;
 
 let gesuredZone = document.querySelector('body');
 
+$luz.addEventListener("mouseover",function () {
+  $copy.style.backgroundColor = '#fcd31e80'
+})
+$luz.addEventListener("mouseout",function () {
+  $copy.style.backgroundColor = '#ffffff00'
+})
+
 $burger.addEventListener('click',function () {
   $menu.classList.add('activo')
 })
 $close.addEventListener('click',function () {
   $menu.classList.remove('activo')
+})
+
+$pro.addEventListener('mouseover',function () {
+  console.log('hoverpro')
+  $hoverPro.classList.add('activo')
+})
+$pro.addEventListener('mouseout',function () {
+  $hoverPro.classList.remove('activo')
+})
+$web.addEventListener('mouseover',function () {
+  console.log('web')
+  $hoverWeb.classList.add('activo')
+})
+$web.addEventListener('mouseout',function () {
+  $hoverWeb.classList.remove('activo')
+})
+$elec.addEventListener('mouseover',function () {
+  console.log('elec')
+  $hoverElec.classList.add('activo')
+})
+$elec.addEventListener('mouseout',function () {
+  $hoverElec.classList.remove('activo')
+})
+$movil.addEventListener('mouseover',function () {
+  console.log('hovermovil')
+  $hoverMovil.classList.add('activo')
+})
+$movil.addEventListener('mouseout',function () {
+  $hoverMovil.classList.remove('activo')
 })
 
 //botones
