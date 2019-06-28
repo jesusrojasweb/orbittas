@@ -11,7 +11,7 @@
 		font-family: var(--fuentePrincipal);
 		text-decoration: none;
 		border-radius: 2em;
-		font-size: 1.2rem;
+		font-size: 1rem;
 		transition: .3s;
 		&:hover{
 			box-shadow: 0 0 50px #00b5ff;
@@ -128,7 +128,7 @@ ul,figure{
 			border: none;
 			cursor: pointer;
 			& img{
-				width: 2.5rem;
+				width: 2rem;
 			}
 			&:focus{
 				outline: none;
@@ -160,7 +160,7 @@ ul,figure{
 			background: none; 
 			border: none;
 			color: white;
-			width: 2.5rem;
+			width: 2rem;
 			position: absolute;
 			top: 4%;
 			right: 0;
@@ -209,7 +209,7 @@ ul,figure{
 						& a{
 							color: white;
 							text-decoration: none;
-							font-size: 2rem;
+							font-size: 1.5rem;
 							text-transform: uppercase;
 						}
 					}
@@ -244,7 +244,7 @@ ul,figure{
 	height: 100vh;
 	box-sizing: border-box;
 	background: white;
-	&.active{
+	&.animacion{
 		& .copy{
 			& .item:first-child{
 				
@@ -303,9 +303,12 @@ ul,figure{
 			}
 		}
 		& .item{
+			&:first-child{
+				display: grid;
+			}
 			& .title{
 				font-family: var(--fuentePrincipal);
-				font-size: 7rem;
+				font-size: 8rem;
 				color: var(--colorPrincipal);
 				margin: 0;
 				@media(--mobile){
@@ -317,7 +320,7 @@ ul,figure{
 				color: color(var(--colorPrincipal) a(80%));
 				font-weight: 600;
 				font-size: 1.5rem;
-				margin: 0 0 2em;
+				margin: -1em 0 0;
 			}
 			& .ilustracion{
 				width: 90%;
@@ -334,7 +337,7 @@ ul,figure{
 	height: 100vh;
 	display: flex;
 	align-items: center;
-	&.active{
+	&.animacion{
 		& .grid{
 			& .item:first-child{
 				animation-name: slideRight;
@@ -435,7 +438,7 @@ ul,figure{
 	display: flex;
 	align-items: center;
 	background: white;
-	&.active{
+	&.animacion{
 		& #pro .cls-2 {
 		    transition: 2s;
 		    fill: #007e70;
@@ -565,7 +568,7 @@ ul,figure{
 	background: var(--colorSecundario);
 	display: flex;
 	align-items: center;
-	&.active{
+	&.animacion{
 		& .grid{
 			& .proyectos{
 				animation-name: Down;
@@ -678,7 +681,7 @@ ul,figure{
 	max-height: 100vh;
 	overflow: hidden;
 	background: white;
-	&.active{
+	&.animacion{
 		& .grid{
 			& .item:first-child{
 				animation-name: stretchRight;
