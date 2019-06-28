@@ -185,6 +185,11 @@ ul,figure{
 .cls-25:hover{
 	fill: #fcd121;
 }
+.margen{
+	padding: 9em 4em 3em;
+	height: 100vh;
+	box-sizing: border-box;
+}
 .hero{
 	height: 100vh;
 	box-sizing: border-box;
@@ -221,12 +226,8 @@ ul,figure{
 .hero .copy{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	padding: 0 4em;
 	height: 100%;
 	transition: .3s;
-}
-.hero .copy .item{
-	align-self: center
 }
 .hero .copy .item .title{
 	font-family: 'Dolce Vita Heavy Bold';
@@ -290,17 +291,18 @@ ul,figure{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 3fr 1fr;
-	grid-gap: 3em;
-	padding: 8em 4em 2em;
 	height: 100vh;
-	color: white;
-	align-items: center;
-	align-self: center;
-	height: 80%
+	color: white
+}
+.about .grid .descripcion{
+	margin: 0;
+}
+.about .grid .item:last-child{
+	align-self: flex-end;
+	margin-bottom: 1em;
 }
 .about .grid .item:nth-of-type(2){
-	grid-row: 2 span;
-	justify-self: end
+	grid-row: 1 span
 }
 .about .grid .cualidades{
 	display: grid;
@@ -337,7 +339,6 @@ ul,figure{
 	color: #007993;
 }
 .servicios{
-	padding: 8em 4em 2em;
 	height: 100vh;
 	display: flex;
 	align-items: center;
@@ -389,7 +390,7 @@ ul,figure{
 .servicios .grid .hover .hover-item{
 	transform: translateX(150%);
 	position: absolute;
-	top: 0;
+	top: 6em;
 	width: 800px;
 	height: 100vh;
 	right: 0
@@ -423,15 +424,15 @@ ul,figure{
 	opacity: 0.0;
 }
 .servicios .grid .item:nth-of-type(2){
-	margin-top: 2em;
+	margin-top: 1.5em;
 	animation-delay: .25s;
 }
 .servicios .grid .item:nth-of-type(3){
-	margin-top: 4em;
+	margin-top: 3em;
 	animation-delay: .5s;
 }
 .servicios .grid .item:nth-of-type(4){
-	margin-top: 6em;
+	margin-top: 4.5em;
 	animation-delay: .75s;
 }
 .servicios .grid .nombre-servicios{
@@ -444,7 +445,6 @@ ul,figure{
 .portafolio{
 	height: 100vh;
 	background: #009270;
-	padding: 8em 4em 3em;
 	display: flex;
 	align-items: center
 }
@@ -522,7 +522,6 @@ ul,figure{
 	left: calc(50% - 6em);
 }
 .contacto{
-	padding: 8em 4em 2em;
 	max-height: 100vh;
 	overflow: hidden;
 	background: white
@@ -557,8 +556,6 @@ ul,figure{
 	display: grid;
 	grid-template-columns: 3fr 2fr;
 	grid-gap: 4em;
-	align-items: center;
-	max-height: 100%;
 }
 .contacto .grid .animanos{
 	color: #009270;
@@ -587,7 +584,6 @@ ul,figure{
 }
 .contacto .grid .formulario{
 	background: #007993;
-	height: 80%;
 	box-sizing: border-box;
 	padding: 2em 3em;
 	border-radius: 2em;
@@ -962,8 +958,8 @@ slideRight
 }
 @media (min-width: 801px){
 	.about .grid .item:nth-of-type(2) .img{
-		width: 80%;
-		margin-left: 2em
+		width: 55%;
+		margin-left: 5em
 	}
 	.about .grid .cualidades{
 		margin-top: 4em
