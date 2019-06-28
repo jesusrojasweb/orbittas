@@ -98,6 +98,14 @@ for(let i = 0; i < padre.length; i++){
     for(let i = 0; i < botonesList[0].children.length; i++){
       botonesList[0].children[i].classList.remove('activo')
     }
+    if(botonClick == 1 || botonClick == 3){
+      $header.classList.add('scroll')
+      $botones.classList.add('scroll')
+    }
+    if(botonClick== 0 || botonClick == 2 || botonClick == 4){
+     $header.classList.remove('scroll')
+     $botones.classList.remove('scroll')
+    }
     padre[botonClick].classList.add('active')
     button.classList.add('activo')
   })
@@ -173,13 +181,11 @@ function slide(direccion, movil) {
     }
     if(next == 1 || next == 3){
       $header.classList.add('scroll')
-      $header.classList.remove('scrollContacto')
+      $botones.classList.add('scroll')
     }
     if(next== 0 || next == 2 || next == 4){
      $header.classList.remove('scroll')
-    }
-    if(next ==4){
-      $header.classList.add('scrollContacto')
+     $botones.classList.remove('scroll')
     }
     console.log(next)
     let siguiente = padre[next];

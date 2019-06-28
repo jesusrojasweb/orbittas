@@ -9,8 +9,6 @@ body{
 	}*/
 }
 .botones{
-	background: white;
-	box-shadow: 2px 2px 4px gray;
 	position: fixed;
 	padding: 1em 0;
 	box-sizing: border-box;
@@ -18,12 +16,19 @@ body{
 	height: 30%;
 	width: 30px;
 	top: 35%;
-	right: 1%;
+	right: 4em;
 	z-index: 1500;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	flex-direction: column
+}
+.botones.scroll .boton.activo:after{
+	background: white;
+}
+.botones.scroll .boton:after{
+	background: #ffffff;
+	background: rgba(255, 255, 255, 0.5);
 }
 .botones .boton{
 	width: 100%;
@@ -36,13 +41,15 @@ body{
 .botones .boton:after{
 	position: absolute;
 	content: '';
-	width: 15px;
-	height: 15px;
-	border: 1px solid #007993;
+	width: 10px;
+	height: 10px;
+	background: #007993;
+	background: rgba(0, 121, 147, 0.5);
 	box-sizing: border-box;
 	border-radius: 50%;
 	top: 16%;
-	left: 7.5px;
+	right: 0;
+	transition: .3s;
 }
 img{
 	width: 100%;
@@ -60,7 +67,7 @@ ul,figure{
   z-index: 5;
 }
 .header{
-	padding: 2em 4em;
+	padding: 3em 4em;
 }
 .header.scroll .contenedor{
 	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
@@ -76,7 +83,8 @@ ul,figure{
 	position: relative;
 	position: fixed;
 	width: 90%;
-	z-index: 1200
+	z-index: 1200;
+	transition: 1.2s
 }
 .header .contenedor .logo{
 	width: 35%;
@@ -282,7 +290,7 @@ ul,figure{
 	grid-template-columns: 1fr 1fr;
 	grid-template-rows: 3fr 1fr;
 	grid-gap: 3em;
-	padding: 6em 4em 2em;
+	padding: 8em 4em 2em;
 	height: 100vh;
 	color: white;
 	align-items: center;
@@ -328,11 +336,27 @@ ul,figure{
 	color: #007993;
 }
 .servicios{
-	padding: 6em 4em 2em;
+	padding: 8em 4em 2em;
 	height: 100vh;
 	display: flex;
 	align-items: center;
 	background: white
+}
+.servicios.active #pro .cls-2 {
+	transition: 2s;
+	fill: #007e70;
+}
+.servicios.active #elec .cls-5 {
+	transition: 4s;
+	fill: #007e70;
+}
+.servicios.active #web .cls-2 {
+	transition: 6s;
+	fill: #007e70;
+}
+.servicios.active #movil .cls-2 {
+	transition: 8s;
+	fill: #007e70;
 }
 .servicios.active .grid .item{
 	animation-name: fadeIn;
@@ -349,7 +373,8 @@ ul,figure{
 	grid-template-columns: repeat(4,1fr);
 	grid-gap: 5em;
 	text-align: center;
-	position: relative
+	position: relative;
+	width: 95%
 }
 .servicios .grid .hover{
 	position: absolute;
@@ -397,15 +422,15 @@ ul,figure{
 	opacity: 0.0;
 }
 .servicios .grid .item:nth-of-type(2){
-	margin-top: 2.5em;
+	margin-top: 2em;
 	animation-delay: .25s;
 }
 .servicios .grid .item:nth-of-type(3){
-	margin-top: 5em;
+	margin-top: 4em;
 	animation-delay: .5s;
 }
 .servicios .grid .item:nth-of-type(4){
-	margin-top: 7.5em;
+	margin-top: 6em;
 	animation-delay: .75s;
 }
 .servicios .grid .nombre-servicios{
@@ -418,11 +443,23 @@ ul,figure{
 .portafolio{
 	height: 100vh;
 	background: #009270;
-	padding: .5em 4em;
+	padding: 8em 4em 3em;
+	display: flex;
+	align-items: center
+}
+.portafolio.active .grid .proyectos{
+	animation-name: Down;
+	-webkit-animation-name: Down;
+	animation-duration: 1.5s;
+	-webkit-animation-duration: 1.5s;
+	animation-timing-function: ease;
+	-webkit-animation-timing-function: ease;
+	animation-fill-mode: forwards;
+	visibility: visible !important;
 }
 .portafolio .grid{
 	display: grid;
-	grid-template-columns: 2fr 3fr;
+	grid-template-columns: 2fr 4fr;
 	height: 100%
 }
 .portafolio .grid .item:first-child{
@@ -448,7 +485,7 @@ ul,figure{
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
 	grid-template-rows: 1fr 1fr;
-	height: 100%;
+	margin-right: 3em;
 }
 .portafolio .grid .proyectos .proyecto{
 	border: 1px solid white;
@@ -462,6 +499,9 @@ ul,figure{
 	text-decoration: none
 }
 .portafolio .grid .proyectos .proyecto .nombre{
+	z-index: 1000;
+}
+.portafolio .grid .proyectos .proyecto .caracteristicas{
 	z-index: 1000;
 }
 .portafolio .grid .proyectos .proyecto:before{
@@ -481,16 +521,43 @@ ul,figure{
 	left: calc(50% - 6em);
 }
 .contacto{
-	padding: 2em 4em;
-	height: 100vh;
+	padding: 8em 4em 2em;
+	max-height: 100vh;
 	overflow: hidden;
-	background: white;
+	background: white
+}
+.contacto.active .grid .item:first-child{
+	animation-name: stretchRight;
+	-webkit-animation-name: stretchRight;
+	animation-duration: 1.5s;
+	-webkit-animation-duration: 1.5s;
+	animation-delay: .3s;
+	animation-timing-function: ease-out;
+	-webkit-animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	transform-origin: 0% 0%;
+	-ms-transform-origin: 0% 0%;
+	-webkit-transform-origin: 0% 0%;
+}
+.contacto.active .grid .formulario{
+	animation-name: stretchLeft;
+	-webkit-animation-name: stretchLeft;
+	animation-duration: 1.5s;
+	-webkit-animation-duration: 1.5s;
+	animation-delay: .3s;
+	animation-timing-function: ease-out;
+	-webkit-animation-timing-function: ease-out;
+	animation-fill-mode: forwards;
+	transform-origin: 100% 0%;
+	-ms-transform-origin: 100% 0%;
+	-webkit-transform-origin: 100% 0%;
 }
 .contacto .grid{
 	display: grid;
 	grid-template-columns: 3fr 2fr;
 	grid-gap: 4em;
 	align-items: center;
+	max-height: 100%;
 }
 .contacto .grid .animanos{
 	color: #009270;
@@ -522,7 +589,8 @@ ul,figure{
 	height: 80%;
 	box-sizing: border-box;
 	padding: 2em 3em;
-	border-radius: 2em
+	border-radius: 2em;
+	margin-right: 3em
 }
 .contacto .grid .formulario .title{
 	color: white;
@@ -542,9 +610,7 @@ ul,figure{
 	font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	padding: 1em;
 	transition: .3s;
-	color: white;
-	font-size: 16px;
-	font-size: 1rem
+	color: white
 }
 .contacto .grid .formulario .contact input::placeholder,.contacto .grid .formulario .contact textarea::placeholder{
 	color: #ffffff;
@@ -718,6 +784,72 @@ slideRight
 		transform: translateY(-1%);
 	}			
 }
+@keyframes Down {
+	0% {
+		transform: translateY(-100%);
+	}
+	50%{
+		transform: translateY(8%);
+	}
+	65%{
+		transform: translateY(-4%);
+	}
+	80%{
+		transform: translateY(4%);
+	}
+	95%{
+		transform: translateY(-2%);
+	}			
+	100% {
+		transform: translateY(0%);
+	}		
+}
+@keyframes stretchLeft {
+	0% {
+		transform: scaleX(0.3);
+	}
+	40% {
+		transform: scaleX(1.02);
+	}
+	60% {
+		transform: scaleX(0.98);
+	}
+	80% {
+		transform: scaleX(1.01);
+	}
+	100% {
+		transform: scaleX(0.98);
+	}				
+	80% {
+		transform: scaleX(1.01);
+	}
+	100% {
+		transform: scaleX(1);
+	}							
+}
+@keyframes stretchRight {
+	0% {
+		transform: scaleX(0.3);
+	}
+	40% {
+		transform: scaleX(1.02);
+	}
+	60% {
+		transform: scaleX(0.98);
+	}
+	80% {
+		transform: scaleX(1.01);
+	}
+	100% {
+		transform: scaleX(0.98);
+	}				
+	80% {
+		transform: scaleX(1.01);
+	}
+	100% {
+		transform: scaleX(1);
+	}							
+}
 @media (max-width: 500px){
 	.header{
 		padding: 2em
@@ -831,7 +963,7 @@ slideRight
 @media (min-width: 801px){
 	.about .grid .item:nth-of-type(2) .img{
 		width: 80%;
-		margin-left: 7em
+		margin-left: 2em
 	}
 	.about .grid .cualidades{
 		margin-top: 4em
