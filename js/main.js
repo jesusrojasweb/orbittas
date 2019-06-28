@@ -190,7 +190,7 @@ function slide(direccion, movil) {
     console.log(next)
     let siguiente = padre[next];
     let botonSiguiente = botonPadre[next]
-    if(hijo.classList[2] == "active" || hijo.classList[3] == "active"){
+    if(hijo.classList[2] == "active" || hijo.classList[3] == "active" || hijo.classList[4] == "active"){
 
       scroll(hijo,siguiente,boton,botonSiguiente)
       break;
@@ -203,6 +203,7 @@ function scroll(hijo, siguiente,boton,botonSiguiente){
   hijo.classList.add('prev')
   boton.classList.remove('activo')
   siguiente.classList.add('active')
+  siguiente.classList.add('animacion')
   botonSiguiente.classList.add('activo')
 }
 

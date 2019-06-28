@@ -92,8 +92,8 @@ ul,figure{
 	cursor: pointer
 }
 .header .contenedor .burger img{
-	width: 40px;
-	width: 2.5rem;
+	width: 32px;
+	width: 2rem;
 }
 .header .contenedor .burger:focus{
 	outline: none;
@@ -121,8 +121,8 @@ ul,figure{
 	background: none;
 	border: none;
 	color: white;
-	width: 40px;
-	width: 2.5rem;
+	width: 32px;
+	width: 2rem;
 	position: absolute;
 	top: 4%;
 	right: 0;
@@ -164,8 +164,8 @@ ul,figure{
 .header > .menu .grid > .item:nth-of-type(2) .menu .item a{
 	color: white;
 	text-decoration: none;
-	font-size: 32px;
-	font-size: 2rem;
+	font-size: 24px;
+	font-size: 1.5rem;
 	text-transform: uppercase;
 }
 .cls-22{
@@ -195,7 +195,7 @@ ul,figure{
 	box-sizing: border-box;
 	background: white
 }
-.hero.active .copy .item:first-child{
+.hero.animacion .copy .item:first-child{
 	animation-name: slideExpandUp;
 	-webkit-animation-name: slideExpandUp;
 	animation-duration: 1.6s;
@@ -203,7 +203,7 @@ ul,figure{
 	animation-timing-function: ease-out;
 	-webkit-animation-timing-function: ease -out;
 }
-.hero.active .copy .item:last-child{
+.hero.animacion .copy .item:last-child{
 	animation-name: fadeIn;
 	-webkit-animation-name: fadeIn;
 	animation-duration: 1.5s;
@@ -212,7 +212,7 @@ ul,figure{
 	-webkit-animation-timing-function: ease-in-out;
 	visibility: visible !important;
 }
-.hero.active{
+.hero.animacion{
 	visibility: visible !important;
 }
 .hero #particles-js{
@@ -229,10 +229,13 @@ ul,figure{
 	height: 100%;
 	transition: .3s;
 }
+.hero .copy .item:first-child{
+	display: grid;
+}
 .hero .copy .item .title{
 	font-family: 'Dolce Vita Heavy Bold';
-	font-size: 112px;
-	font-size: 7rem;
+	font-size: 128px;
+	font-size: 8rem;
 	color: #007993;
 	margin: 0;
 }
@@ -243,7 +246,7 @@ ul,figure{
 	font-weight: 600;
 	font-size: 24px;
 	font-size: 1.5rem;
-	margin: 0 0 2em;
+	margin: -1em 0 0;
 }
 .hero .copy .item .ilustracion{
 	width: 90%;
@@ -256,8 +259,8 @@ ul,figure{
 	font-family: 'Dolce Vita Heavy Bold';
 	text-decoration: none;
 	border-radius: 2em;
-	font-size: 19.2px;
-	font-size: 1.2rem;
+	font-size: 16px;
+	font-size: 1rem;
 	transition: .3s;
 }
 .hero .copy .item .btn:hover{
@@ -269,7 +272,7 @@ ul,figure{
 	display: flex;
 	align-items: center
 }
-.about.active .grid .item:first-child{
+.about.animacion .grid .item:first-child{
 	animation-name: slideRight;
 	-webkit-animation-name: slideRight;
 	animation-duration: 1.5s;
@@ -278,7 +281,7 @@ ul,figure{
 	-webkit-animation-timing-function: ease-in-out;
 	visibility: visible !important;
 }
-.about.active .grid .item:nth-of-type(2),.about.active .grid .item:last-child{
+.about.animacion .grid .item:nth-of-type(2),.about.animacion .grid .item:last-child{
 	animation-name: slideLeft;
 	-webkit-animation-name: slideLeft;
 	animation-duration: 1.5s;
@@ -327,8 +330,8 @@ ul,figure{
 	font-family: 'Dolce Vita Heavy Bold';
 	text-decoration: none;
 	border-radius: 2em;
-	font-size: 19.2px;
-	font-size: 1.2rem;
+	font-size: 16px;
+	font-size: 1rem;
 	transition: .3s;
 }
 .about .grid .btn:hover{
@@ -344,23 +347,23 @@ ul,figure{
 	align-items: center;
 	background: white
 }
-.servicios.active #pro .cls-2 {
+.servicios.animacion #pro .cls-2 {
 	transition: 2s;
 	fill: #007e70;
 }
-.servicios.active #elec .cls-5 {
+.servicios.animacion #elec .cls-5 {
 	transition: 4s;
 	fill: #007e70;
 }
-.servicios.active #web .cls-2 {
+.servicios.animacion #web .cls-2 {
 	transition: 6s;
 	fill: #007e70;
 }
-.servicios.active #movil .cls-2 {
+.servicios.animacion #movil .cls-2 {
 	transition: 8s;
 	fill: #007e70;
 }
-.servicios.active .grid .item{
+.servicios.animacion .grid .item{
 	animation-name: fadeIn;
 	-webkit-animation-name: fadeIn;
 	animation-duration: 1.5s;
@@ -448,7 +451,7 @@ ul,figure{
 	display: flex;
 	align-items: center
 }
-.portafolio.active .grid .proyectos{
+.portafolio.animacion .grid .proyectos{
 	animation-name: Down;
 	-webkit-animation-name: Down;
 	animation-duration: 1.5s;
@@ -526,7 +529,7 @@ ul,figure{
 	overflow: hidden;
 	background: white
 }
-.contacto.active .grid .item:first-child{
+.contacto.animacion .grid .item:first-child{
 	animation-name: stretchRight;
 	-webkit-animation-name: stretchRight;
 	animation-duration: 1.5s;
@@ -539,7 +542,7 @@ ul,figure{
 	-ms-transform-origin: 0% 0%;
 	-webkit-transform-origin: 0% 0%;
 }
-.contacto.active .grid .formulario{
+.contacto.animacion .grid .formulario{
 	animation-name: stretchLeft;
 	-webkit-animation-name: stretchLeft;
 	animation-duration: 1.5s;
@@ -625,8 +628,8 @@ ul,figure{
 	font-family: 'Dolce Vita Heavy Bold';
 	text-decoration: none;
 	border-radius: 2em;
-	font-size: 19.2px;
-	font-size: 1.2rem;
+	font-size: 16px;
+	font-size: 1rem;
 	transition: .3s;
 }
 .contacto .grid .formulario .contact .btn:hover{
