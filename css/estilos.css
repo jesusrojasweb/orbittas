@@ -146,7 +146,7 @@ ul,figure{
 	fill: #fcd121;
 }
 .margen{
-	padding: 10em 4em 4em;
+	padding: 10em 6em 4em;
 	height: 100vh;
 	box-sizing: border-box;
 }
@@ -378,7 +378,7 @@ ul,figure{
 	grid-gap: 5em;
 	text-align: center;
 	position: relative;
-	padding-right: 7em
+	padding-right: 9em
 }
 .servicios .grid .hover{
 	position: absolute;
@@ -611,12 +611,14 @@ ul,figure{
 .contacto .grid .formulario{
 	background: #007993;
 	box-sizing: border-box;
-	padding: 1em 3em;
+	padding: 2em 3em;
 	border-radius: 2em;
 	margin-right: 3em
 }
 .contacto .grid .formulario .title{
 	color: white;
+	font-size: 19.2px;
+	font-size: 1.2rem;
 }
 .contacto .grid .formulario .contact{
 	width: 100%;
