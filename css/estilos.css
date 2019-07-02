@@ -378,7 +378,7 @@ ul,figure{
 	grid-gap: 5em;
 	text-align: center;
 	position: relative;
-	width: 95%
+	padding-right: 7em
 }
 .servicios .grid .hover{
 	position: absolute;
