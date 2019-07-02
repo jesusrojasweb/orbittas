@@ -794,8 +794,11 @@ ul,figure{
 				}
 				& .btn{
 					@apply --btn;
-					margin-top: 2em;
+					padding: .5em 2em;
+					width: 70%;
+					margin-top: 1em;
 					background: none;
+					font-size: 1rem;
 					&:hover{
 						border-color: #00caf5;
 						background: #00caf5;
