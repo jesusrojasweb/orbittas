@@ -100,12 +100,12 @@ ul,figure{
 	box-sizing: border-box
 }
 .header .contenedor .navbar .menu:nth-of-type(2){
-	width: calc(85% - 6em);
-	margin-right: 2em;
+	width: calc(85% - 4em);
+	margin-right: 3.5em;
 }
 .header .contenedor .navbar .menu .item{
 	text-decoration: none;
-	font-family: 'Dolce Vita Heavy Bold';
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	text-transform: uppercase;
 	color: #007993;
 	font-size: 19.2px;
@@ -195,7 +195,7 @@ ul,figure{
 	justify-content: space-around;
 }
 .hero .copy .item .title{
-	font-family: 'Dolce Vita Heavy Bold';
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	font-size: 128px;
 	font-size: 8rem;
 	color: #007993;
@@ -229,7 +229,7 @@ ul,figure{
 	border: 2px solid white;
 	padding: 1em 2em;
 	text-transform: uppercase;
-	font-family: 'Dolce Vita Heavy Bold';
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	text-decoration: none;
 	border-radius: 2em;
 	font-size: 16px;
@@ -325,7 +325,7 @@ ul,figure{
 	border: 2px solid white;
 	padding: 1em 2em;
 	text-transform: uppercase;
-	font-family: 'Dolce Vita Heavy Bold';
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	text-decoration: none;
 	border-radius: 2em;
 	font-size: 16px;
@@ -439,7 +439,7 @@ ul,figure{
 }
 .servicios .grid .nombre-servicios{
 	color: #007993;
-	font-family: 'Dolce Vita Heavy Bold';
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 }
 .servicios .grid .descripcion{
 	color: #009270;
@@ -479,7 +479,7 @@ ul,figure{
 	color: white;
 	text-decoration: none;
 	margin-right: 1em;
-	font-family: 'Dolce Vita Heavy Bold';
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 }
 .portafolio .grid .proyectos{
 	display: grid;
@@ -526,7 +526,7 @@ ul,figure{
 	border: 2px solid white;
 	padding: 1em 2em;
 	text-transform: uppercase;
-	font-family: 'Dolce Vita Heavy Bold';
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	text-decoration: none;
 	border-radius: 2em;
 	font-size: 16px;
@@ -581,6 +581,7 @@ ul,figure{
 	grid-gap: 0 4em;
 	padding-bottom: 0;
 	position: relative;
+	padding-top: 11em;
 }
 .contacto .grid .animanos{
 	color: #009270;
@@ -654,7 +655,7 @@ ul,figure{
 	border: 2px solid white;
 	padding: 1em 2em;
 	text-transform: uppercase;
-	font-family: 'Dolce Vita Heavy Bold';
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	text-decoration: none;
 	border-radius: 2em;
 	font-size: 16px;
@@ -696,7 +697,7 @@ ul,figure{
 .contacto .grid .footer .menu .item a{
 	color: white;
 	text-decoration: none;
-	font-family: 'Dolce Vita Heavy Bold';
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 }
 .contacto .grid .footer .copy{
 	display: flex;

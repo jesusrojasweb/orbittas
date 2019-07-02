@@ -1,7 +1,7 @@
 :root{
 	--colorPrincipal: #007993;
 	--colorSecundario: #009270;
-	--fuentePrincipal: 'Dolce Vita Heavy Bold';
+	--fuentePrincipal: 'Dolce Vita Heavy Bold', system-ui;
 	--fuenteSecundaria:'Montserrat', system-ui;
 	--btn: {
 		color: white;
@@ -145,8 +145,8 @@ ul,figure{
 				width: calc((100% - 15%));
 				box-sizing: border-box;
 				&:nth-of-type(2){
-					width: calc((100% - 15%) - 6em);
-					margin-right: 2em;
+					width: calc((100% - 15%) - 4em);
+					margin-right: 3.5em;
 				}
 				& .item{
 					text-decoration: none;
@@ -715,6 +715,7 @@ ul,figure{
 		grid-gap: 0 4em;
 		padding-bottom: 0;
 		position: relative;
+		padding-top: 11em;
 		@media(--tablet){
 			grid-template-columns: 1fr;
 		}
