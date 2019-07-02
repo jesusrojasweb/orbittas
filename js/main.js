@@ -36,9 +36,6 @@ $luz.addEventListener("mouseout",function () {
 $burger.addEventListener('click',function () {
   $menu.classList.add('activo')
 })
-$close.addEventListener('click',function () {
-  $menu.classList.remove('activo')
-})
 
 $pro.addEventListener('mouseover',function () {
   console.log('hoverpro')
@@ -183,12 +180,10 @@ function slide(direccion, movil) {
     if(next == 1 || next == 3){
       $header.classList.add('scroll')
       $botones.classList.add('scroll')
-      $menu.classList.add('fondo')
     }
     if(next== 0 || next == 2 || next == 4){
      $header.classList.remove('scroll')
      $botones.classList.remove('scroll')
-     $menu.classList.add('fondo')
     }
     console.log(next)
     let siguiente = padre[next];
