@@ -37,34 +37,6 @@ $burger.addEventListener('click',function () {
   $menu.classList.add('activo')
 })
 
-$pro.addEventListener('mouseover',function () {
-  console.log('hoverpro')
-  $hoverPro.classList.add('activo')
-})
-$pro.addEventListener('mouseout',function () {
-  $hoverPro.classList.remove('activo')
-})
-$web.addEventListener('mouseover',function () {
-  console.log('web')
-  $hoverWeb.classList.add('activo')
-})
-$web.addEventListener('mouseout',function () {
-  $hoverWeb.classList.remove('activo')
-})
-$elec.addEventListener('mouseover',function () {
-  console.log('elec')
-  $hoverElec.classList.add('activo')
-})
-$elec.addEventListener('mouseout',function () {
-  $hoverElec.classList.remove('activo')
-})
-$movil.addEventListener('mouseover',function () {
-  console.log('hovermovil')
-  $hoverMovil.classList.add('activo')
-})
-$movil.addEventListener('mouseout',function () {
-  $hoverMovil.classList.remove('activo')
-})
 
 //botones
 for(let i = 0; i < padre.length; i++){

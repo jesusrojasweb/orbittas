@@ -666,8 +666,12 @@ ul,figure{
 	box-shadow: 0 0 50px #00b5ff;
 }
 .contacto .grid .formulario .contact .btn{
-	margin-top: 2em;
-	background: none
+	padding: .5em 2em;
+	width: 70%;
+	margin-top: 1em;
+	background: none;
+	font-size: 16px;
+	font-size: 1rem
 }
 .contacto .grid .formulario .contact .btn:hover{
 	border-color: #00caf5;
