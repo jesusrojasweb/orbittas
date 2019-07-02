@@ -251,7 +251,7 @@ ul,figure{
 	display: flex;
 	align-items: center
 }
-.about.animacion .grid .item:first-child{
+.about.animacion .grid .item:first-child .contenedor{
 	animation-name: slideRight;
 	-webkit-animation-name: slideRight;
 	animation-duration: 1.5s;
@@ -260,7 +260,7 @@ ul,figure{
 	-webkit-animation-timing-function: ease-in-out;
 	visibility: visible !important;
 }
-.about.animacion .grid .item:nth-of-type(2),.about.animacion .grid .item:last-child{
+.about.animacion .grid .item:last-child{
 	animation-name: slideLeft;
 	-webkit-animation-name: slideLeft;
 	animation-duration: 1.5s;
@@ -446,7 +446,7 @@ ul,figure{
 }
 .portafolio{
 	height: 100vh;
-	background: #009270;
+	background: #007993;
 	display: flex;
 	align-items: center
 }
@@ -461,7 +461,10 @@ ul,figure{
 	visibility: visible !important;
 }
 .portafolio .grid{
-	height: 100%
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	justify-content: space-between
 }
 .portafolio .grid .portafolio-servicios{
 	list-style: none
@@ -483,7 +486,7 @@ ul,figure{
 	grid-template-columns: repeat(4, 1fr);
 	grid-template-rows: 1fr;
 	margin: 2em 3em 0 0;
-	height: 90%;
+	height: 75%;
 }
 .portafolio .grid .proyectos .proyecto{
 	border: 1px solid white;
@@ -517,6 +520,29 @@ ul,figure{
 	width: 12em;
 	height: 12em;
 	left: calc(50% - 6em);
+}
+.portafolio .grid .btn{
+	color: white;
+	border: 2px solid white;
+	padding: 1em 2em;
+	text-transform: uppercase;
+	font-family: 'Dolce Vita Heavy Bold';
+	text-decoration: none;
+	border-radius: 2em;
+	font-size: 16px;
+	font-size: 1rem;
+	transition: .3s
+}
+.portafolio .grid .btn:hover{
+	box-shadow: 0 0 50px #00b5ff;
+}
+.portafolio .grid .btn{
+	margin-right: 3em
+}
+.portafolio .grid .btn:hover{
+	border-color: #00caf5;
+	background: #00caf5;
+	color: #007993;
 }
 .contacto{
 	max-height: 100vh;
@@ -773,18 +799,6 @@ ul,figure{
 	0% {
 		transform: translateX(150%);
 	}
-	50%{
-		transform: translateX(-8%);
-	}
-	65%{
-		transform: translateX(4%);
-	}
-	80%{
-		transform: translateX(-4%);
-	}
-	95%{
-		transform: translateX(2%);
-	}			
 	100% {
 		transform: translateX(0%);
 	}
@@ -797,15 +811,6 @@ slideRight
 @keyframes slideRight {
 	0% {
 		transform: translateX(-150%);
-	}
-	50%{
-		transform: translateX(8%);
-	}
-	65%{
-		transform: translateX(-4%);
-	}
-	80%{
-		transform: translateX(4%);
 	}
 	95%{
 		transform: translateX(-2%);
@@ -987,9 +992,6 @@ slideRight
 	}
 	.portafolio{
 		padding: .5em 0
-	}
-	.portafolio .grid{
-		grid-template-columns: 1fr
 	}
 	.portafolio .grid .portafolio-servicios{
 		display: flex;
