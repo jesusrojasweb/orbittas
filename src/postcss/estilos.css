@@ -468,7 +468,7 @@ ul,figure{
 		grid-gap: 5em;
 		text-align: center;
 		position: relative;
-		width: 95%;
+		padding-right: 7em;
 		@media(--tablet){
 			grid-template-columns: 1fr 1fr;
 			& .item{
