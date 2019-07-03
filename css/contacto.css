@@ -70,6 +70,7 @@ ul,figure{
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	position: fixed;
 }
 .header.scroll .contenedor{
 	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
@@ -132,8 +133,149 @@ ul,figure{
 	height: 100vh;
 	box-sizing: border-box;
 }
+.contacto .grid{
+	display: grid;
+	grid-template-columns: 4fr 2fr
+}
+.contacto .grid > .item{
+	position: relative
+}
+.contacto .grid > .item .fondo{
+	width: 20%;
+	right: 0;
+	top: -8em;
+	position: absolute;
+	z-index: -1;
+}
+.contacto .grid > .item .title{
+	color: #007993;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-size: 64px;
+	font-size: 4rem;
+	margin-top: 0;
+}
+.contacto .grid > .item .separacion{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 4rem
+}
+.contacto .grid > .item .separacion .caption{
+	margin-top: 0;
+	color: #007993;
+	font-size: 32px;
+	font-size: 2rem;
+	font-weight: 600;
+}
+.contacto .grid > .item .separacion .formulario{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	grid-gap: 0 1em;
+	margin: 0;
+	padding: 0
+}
+.contacto .grid > .item .separacion .formulario input, .contacto .grid > .item .separacion .formulario textarea{
+	background: none;
+	border: none;
+	border-bottom: 2px solid rgba(0, 121, 147, 0.5);
+	font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	padding: 1em;
+	transition: .3s;
+	color: #007993;
+	width: 90%
+}
+.contacto .grid > .item .separacion .formulario input::placeholder,.contacto .grid > .item .separacion .formulario textarea::placeholder{
+	color: #007993;
+	color: rgba(0, 121, 147, 0.5);
+}
+.contacto .grid > .item .separacion .formulario input:focus,.contacto .grid > .item .separacion .formulario textarea:focus{
+	border-bottom-color: #007993;
+	outline: none;
+}
+.contacto .grid > .item .separacion .formulario textarea{
+	grid-column: 2 span;
+}
+.contacto .grid > .item .separacion .formulario input:nth-of-type(3){
+	grid-column: 2 span;
+}
+.contacto .grid > .item .separacion .formulario .btn{
+	color: white;
+	border: 2px solid white;
+	padding: 1em 2em;
+	text-transform: uppercase;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	text-decoration: none;
+	border-radius: 2em;
+	font-size: 16px;
+	font-size: 1rem;
+	transition: .3s
+}
+.contacto .grid > .item .separacion .formulario .btn:hover{
+	box-shadow: 0 0 50px #00b5ff;
+}
+.contacto .grid > .item .separacion .formulario .btn{
+	background: rgb(0, 121, 147);
+	background: linear-gradient(90deg, rgba(0, 121, 147, 1) 0%, rgba(0, 146, 112, 1) 100%) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#007993",endColorstr="#009270",GradientType=1) !important;
+	border: none;
+	padding: .5em 2em;
+	width: 50%;
+	margin-top: 1em;
+	background: none;
+	font-size: 16px;
+	font-size: 1rem
+}
+.contacto .grid > .item .separacion .formulario .btn:hover{
+	border-color: #00caf5;
+	background: #00caf5;
+	color: #007993;
+}
+.contacto .grid > .item:first-child{
+	padding-right: 4em
+}
+.contacto .grid > .item:first-child:after{
+	content: '';
+	position: absolute;
+	top: -10em;
+	right: 0;
+	height: 100vh;
+	width: 2px;
+	background: #007993;
+	background: rgba(0, 121, 147, 0.5);
+}
+.contacto .grid > .item:last-child{
+	padding-left: 6em;
+	display: flex;
+	flex-direction: column;
+	justify-content: center
+}
+.contacto .grid > .item:last-child .informacion{
+	text-align: center;
+	list-style: none
+}
+.contacto .grid > .item:last-child .informacion .item{
+	margin-bottom: 1.5em
+}
+.contacto .grid > .item:last-child .informacion .item a{
+	color: #007993;
+	text-decoration: none;
+	font-size: 32px;
+	font-size: 2rem;
+	font-weight: 600;
+}
+.contacto .grid > .item:last-child .sociales{
+	display: flex;
+	list-style: none;
+	margin-top: 2em;
+}
+.contacto .grid > .item:last-child .sociales .item{
+	margin-right: 1em;
+}
 @media (max-width: 500px){
 	.header{
 		padding: 2em
+	}
+	.contacto .grid > .item:last-child .sociales{
+		width: 100%
 	}
 }
