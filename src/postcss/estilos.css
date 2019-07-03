@@ -130,7 +130,7 @@ ul,figure{
 		align-items: center;
 		position: relative;
 		position: fixed;
-		width: calc(100% - 8em);
+		width: calc(100% - 12em);
 		box-sizing: border-box;
 		z-index: 1200;
 		transition: 1.2s;
@@ -757,7 +757,7 @@ ul,figure{
 		}
 		& .formulario{
 			box-sizing: border-box;
-			padding: .5em 2em 2em;
+			padding: 0 2em 2em;
 			border-radius: 2em;
 			margin-right: 3em;
 			& .title{
@@ -850,7 +850,7 @@ ul,figure{
 	}
 }
 .active{
-  animation: slideDown .8s forwards;
+  animation: slideDown 1s forwards;
   z-index: 1000;
   
 }
@@ -874,16 +874,7 @@ ul,figure{
 @keyframes slideDown {
 	0% {
 		transform: translateY(100%);
-	}
-	50%{
-		transform: translateY(-4%);
-	}
-	80%{
-		transform: translateY(4%);
-	}
-	95%{
-		transform: translateY(2%);
-	}			
+	}		
 	100% {
 		transform: translateY(0%);
 	}	
@@ -892,19 +883,7 @@ ul,figure{
 @-webkit-keyframes slideDown {
 	0% {
 		-webkit-transform: translateY(100%);
-	}
-	50%{
-		-webkit-transform: translateY(-8%);
-	}
-	65%{
-		-webkit-transform: translateY(4%);
-	}
-	80%{
-		-webkit-transform: translateY(-4%);
-	}
-	95%{
-		-webkit-transform: translateY(2%);
-	}			
+	}		
 	100% {
 		-webkit-transform: translateY(0%);
 	}	
