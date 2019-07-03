@@ -60,6 +60,7 @@ for(let i = 0; i < padre.length; i++){
     for(let i = 0; i < botonesList[0].children.length; i++){
       botonesList[0].children[i].classList.remove('activo')
     }
+<<<<<<< HEAD
     if(botonClick == 0){
       $header.classList.add('scroll')
       $botones.classList.add('scroll')
@@ -74,6 +75,16 @@ for(let i = 0; i < padre.length; i++){
     if(botonClick== 0 || botonClick == 2 || botonClick == 4){
       $botones.classList.remove('left')
     }
+=======
+    if(botonClick == 1 || botonClick == 3){
+      $header.classList.add('scroll')
+      $botones.classList.add('scroll')
+    }
+    if(botonClick== 0 || botonClick == 2 || botonClick == 4){
+     $header.classList.remove('scroll')
+     $botones.classList.remove('scroll')
+    }
+>>>>>>> 1483ba82e7276e473f2f69f907ac0729944c0c83
     padre[botonClick].classList.add('active')
     padre[botonClick].classList.add('animacion')
     button.classList.add('activo')
