@@ -70,6 +70,7 @@ ul,figure{
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	position: fixed;
 }
 .header.scroll .contenedor{
 	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
@@ -84,7 +85,9 @@ ul,figure{
 	width: calc(100% - 12em);
 	box-sizing: border-box;
 	z-index: 1200;
-	transition: 1.2s
+	transition: 1.2s;
+	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+	filter: brightness(0) invert(1)
 }
 .header .contenedor .navbar{
 	width: 100%;
@@ -131,6 +134,77 @@ ul,figure{
 	padding: 10em 6em 4em;
 	height: 100vh;
 	box-sizing: border-box;
+}
+.portafolio{
+	background: #007993
+}
+.portafolio .grid{
+	display: grid;
+	grid-template-columns: 2fr 5fr;
+	align-items: center;
+	grid-gap: 5em
+}
+.portafolio .grid .menu{
+	list-style: none;
+	width: 80%
+}
+.portafolio .grid .menu .item{
+	margin-bottom: 1em
+}
+.portafolio .grid .menu .item a{
+	color: white;
+	text-decoration: none;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-size: 32px;
+	font-size: 2rem;
+	display: flex;
+	justify-content: space-between
+}
+.portafolio .grid .menu .item a span{
+	font-size: 24px;
+	font-size: 1.5rem;
+	margin-left: .5em;
+}
+.portafolio .grid .grilla{
+	display: grid;
+	grid-template-columns: repeat(3,1fr)
+}
+.portafolio .grid .grilla .proyecto{
+	border: 2px solid #00caf5;
+	text-align: center;
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+	color: white;
+	text-decoration: none
+}
+.portafolio .grid .grilla .proyecto .nombre{
+	z-index: 1000;
+}
+.portafolio .grid .grilla .proyecto .caracteristicas{
+	z-index: 1000;
+}
+.portafolio .grid .grilla .proyecto:before{
+	content: '';
+	width: 0;
+	height: 0;
+	left: 50%;
+	background: rgb(0, 97, 118);
+	border-radius: 50%;
+	position: absolute;
+	z-index: 1;
+	transition: .3s;
+}
+.portafolio .grid .grilla .proyecto:hover:before{
+	width: 9em;
+	height: 9em;
+	left: calc(50% - 4.5em);
+}
+.portafolio .grid .grilla .proyecto:nth-of-type(2), .portafolio .grid .grilla .proyecto:nth-of-type(5){
+	border-right: none;
+	border-left: 0;
 }
 @media (max-width: 500px){
 	.header{

@@ -1,6 +1,7 @@
 :root{
 	--colorPrincipal: #007993;
 	--colorSecundario: #009270;
+	--colorFluerecente: #00caf5;
 	--fuentePrincipal: 'Dolce Vita Heavy Bold', system-ui;
 	--fuenteSecundaria:'Montserrat', system-ui;
 	--btn: {
@@ -115,6 +116,7 @@ ul,figure{
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	position: fixed;
 	@media(--mobile){
 		padding: 2em;
 	}
@@ -133,6 +135,7 @@ ul,figure{
 		box-sizing: border-box;
 		z-index: 1200;
 		transition: 1.2s;
+		filter: brightness(0) invert(1);
 		& .navbar{
 			width: 100%;
 			display: flex;
@@ -179,4 +182,75 @@ ul,figure{
 	padding: 10em 6em 4em;
 	height: 100vh;
 	box-sizing: border-box;
+}
+.portafolio{
+	background: var(--colorPrincipal);
+	& .grid{
+		display: grid;
+		grid-template-columns: 2fr 5fr;
+		align-items: center;
+		grid-gap: 5em;
+		& .menu{
+			list-style: none;
+			width: 80%;
+			& .item{
+				margin-bottom: 1em;
+				& a{
+					color: white;
+					text-decoration: none;
+					font-family: var(--fuentePrincipal);
+					font-size: 2rem;
+					display: flex;
+					justify-content: space-between;
+					& span{
+						font-size: 1.5rem;
+						margin-left: .5em;
+					}
+				}
+			}
+		}
+		& .grilla{
+			display: grid;
+			grid-template-columns: repeat(3,1fr);
+			& .proyecto{
+				border: 2px solid var(--colorFluerecente);
+				text-align: center;
+				padding: 2em;
+				display: flex;
+				flex-direction: column;
+				justify-content: space-between;
+				position: relative;
+				color: white;
+				text-decoration: none;
+				& .nombre{
+					z-index: 1000;
+				}
+				& .caracteristicas{
+					z-index: 1000;
+				}
+				&:before{
+					content: '';
+					width: 0;
+					height: 0;
+					left: 50%;
+					background: color(var(--colorPrincipal) shade(20%));
+					border-radius: 50%;
+					position: absolute;
+					z-index: 1;
+					transition: .3s;
+				}
+				&:hover{
+					&:before{
+						width: 9em;
+						height: 9em;
+						left: calc((100% - 9em)/2);
+					}
+				}
+				&:nth-of-type(2), &:nth-of-type(5){
+					border-right: none;
+					border-left: 0;
+				}
+			}
+		}
+	}
 }
