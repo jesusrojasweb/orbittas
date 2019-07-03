@@ -70,6 +70,7 @@ ul,figure{
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	position: fixed;
 }
 .header.scroll .contenedor{
 	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
@@ -131,6 +132,80 @@ ul,figure{
 	padding: 10em 6em 4em;
 	height: 100vh;
 	box-sizing: border-box;
+}
+.right img{
+	margin-left: 6em;
+}
+.left img{
+	margin-left: -6em;
+}
+.hero{
+	background: #005567;
+	background: rgba(0, 85, 103, 0.9);
+	overflow: hidden
+}
+.hero .margen{
+	position: relative
+}
+.hero .margen .fondo{
+	position: absolute;
+	width: 80%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: -1
+}
+.hero .margen .fondo img{
+	width: 50%;
+}
+.hero .margen .contenedor{
+	z-index: 1000
+}
+.hero .margen .contenedor .title{
+	color: white;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-size: 64px;
+	font-size: 4rem;
+}
+.hero .margen .contenedor .descripcion{
+	color: white;
+}
+.servicio .grid{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 5em
+}
+.servicio .grid .head{
+	display: flex;
+	align-items: center
+}
+.servicio .grid .head .icono{
+	width: 15%;
+	margin-right: 2em;
+}
+.servicio .grid .head .nombre{
+	color: #009270;
+	font-size: 48px;
+	font-size: 3rem;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+}
+.servicio .grid .body .lista{
+	list-style: none;
+	padding-left: 2em
+}
+.servicio .grid .body .lista .item{
+	margin-bottom: 1em;
+	position: relative
+}
+.servicio .grid .body .lista .item:before{
+	content: '';
+	width: 20px;
+	height: 20px;
+	background: #007993;
+	left: -2em;
+	top: 0;
+	position: absolute;
+	border-radius: 50%;
 }
 @media (max-width: 500px){
 	.header{

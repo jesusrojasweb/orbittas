@@ -115,6 +115,7 @@ ul,figure{
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	position: fixed;
 	@media(--mobile){
 		padding: 2em;
 	}
@@ -179,4 +180,85 @@ ul,figure{
 	padding: 10em 6em 4em;
 	height: 100vh;
 	box-sizing: border-box;
+}
+.right{
+	& img{
+		margin-left: 6em;
+	}
+}
+.left{
+	& img{
+		margin-left: -6em;
+	}
+}
+.hero{
+	background: color(var(--colorPrincipal) shade(30%) a(90%));
+	overflow: hidden;
+	& .margen{
+		position: relative;
+		& .fondo{
+			position: absolute;
+			width: 80%;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			z-index: -1;
+			& img{
+				width: 50%;
+
+			}
+		}
+		& .contenedor{
+			z-index: 1000;
+			& .title{
+				color: white;
+				font-family: var(--fuentePrincipal);
+				font-size: 4rem;
+			}
+			& .descripcion{
+				color: white;
+			}
+		}
+	}
+}
+
+.servicio{
+	& .grid{
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 5em;
+		& .head{
+			display: flex;
+			align-items: center;
+			& .icono{
+				width: 15%;
+				margin-right: 2em;
+			}
+			& .nombre{
+				color: var(--colorSecundario);
+				font-size: 3rem;
+				font-family: var(--fuentePrincipal);
+			}
+		}
+		& .body{
+			& .lista{
+				list-style: none;
+				padding-left: 2em;
+				& .item{
+					margin-bottom: 1em;
+					position: relative;
+					&:before{
+						content: '';
+						width: 20px;
+						height: 20px;
+						background: var(--colorPrincipal);
+						left: -2em;
+						top: 0;
+						position: absolute;
+						border-radius: 50%;
+					}
+				}
+			}
+		}
+	}
 }
