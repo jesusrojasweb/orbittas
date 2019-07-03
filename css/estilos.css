@@ -194,6 +194,9 @@ ul,figure{
 	flex-direction: column;
 	justify-content: space-around;
 }
+.hero .copy .item:last-child{
+	padding-top: 1.5em;
+}
 .hero .copy .item .title{
 	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	font-size: 128px;

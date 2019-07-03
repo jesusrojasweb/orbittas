@@ -265,6 +265,9 @@ ul,figure{
 				flex-direction: column;
 				justify-content: space-around;
 			}
+			&:last-child{
+				padding-top: 1.5em;
+			}
 			& .title{
 				font-family: var(--fuentePrincipal);
 				font-size: 8rem;
