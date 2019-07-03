@@ -1,0 +1,286 @@
+body{
+	font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	/*overflow: hidden;*/
+	/*@media(--mobile){
+		overflow-y: scroll;
+	}*/
+}
+.botones{
+	position: fixed;
+	padding: 1em 0;
+	box-sizing: border-box;
+	border-radius: 2em;
+	height: 30%;
+	width: 30px;
+	top: 35%;
+	right: 4em;
+	z-index: 1500;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column
+}
+.botones.scroll .boton.activo:after{
+	background: white;
+}
+.botones.scroll .boton:after{
+	background: #ffffff;
+	background: rgba(255, 255, 255, 0.5);
+}
+.botones .boton{
+	width: 100%;
+	height: 100%;
+	position: relative
+}
+.botones .boton.activo:after{
+	background: #007993;
+}
+.botones .boton:after{
+	position: absolute;
+	content: '';
+	width: 10px;
+	height: 10px;
+	background: #007993;
+	background: rgba(0, 121, 147, 0.5);
+	box-sizing: border-box;
+	border-radius: 50%;
+	top: 16%;
+	right: 0;
+	transition: .3s;
+}
+img{
+	width: 100%;
+}
+ul,figure{
+	margin: 0;
+	padding: 0;
+}
+/*.slide{
+	position: absolute;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  top: 0;
+  z-index: 5;
+}*/
+.header{
+	padding: 3em 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	position: fixed;
+	z-index: 1;
+}
+.header.scroll .contenedor{
+	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+	filter: brightness(0) invert(1);
+}
+.header .contenedor{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	position: fixed;
+	width: calc(100% - 12em);
+	box-sizing: border-box;
+	z-index: 1200;
+	transition: 1.2s;
+	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+	filter: brightness(0) invert(1)
+}
+.header .contenedor .navbar{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between
+}
+.header .contenedor .navbar .menu{
+	display: flex;
+	justify-content: space-between;
+	width: 85%;
+	box-sizing: border-box
+}
+.header .contenedor .navbar .menu:nth-of-type(2){
+	width: calc(85% - 4em);
+	margin-right: 3.5em;
+}
+.header .contenedor .navbar .menu .item{
+	text-decoration: none;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	text-transform: uppercase;
+	color: #007993;
+	font-size: 19.2px;
+	font-size: 1.2rem;
+}
+.header .contenedor .navbar .logo{
+	width: 15%;
+	margin: 0 10em;
+}
+.header .contenedor .burger{
+	background: none;
+	border: none;
+	cursor: pointer;
+	display: none
+}
+.header .contenedor .burger img{
+	width: 32px;
+	width: 2rem;
+}
+.header .contenedor .burger:focus{
+	outline: none;
+}
+.margen{
+	padding: 11em 6em 4em;
+	height: 100vh;
+	box-sizing: border-box;
+}
+.proyecto{
+	background: #009270;
+	position: relative
+}
+.proyecto .grid{
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 5em
+}
+.proyecto .grid .item{
+	text-align: end
+}
+.proyecto .grid .item .caption{
+	color: white;
+	opacity: .5;
+	text-transform: uppercase;
+}
+.proyecto .grid .item .nombre{
+	color: white;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-size: 80px;
+	font-size: 5rem;
+	margin: 0;
+}
+.proyecto .grid .item .descripcion{
+	color: white;
+}
+.proyecto .grid .item .boton{
+	color: white;
+	background: none;
+	border: none;
+	font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-size: 20.8px;
+	font-size: 1.3rem;
+	display: flex;
+	align-items: center;
+	justify-content: flex-end;
+	text-decoration: none
+}
+.proyecto .grid .item .boton .icono{
+	width: 4%;
+	margin-left: 1em;
+}
+.proyecto .grid .item:first-child{
+	width: 100%;
+	height: 100%;
+	background: rgb(0, 117, 90);
+}
+.proyecto .hover{
+	width: 30%;
+	height: 100%;
+	position: absolute;
+	background: #000000;
+	background: rgba(0, 0, 0, .5);
+	top: 0;
+	left: 0;
+	z-index: 1000;
+	visibility: hidden
+}
+.proyecto .hover .close{
+	background: none;
+	color: white;
+	font-size: 32px;
+	font-size: 2rem;
+	border: none;
+	position: absolute;
+	right: 1em;
+	top: 2.3em;
+	cursor: pointer;
+}
+.proyecto .detalle{
+	background: white;
+	position: absolute;
+	width: 70%;
+	box-sizing: border-box;
+	right: 100%;
+	top: 0;
+	z-index: 1000;
+	padding: 5em 6em;
+	overflow: scroll;
+	height: 100%
+}
+.proyecto .detalle .contenedor{
+	position: relative
+}
+.proyecto .detalle .contenedor .nombre{
+	color: #009270;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-size: 64px;
+	font-size: 4rem;
+	text-align: center;
+	margin-top: 0;
+}
+.proyecto .detalle .contenedor .skills{
+	display: flex;
+	justify-content: space-between
+}
+.proyecto .detalle .contenedor .skills .item{
+	color: #009270;
+}
+.proyecto .detalle .contenedor .imagen{
+	width: 100%;
+	height: 300px;
+	background: #009270;
+	margin: 2em 0;
+}
+.proyecto .detalle .contenedor .subtitle{
+	color: #009270;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-size: 32px;
+	font-size: 2rem;
+}
+.proyecto .detalle .contenedor .gustar{
+	color: #009270;
+	text-align: center;
+	font-size: 24px;
+	font-size: 1.5rem;
+}
+.proyecto .detalle .contenedor .boton{
+	display: flex;
+	justify-content: center;
+}
+.proyecto .detalle .contenedor .btn{
+	color: white;
+	border: 2px solid white;
+	padding: 1em 2em;
+	text-transform: uppercase;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	text-decoration: none;
+	border-radius: 2em;
+	font-size: 16px;
+	font-size: 1rem;
+	transition: .3s;
+}
+.proyecto .detalle .contenedor .btn:hover{
+	box-shadow: 0 0 50px #00b5ff;
+}
+.proyecto .detalle .contenedor .btn{
+	background: #009270;
+	border: none;
+	text-align: center;
+}
+@media (max-width: 500px){
+	.header{
+		padding: 2em
+	}
+}

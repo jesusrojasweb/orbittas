@@ -21,7 +21,7 @@ gulp.task('css', ()=>{
     cssnext({browsers: ['> 5%', 'ie 8']}),
     mqpacker()
   ]
-  return gulp.src('./src/postcss/estilos.css')
+  return gulp.src('./src/postcss/*.css')
     //.pipe(sourcemaps.init())
     .pipe(postcss(processor))
     .pipe(gulp.dest('./css/'))

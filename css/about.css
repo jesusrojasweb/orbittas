@@ -1,0 +1,235 @@
+body{
+	font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	/*@media(--mobile){
+		overflow-y: scroll;
+	}*/
+}
+.botones{
+	position: fixed;
+	padding: 1em 0;
+	box-sizing: border-box;
+	border-radius: 2em;
+	height: 30%;
+	width: 30px;
+	top: 35%;
+	right: 4em;
+	z-index: 1500;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column
+}
+.botones.scroll .boton.activo:after{
+	background: white;
+}
+.botones.scroll .boton:after{
+	background: #ffffff;
+	background: rgba(255, 255, 255, 0.5);
+}
+.botones .boton{
+	width: 100%;
+	height: 100%;
+	position: relative
+}
+.botones .boton.activo:after{
+	background: #007993;
+}
+.botones .boton:after{
+	position: absolute;
+	content: '';
+	width: 10px;
+	height: 10px;
+	background: #007993;
+	background: rgba(0, 121, 147, 0.5);
+	box-sizing: border-box;
+	border-radius: 50%;
+	top: 16%;
+	right: 0;
+	transition: .3s;
+}
+img{
+	width: 100%;
+}
+ul,figure{
+	margin: 0;
+	padding: 0;
+}
+/*.slide{
+	position: absolute;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  top: 0;
+  z-index: 5;
+}*/
+.header{
+	padding: 3em 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	position: fixed;
+}
+.header.scroll .contenedor{
+	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+	filter: brightness(0) invert(1);
+}
+.header .contenedor{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	position: fixed;
+	width: calc(100% - 12em);
+	box-sizing: border-box;
+	z-index: 1200;
+	transition: 1.2s
+}
+.header .contenedor .navbar{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between
+}
+.header .contenedor .navbar .menu{
+	display: flex;
+	justify-content: space-between;
+	width: 85%;
+	box-sizing: border-box
+}
+.header .contenedor .navbar .menu:nth-of-type(2){
+	width: calc(85% - 4em);
+	margin-right: 3.5em;
+}
+.header .contenedor .navbar .menu .item{
+	text-decoration: none;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	text-transform: uppercase;
+	color: #007993;
+	font-size: 19.2px;
+	font-size: 1.2rem;
+}
+.header .contenedor .navbar .logo{
+	width: 15%;
+	margin: 0 10em;
+}
+.header .contenedor .burger{
+	background: none;
+	border: none;
+	cursor: pointer;
+	display: none
+}
+.header .contenedor .burger img{
+	width: 32px;
+	width: 2rem;
+}
+.header .contenedor .burger:focus{
+	outline: none;
+}
+.margen{
+	padding: 10em 6em 4em;
+	height: 100vh;
+	box-sizing: border-box;
+}
+.hero{
+	background: #007993
+}
+.hero .margen{
+	display: grid;
+	align-items: center;
+	grid-template-columns: 1fr 1fr;
+	width: 100%;
+	grid-gap: 2em
+}
+.hero .margen .item .title{
+	color: white;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-size: 92.8px;
+	font-size: 5.8rem;
+	margin: 0
+}
+.hero .margen .item .title .sangria{
+	margin-left: 1em;
+}
+.hero .margen .item .descripcion{
+	color: white;
+}
+.valores .grid{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 5em;
+	text-align: center;
+	align-content: end
+}
+.valores .grid .body .valor{
+	color: #007993;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-size: 24px;
+	font-size: 1.5rem;
+}
+.valores .grid .body .descripcion{
+	margin-bottom: 0;
+	color: #009270;
+}
+.equipo{
+	background: #007993
+}
+.equipo .contenedor{
+	text-align: center;
+	height: auto
+}
+.equipo .contenedor .title{
+	color: white;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-size: 48px;
+	font-size: 3rem;
+}
+.equipo .contenedor .grid{
+	display: flex;
+	flex-wrap: wrap;
+	width: 100%;
+	justify-content: space-between;
+	margin-top: 5em
+}
+.equipo .contenedor .grid .item{
+	width: 30%;
+	margin-right: 2em;
+	margin-bottom: 4em
+}
+.equipo .contenedor .grid .item .head{
+	position: relative
+}
+.equipo .contenedor .grid .item .head .hover{
+	position: absolute;
+	bottom: 15%;
+	left: 25%
+}
+.equipo .contenedor .grid .item .head .hover a{
+	color: white;
+	font-size: 24px;
+	font-size: 1.5rem;
+	text-decoration: none;
+}
+.equipo .contenedor .grid .item .body{
+	color: white
+}
+.equipo .contenedor .grid .item .body .nombre{
+	font-size: 20.8px;
+	font-size: 1.3rem;
+}
+.equipo .contenedor .grid .item:nth-of-type(3){
+	margin-right: 0;
+}
+.equipo .contenedor .grid .item:nth-of-type(4){
+	margin-left: 10em;
+}
+.equipo .contenedor .grid .item:nth-of-type(5){
+	margin-right: 10em;
+}
+@media (max-width: 500px){
+	.header{
+		padding: 2em
+	}
+}

@@ -1,0 +1,213 @@
+body{
+	font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	margin: 0;
+	padding: 0;
+	position: relative;
+	/*@media(--mobile){
+		overflow-y: scroll;
+	}*/
+}
+.botones{
+	position: fixed;
+	padding: 1em 0;
+	box-sizing: border-box;
+	border-radius: 2em;
+	height: 30%;
+	width: 30px;
+	top: 35%;
+	right: 4em;
+	z-index: 1500;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column
+}
+.botones.scroll .boton.activo:after{
+	background: white;
+}
+.botones.scroll .boton:after{
+	background: #ffffff;
+	background: rgba(255, 255, 255, 0.5);
+}
+.botones .boton{
+	width: 100%;
+	height: 100%;
+	position: relative
+}
+.botones .boton.activo:after{
+	background: #007993;
+}
+.botones .boton:after{
+	position: absolute;
+	content: '';
+	width: 10px;
+	height: 10px;
+	background: #007993;
+	background: rgba(0, 121, 147, 0.5);
+	box-sizing: border-box;
+	border-radius: 50%;
+	top: 16%;
+	right: 0;
+	transition: .3s;
+}
+img{
+	width: 100%;
+}
+ul,figure{
+	margin: 0;
+	padding: 0;
+}
+/*.slide{
+	position: absolute;
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  top: 0;
+  z-index: 5;
+}*/
+.header{
+	padding: 3em 0;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	position: fixed;
+}
+.header.scroll .contenedor{
+	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+	filter: brightness(0) invert(1);
+}
+.header .contenedor{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	position: fixed;
+	width: calc(100% - 12em);
+	box-sizing: border-box;
+	z-index: 1200;
+	transition: 1.2s;
+	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+	filter: brightness(0) invert(1)
+}
+.header .contenedor .navbar{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: space-between
+}
+.header .contenedor .navbar .menu{
+	display: flex;
+	justify-content: space-between;
+	width: 85%;
+	box-sizing: border-box
+}
+.header .contenedor .navbar .menu:nth-of-type(2){
+	width: calc(85% - 4em);
+	margin-right: 3.5em;
+}
+.header .contenedor .navbar .menu .item{
+	text-decoration: none;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	text-transform: uppercase;
+	color: #007993;
+	font-size: 19.2px;
+	font-size: 1.2rem;
+}
+.header .contenedor .navbar .logo{
+	width: 15%;
+	margin: 0 10em;
+}
+.header .contenedor .burger{
+	background: none;
+	border: none;
+	cursor: pointer;
+	display: none
+}
+.header .contenedor .burger img{
+	width: 32px;
+	width: 2rem;
+}
+.header .contenedor .burger:focus{
+	outline: none;
+}
+.margen{
+	padding: 10em 6em 4em;
+	height: 100vh;
+	box-sizing: border-box;
+}
+.portafolio{
+	background: #007993
+}
+.portafolio .grid{
+	display: grid;
+	grid-template-columns: 2fr 5fr;
+	align-items: center;
+	grid-gap: 5em
+}
+.portafolio .grid .menu{
+	list-style: none;
+	width: 80%
+}
+.portafolio .grid .menu .item{
+	margin-bottom: 1em
+}
+.portafolio .grid .menu .item a{
+	color: white;
+	text-decoration: none;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-size: 32px;
+	font-size: 2rem;
+	display: flex;
+	justify-content: space-between
+}
+.portafolio .grid .menu .item a span{
+	font-size: 24px;
+	font-size: 1.5rem;
+	margin-left: .5em;
+}
+.portafolio .grid .grilla{
+	display: grid;
+	grid-template-columns: repeat(3,1fr)
+}
+.portafolio .grid .grilla .proyecto{
+	border: 2px solid #00caf5;
+	text-align: center;
+	padding: 2em;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	position: relative;
+	color: white;
+	text-decoration: none
+}
+.portafolio .grid .grilla .proyecto .nombre{
+	z-index: 1000;
+}
+.portafolio .grid .grilla .proyecto .caracteristicas{
+	z-index: 1000;
+}
+.portafolio .grid .grilla .proyecto:before{
+	content: '';
+	width: 0;
+	height: 0;
+	left: 50%;
+	background: rgb(0, 97, 118);
+	border-radius: 50%;
+	position: absolute;
+	z-index: 1;
+	transition: .3s;
+}
+.portafolio .grid .grilla .proyecto:hover:before{
+	width: 9em;
+	height: 9em;
+	left: calc(50% - 4.5em);
+}
+.portafolio .grid .grilla .proyecto:nth-of-type(2), .portafolio .grid .grilla .proyecto:nth-of-type(5){
+	border-right: none;
+	border-left: 0;
+}
+@media (max-width: 500px){
+	.header{
+		padding: 2em
+	}
+}
