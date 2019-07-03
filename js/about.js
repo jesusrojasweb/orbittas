@@ -56,6 +56,10 @@ for(let i = 0; i < padre.length; i++){
      $header.classList.remove('scroll')
      $botones.classList.remove('scroll')
     }
+    if(botonClick == 0 || botonClick == 1){
+      document.body.style.overflowY = "hidden"        
+    }
+    window.scrollBy(0, -window.innerHeight);
     padre[botonClick].classList.add('active')
     padre[botonClick].classList.add('animacion')
     button.classList.add('activo')
@@ -145,10 +149,12 @@ function slide(direccion, movil) {
       $header.classList.add('scroll')
       $botones.classList.add('scroll')
     }
+    if(next == 0 || next == 1){
+      document.body.style.overflowY = "hidden"        
+    }
     if(next== 1){
      $header.classList.remove('scroll')
      $botones.classList.remove('scroll')
-      document.body.style.overflowY = "hidden"        
     }
     let siguiente = padre[next];
     console.log(siguiente)

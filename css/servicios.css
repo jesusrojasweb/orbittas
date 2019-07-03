@@ -3,6 +3,7 @@ body{
 	margin: 0;
 	padding: 0;
 	position: relative;
+	overflow: hidden;
 	/*@media(--mobile){
 		overflow-y: scroll;
 	}*/
@@ -20,7 +21,11 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column
+	flex-direction: column;
+	transition: .3s
+}
+.botones.left{
+	left: 4em;
 }
 .botones.scroll .boton.activo:after{
 	background: white;
@@ -57,20 +62,21 @@ ul,figure{
 	margin: 0;
 	padding: 0;
 }
-/*.slide{
+.slide{
 	position: absolute;
   height: 100vh;
   width: 100%;
   box-sizing: border-box;
   top: 0;
   z-index: 5;
-}*/
+}
 .header{
 	padding: 3em 0;
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	position: fixed;
+	z-index: 1500;
 }
 .header.scroll .contenedor{
 	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
@@ -133,15 +139,22 @@ ul,figure{
 	height: 100vh;
 	box-sizing: border-box;
 }
+.right{
+	padding-left: 8em
+}
 .right img{
 	margin-left: 6em;
 }
 .left img{
 	margin-left: -6em;
 }
+.active{
+  animation: slideDown 1s forwards;
+  z-index: 1000;
+  
+}
 .hero{
-	background: #005567;
-	background: rgba(0, 85, 103, 0.9);
+	background: rgb(0, 85, 103);
 	overflow: hidden
 }
 .hero .margen{
@@ -170,6 +183,9 @@ ul,figure{
 .hero .margen .contenedor .descripcion{
 	color: white;
 }
+.servicio{
+	background: white
+}
 .servicio .grid{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -177,16 +193,17 @@ ul,figure{
 }
 .servicio .grid .head{
 	display: flex;
-	align-items: center
+	align-items: center;
+	margin-bottom: 2em
 }
 .servicio .grid .head .icono{
-	width: 15%;
+	width: 10%;
 	margin-right: 2em;
 }
 .servicio .grid .head .nombre{
 	color: #009270;
-	font-size: 48px;
-	font-size: 3rem;
+	font-size: 32px;
+	font-size: 2rem;
 	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 }
 .servicio .grid .body .lista{
@@ -206,6 +223,14 @@ ul,figure{
 	top: 0;
 	position: absolute;
 	border-radius: 50%;
+}
+@keyframes slideDown {
+	0% {
+		transform: translateY(100%);
+	}		
+	100% {
+		transform: translateY(0%);
+	}	
 }
 @media (max-width: 500px){
 	.header{
