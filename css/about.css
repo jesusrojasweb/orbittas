@@ -3,6 +3,8 @@ body{
 	margin: 0;
 	padding: 0;
 	position: relative;
+	background: #007993;
+	overflow: hidden;
 	/*@media(--mobile){
 		overflow-y: scroll;
 	}*/
@@ -57,20 +59,29 @@ ul,figure{
 	margin: 0;
 	padding: 0;
 }
-/*.slide{
+.slide{
 	position: absolute;
   height: 100vh;
   width: 100%;
   box-sizing: border-box;
   top: 0;
   z-index: 5;
-}*/
+}
+.active{
+  animation: slideDown 1s forwards;
+  z-index: 1000;
+  
+}
+.prev{
+  z-index: 50;
+}
 .header{
 	padding: 3em 0;
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	position: fixed;
+	z-index: 1500;
 }
 .header.scroll .contenedor{
 	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
@@ -156,6 +167,9 @@ ul,figure{
 .hero .margen .item .descripcion{
 	color: white;
 }
+.valores{
+	background: white
+}
 .valores .grid{
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
@@ -227,6 +241,26 @@ ul,figure{
 }
 .equipo .contenedor .grid .item:nth-of-type(5){
 	margin-right: 10em;
+}
+.slideDown{
+	animation-name: slideDown;
+	-webkit-animation-name: slideDown;	
+
+	animation-duration: 1s;	
+	-webkit-animation-duration: 1s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;
+
+	visibility: visible !important;			
+}
+@keyframes slideDown {
+	0% {
+		transform: translateY(100%);
+	}		
+	100% {
+		transform: translateY(0%);
+	}	
 }
 @media (max-width: 500px){
 	.header{

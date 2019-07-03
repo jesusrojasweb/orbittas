@@ -41,6 +41,8 @@ body{
 	margin: 0;
 	padding: 0;
 	position: relative;
+	background: var(--colorPrincipal);
+	overflow: hidden;
 	/*@media(--mobile){
 		overflow-y: scroll;
 	}*/
@@ -102,20 +104,29 @@ ul,figure{
 	margin: 0;
 	padding: 0;
 }
-/*.slide{
+.slide{
 	position: absolute;
   height: 100vh;
   width: 100%;
   box-sizing: border-box;
   top: 0;
   z-index: 5;
-}*/
+}
+.active{
+  animation: slideDown 1s forwards;
+  z-index: 1000;
+  
+}
+.prev{
+  z-index: 50;
+}
 .header{
 	padding: 3em 0;
 	width: 100%;
 	display: flex;
 	justify-content: center;
 	position: fixed;
+	z-index: 1500;
 	@media(--mobile){
 		padding: 2em;
 	}
@@ -207,6 +218,7 @@ ul,figure{
 	}
 }
 .valores{
+	background: white;
 	& .grid{
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
@@ -279,4 +291,34 @@ ul,figure{
 			}
 		}
 	}
+}
+.slideDown{
+	animation-name: slideDown;
+	-webkit-animation-name: slideDown;	
+
+	animation-duration: 1s;	
+	-webkit-animation-duration: 1s;
+
+	animation-timing-function: ease;	
+	-webkit-animation-timing-function: ease;
+
+	visibility: visible !important;			
+}
+
+@keyframes slideDown {
+	0% {
+		transform: translateY(100%);
+	}		
+	100% {
+		transform: translateY(0%);
+	}	
+}
+
+@-webkit-keyframes slideDown {
+	0% {
+		-webkit-transform: translateY(100%);
+	}		
+	100% {
+		-webkit-transform: translateY(0%);
+	}	
 }
