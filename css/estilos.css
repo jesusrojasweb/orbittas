@@ -244,8 +244,8 @@ ul,figure{
 }
 .hero .copy .item .btn{
 	background: rgb(0, 121, 147);
-	background: linear-gradient(90deg, rgba(0, 121, 147, 1) 0%, rgba(0, 146, 112, 1) 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#007993",endColorstr="#009270",GradientType=1);
+	background: linear-gradient(90deg, rgba(0, 121, 147, 1) 0%, rgba(0, 146, 112, 1) 100%) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#007993",endColorstr="#009270",GradientType=1) !important;
 	border: none;
 }
 .about{
@@ -613,14 +613,13 @@ ul,figure{
 	margin-right: 1em;
 }
 .contacto .grid .formulario{
-	background: #007993;
 	box-sizing: border-box;
 	padding: .5em 2em 2em;
 	border-radius: 2em;
 	margin-right: 3em
 }
 .contacto .grid .formulario .title{
-	color: white;
+	color: #007993;
 	font-size: 19.2px;
 	font-size: 1.2rem;
 }
@@ -637,19 +636,19 @@ ul,figure{
 .contacto .grid .formulario .contact input, .contacto .grid .formulario .contact textarea{
 	background: none;
 	border: none;
-	border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+	border-bottom: 2px solid rgba(0, 121, 147, 0.5);
 	font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	padding: 1em;
 	transition: .3s;
-	color: white;
+	color: #007993;
 	width: 90%
 }
 .contacto .grid .formulario .contact input::placeholder,.contacto .grid .formulario .contact textarea::placeholder{
-	color: #ffffff;
-	color: rgba(255, 255, 255, 0.5);
+	color: #007993;
+	color: rgba(0, 121, 147, 0.5);
 }
 .contacto .grid .formulario .contact input:focus,.contacto .grid .formulario .contact textarea:focus{
-	border-bottom-color: white;
+	border-bottom-color: #007993;
 	outline: none;
 }
 .contacto .grid .formulario .contact textarea{
@@ -674,6 +673,10 @@ ul,figure{
 	box-shadow: 0 0 50px #00b5ff;
 }
 .contacto .grid .formulario .contact .btn{
+	background: rgb(0, 121, 147);
+	background: linear-gradient(90deg, rgba(0, 121, 147, 1) 0%, rgba(0, 146, 112, 1) 100%) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#007993",endColorstr="#009270",GradientType=1) !important;
+	border: none;
 	padding: .5em 2em;
 	width: 50%;
 	margin-top: 1em;
