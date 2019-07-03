@@ -115,6 +115,7 @@ ul,figure{
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	position: fixed;
 	@media(--mobile){
 		padding: 2em;
 	}
@@ -179,4 +180,103 @@ ul,figure{
 	padding: 10em 6em 4em;
 	height: 100vh;
 	box-sizing: border-box;
+}
+
+.hero{
+	background: var(--colorPrincipal);
+	& .margen{
+		display: grid;
+		align-items: center;
+		grid-template-columns: 1fr 1fr;
+		width: 100%;
+		grid-gap: 2em;
+		& .item{
+			& .title{
+				color: white;
+				font-family: var(--fuentePrincipal);
+				font-size: 5.8rem;
+				margin: 0;
+				& .sangria{
+					margin-left: 1em;
+				}
+			}
+			& .descripcion{
+				color: white;
+			}
+		}
+	}
+}
+.valores{
+	& .grid{
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 5em;
+		text-align: center;
+		align-content: end;
+		& .body{
+			& .valor{
+				color: var(--colorPrincipal);
+				font-family: var(--fuentePrincipal);
+				font-size: 1.5rem;
+			}
+			& .descripcion{
+				margin-bottom: 0;
+				color: var(--colorSecundario);
+			}
+		}
+	}
+}
+.equipo{
+	background: var(--colorPrincipal);
+	& .contenedor{
+		text-align: center;
+		height: auto;
+		& .title{
+			color: white;
+			font-family: var(--fuentePrincipal);
+			font-size: 3rem;
+		}
+		& .grid{
+			display: flex;
+			flex-wrap: wrap;
+			width: 100%;
+			justify-content: space-between;
+			margin-top: 5em;
+			& .item{
+				width: 30%;
+				margin-right: 2em;
+				margin-bottom: 4em;
+				& .head{
+					position: relative;
+					& .hover{
+						position: absolute;
+						bottom: 15%;
+						left: 25%;
+
+						& a{
+							color: white;
+							font-size: 1.5rem;
+							text-decoration: none;
+						}
+
+					}
+				}
+				& .body{
+					color: white;
+					& .nombre{
+						font-size: 1.3rem;
+					}
+				}
+				&:nth-of-type(3){
+					margin-right: 0;
+				}
+				&:nth-of-type(4){
+					margin-left: 10em;
+				}
+				&:nth-of-type(5){
+					margin-right: 10em;
+				}
+			}
+		}
+	}
 }
