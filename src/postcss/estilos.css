@@ -19,10 +19,10 @@
 	};
 	--gradient: {
 		background: rgb(0,121,147);
-		background: -moz-linear-gradient(90deg, rgba(0,121,147,1) 0%, rgba(0,146,112,1) 100%);
-		background: -webkit-linear-gradient(90deg, rgba(0,121,147,1) 0%, rgba(0,146,112,1) 100%);
-		background: linear-gradient(90deg, rgba(0,121,147,1) 0%, rgba(0,146,112,1) 100%);
-		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#007993",endColorstr="#009270",GradientType=1);
+		background: -moz-linear-gradient(90deg, rgba(0,121,147,1) 0%, rgba(0,146,112,1) 100%) !important;
+		background: -webkit-linear-gradient(90deg, rgba(0,121,147,1) 0%, rgba(0,146,112,1) 100%) !important;
+		background: linear-gradient(90deg, rgba(0,121,147,1) 0%, rgba(0,146,112,1) 100%) !important;
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#007993",endColorstr="#009270",GradientType=1) !important;
 	}
 	--gradient-inter:{
 		color: rgb(0,121,147);
@@ -756,13 +756,12 @@ ul,figure{
 			}
 		}
 		& .formulario{
-			background: var(--colorPrincipal);
 			box-sizing: border-box;
 			padding: .5em 2em 2em;
 			border-radius: 2em;
 			margin-right: 3em;
 			& .title{
-				color: white;
+				color: var(--colorPrincipal);
 				font-size: 1.2rem;
 			}
 			& .contact{
@@ -777,17 +776,17 @@ ul,figure{
 				& input, & textarea{
 					background: none;
 					border: none;
-					border-bottom: 1px solid color(white a(50%));
+					border-bottom: 2px solid color(var(--colorPrincipal) a(50%));
 					font-family: var(--fuenteSecundaria);
 					padding: 1em;
 					transition: .3s;
-					color: white;
+					color: var(--colorPrincipal);
 					width: 90%;
 					&::placeholder{
-						color: color(white a(50%));
+						color: color(var(--colorPrincipal) a(50%));
 					}
 					&:focus{
-						border-bottom-color: white;
+						border-bottom-color: var(--colorPrincipal);
 						outline: none;
 					}
 				}
@@ -801,6 +800,8 @@ ul,figure{
 				}
 				& .btn{
 					@apply --btn;
+					@apply --gradient;
+					border: none;
 					padding: .5em 2em;
 					width: 50%;
 					margin-top: 1em;
