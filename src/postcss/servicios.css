@@ -200,8 +200,10 @@ ul,figure{
 }
 .active{
   animation: slideDown 1s forwards;
-  z-index: 1000;
-  
+  z-index: 1000; 
+}
+.prev{
+  z-index: 50;
 }
 .hero{
 	background: color(var(--colorPrincipal) shade(30%));
@@ -222,10 +224,15 @@ ul,figure{
 		}
 		& .contenedor{
 			z-index: 1000;
+			display: grid;
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 4em;
+			align-items: center;
+			height: 100%;
 			& .title{
 				color: white;
 				font-family: var(--fuentePrincipal);
-				font-size: 4rem;
+				font-size: 5rem;
 			}
 			& .descripcion{
 				color: white;

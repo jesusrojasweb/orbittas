@@ -41,6 +41,7 @@ body{
 	margin: 0;
 	padding: 0;
 	position: relative;
+	overflow: hidden;
 	/*overflow: hidden;*/
 	/*@media(--mobile){
 		overflow-y: scroll;
@@ -185,7 +186,7 @@ ul,figure{
 	box-sizing: border-box;
 }
 .proyecto{
-	background: var(--colorSecundario);
+	background: var(--colorPrincipal);
 	position: relative;
 	& .grid{
 		display: grid;
@@ -225,7 +226,7 @@ ul,figure{
 			&:first-child{
 				width: 100%;
 				height: 100%;
-				background: color(var(--colorSecundario) shade(20%));
+				background: color(var(--colorPrincipal) shade(20%));
 			}
 		}
 	}
@@ -235,10 +236,13 @@ ul,figure{
 		position: absolute;
 		background: rgba(0,0,0,.5);
 		top: 0;
-		left: 0;
+		left: -100%;
 		z-index: 1000;
-		visibility: hidden;
-		& .close{
+		transition: .3s;
+		&.active{
+			left: 0;
+		}
+		& .detalleClose{
 			background: none;
 			color: white;
 			font-size: 2rem;
@@ -247,6 +251,9 @@ ul,figure{
 			right: 1em;
 			top: 2.3em;
 			cursor: pointer;
+			&:focus{
+				outline: none;
+			}
 		}
 	}
 	& .detalle{
@@ -254,16 +261,20 @@ ul,figure{
 		position: absolute;
 		width: 70%;
 		box-sizing: border-box;
-		right: 100%;
+		right: -100%;
 		top: 0;
 		z-index: 1000;
 		padding: 5em 6em;
-		overflow: scroll;
+		overflow: hidden scroll;
 		height: 100%;
+		transition: .3s;
+		&.active{
+			right: 0;
+		}
 		& .contenedor{
 			position: relative;
 			& .nombre{
-				color: var(--colorSecundario);
+				color: var(--colorPrincipal);
 				font-family: var(--fuentePrincipal);
 				font-size: 4rem;
 				text-align: center;
@@ -273,22 +284,22 @@ ul,figure{
 				display: flex;
 				justify-content: space-between;
 				& .item{
-					color: var(--colorSecundario);
+					color: var(--colorPrincipal);
 				}
 			}
 			& .imagen{
 				width: 100%;
 				height: 300px;
-				background: var(--colorSecundario);
+				background: var(--colorPrincipal);
 				margin: 2em 0;
 			}
 			& .subtitle{
-				color: var(--colorSecundario);
+				color: var(--colorPrincipal);
 				font-family: var(--fuentePrincipal);
 				font-size: 2rem;
 			}
 			& .gustar{
-				color: var(--colorSecundario);
+				color: var(--colorPrincipal);
 				text-align: center;
 				font-size: 1.5rem;
 			}
@@ -298,7 +309,7 @@ ul,figure{
 			}
 			& .btn{
 				@apply --btn;
-				background: var(--colorSecundario);
+				background: var(--colorPrincipal);
 				border: none;
 				text-align: center;
 			}

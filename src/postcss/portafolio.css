@@ -190,16 +190,19 @@ ul,figure{
 		grid-template-columns: 2fr 5fr;
 		align-items: center;
 		grid-gap: 5em;
+		padding-bottom: 0;
+		align-self: top;
 		& .menu{
 			list-style: none;
-			width: 80%;
+			width: 90%;
+			padding-bottom: 4em;
 			& .item{
-				margin-bottom: 1em;
+				margin-bottom: 2em;
 				& a{
 					color: white;
 					text-decoration: none;
 					font-family: var(--fuentePrincipal);
-					font-size: 2rem;
+					font-size: 1.2rem;
 					display: flex;
 					justify-content: space-between;
 					& span{
@@ -212,6 +215,9 @@ ul,figure{
 		& .grilla{
 			display: grid;
 			grid-template-columns: repeat(3,1fr);
+			align-self: start;
+			overflow: hidden scroll;
+			height: 100%;
 			& .proyecto{
 				border: 2px solid var(--colorFluerecente);
 				text-align: center;
@@ -222,6 +228,7 @@ ul,figure{
 				position: relative;
 				color: white;
 				text-decoration: none;
+				height: 250px;
 				& .nombre{
 					z-index: 1000;
 				}
@@ -241,9 +248,9 @@ ul,figure{
 				}
 				&:hover{
 					&:before{
-						width: 9em;
-						height: 9em;
-						left: calc((100% - 9em)/2);
+						width: 10em;
+						height: 10em;
+						left: calc((100% - 10em)/2);
 					}
 				}
 				&:nth-of-type(2), &:nth-of-type(5){

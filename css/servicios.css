@@ -150,8 +150,10 @@ ul,figure{
 }
 .active{
   animation: slideDown 1s forwards;
-  z-index: 1000;
-  
+  z-index: 1000; 
+}
+.prev{
+  z-index: 50;
 }
 .hero{
 	background: rgb(0, 85, 103);
@@ -172,13 +174,18 @@ ul,figure{
 	width: 50%;
 }
 .hero .margen .contenedor{
-	z-index: 1000
+	z-index: 1000;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-gap: 4em;
+	align-items: center;
+	height: 100%
 }
 .hero .margen .contenedor .title{
 	color: white;
 	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
-	font-size: 64px;
-	font-size: 4rem;
+	font-size: 80px;
+	font-size: 5rem;
 }
 .hero .margen .contenedor .descripcion{
 	color: white;

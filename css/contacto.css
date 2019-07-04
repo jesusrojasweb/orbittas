@@ -71,6 +71,7 @@ ul,figure{
 	display: flex;
 	justify-content: center;
 	position: fixed;
+	z-index: 1000;
 }
 .header.scroll .contenedor{
 	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
@@ -133,40 +134,59 @@ ul,figure{
 	height: 100vh;
 	box-sizing: border-box;
 }
+.contacto{
+	max-height: 100vh;
+	overflow: hidden;
+	background: white;
+}
 .contacto .grid{
 	display: grid;
-	grid-template-columns: 4fr 2fr
-}
-.contacto .grid > .item{
-	position: relative
-}
-.contacto .grid > .item .fondo{
-	width: 20%;
-	right: 0;
-	top: -8em;
-	position: absolute;
-	z-index: -1;
-}
-.contacto .grid > .item .title{
-	color: #007993;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
-	font-size: 64px;
-	font-size: 4rem;
-	margin-top: 0;
-}
-.contacto .grid > .item .separacion{
-	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-gap: 4rem
+	grid-gap: 0 4em;
+	padding-bottom: 0;
+	position: relative;
+	padding-top: 11em;
 }
-.contacto .grid > .item .separacion .caption{
-	margin-top: 0;
-	color: #007993;
-	font-size: 32px;
-	font-size: 2rem;
+.contacto .grid .animanos{
+	color: #009270;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-size: 48px;
+	font-size: 3rem;
+}
+.contacto .grid .informacion{
+	list-style: none
+}
+.contacto .grid .informacion li{
+	margin-bottom: 1em
+}
+.contacto .grid .informacion li a{
+	color: #009270;
 	font-weight: 600;
+	text-decoration: none;
 }
-.contacto .grid > .item .separacion .formulario{
+.contacto .grid .sociales{
+	display: flex;
+	list-style: none;
+	width: 40%;
+	margin-top: 2em;
+}
+.contacto .grid .sociales .item{
+	margin-right: 1em;
+}
+.contacto .grid .formulario{
+	box-sizing: border-box;
+	padding: 0 2em 2em;
+	border-radius: 2em;
+	margin-right: 3em
+}
+.contacto .grid .formulario .title{
+	color: #007993;
+	font-size: 19.2px;
+	font-size: 1.2rem;
+}
+.contacto .grid .formulario .contact{
+	width: 100%;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -174,7 +194,7 @@ ul,figure{
 	margin: 0;
 	padding: 0
 }
-.contacto .grid > .item .separacion .formulario input, .contacto .grid > .item .separacion .formulario textarea{
+.contacto .grid .formulario .contact input, .contacto .grid .formulario .contact textarea{
 	background: none;
 	border: none;
 	border-bottom: 2px solid rgba(0, 121, 147, 0.5);
@@ -184,21 +204,21 @@ ul,figure{
 	color: #007993;
 	width: 90%
 }
-.contacto .grid > .item .separacion .formulario input::placeholder,.contacto .grid > .item .separacion .formulario textarea::placeholder{
+.contacto .grid .formulario .contact input::placeholder,.contacto .grid .formulario .contact textarea::placeholder{
 	color: #007993;
 	color: rgba(0, 121, 147, 0.5);
 }
-.contacto .grid > .item .separacion .formulario input:focus,.contacto .grid > .item .separacion .formulario textarea:focus{
+.contacto .grid .formulario .contact input:focus,.contacto .grid .formulario .contact textarea:focus{
 	border-bottom-color: #007993;
 	outline: none;
 }
-.contacto .grid > .item .separacion .formulario textarea{
+.contacto .grid .formulario .contact textarea{
 	grid-column: 2 span;
 }
-.contacto .grid > .item .separacion .formulario input:nth-of-type(3){
+.contacto .grid .formulario .contact input:nth-of-type(3){
 	grid-column: 2 span;
 }
-.contacto .grid > .item .separacion .formulario .btn{
+.contacto .grid .formulario .contact .btn{
 	color: white;
 	border: 2px solid white;
 	padding: 1em 2em;
@@ -210,10 +230,10 @@ ul,figure{
 	font-size: 1rem;
 	transition: .3s
 }
-.contacto .grid > .item .separacion .formulario .btn:hover{
+.contacto .grid .formulario .contact .btn:hover{
 	box-shadow: 0 0 50px #00b5ff;
 }
-.contacto .grid > .item .separacion .formulario .btn{
+.contacto .grid .formulario .contact .btn{
 	background: rgb(0, 121, 147);
 	background: linear-gradient(90deg, rgba(0, 121, 147, 1) 0%, rgba(0, 146, 112, 1) 100%) !important;
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#007993",endColorstr="#009270",GradientType=1) !important;
@@ -225,57 +245,59 @@ ul,figure{
 	font-size: 16px;
 	font-size: 1rem
 }
-.contacto .grid > .item .separacion .formulario .btn:hover{
+.contacto .grid .formulario .contact .btn:hover{
 	border-color: #00caf5;
 	background: #00caf5;
 	color: #007993;
 }
-.contacto .grid > .item:first-child{
-	padding-right: 4em
-}
-.contacto .grid > .item:first-child:after{
-	content: '';
-	position: absolute;
-	top: -10em;
-	right: 0;
-	height: 100vh;
-	width: 2px;
-	background: #007993;
-	background: rgba(0, 121, 147, 0.5);
-}
-.contacto .grid > .item:last-child{
-	padding-left: 6em;
+.contacto .grid .footer{
 	display: flex;
 	flex-direction: column;
-	justify-content: center
+	align-content: center;
+	grid-column: 2 span;
+	background: #007993;
+	position: absolute;
+	width: 100%;
+	bottom: 0;
+	padding: 1em;
+	box-sizing: border-box
 }
-.contacto .grid > .item:last-child .informacion{
-	text-align: center;
+.contacto .grid .footer .menu{
+	display: flex;
+	justify-content: center;
 	list-style: none
 }
-.contacto .grid > .item:last-child .informacion .item{
-	margin-bottom: 1.5em
+.contacto .grid .footer .menu .item{
+	margin-right: 2em
 }
-.contacto .grid > .item:last-child .informacion .item a{
-	color: #007993;
+.contacto .grid .footer .menu .item a{
+	color: white;
 	text-decoration: none;
-	font-size: 32px;
-	font-size: 2rem;
-	font-weight: 600;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 }
-.contacto .grid > .item:last-child .sociales{
+.contacto .grid .footer .copy{
 	display: flex;
-	list-style: none;
-	margin-top: 2em;
-}
-.contacto .grid > .item:last-child .sociales .item{
-	margin-right: 1em;
+	justify-content: center;
+	color: white;
+	margin-bottom: 0;
 }
 @media (max-width: 500px){
 	.header{
 		padding: 2em
 	}
-	.contacto .grid > .item:last-child .sociales{
+	.contacto{
+		height: auto;
+		padding: 2em
+	}
+	.contacto .grid .item{
+		width: 80%;
+	}
+	.contacto .grid .sociales{
 		width: 100%
+	}
+}
+@media (max-width: 800px){
+	.contacto .grid{
+		grid-template-columns: 1fr
 	}
 }
