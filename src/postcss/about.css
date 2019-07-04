@@ -43,6 +43,16 @@ body{
 	position: relative;
 	background: var(--colorPrincipal);
 	overflow: hidden;
+	&::-webkit-scrollbar{
+		width: 7px;
+		margin-left: 1em;
+	}
+	&::-webkit-scrollbar-thumb{
+
+		background: white;
+		border-radius: 5px;
+
+	}
 	/*@media(--mobile){
 		overflow-y: scroll;
 	}*/

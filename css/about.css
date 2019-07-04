@@ -4,10 +4,20 @@ body{
 	padding: 0;
 	position: relative;
 	background: #007993;
-	overflow: hidden;
-	/*@media(--mobile){
+	overflow: hidden
+}
+body::-webkit-scrollbar{
+	width: 7px;
+	margin-left: 1em;
+}
+body::-webkit-scrollbar-thumb{
+	background: white;
+	border-radius: 5px;
+}
+body{
+	/* @media(--mobile){
 		overflow-y: scroll;
-	}*/
+	} */
 }
 .botones{
 	position: fixed;

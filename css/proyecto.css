@@ -227,6 +227,13 @@ ul,figure{
 	height: 100%;
 	transition: .3s
 }
+.proyecto .detalle::-webkit-scrollbar{
+	width: 7px;
+}
+.proyecto .detalle::-webkit-scrollbar-thumb{
+	background: #007993;
+	border-radius: 5px;
+}
 .proyecto .detalle.active{
 	right: 0;
 }

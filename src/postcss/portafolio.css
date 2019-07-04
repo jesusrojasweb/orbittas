@@ -218,6 +218,17 @@ ul,figure{
 			align-self: start;
 			overflow: hidden scroll;
 			height: 100%;
+			padding-right: 1em;
+			&::-webkit-scrollbar{
+				width: 7px;
+				margin-left: 1em;
+			}
+			&::-webkit-scrollbar-thumb{
+
+				background: white;
+				border-radius: 5px;
+
+			}
 			& .proyecto{
 				border: 2px solid var(--colorFluerecente);
 				text-align: center;
