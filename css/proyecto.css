@@ -3,6 +3,7 @@ body{
 	margin: 0;
 	padding: 0;
 	position: relative;
+	overflow: hidden;
 	/*overflow: hidden;*/
 	/*@media(--mobile){
 		overflow-y: scroll;
@@ -138,7 +139,7 @@ ul,figure{
 	box-sizing: border-box;
 }
 .proyecto{
-	background: #009270;
+	background: #007993;
 	position: relative
 }
 .proyecto .grid{
@@ -183,7 +184,7 @@ ul,figure{
 .proyecto .grid .item:first-child{
 	width: 100%;
 	height: 100%;
-	background: rgb(0, 117, 90);
+	background: rgb(0, 97, 118);
 }
 .proyecto .hover{
 	width: 30%;
@@ -192,11 +193,14 @@ ul,figure{
 	background: #000000;
 	background: rgba(0, 0, 0, .5);
 	top: 0;
-	left: 0;
+	left: -100%;
 	z-index: 1000;
-	visibility: hidden
+	transition: .3s
 }
-.proyecto .hover .close{
+.proyecto .hover.active{
+	left: 0;
+}
+.proyecto .hover .detalleClose{
 	background: none;
 	color: white;
 	font-size: 32px;
@@ -205,25 +209,32 @@ ul,figure{
 	position: absolute;
 	right: 1em;
 	top: 2.3em;
-	cursor: pointer;
+	cursor: pointer
+}
+.proyecto .hover .detalleClose:focus{
+	outline: none;
 }
 .proyecto .detalle{
 	background: white;
 	position: absolute;
 	width: 70%;
 	box-sizing: border-box;
-	right: 100%;
+	right: -100%;
 	top: 0;
 	z-index: 1000;
 	padding: 5em 6em;
-	overflow: scroll;
-	height: 100%
+	overflow: hidden scroll;
+	height: 100%;
+	transition: .3s
+}
+.proyecto .detalle.active{
+	right: 0;
 }
 .proyecto .detalle .contenedor{
 	position: relative
 }
 .proyecto .detalle .contenedor .nombre{
-	color: #009270;
+	color: #007993;
 	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	font-size: 64px;
 	font-size: 4rem;
@@ -235,22 +246,22 @@ ul,figure{
 	justify-content: space-between
 }
 .proyecto .detalle .contenedor .skills .item{
-	color: #009270;
+	color: #007993;
 }
 .proyecto .detalle .contenedor .imagen{
 	width: 100%;
 	height: 300px;
-	background: #009270;
+	background: #007993;
 	margin: 2em 0;
 }
 .proyecto .detalle .contenedor .subtitle{
-	color: #009270;
+	color: #007993;
 	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	font-size: 32px;
 	font-size: 2rem;
 }
 .proyecto .detalle .contenedor .gustar{
-	color: #009270;
+	color: #007993;
 	text-align: center;
 	font-size: 24px;
 	font-size: 1.5rem;
@@ -275,7 +286,7 @@ ul,figure{
 	box-shadow: 0 0 50px #00b5ff;
 }
 .proyecto .detalle .contenedor .btn{
-	background: #009270;
+	background: #007993;
 	border: none;
 	text-align: center;
 }
