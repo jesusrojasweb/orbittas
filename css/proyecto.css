@@ -104,9 +104,9 @@ ul,figure{
 	width: 85%;
 	box-sizing: border-box
 }
-.header .contenedor .navbar .menu:nth-of-type(2){
-	width: calc(85% - 4em);
-	margin-right: 3.5em;
+.header .contenedor .navbar .menu:nth-of-type(1){
+	width: calc(80% - 4em);
+	margin-left: 3.5em;
 }
 .header .contenedor .navbar .menu .item{
 	text-decoration: none;
@@ -145,7 +145,18 @@ ul,figure{
 .proyecto .grid{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-gap: 5em
+	grid-gap: 5em;
+	position: relative
+}
+.proyecto .grid .volver{
+	position: absolute;
+	color: white;
+	font-size: 32px;
+	font-size: 2rem;
+	left: 3em;
+	top: 3.5em;
+	text-decoration: none;
+	z-index: 900;
 }
 .proyecto .grid .item{
 	text-align: end
@@ -180,8 +191,14 @@ ul,figure{
 .proyecto .grid .item .boton .icono{
 	width: 4%;
 	margin-left: 1em;
+	animation-name: floating;
+	-webkit-animation-name: floating;
+	animation-duration: 1.5s;
+	-webkit-animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
 }
-.proyecto .grid .item:first-child{
+.proyecto .grid .item.imagen{
 	width: 100%;
 	height: 100%;
 	background: rgb(0, 97, 118);
@@ -228,11 +245,12 @@ ul,figure{
 	transition: .3s
 }
 .proyecto .detalle::-webkit-scrollbar{
-	width: 7px;
+	width: 9px;
 }
 .proyecto .detalle::-webkit-scrollbar-thumb{
 	background: #007993;
 	border-radius: 5px;
+	border-right: 2px solid white;
 }
 .proyecto .detalle.active{
 	right: 0;
@@ -296,6 +314,17 @@ ul,figure{
 	background: #007993;
 	border: none;
 	text-align: center;
+}
+@keyframes floating {
+	0% {
+		transform: translateY(0%);	
+	}
+	50% {
+		transform: translateY(8%);	
+	}	
+	100% {
+		transform: translateY(0%);
+	}			
 }
 @media (max-width: 500px){
 	.header{
