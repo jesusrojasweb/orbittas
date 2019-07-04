@@ -2,8 +2,27 @@ body{
 	font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	margin: 0;
 	padding: 0;
-	position: relative;
-	overflow: hidden;
+	position: relative
+}
+body::-webkit-scrollbar{
+	width: 10px;
+	background: white;
+}
+body::-webkit-scrollbar-thumb{
+	background: #007993;
+	border-radius: 5px;
+}
+body{
+	/*&.scroll{
+		&::-webkit-scrollbar{
+			background: white !important;
+		}
+		&::-webkit-scrollbar-thumb{
+
+			background: var(--colorPrincipal);
+			border-radius: 5px;
+		}	
+	}*/
 	/*@media(--mobile){
 		overflow-y: scroll;
 	}*/
@@ -62,14 +81,14 @@ ul,figure{
 	margin: 0;
 	padding: 0;
 }
-.slide{
+/*.slide{
 	position: absolute;
   height: 100vh;
   width: 100%;
   box-sizing: border-box;
   top: 0;
   z-index: 5;
-}
+}*/
 .header{
 	padding: 3em 0;
 	width: 100%;
@@ -115,7 +134,20 @@ ul,figure{
 	text-transform: uppercase;
 	color: #007993;
 	font-size: 19.2px;
-	font-size: 1.2rem;
+	font-size: 1.2rem
+}
+.header .contenedor .navbar .menu .item.activo{
+	position: relative
+}
+.header .contenedor .navbar .menu .item.activo:after{
+	position: absolute;
+	content: '';
+	height: 2px;
+	width: 100%;
+	bottom: -5px;
+	left: 0;
+	background: #007993;
+	transition: .3s;
 }
 .header .contenedor .navbar .logo{
 	width: 15%;
@@ -147,13 +179,6 @@ ul,figure{
 }
 .left img{
 	margin-left: -6em;
-}
-.active{
-  animation: slideDown 1s forwards;
-  z-index: 1000; 
-}
-.prev{
-  z-index: 50;
 }
 .hero{
 	background: rgb(0, 85, 103);

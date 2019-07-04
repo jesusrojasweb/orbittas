@@ -41,7 +41,24 @@ body{
 	margin: 0;
 	padding: 0;
 	position: relative;
-	overflow: hidden;
+	&::-webkit-scrollbar{
+		width: 10px;
+		background: white;
+	}
+	&::-webkit-scrollbar-thumb{
+		background: var(--colorPrincipal);
+		border-radius: 5px;
+	}
+	/*&.scroll{
+		&::-webkit-scrollbar{
+			background: white !important;
+		}
+		&::-webkit-scrollbar-thumb{
+
+			background: var(--colorPrincipal);
+			border-radius: 5px;
+		}	
+	}*/
 	/*@media(--mobile){
 		overflow-y: scroll;
 	}*/
@@ -107,14 +124,14 @@ ul,figure{
 	margin: 0;
 	padding: 0;
 }
-.slide{
+/*.slide{
 	position: absolute;
   height: 100vh;
   width: 100%;
   box-sizing: border-box;
   top: 0;
   z-index: 5;
-}
+}*/
 .header{
 	padding: 3em 0;
 	width: 100%;
@@ -160,6 +177,19 @@ ul,figure{
 					text-transform: uppercase;
 					color: var(--colorPrincipal);
 					font-size: 1.2rem;
+					&.activo{
+						position: relative;
+						&:after{
+							position: absolute;
+							content: '';
+							height: 2px;
+							width: 100%;
+							bottom: -5px;
+							left: 0;
+							background: var(--colorPrincipal);
+							transition: .3s;
+						}
+					}
 				}
 			}
 			& .logo{
@@ -198,13 +228,7 @@ ul,figure{
 		margin-left: -6em;
 	}
 }
-.active{
-  animation: slideDown 1s forwards;
-  z-index: 1000; 
-}
-.prev{
-  z-index: 50;
-}
+
 .hero{
 	background: color(var(--colorPrincipal) shade(30%));
 	overflow: hidden;

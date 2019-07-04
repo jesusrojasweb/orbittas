@@ -111,7 +111,20 @@ ul,figure{
 	text-transform: uppercase;
 	color: #007993;
 	font-size: 19.2px;
-	font-size: 1.2rem;
+	font-size: 1.2rem
+}
+.header .contenedor .navbar .menu .item.activo{
+	position: relative
+}
+.header .contenedor .navbar .menu .item.activo:after{
+	position: absolute;
+	content: '';
+	height: 2px;
+	width: 100%;
+	bottom: -5px;
+	left: 0;
+	background: #007993;
+	transition: .3s;
 }
 .header .contenedor .navbar .logo{
 	width: 15%;
