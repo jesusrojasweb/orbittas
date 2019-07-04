@@ -268,6 +268,15 @@ ul,figure{
 		overflow: hidden scroll;
 		height: 100%;
 		transition: .3s;
+		&::-webkit-scrollbar{
+			width: 7px;
+		}
+		&::-webkit-scrollbar-thumb{
+
+			background: var(--colorPrincipal);
+			border-radius: 5px;
+
+		}
 		&.active{
 			right: 0;
 		}

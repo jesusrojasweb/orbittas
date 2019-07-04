@@ -173,7 +173,16 @@ ul,figure{
 	grid-template-columns: repeat(3,1fr);
 	align-self: start;
 	overflow: hidden scroll;
-	height: 100%
+	height: 100%;
+	padding-right: 1em
+}
+.portafolio .grid .grilla::-webkit-scrollbar{
+	width: 7px;
+	margin-left: 1em;
+}
+.portafolio .grid .grilla::-webkit-scrollbar-thumb{
+	background: white;
+	border-radius: 5px;
 }
 .portafolio .grid .grilla .proyecto{
 	border: 2px solid #00caf5;
