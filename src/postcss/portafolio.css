@@ -252,8 +252,12 @@ ul,figure{
 				position: relative;
 				color: white;
 				text-decoration: none;
-				height: 250px;
+				height: 225px;
 				& .nombre{
+					z-index: 1000;
+					margin: 0;
+				}
+				& .imagen{
 					z-index: 1000;
 				}
 				& .caracteristicas{
@@ -272,9 +276,9 @@ ul,figure{
 				}
 				&:hover{
 					&:before{
-						width: 10em;
-						height: 10em;
-						left: calc((100% - 10em)/2);
+						width: 12em;
+						height: 12em;
+						left: calc((100% - 12em)/2);
 					}
 				}
 				&:nth-of-type(2), &:nth-of-type(5){

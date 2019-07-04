@@ -207,9 +207,13 @@ ul,figure{
 	position: relative;
 	color: white;
 	text-decoration: none;
-	height: 250px
+	height: 225px
 }
 .portafolio .grid .grilla .proyecto .nombre{
+	z-index: 1000;
+	margin: 0;
+}
+.portafolio .grid .grilla .proyecto .imagen{
 	z-index: 1000;
 }
 .portafolio .grid .grilla .proyecto .caracteristicas{
@@ -227,9 +231,9 @@ ul,figure{
 	transition: .3s;
 }
 .portafolio .grid .grilla .proyecto:hover:before{
-	width: 10em;
-	height: 10em;
-	left: calc(50% - 5em);
+	width: 12em;
+	height: 12em;
+	left: calc(50% - 6em);
 }
 .portafolio .grid .grilla .proyecto:nth-of-type(2), .portafolio .grid .grilla .proyecto:nth-of-type(5){
 	border-right: none;
