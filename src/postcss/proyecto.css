@@ -148,8 +148,8 @@ ul,figure{
 				justify-content: space-between;
 				width: calc((100% - 15%));
 				box-sizing: border-box;
-				&:nth-of-type(1){
-					width: calc((100% - 20%) - 4em);
+				&:nth-of-type(2){
+					width: calc((100% - 15%) - 4em);
 					margin-left: 3.5em;
 				}
 				& .item{
@@ -198,7 +198,7 @@ ul,figure{
 			color: white;
 			font-size: 2rem;
 			left: 3em;
-			top: 3.5em;
+			bottom: 2em;
 			text-decoration: none;
 			z-index: 900;
 		}
@@ -244,7 +244,6 @@ ul,figure{
 			&.imagen{
 				width: 100%;
 				height: 100%;
-				background: color(var(--colorPrincipal) shade(20%));
 			}
 		}
 	}
@@ -316,9 +315,11 @@ ul,figure{
 			}
 			& .imagen{
 				width: 100%;
-				height: 300px;
 				background: var(--colorPrincipal);
 				margin: 2em 0;
+				& img{
+					vertical-align: top;
+				}
 			}
 			& .subtitle{
 				color: var(--colorPrincipal);

@@ -104,8 +104,8 @@ ul,figure{
 	width: 85%;
 	box-sizing: border-box
 }
-.header .contenedor .navbar .menu:nth-of-type(1){
-	width: calc(80% - 4em);
+.header .contenedor .navbar .menu:nth-of-type(2){
+	width: calc(85% - 4em);
 	margin-left: 3.5em;
 }
 .header .contenedor .navbar .menu .item{
@@ -154,7 +154,7 @@ ul,figure{
 	font-size: 32px;
 	font-size: 2rem;
 	left: 3em;
-	top: 3.5em;
+	bottom: 2em;
 	text-decoration: none;
 	z-index: 900;
 }
@@ -201,7 +201,6 @@ ul,figure{
 .proyecto .grid .item.imagen{
 	width: 100%;
 	height: 100%;
-	background: rgb(0, 97, 118);
 }
 .proyecto .hover{
 	width: 30%;
@@ -275,9 +274,11 @@ ul,figure{
 }
 .proyecto .detalle .contenedor .imagen{
 	width: 100%;
-	height: 300px;
 	background: #007993;
-	margin: 2em 0;
+	margin: 2em 0
+}
+.proyecto .detalle .contenedor .imagen img{
+	vertical-align: top;
 }
 .proyecto .detalle .contenedor .subtitle{
 	color: #007993;
