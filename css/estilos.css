@@ -71,21 +71,31 @@ ul,figure{
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	position: fixed;
+	z-index: 1001;
 }
-.header.scroll .contenedor{
+.header.scroll .logo, .header.scroll .burger{
 	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
 	filter: brightness(0) invert(1);
+}
+.header.activo .contenedor .menu:nth-of-type(1){
+	top: 0 !important;
+}
+.header.activo .contenedor .menu:nth-of-type(2){
+	bottom: 0 !important;
+}
+.header.activo .contenedor .close{
+	visibility: visible;
 }
 .header .contenedor{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	position: relative;
-	position: fixed;
 	width: calc(100% - 12em);
 	box-sizing: border-box;
 	z-index: 1200;
-	transition: 1.2s
+	position: relative
 }
 .header .contenedor .navbar{
 	width: 100%;
@@ -114,12 +124,14 @@ ul,figure{
 .header .contenedor .navbar .logo{
 	width: 15%;
 	margin: 0 10em;
+	transition: 1.2s;
 }
 .header .contenedor .burger{
 	background: none;
 	border: none;
 	cursor: pointer;
-	display: none
+	display: none;
+	transition: 1.2s;
 }
 .header .contenedor .burger img{
 	width: 32px;
@@ -127,6 +139,16 @@ ul,figure{
 }
 .header .contenedor .burger:focus{
 	outline: none;
+}
+.header .contenedor .close{
+	background: none;
+	border: none;
+	position: absolute;
+	color: white;
+	font-size: 40px;
+	font-size: 2.5rem;
+	right: 0;
+	visibility: hidden;
 }
 .cls-22{
 	animation-name: floating;
@@ -905,6 +927,37 @@ slideRight
 	}
 }
 @media (max-width: 800px){
+	.header .contenedor .navbar .menu{
+		position: fixed;
+		left: 0;
+		width: 100% !important;
+		margin: 0 !important;
+		height: 50vh;
+		background: #007993;
+		background: rgba(0, 121, 147, 0.5);
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: center
+	}
+	.header .contenedor .navbar .menu .item{
+		color: white;
+		font-size: 2rem;
+		margin-bottom: 2em;
+	}
+	.header .contenedor .navbar .menu:nth-of-type(1){
+		top: -100%;
+	}
+	.header .contenedor .navbar .menu:nth-of-type(2){
+		bottom: -100%;
+		top: inherit;
+		justify-content: flex-start;
+	}
+	.header .contenedor .navbar .logo{
+		margin: 0
+	}
+	.header .contenedor .burger{
+		display: block
+	}
 	.hero .copy{
 		align-items: center;
 		grid-template-columns: 1fr
@@ -916,6 +969,9 @@ slideRight
 		z-index: -1;
 		opacity: .6;
 		top: 20%;
+	}
+	.hero .copy .item:first-child{
+		height: 70%
 	}
 	.about .grid{
 		grid-template-columns: 1fr;

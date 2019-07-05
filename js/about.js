@@ -92,11 +92,14 @@ window.addEventListener( 'mousewheel',function(e){
 function slide(direccion, movil) {
   for(let i = 0; i < $sliderList[0].children.length; i++){
     let topEquipo = $equipo.getBoundingClientRect().top
-    console.log(`Equipo :${topEquipo}`)
+    let bottomEquipo = $equipo.getBoundingClientRect().bottom
     let hijo = padre[i];
     let boton = botonPadre[i]
     let coords = hijo.getBoundingClientRect();
-    hijo.styles
+    // console.log(`Equipo top :${bottomEquipo}`)
+    // console.log(`Ato viewport: ${alto}`)
+    // console.log(`Equipo height :${$equipo.getBoundingClientRect().height}`)
+    console.log(`bottomEquipo < alto ${coords.bottom < alto}`)
     let next
     let bottom
     //coords.bottom >= alto.bottom
@@ -157,12 +160,9 @@ function slide(direccion, movil) {
      $botones.classList.remove('scroll')
     }
     let siguiente = padre[next];
-    console.log(siguiente)
     let botonSiguiente = botonPadre[next]
-    console.log(`Next: ${next}`)
     if(hijo.classList[2] == "active" || hijo.classList[3] == "active" || hijo.classList[4] == "active" || hijo.classList[5] == "active"){
       if(!bottom){
-        console.log('previo')
         scroll(hijo,siguiente,boton,botonSiguiente)
       }
       break;

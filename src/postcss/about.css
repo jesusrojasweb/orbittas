@@ -263,6 +263,7 @@ ul,figure{
 }
 .equipo{
 	background: var(--colorPrincipal);
+	height: auto;
 	& .contenedor{
 		text-align: center;
 		height: auto;
