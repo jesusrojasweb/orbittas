@@ -211,7 +211,8 @@ ul,figure{
 	top: 0;
 	left: -100%;
 	z-index: 1000;
-	transition: .3s
+	transition: .3s;
+	transition: 1s
 }
 .proyecto .hover.active{
 	left: 0;
@@ -241,7 +242,7 @@ ul,figure{
 	padding: 5em 6em;
 	overflow: hidden scroll;
 	height: 100%;
-	transition: .3s
+	transition: 1s
 }
 .proyecto .detalle::-webkit-scrollbar{
 	width: 9px;

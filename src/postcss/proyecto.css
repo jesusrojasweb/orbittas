@@ -256,6 +256,7 @@ ul,figure{
 		left: -100%;
 		z-index: 1000;
 		transition: .3s;
+		transition: 1s;
 		&.active{
 			left: 0;
 		}
@@ -284,7 +285,7 @@ ul,figure{
 		padding: 5em 6em;
 		overflow: hidden scroll;
 		height: 100%;
-		transition: .3s;
+		transition: 1s;
 		&::-webkit-scrollbar{
 			width: 9px;
 		}

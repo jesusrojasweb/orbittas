@@ -4,9 +4,6 @@ body{
 	padding: 0;
 	overflow: hidden;
 	position: relative;
-	/*@media(--mobile){
-		overflow-y: scroll;
-	}*/
 }
 .botones{
 	position: fixed;
@@ -21,7 +18,7 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column
+	flex-direction: column;
 }
 .botones.scroll .boton.activo:after{
 	background: white;
@@ -33,7 +30,7 @@ body{
 .botones .boton{
 	width: 100%;
 	height: 100%;
-	position: relative
+	position: relative;
 }
 .botones .boton.activo:after{
 	background: #007993;
@@ -65,39 +62,62 @@ ul,figure{
   box-sizing: border-box;
   top: 0;
   z-index: 5;
+  display: none;
+
+}
+.active{
+  animation: slideDown 1s forwards;
+  z-index: 1000;
+  display: block;
+  
+}
+.prev{
+  z-index: 50;
+  display: block;
 }
 .header{
 	padding: 3em 0;
 	width: 100%;
 	display: flex;
 	justify-content: center;
+	position: fixed;
+	z-index: 1001;
 }
 .header.scroll .contenedor{
 	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
 	filter: brightness(0) invert(1);
+}
+.header.activo .contenedor .menu:nth-of-type(1){
+	top: 0 !important;
+}
+.header.activo .contenedor .menu:nth-of-type(2){
+	bottom: 0 !important;
+}
+.header.activo .contenedor .close{
+	visibility: visible;
 }
 .header .contenedor{
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
 	position: relative;
-	position: fixed;
 	width: calc(100% - 12em);
 	box-sizing: border-box;
 	z-index: 1200;
-	transition: 1.2s
+	position: relative;
 }
 .header .contenedor .navbar{
 	width: 100%;
 	display: flex;
 	align-items: center;
-	justify-content: space-between
+	justify-content: space-between;
 }
 .header .contenedor .navbar .menu{
 	display: flex;
 	justify-content: space-between;
 	width: 85%;
-	box-sizing: border-box
+	box-sizing: border-box;
+	transition: 1s;
 }
 .header .contenedor .navbar .menu:nth-of-type(2){
 	width: calc(85% - 4em);
@@ -114,12 +134,14 @@ ul,figure{
 .header .contenedor .navbar .logo{
 	width: 15%;
 	margin: 0 10em;
+	transition: 1.2s;
 }
 .header .contenedor .burger{
 	background: none;
 	border: none;
 	cursor: pointer;
-	display: none
+	display: none;
+	transition: 1.2s;
 }
 .header .contenedor .burger img{
 	width: 32px;
@@ -127,6 +149,16 @@ ul,figure{
 }
 .header .contenedor .burger:focus{
 	outline: none;
+}
+.header .contenedor .close{
+	background: none;
+	border: none;
+	position: absolute;
+	color: white;
+	font-size: 40px;
+	font-size: 2.5rem;
+	right: 0;
+	visibility: hidden;
 }
 .cls-22{
 	animation-name: floating;
@@ -151,9 +183,8 @@ ul,figure{
 	box-sizing: border-box;
 }
 .hero{
-	height: 100vh;
 	box-sizing: border-box;
-	background: white
+	background: white;
 }
 .hero.animacion .copy .item:first-child{
 	animation-name: slideExpandUp;
@@ -203,7 +234,7 @@ ul,figure{
 	font-size: 8rem;
 	color: #007993;
 	color: rgba(0, 121, 147, 0.78039);
-	margin: 0
+	margin: 0;
 }
 .hero .copy .item .title b{
 	color: rgb(0, 121, 147);
@@ -250,9 +281,10 @@ ul,figure{
 }
 .about{
 	background: #007993;
-	height: 100vh;
-	display: flex;
 	align-items: center
+}
+.about.active, .about.prev{
+	display: flex;
 }
 .about.animacion .grid .item:first-child .contenedor{
 	animation-name: slideRight;
@@ -277,13 +309,23 @@ ul,figure{
 	flex-direction: column;
 	height: 100vh;
 	color: white;
-	justify-content: space-evenly
+	justify-content: space-evenly;
+	/*
+@media(--tablet){
+			grid-template-columns: 1fr;
+			grid-template-rows: 1fr;
+			& .img{
+				width: 80%;
+				margin-left: 25%;
+			}
+		}
+*/
 }
 .about .grid .item:first-child{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 4em;
-	align-items: center
+	align-items: center;
 }
 .about .grid .item:first-child .img{
 	width: 60%;
@@ -295,7 +337,8 @@ ul,figure{
 	justify-self: flex-end;
 }
 .about .grid{
-	/*& .item:nth-of-type(2){
+	/*
+& .item:nth-of-type(2){
 			grid-row: 1 span;
 			& .img{
 				@media(--desktop){
@@ -303,7 +346,8 @@ ul,figure{
 					margin-left: 5em;
 				}
 			}
-		}*/
+		}
+*/
 }
 .about .grid .cualidades{
 	display: grid;
@@ -312,7 +356,7 @@ ul,figure{
 }
 .about .grid .cualidades .cualidad{
 	display: flex;
-	align-items: center
+	align-items: center;
 }
 .about .grid .cualidades .cualidad:nth-of-type(2) .icono{
 	width: 8%;
@@ -333,7 +377,7 @@ ul,figure{
 	border-radius: 2em;
 	font-size: 16px;
 	font-size: 1rem;
-	transition: .3s
+	transition: .3s;
 }
 .about .grid .btn:hover{
 	box-shadow: 0 0 50px #00b5ff;
@@ -344,10 +388,11 @@ ul,figure{
 	color: #007993;
 }
 .servicios{
-	height: 100vh;
-	display: flex;
 	align-items: center;
 	background: white
+}
+.servicios.active, .servicios.prev{
+	display: flex;
 }
 .servicios.animacion #pro .cls-2 {
 	transition: 2s;
@@ -382,7 +427,7 @@ ul,figure{
 	text-align: center;
 	position: relative;
 	padding-top: 12em;
-	padding-right: 9em
+	padding-right: 9em;
 }
 .servicios .grid .hover{
 	position: absolute;
@@ -391,7 +436,7 @@ ul,figure{
 	opacity: .5;
 	top: 0;
 	width: 100%;
-	height: 100%
+	height: 100%;
 }
 .servicios .grid .hover .hover-item{
 	transform: translateX(150%);
@@ -399,10 +444,10 @@ ul,figure{
 	top: 6em;
 	width: 800px;
 	height: 100vh;
-	right: 0
+	right: 0;
 }
 .servicios .grid .hover .hover-item .contenedor{
-	position: relative
+	position: relative;
 }
 .servicios .grid .hover .hover-item .contenedor:after{
 	position: absolute;
@@ -449,10 +494,11 @@ ul,figure{
 	color: #009270;
 }
 .portafolio{
-	height: 100vh;
 	background: #007993;
-	display: flex;
 	align-items: center
+}
+.portafolio.active, .portafolio.prev{
+	display: flex;
 }
 .portafolio.animacion .grid .proyectos{
 	animation-name: Down;
@@ -468,10 +514,10 @@ ul,figure{
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-	justify-content: space-between
+	justify-content: space-between;
 }
 .portafolio .grid .portafolio-servicios{
-	list-style: none
+	list-style: none;
 }
 .portafolio .grid .portafolio-servicios .servicio{
 	font-size: 22.4px;
@@ -501,7 +547,7 @@ ul,figure{
 	justify-content: space-between;
 	position: relative;
 	color: white;
-	text-decoration: none
+	text-decoration: none;
 }
 .portafolio .grid .proyectos .proyecto .nombre{
 	z-index: 1000;
@@ -535,13 +581,13 @@ ul,figure{
 	border-radius: 2em;
 	font-size: 16px;
 	font-size: 1rem;
-	transition: .3s
+	transition: .3s;
 }
 .portafolio .grid .btn:hover{
 	box-shadow: 0 0 50px #00b5ff;
 }
 .portafolio .grid .btn{
-	margin-right: 3em
+	margin-right: 3em;
 }
 .portafolio .grid .btn:hover{
 	border-color: #00caf5;
@@ -549,7 +595,6 @@ ul,figure{
 	color: #007993;
 }
 .contacto{
-	max-height: 100vh;
 	overflow: hidden;
 	background: white
 }
@@ -593,10 +638,10 @@ ul,figure{
 	font-size: 2rem;
 }
 .contacto .grid .informacion{
-	list-style: none
+	list-style: none;
 }
 .contacto .grid .informacion li{
-	margin-bottom: 1em
+	margin-bottom: 1em;
 }
 .contacto .grid .informacion li a{
 	color: #009270;
@@ -616,7 +661,7 @@ ul,figure{
 	box-sizing: border-box;
 	padding: 0 2em 2em;
 	border-radius: 2em;
-	margin-right: 3em
+	margin-right: 3em;
 }
 .contacto .grid .formulario .title{
 	color: #007993;
@@ -631,7 +676,7 @@ ul,figure{
 	align-items: center;
 	grid-gap: 0 1em;
 	margin: 0;
-	padding: 0
+	padding: 0;
 }
 .contacto .grid .formulario .contact input, .contacto .grid .formulario .contact textarea{
 	background: none;
@@ -641,7 +686,7 @@ ul,figure{
 	padding: 1em;
 	transition: .3s;
 	color: #007993;
-	width: 90%
+	width: 90%;
 }
 .contacto .grid .formulario .contact input::placeholder,.contacto .grid .formulario .contact textarea::placeholder{
 	color: #007993;
@@ -667,7 +712,7 @@ ul,figure{
 	border-radius: 2em;
 	font-size: 16px;
 	font-size: 1rem;
-	transition: .3s
+	transition: .3s;
 }
 .contacto .grid .formulario .contact .btn:hover{
 	box-shadow: 0 0 50px #00b5ff;
@@ -682,7 +727,7 @@ ul,figure{
 	margin-top: 1em;
 	background: none;
 	font-size: 16px;
-	font-size: 1rem
+	font-size: 1rem;
 }
 .contacto .grid .formulario .contact .btn:hover{
 	border-color: #00caf5;
@@ -699,15 +744,15 @@ ul,figure{
 	width: 100%;
 	bottom: 0;
 	padding: 1em;
-	box-sizing: border-box
+	box-sizing: border-box;
 }
 .contacto .grid .footer .menu{
 	display: flex;
 	justify-content: center;
-	list-style: none
+	list-style: none;
 }
 .contacto .grid .footer .menu .item{
-	margin-right: 2em
+	margin-right: 2em;
 }
 .contacto .grid .footer .menu .item a{
 	color: white;
@@ -719,14 +764,6 @@ ul,figure{
 	justify-content: center;
 	color: white;
 	margin-bottom: 0;
-}
-.active{
-  animation: slideDown 1s forwards;
-  z-index: 1000;
-  
-}
-.prev{
-  z-index: 50;
 }
 .slideDown{
 	animation-name: slideDown;
@@ -855,59 +892,131 @@ slideRight
 	}							
 }
 @media (max-width: 500px){
+	body{
+		overflow-y: scroll;
+	}
+	.botones{
+		right: 2em;
+	}
+	.slide{
+		height: auto;
+	}
 	.header{
-		padding: 2em
+		padding: 2em 0;
+	}
+	.margen{
+		height: auto;
+		padding: 8em 4em 6em 2em;
+	}
+	.hero{
+		height: 100vh;
+		overflow: hidden;
 	}
 	.hero .copy{
-		padding: 0 2em
+		padding: 0 2em;
+	}
+	.hero .copy .item:first-child{
+		height: 50% !important;
 	}
 	.hero .copy .item .title{
-		font-size: 4rem
+		font-size: 4rem;
 	}
 	.about{
-		height: auto
+		height: auto;
 	}
 	.about .grid{
-		padding: 2em
+		height: auto;
 	}
 	.about .grid .img{
 		margin: 0 !important;
 		width: 100% !important;
 	}
-	.about .grid .cualidades{
-		grid-template-columns: 1fr
+	.about .grid .item:first-child{
+		grid-template-columns: 1fr;
 	}
 	.servicios{
 		height: auto;
-		padding: 2em
 	}
 	.servicios .grid{
-		grid-template-columns: 1fr !important
+		padding-right: 4em;
+		padding-top: 8em;
+		grid-template-columns: 1fr !important;
 	}
 	.portafolio{
-		height: auto
+		height: auto;
 	}
 	.portafolio .grid .portafolio-servicios{
 		flex-direction: column;
 	}
 	.portafolio .grid .proyectos{
-		grid-template-columns: 1fr
+		grid-template-columns: 1fr !important;
+		margin: 0;
 	}
 	.contacto{
 		height: auto;
-		padding: 2em
 	}
-	.contacto .grid .item{
-		width: 80%;
+	.contacto .grid{
+		padding-top: 8em;
 	}
 	.contacto .grid .sociales{
-		width: 100%
+		width: 100%;
+	}
+	.contacto .grid .formulario{
+		padding: 0;
+		margin-right: 0;
+	}
+	.contacto .grid .formulario .contact{
+		margin-bottom: 10em;
+	}
+	.contacto .grid .footer .menu{
+		display: none;
 	}
 }
 @media (max-width: 800px){
+	.header.scroll .contenedor{
+		filter: inherit;
+	}
+	.header.scroll .contenedor .burger, .header.scroll .contenedor .logo{
+		filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+		filter: brightness(0) invert(1);
+	}
+	.header .contenedor{
+		width: calc(100% - 5em);
+	}
+	.header .contenedor .navbar .menu{
+		position: fixed;
+		left: 0;
+		width: 100% !important;
+		margin: 0 !important;
+		height: 50vh;
+		background: #007993;
+		background: rgba(0, 121, 147, 0.5);
+		flex-direction: column;
+		justify-content: flex-end;
+		align-items: center;
+	}
+	.header .contenedor .navbar .menu .item{
+		color: white;
+		font-size: 2rem;
+		margin-bottom: 2em;
+	}
+	.header .contenedor .navbar .menu:nth-of-type(1){
+		top: -100%;
+	}
+	.header .contenedor .navbar .menu:nth-of-type(2){
+		bottom: -100%;
+		top: inherit;
+		justify-content: flex-start;
+	}
+	.header .contenedor .navbar .logo{
+		margin: 0;
+	}
+	.header .contenedor .burger{
+		display: block;
+	}
 	.hero .copy{
 		align-items: center;
-		grid-template-columns: 1fr
+		grid-template-columns: 1fr;
 	}
 	.hero .copy .item:last-child{
 		position: absolute;
@@ -917,41 +1026,51 @@ slideRight
 		opacity: .6;
 		top: 20%;
 	}
-	.about .grid{
-		grid-template-columns: 1fr;
-		grid-template-rows: 1fr
+	.hero .copy .item:first-child{
+		height: 70%;
 	}
-	.about .grid .img{
-		width: 50%;
-		margin-left: 25%;
+	.about .grid .item:first-child .img{
+		width: 90%;
+	}
+	.about .grid .cualidades{
+		margin-top: 2em;
+		grid-template-columns: 1fr;
+	}
+	.about .grid .cualidades .cualidad .icono{
+		width: 20%;
 	}
 	.servicios .grid{
-		grid-template-columns: 1fr 1fr
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 2em 8em;
 	}
 	.servicios .grid .item{
 		margin-top: 0 !important;
 	}
 	.portafolio{
-		padding: .5em 0
+		padding: .5em 0;
 	}
 	.portafolio .grid .portafolio-servicios{
 		display: flex;
-		padding: 0 2em
+		padding: 0 2em;
 	}
 	.portafolio .grid .portafolio-servicios span{
 		display: none;
 	}
+	.portafolio .grid .proyectos{
+		grid-template-columns: 1fr 1fr;
+		grid-template-rows: 1fr 1fr;
+	}
 	.contacto .grid{
-		grid-template-columns: 1fr
+		grid-template-columns: 1fr;
 	}
 }
 @media (min-width: 801px){
 	.about .grid .cualidades{
-		margin-top: 2em
+		margin-top: 2em;
 	}
 }
 @media (max-width: 360px){
 	.portafolio .grid .portafolio-servicios .servicio{
-		font-size: 1.1rem
+		font-size: 1.1rem;
 	}
 }

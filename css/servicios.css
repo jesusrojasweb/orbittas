@@ -206,6 +206,13 @@ ul,figure{
 	align-items: center;
 	height: 100%
 }
+.hero .margen .contenedor .grid{
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 4em;
+	align-items: center;
+	margin-top: 3em;
+}
 .hero .margen .contenedor .title{
 	color: white;
 	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;

@@ -211,7 +211,8 @@ ul,figure{
 	color: #009270;
 }
 .equipo{
-	background: #007993
+	background: #007993;
+	height: auto
 }
 .equipo .contenedor{
 	text-align: center;
