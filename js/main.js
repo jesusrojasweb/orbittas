@@ -2,18 +2,11 @@ const $sliderList = document.querySelectorAll('.slider')
 const $botones = document.querySelector('.botones')
 const $burger = document.getElementById('burger')
 const $close = document.getElementById('close')
-const $menu = document.getElementById('menu')
+const $menu = document.querySelectorAll('.menuHeader')
 const $header = document.getElementById('header')
 const $luz = document.querySelector('.cls-25')
 const $copy = document.getElementById('copy')
-const $pro = document.getElementById('pro')
-const $elec = document.getElementById('elec')
-const $web = document.getElementById('web')
-const $movil = document.getElementById('movil')
-const $hoverPro = document.getElementById('hoverPro')
-const $hoverElec = document.getElementById('hoverElec')
-const $hoverWeb = document.getElementById('hoverWeb')
-const $hoverMovil = document.getElementById('hoverMovil')
+const $about = document.querySelector('.about')
 let botonesList
 let $boton
 const padre = $sliderList[0].children;
@@ -23,6 +16,7 @@ let touchstartX = 0;
 let touchendX = 0;
 let touchendY = 0;
 let alto = window.screen.availHeight;
+let ancho = window.screen.availWidth;
 
 let gesuredZone = document.querySelector('body');
 
@@ -33,10 +27,23 @@ $luz.addEventListener("mouseout",function () {
   $copy.style.backgroundColor = '#ffffff00'
 })
 
-$burger.addEventListener('click',function () {
-  $menu.classList.add('activo')
+
+//--------------Burger menu
+
+$burger.addEventListener('click', function (e) {
+  $header.classList.add('activo')
+})
+$close.addEventListener('click', function (e) {
+  $header.classList.remove('activo')
 })
 
+// $about.addEventListener('scroll', function (e) {
+//   let coordsHijo = $about.children[0].getBoundingClientRect()
+//   console.log(`top: ${coordsHijo.top}`)
+//   console.log(`Height: ${$about.getBoundingClientRect().height}`)
+//   console.log(`bottom < alto: ${coordsHijo.top < $about.getBoundingClientRect().height}`)
+
+// })
 
 //botones
 for(let i = 0; i < padre.length; i++){
@@ -112,29 +119,23 @@ function slide(direccion, movil) {
     let coords = hijo.getBoundingClientRect();
     hijo.styles
     let next
-    console.log()
-    //coords.bottom >= alto.bottom
-    // console.log(hijo)
-    // console.log(`Estas son las coordenadas`)
-    // console.log(coords)
-    // console.log(coords.top )
-    // console.log(`Este es el alto${alto}`)
-    console.log(coords.bottom >= alto.bottom)
+    let bottom = true
+    
     //detectamos direccion del scroll
     if(direccion){
       //detectamos si es un dispositivo movil
       if(movil){
-        if(true){
-          next = i + 1
-          if(next >= padre.length ){
-            next = i;
-            window.scrollBy(0, -window.innerHeight);
-            console.log("estamos en next")
-          }
+        let hijoBottom = (coords.bottom - 1)
+        console.log(hijoBottom)
+        if(hijoBottom <= alto){
+          bottom = false
+          console.log(`Bottom: ${(coords.bottom - 1)}`)
+          console.log(`Alto: ${alto}`)
+          console.log("Bajaste")
+          console.log(`coords.bottom < alto ${(coords.bottom  - 1) < alto}`)
         } 
-        if(false){
-          console.log("salimos")
-          break;
+        if(coords.bottom > alto){
+          bottom = true
         }
       }
       next = i + 1
@@ -144,25 +145,37 @@ function slide(direccion, movil) {
       
     }
     if(!direccion){
+      if(movil){
+        // if(coords.top <= alto){
+        //   bottom = false
+        // } 
+        console.log(`Top: ${coords.top}`)
+        if(coords.top == 0){
+          bottom = false
+        }
+      }
       next = i - 1 
       if(next < 0 ){
         next = i;
       }
     }
-    if(next == 1 || next == 3){
-      $header.classList.add('scroll')
-      $botones.classList.add('scroll')
-    }
-    if(next== 0 || next == 2 || next == 4){
-     $header.classList.remove('scroll')
-     $botones.classList.remove('scroll')
-    }
-    console.log(next)
+    
     let siguiente = padre[next];
     let botonSiguiente = botonPadre[next]
     if(hijo.classList[2] == "active" || hijo.classList[3] == "active" || hijo.classList[4] == "active"){
-
-      scroll(hijo,siguiente,boton,botonSiguiente)
+      console.log(!bottom)
+      if(!bottom){
+        if(next == 1 || next == 3){
+          $header.classList.add('scroll')
+          $botones.classList.add('scroll')
+        }
+        if(next== 0 || next == 2 || next == 4){
+         $header.classList.remove('scroll')
+         $botones.classList.remove('scroll')
+        }
+        window.scrollBy(0, -window.innerHeight);
+        scroll(hijo,siguiente,boton,botonSiguiente)
+      }
       break;
     }
   }
@@ -178,6 +191,7 @@ function scroll(hijo, siguiente,boton,botonSiguiente){
 }
 
 //detectando scroll en movil
+
 gesuredZone.addEventListener('touchstart', function(event) {
     touchstartX = touchendX = event.changedTouches[0].screenX;
     touchstartY = event.changedTouches[0].screenY;
@@ -196,11 +210,7 @@ function handleGesure() {
     if (touchendY < touchstartY) {
         slide(true, true)
     }if (touchendY > touchstartY) {
-        slide(false)
-        console.log("Subiste")
-    }
-    if (touchendY == touchstartY) {
-      arriba()
+        slide(false, true)
     }
 }
 

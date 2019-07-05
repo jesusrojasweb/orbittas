@@ -42,9 +42,9 @@ body{
 	padding: 0;
 	overflow: hidden;
 	position: relative;
-	/*@media(--mobile){
+	@media(--mobile){
 		overflow-y: scroll;
-	}*/
+	}
 }
 .botones{
 	position: fixed;
@@ -60,6 +60,9 @@ body{
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	@media(--mobile){
+		right: 2em;
+	}
 	&.scroll{
 		& .boton{
 			&.activo{
@@ -110,7 +113,23 @@ ul,figure{
   box-sizing: border-box;
   top: 0;
   z-index: 5;
+  display: none;
+  @media(--mobile){
+  	height: auto;
+  }
+
 }
+.active{
+  animation: slideDown 1s forwards;
+  z-index: 1000;
+  display: block;
+  
+}
+.prev{
+  z-index: 50;
+  display: block;
+}
+
 .header{
 	padding: 3em 0;
 	width: 100%;
@@ -119,11 +138,17 @@ ul,figure{
 	position: fixed;
 	z-index: 1001;
 	@media(--mobile){
-		padding: 2em;
+		padding: 2em 0;
 	}
 	&.scroll{
-		& .logo, & .burger{
+		& .contenedor{
 			filter: brightness(0) invert(1);
+			@media(--tablet){
+				filter: inherit;
+				& .burger, & .logo{
+					filter: brightness(0) invert(1);
+				}
+			}
 		}
 	}
 	&.activo{
@@ -149,8 +174,10 @@ ul,figure{
 		width: calc(100% - 12em);
 		box-sizing: border-box;
 		z-index: 1200;
-		
 		position: relative;
+		@media(--tablet){
+			width: calc(100% - 5em);
+		}
 		& .navbar{
 			width: 100%;
 			display: flex;
@@ -161,6 +188,7 @@ ul,figure{
 				justify-content: space-between;
 				width: calc((100% - 15%));
 				box-sizing: border-box;
+				transition: 1s;
 				@media(--tablet){
 					position: fixed;
 					left: 0;
@@ -255,11 +283,18 @@ ul,figure{
 	padding: 10em 6em 4em;
 	height: 100vh;
 	box-sizing: border-box;
+	@media(--mobile){
+		height: auto;
+		padding: 8em 4em 6em 2em;
+	}
 }
 .hero{
-	height: 100vh;
 	box-sizing: border-box;
 	background: white;
+	@media(--mobile){
+		height: 100vh;
+		overflow: hidden;
+	}
 	&.animacion{
 		& .copy{
 			& .item:first-child{
@@ -326,6 +361,9 @@ ul,figure{
 				@media(--tablet){
 					height: 70%;
 				}
+				@media(--mobile){
+					height: 50% !important;
+				}
 			}
 			&:last-child{
 				padding-top: 1.5em;
@@ -366,9 +404,11 @@ ul,figure{
 }
 .about{
 	background: var(--colorPrincipal);
-	height: 100vh;
-	display: flex;
 	align-items: center;
+	&.active, &.prev{
+		display: flex;
+
+	}
 	&.animacion{
 		& .grid{
 			& .item:first-child{
@@ -409,16 +449,16 @@ ul,figure{
 		height: 100vh;
 		color: white;
 		justify-content: space-evenly;
-		@media(--tablet){
+		/*@media(--tablet){
 			grid-template-columns: 1fr;
 			grid-template-rows: 1fr;
 			& .img{
-				width: 50%;
+				width: 80%;
 				margin-left: 25%;
 			}
-		}
+		}*/
 		@media(--mobile){
-			padding: 2em;
+			height: auto;
 			& .img{
 				margin: 0 !important;
 				width: 100% !important;
@@ -429,8 +469,14 @@ ul,figure{
 			grid-template-columns: 1fr 1fr;
 			grid-gap: 4em;
 			align-items: center;
+			@media(--mobile){
+				grid-template-columns: 1fr;
+			}
 			& .img{
 				width: 60%;
+				@media(--tablet){
+					width: 90%;
+				}
 			}
 		}
 		& .descripcion{
@@ -452,7 +498,8 @@ ul,figure{
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			grid-gap: 2em;
-			@media(--mobile){
+			@media(--tablet){
+				margin-top: 2em;
 				grid-template-columns: 1fr;
 			}
 			@media(--desktop){
@@ -468,6 +515,9 @@ ul,figure{
 				}
 				& .icono{
 					width: 13%;
+					@media(--tablet){
+						width: 20%;
+					}
 				}
 				& .cualidad-nombre{
 					margin-left: 1em;
@@ -485,10 +535,12 @@ ul,figure{
 	}
 }
 .servicios{
-	height: 100vh;
-	display: flex;
 	align-items: center;
 	background: white;
+	&.active, &.prev{
+		display: flex;
+
+	}
 	&.animacion{
 		& #pro .cls-2 {
 		    transition: 2s;
@@ -525,7 +577,6 @@ ul,figure{
 	}
 	@media(--mobile){
 		height: auto;
-		padding: 2em;
 	}
 	& .grid{
 		display: grid;
@@ -537,11 +588,14 @@ ul,figure{
 		padding-right: 9em;
 		@media(--tablet){
 			grid-template-columns: 1fr 1fr;
+			grid-gap: 2em 8em;
 			& .item{
 				margin-top: 0 !important;
 			}
 		}
 		@media(--mobile){
+			padding-right: 4em;
+			padding-top: 8em;
 			grid-template-columns: 1fr !important;
 		}
 		& .hover{
@@ -616,10 +670,12 @@ ul,figure{
 	}
 }
 .portafolio{
-	height: 100vh;
 	background: var(--colorPrincipal);
-	display: flex;
 	align-items: center;
+	&.active, &.prev{
+		display: flex;
+
+	}
 	&.animacion{
 		& .grid{
 			& .proyectos{
@@ -684,8 +740,13 @@ ul,figure{
 			grid-template-rows: 1fr;
 			margin: 2em 3em 0 0;
 			height: 75%;
+			@media(--tablet){
+				grid-template-columns: 1fr 1fr;
+				grid-template-rows: 1fr 1fr;
+			}
 			@media(--mobile){
-				grid-template-columns: 1fr;
+				grid-template-columns: 1fr !important;
+				margin: 0;
 			}
 			& .proyecto{
 				border: 1px solid white;
@@ -735,7 +796,6 @@ ul,figure{
 	}
 }
 .contacto{
-	max-height: 100vh;
 	overflow: hidden;
 	background: white;
 
@@ -773,7 +833,6 @@ ul,figure{
 	}
 	@media(--mobile){
 		height: auto;
-		padding: 2em;
 	}
 	& .grid{
 		display: grid;
@@ -786,9 +845,7 @@ ul,figure{
 			grid-template-columns: 1fr;
 		}
 		@media(--mobile){
-			& .item{
-				width: 80%;
-			}
+			padding-top: 8em;
 		}
 		& .animanos{
 			color: var(--colorSecundario);
@@ -822,6 +879,10 @@ ul,figure{
 			padding: 0 2em 2em;
 			border-radius: 2em;
 			margin-right: 3em;
+			@media(--mobile){
+				padding: 0;
+				margin-right: 0;
+			}
 			& .title{
 				color: var(--colorPrincipal);
 				font-size: 1.2rem;
@@ -835,6 +896,9 @@ ul,figure{
 				grid-gap: 0 1em;
 				margin: 0;
 				padding: 0;
+				@media(--mobile){
+					margin-bottom: 10em;
+				}
 				& input, & textarea{
 					background: none;
 					border: none;
@@ -893,6 +957,9 @@ ul,figure{
 				display: flex;
 				justify-content: center;
 				list-style: none;
+				@media(--mobile){
+					display: none;
+				}
 				& .item{
 					margin-right: 2em;
 					& a{
@@ -911,14 +978,7 @@ ul,figure{
 		}
 	}
 }
-.active{
-  animation: slideDown 1s forwards;
-  z-index: 1000;
-  
-}
-.prev{
-  z-index: 50;
-}
+
 
 .slideDown{
 	animation-name: slideDown;

@@ -122,6 +122,7 @@ ul,figure{
   top: 0;
   z-index: 5;
 }
+
 .active{
   animation: slideDown 1s forwards;
   z-index: 1000;
