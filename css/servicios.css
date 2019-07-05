@@ -211,7 +211,10 @@ ul,figure{
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 4em;
 	align-items: center;
-	margin-top: 3em;
+	margin-top: 3em
+}
+.hero .margen .contenedor .grid .icono:first-child{
+	width: 72.5%;
 }
 .hero .margen .contenedor .title{
 	color: white;

@@ -259,6 +259,11 @@ ul,figure{
 				grid-gap: 4em;
 				align-items: center;
 				margin-top: 3em;
+				& .icono{
+					&:first-child{
+						width: 72.5%;
+					}
+				}
 			}
 			& .title{
 				color: white;
