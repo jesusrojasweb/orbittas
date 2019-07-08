@@ -469,7 +469,8 @@ ul,figure{
 }
 .portafolio{
 	background: #007993;
-	align-items: center
+	align-items: center;
+	overflow: hidden
 }
 .portafolio.active, .portafolio.prev{
 	display: flex;
@@ -582,9 +583,6 @@ ul,figure{
 	animation-timing-function: ease-out;
 	-webkit-animation-timing-function: ease-out;
 	animation-fill-mode: forwards;
-	transform-origin: 0% 0%;
-	-ms-transform-origin: 0% 0%;
-	-webkit-transform-origin: 0% 0%;
 }
 .contacto.animacion .grid .formulario{
 	animation-name: stretchLeft;
@@ -595,9 +593,6 @@ ul,figure{
 	animation-timing-function: ease-out;
 	-webkit-animation-timing-function: ease-out;
 	animation-fill-mode: forwards;
-	transform-origin: 100% 0%;
-	-ms-transform-origin: 100% 0%;
-	-webkit-transform-origin: 100% 0%;
 }
 .contacto .grid{
 	display: grid;
@@ -609,6 +604,9 @@ ul,figure{
 }
 .contacto .grid > .item:first-child{
 	transform: scaleX(0.3);
+	transform-origin: 0% 0%;
+	-ms-transform-origin: 0% 0%;
+	-webkit-transform-origin: 0% 0%;
 }
 .contacto .grid .animanos{
 	color: #009270;
@@ -641,6 +639,9 @@ ul,figure{
 	border-radius: 2em;
 	margin-right: 3em;
 	transform: scaleX(0.3);
+	transform-origin: 100% 0%;
+	-ms-transform-origin: 100% 0%;
+	-webkit-transform-origin: 100% 0%;
 }
 .contacto .grid .formulario .title{
 	color: #007993;
