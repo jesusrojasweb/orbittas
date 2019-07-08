@@ -615,16 +615,11 @@ ul,figure{
 	position: relative;
 	padding-top: 11em;
 }
-.contacto .grid > .item:first-child{
-	transform: scaleX(0.3);
-	transform-origin: 0% 0%;
-	-ms-transform-origin: 0% 0%;
-	-webkit-transform-origin: 0% 0%;
-}
 .contacto .grid .animanos{
 	color: #009270;
-	font-size: 32px;
-	font-size: 2rem;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-size: 48px;
+	font-size: 3rem;
 }
 .contacto .grid .informacion{
 	list-style: none;
@@ -651,10 +646,6 @@ ul,figure{
 	padding: 0 2em 2em;
 	border-radius: 2em;
 	margin-right: 3em;
-	transform: scaleX(0.3);
-	transform-origin: 100% 0%;
-	-ms-transform-origin: 100% 0%;
-	-webkit-transform-origin: 100% 0%;
 }
 .contacto .grid .formulario .title{
 	color: #007993;
@@ -939,21 +930,11 @@ slideRight
 	.contacto{
 		height: auto;
 	}
-	.contacto .grid{
-		padding-top: 8em;
+	.contacto .grid .item{
+		width: 80%;
 	}
 	.contacto .grid .sociales{
 		width: 100%;
-	}
-	.contacto .grid .formulario{
-		padding: 0;
-		margin-right: 0;
-	}
-	.contacto .grid .formulario .contact{
-		margin-bottom: 10em;
-	}
-	.contacto .grid .footer .menu{
-		display: none;
 	}
 }
 @media (max-width: 800px){
