@@ -507,16 +507,6 @@ ul,figure{
 .portafolio.active, .portafolio.prev{
 	display: flex;
 }
-.portafolio.animacion .grid .proyectos{
-	animation-name: Down;
-	-webkit-animation-name: Down;
-	animation-duration: 1.5s;
-	-webkit-animation-duration: 1.5s;
-	animation-timing-function: ease;
-	-webkit-animation-timing-function: ease;
-	animation-fill-mode: forwards;
-	visibility: visible !important;
-}
 .portafolio .grid{
 	display: flex;
 	flex-direction: column;
@@ -524,20 +514,13 @@ ul,figure{
 	justify-content: space-between;
 	height: auto
 }
-.portafolio .grid .portafolio-servicios{
-	list-style: none
-}
-.portafolio .grid .portafolio-servicios .servicio{
-	font-size: 22.4px;
-	font-size: 1.4rem;
-	margin-bottom: 1em;
+.portafolio .grid .title{
+	text-align: center;
 	color: white;
-}
-.portafolio .grid .portafolio-servicios .servicio a{
-	color: white;
-	text-decoration: none;
-	margin-right: 1em;
 	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	align-self: center;
+	font-size: 32px;
+	font-size: 2rem;
 }
 .portafolio .grid .proyectos{
 	display: grid;
@@ -545,9 +528,7 @@ ul,figure{
 	grid-template-rows: 1fr;
 	margin: 2em 3em 0 0;
 	height: 75%;
-	transform: translateY(-100%);
 	margin-bottom: 2em;
-	opacity: 0;
 }
 .portafolio .grid .proyectos .proyecto{
 	border: 1px solid white;
@@ -560,7 +541,11 @@ ul,figure{
 	color: white;
 	text-decoration: none;
 	height: 280px;
-	overflow: hidden
+	overflow: hidden;
+	transition: .3s
+}
+.portafolio .grid .proyectos .proyecto:hover{
+	background: rgb(0, 97, 118);
 }
 .portafolio .grid .proyectos .proyecto .nombre{
 	z-index: 1000;
@@ -571,23 +556,27 @@ ul,figure{
 .portafolio .grid .proyectos .proyecto .caracteristicas{
 	z-index: 1000;
 }
-.portafolio .grid .proyectos .proyecto:before{
-	content: '';
-	width: 0;
-	height: 0;
-	width: 14em;
-	height: 14em;
-	left: calc(50% - 7em);
-	top: calc(50% - 7em);
-	background: rgb(0, 97, 118);
-	border-radius: 50%;
-	position: absolute;
-	z-index: 1;
-	transition: .3s;
-	transform: scale(0);
-}
-.portafolio .grid .proyectos .proyecto:hover:before{
-	transform: scale(1);
+.portafolio .grid .proyectos .proyecto{
+	/*&:before{
+					content: '';
+					width: 0;
+					height: 0;
+					width: 14em;
+					height: 14em;
+					left: calc((100% - 14em)/2);
+					top: calc((100% - 14em)/2);
+					background: color(var(--colorPrincipal) shade(20%));
+					border-radius: 50%;
+					position: absolute;
+					z-index: 1;
+					transition: .3s;
+					transform: scale(0);
+				}
+				&:hover{
+					&:before{
+						transform: scale(1);
+					}
+				}*/
 }
 .portafolio .grid .btn{
 	color: white;
@@ -1036,10 +1025,5 @@ slideRight
 @media (min-width: 801px){
 	.about .grid .cualidades{
 		margin-top: 2em
-	}
-}
-@media (max-width: 360px){
-	.portafolio .grid .portafolio-servicios .servicio{
-		font-size: 1.1rem
 	}
 }
