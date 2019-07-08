@@ -622,6 +622,7 @@ ul,figure{
 .portafolio{
 	background: var(--colorPrincipal);
 	align-items: center;
+	overflow: hidden;
 	&.active, &.prev{
 		display: flex;
 
@@ -762,9 +763,7 @@ ul,figure{
 				animation-timing-function: ease-out;	
 				-webkit-animation-timing-function: ease-out;	
 				animation-fill-mode: forwards;
-				transform-origin: 0% 0%;
-				-ms-transform-origin: 0% 0%;
-				-webkit-transform-origin: 0% 0%; 
+				
 			}
 			& .formulario{
 				animation-name: stretchLeft;
@@ -776,9 +775,7 @@ ul,figure{
 				animation-timing-function: ease-out;	
 				-webkit-animation-timing-function: ease-out;	
 				animation-fill-mode: forwards;
-				transform-origin: 100% 0%;
-				-ms-transform-origin: 100% 0%;
-				-webkit-transform-origin: 100% 0%;
+				
 			}
 		}
 	}
@@ -794,6 +791,9 @@ ul,figure{
 		padding-top: 11em;
 		& > .item:first-child{
 			transform: scaleX(0.3);
+			transform-origin: 0% 0%;
+			-ms-transform-origin: 0% 0%;
+			-webkit-transform-origin: 0% 0%; 
 		}
 		@media(--tablet){
 			grid-template-columns: 1fr;
@@ -834,6 +834,9 @@ ul,figure{
 			border-radius: 2em;
 			margin-right: 3em;
 			transform: scaleX(0.3);
+			transform-origin: 100% 0%;
+			-ms-transform-origin: 100% 0%;
+			-webkit-transform-origin: 100% 0%;
 			@media(--mobile){
 				padding: 0;
 				margin-right: 0;
