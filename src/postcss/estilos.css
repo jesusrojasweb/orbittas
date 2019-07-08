@@ -42,6 +42,14 @@ body{
 	padding: 0;
 	position: relative;
 	overflow-x: hidden;
+	&::-webkit-scrollbar{
+		width: 10px;
+		background: white;
+	}
+	&::-webkit-scrollbar-thumb{
+		background: color(var(--colorPrincipal) shade(20%));
+		border-radius: 5px;
+	}
 }
 /*.botones{
 	position: fixed;
@@ -811,6 +819,12 @@ ul,figure{
 					width: 80%;
 				}
 			}
+			& > .item:first-child{
+				transform-origin: 0% 0%;
+				-ms-transform-origin: 0% 0%;
+				-webkit-transform-origin: 0% 0%; 
+				transform: scaleX(0.3);
+			}
 			& .animanos{
 				color: var(--colorSecundario);
 				font-family: var(--fuentePrincipal);
@@ -844,6 +858,10 @@ ul,figure{
 				padding: 0 2em 2em;
 				border-radius: 2em;
 				margin-right: 3em;
+				transform-origin: 100% 0%;
+				-ms-transform-origin: 100% 0%;
+				-webkit-transform-origin: 100% 0%;
+				transform: scaleX(0.3);
 				& .title{
 					color: var(--colorPrincipal);
 					font-size: 1.2rem;
