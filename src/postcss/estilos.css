@@ -40,13 +40,10 @@ body{
 	font-family: 'Montserrat', system-ui;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
 	position: relative;
-	@media(--mobile){
-		overflow-y: scroll;
-	}
+	overflow-x: hidden;
 }
-.botones{
+/*.botones{
 	position: fixed;
 	padding: 1em 0;
 	box-sizing: border-box;
@@ -97,7 +94,7 @@ body{
 			transition: .3s;
 		}
 	}
-}
+}*/
 
 img{
 	width: 100%;
@@ -106,7 +103,7 @@ ul,figure{
 	margin: 0;
 	padding: 0;
 }
-.slide{
+/*.slide{
 	position: absolute;
   height: 100vh;
   width: 100%;
@@ -118,8 +115,8 @@ ul,figure{
   	height: auto;
   }
 
-}
-.active{
+}*/
+/*.active{
   animation: slideDown 1s forwards;
   z-index: 1000;
   display: block;
@@ -128,7 +125,7 @@ ul,figure{
 .prev{
   z-index: 50;
   display: block;
-}
+}*/
 
 .header{
 	padding: 3em 0;
@@ -137,19 +134,14 @@ ul,figure{
 	justify-content: center;
 	position: fixed;
 	z-index: 1001;
+	transition: .3s;
 	@media(--mobile){
-		padding: 2em 0;
+		padding: .5em 0;
 	}
 	&.scroll{
-		& .contenedor{
-			filter: brightness(0) invert(1);
-			@media(--tablet){
-				filter: inherit;
-				& .burger, & .logo{
-					filter: brightness(0) invert(1);
-				}
-			}
-		}
+		background: white;
+		padding: 1em 0;
+		border-bottom: 3px solid #00caf5;
 	}
 	&.activo{
 		& .contenedor{
@@ -186,7 +178,6 @@ ul,figure{
 			& .menu{
 				display: flex;
 				justify-content: space-between;
-				width: calc((100% - 15%));
 				box-sizing: border-box;
 				transition: 1s;
 				@media(--tablet){
@@ -213,22 +204,17 @@ ul,figure{
 						justify-content: flex-start;
 					}
 				}
-
-				&:nth-of-type(2){
-					width: calc((100% - 15%) - 4em);
-					margin-right: 3.5em;
-				}
 				& .item{
 					text-decoration: none;
 					font-family: var(--fuentePrincipal);
 					text-transform: uppercase;
 					color: var(--colorPrincipal);
 					font-size: 1.2rem;
+					margin-left: 2em;
 				}
 			}
 			& .logo{
 				width: 15%;
-				margin: 0 10em;
 				transition: 1.2s;
 				@media(--tablet){
 					margin: 0;
@@ -290,7 +276,7 @@ ul,figure{
 }
 .hero{
 	box-sizing: border-box;
-	background: white;
+	position: relative;
 	@media(--mobile){
 		height: 100vh;
 		overflow: hidden;
@@ -418,7 +404,7 @@ ul,figure{
 
 					animation-duration: 1.5s;	
 					-webkit-animation-duration: 1.5s;
-
+					animation-fill-mode: forwards;
 					animation-timing-function: ease-in-out;	
 					-webkit-animation-timing-function: ease-in-out;		
 
@@ -432,7 +418,7 @@ ul,figure{
 
 				animation-duration: 1.5s;	
 				-webkit-animation-duration: 1.5s;
-
+				animation-fill-mode: forwards;
 				animation-timing-function: ease-in-out;	
 				-webkit-animation-timing-function: ease-in-out;		
 
@@ -464,11 +450,18 @@ ul,figure{
 				width: 100% !important;
 			}
 		}
+		& .item:last-child{
+			transform: translateX(150%);
+		}
 		& .item:first-child{
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			grid-gap: 4em;
 			align-items: center;
+			& .contenedor{
+
+				transform: translateX(-150%);
+			}
 			@media(--mobile){
 				grid-template-columns: 1fr;
 			}
@@ -562,10 +555,10 @@ ul,figure{
 
 				animation-name: fadeIn;
 				-webkit-animation-name: fadeIn;	
-
+				
 				animation-duration: 1.5s;	
 				-webkit-animation-duration: 1.5s;
-
+				animation-fill-mode: forwards;
 				animation-timing-function: ease-in-out;	
 				-webkit-animation-timing-function: ease-in-out;		
 				animation-fill-mode: forwards;
@@ -586,6 +579,7 @@ ul,figure{
 		position: relative;
 		padding-top: 12em;
 		padding-right: 9em;
+		height: auto;
 		@media(--tablet){
 			grid-template-columns: 1fr 1fr;
 			grid-gap: 2em 8em;
@@ -598,50 +592,6 @@ ul,figure{
 			padding-top: 8em;
 			grid-template-columns: 1fr !important;
 		}
-		& .hover{
-			position: absolute;
-			z-index: -1;
-			right: 0;
-			opacity: .5;
-			top: 0;
-			width: 100%;
-			height: 100%;
-
-			& .hover-item{
-				transform: translateX(150%);
-				position: absolute;
-				top: 6em;
-				width: 800px;
-				height: 100vh;
-				right: 0;
-				& .contenedor{
-					position: relative;
-					&:after{
-						position: absolute;
-						width: 100%;
-						height: 100%;
-						content: '';
-						background: color(white a(70%));
-						z-index: 1000;
-						top: 0;
-						left: 0;
-					}
-					
-				}
-				&.activo{
-					animation-name: slideLeft;
-					-webkit-animation-name: slideLeft;	
-
-					animation-duration: 1.5s;	
-					-webkit-animation-duration: 1.5s;
-
-					animation-timing-function: ease-in-out;	
-					-webkit-animation-timing-function: ease-in-out;		
-					animation-fill-mode: forwards;
-					visibility: visible !important;	
-				}
-			}
-		}
 		& .item{
 			transform: scale(0);
 			opacity: 0.0;
@@ -649,15 +599,15 @@ ul,figure{
 		}
 		
 		& .item:nth-of-type(2){
-			margin-top: .5em;
+			margin-top: 2em;
 			animation-delay: .25s;
 		}
 		& .item:nth-of-type(3){
-			margin-top: 1em;
+			margin-top: 4em;
 			animation-delay: .5s;
 		}
 		& .item:nth-of-type(4){
-			margin-top: 1.5em;
+			margin-top: 6em;
 			animation-delay: .75s;
 		}
 		& .nombre-servicios{
@@ -740,6 +690,7 @@ ul,figure{
 			grid-template-rows: 1fr;
 			margin: 2em 3em 0 0;
 			height: 75%;
+			transform: translateY(-100%);
 			@media(--tablet){
 				grid-template-columns: 1fr 1fr;
 				grid-template-rows: 1fr 1fr;
@@ -801,7 +752,7 @@ ul,figure{
 
 	&.animacion{
 		& .grid{
-			& .item:first-child{
+			& > .item:first-child{
 				animation-name: stretchRight;
 				-webkit-animation-name: stretchRight;	
 
@@ -841,6 +792,9 @@ ul,figure{
 		padding-bottom: 0;
 		position: relative;
 		padding-top: 11em;
+		& > .item:first-child{
+			transform: scaleX(0.3);
+		}
 		@media(--tablet){
 			grid-template-columns: 1fr;
 		}
@@ -879,6 +833,7 @@ ul,figure{
 			padding: 0 2em 2em;
 			border-radius: 2em;
 			margin-right: 3em;
+			transform: scaleX(0.3);
 			@media(--mobile){
 				padding: 0;
 				margin-right: 0;
@@ -1124,7 +1079,6 @@ slideRight
 ==============================================
 */
 
-
 @keyframes slideRight {
 	0% {
 		transform: translateX(-150%);
@@ -1209,6 +1163,7 @@ slideRight
 		-webkit-transform: scaleX(1);
 	}		
 }
+
 @keyframes stretchRight {
 	0% {
 		transform: scaleX(0.3);

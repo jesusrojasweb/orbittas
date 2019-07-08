@@ -2,10 +2,10 @@ body{
 	font-family: 'Montserrat', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	margin: 0;
 	padding: 0;
-	overflow: hidden;
 	position: relative;
+	overflow-x: hidden;
 }
-.botones{
+/*.botones{
 	position: fixed;
 	padding: 1em 0;
 	box-sizing: border-box;
@@ -19,35 +19,44 @@ body{
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
-}
-.botones.scroll .boton.activo:after{
-	background: white;
-}
-.botones.scroll .boton:after{
-	background: #ffffff;
-	background: rgba(255, 255, 255, 0.5);
-}
-.botones .boton{
-	width: 100%;
-	height: 100%;
-	position: relative;
-}
-.botones .boton.activo:after{
-	background: #007993;
-}
-.botones .boton:after{
-	position: absolute;
-	content: '';
-	width: 10px;
-	height: 10px;
-	background: #007993;
-	background: rgba(0, 121, 147, 0.5);
-	box-sizing: border-box;
-	border-radius: 50%;
-	top: 16%;
-	right: 0;
-	transition: .3s;
-}
+	@media(--mobile){
+		right: 2em;
+	}
+	&.scroll{
+		& .boton{
+			&.activo{
+				&:after{
+					background: white;
+				}
+			}
+			&:after{
+				background: color(white a(50%));
+			}
+		}
+	}
+	& .boton{
+		width: 100%;
+		height: 100%;
+		position: relative;
+		&.activo{
+			&:after{
+				background: var(--colorPrincipal);
+			}
+		}
+		&:after{
+			position: absolute;
+			content: '';
+			width: 10px;
+			height: 10px;
+			background: color(var(--colorPrincipal) a(50%));
+			box-sizing: border-box;
+			border-radius: 50%;
+			top: 16%;
+			right: 0;
+			transition: .3s;
+		}
+	}
+}*/
 img{
 	width: 100%;
 }
@@ -55,7 +64,7 @@ ul,figure{
 	margin: 0;
 	padding: 0;
 }
-.slide{
+/*.slide{
 	position: absolute;
   height: 100vh;
   width: 100%;
@@ -63,9 +72,12 @@ ul,figure{
   top: 0;
   z-index: 5;
   display: none;
+  @media(--mobile){
+  	height: auto;
+  }
 
-}
-.active{
+}*/
+/*.active{
   animation: slideDown 1s forwards;
   z-index: 1000;
   display: block;
@@ -74,7 +86,7 @@ ul,figure{
 .prev{
   z-index: 50;
   display: block;
-}
+}*/
 .header{
 	padding: 3em 0;
 	width: 100%;
@@ -82,10 +94,12 @@ ul,figure{
 	justify-content: center;
 	position: fixed;
 	z-index: 1001;
+	transition: .3s;
 }
-.header.scroll .contenedor{
-	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
-	filter: brightness(0) invert(1);
+.header.scroll{
+	background: white;
+	padding: 1em 0;
+	border-bottom: 3px solid #00caf5;
 }
 .header.activo .contenedor .menu:nth-of-type(1){
 	top: 0 !important;
@@ -115,13 +129,8 @@ ul,figure{
 .header .contenedor .navbar .menu{
 	display: flex;
 	justify-content: space-between;
-	width: 85%;
 	box-sizing: border-box;
 	transition: 1s;
-}
-.header .contenedor .navbar .menu:nth-of-type(2){
-	width: calc(85% - 4em);
-	margin-right: 3.5em;
 }
 .header .contenedor .navbar .menu .item{
 	text-decoration: none;
@@ -130,10 +139,10 @@ ul,figure{
 	color: #007993;
 	font-size: 19.2px;
 	font-size: 1.2rem;
+	margin-left: 2em;
 }
 .header .contenedor .navbar .logo{
 	width: 15%;
-	margin: 0 10em;
 	transition: 1.2s;
 }
 .header .contenedor .burger{
@@ -184,7 +193,7 @@ ul,figure{
 }
 .hero{
 	box-sizing: border-box;
-	background: white;
+	position: relative;
 }
 .hero.animacion .copy .item:first-child{
 	animation-name: slideExpandUp;
@@ -291,6 +300,7 @@ ul,figure{
 	-webkit-animation-name: slideRight;
 	animation-duration: 1.5s;
 	-webkit-animation-duration: 1.5s;
+	animation-fill-mode: forwards;
 	animation-timing-function: ease-in-out;
 	-webkit-animation-timing-function: ease-in-out;
 	visibility: visible !important;
@@ -300,6 +310,7 @@ ul,figure{
 	-webkit-animation-name: slideLeft;
 	animation-duration: 1.5s;
 	-webkit-animation-duration: 1.5s;
+	animation-fill-mode: forwards;
 	animation-timing-function: ease-in-out;
 	-webkit-animation-timing-function: ease-in-out;
 	visibility: visible !important;
@@ -310,22 +321,26 @@ ul,figure{
 	height: 100vh;
 	color: white;
 	justify-content: space-evenly;
-	/*
-@media(--tablet){
+	/*@media(--tablet){
 			grid-template-columns: 1fr;
 			grid-template-rows: 1fr;
 			& .img{
 				width: 80%;
 				margin-left: 25%;
 			}
-		}
-*/
+		}*/
+}
+.about .grid .item:last-child{
+	transform: translateX(150%);
 }
 .about .grid .item:first-child{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 4em;
 	align-items: center;
+}
+.about .grid .item:first-child .contenedor{
+	transform: translateX(-150%);
 }
 .about .grid .item:first-child .img{
 	width: 60%;
@@ -337,8 +352,7 @@ ul,figure{
 	justify-self: flex-end;
 }
 .about .grid{
-	/*
-& .item:nth-of-type(2){
+	/*& .item:nth-of-type(2){
 			grid-row: 1 span;
 			& .img{
 				@media(--desktop){
@@ -346,8 +360,7 @@ ul,figure{
 					margin-left: 5em;
 				}
 			}
-		}
-*/
+		}*/
 }
 .about .grid .cualidades{
 	display: grid;
@@ -415,6 +428,7 @@ ul,figure{
 	-webkit-animation-name: fadeIn;
 	animation-duration: 1.5s;
 	-webkit-animation-duration: 1.5s;
+	animation-fill-mode: forwards;
 	animation-timing-function: ease-in-out;
 	-webkit-animation-timing-function: ease-in-out;
 	animation-fill-mode: forwards;
@@ -428,62 +442,22 @@ ul,figure{
 	position: relative;
 	padding-top: 12em;
 	padding-right: 9em;
-}
-.servicios .grid .hover{
-	position: absolute;
-	z-index: -1;
-	right: 0;
-	opacity: .5;
-	top: 0;
-	width: 100%;
-	height: 100%;
-}
-.servicios .grid .hover .hover-item{
-	transform: translateX(150%);
-	position: absolute;
-	top: 6em;
-	width: 800px;
-	height: 100vh;
-	right: 0;
-}
-.servicios .grid .hover .hover-item .contenedor{
-	position: relative;
-}
-.servicios .grid .hover .hover-item .contenedor:after{
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	content: '';
-	background: #ffffff;
-	background: rgba(255, 255, 255, 0.7);
-	z-index: 1000;
-	top: 0;
-	left: 0;
-}
-.servicios .grid .hover .hover-item.activo{
-	animation-name: slideLeft;
-	-webkit-animation-name: slideLeft;
-	animation-duration: 1.5s;
-	-webkit-animation-duration: 1.5s;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-timing-function: ease-in-out;
-	animation-fill-mode: forwards;
-	visibility: visible !important;
+	height: auto;
 }
 .servicios .grid .item{
 	transform: scale(0);
 	opacity: 0.0;
 }
 .servicios .grid .item:nth-of-type(2){
-	margin-top: .5em;
+	margin-top: 2em;
 	animation-delay: .25s;
 }
 .servicios .grid .item:nth-of-type(3){
-	margin-top: 1em;
+	margin-top: 4em;
 	animation-delay: .5s;
 }
 .servicios .grid .item:nth-of-type(4){
-	margin-top: 1.5em;
+	margin-top: 6em;
 	animation-delay: .75s;
 }
 .servicios .grid .nombre-servicios{
@@ -537,6 +511,7 @@ ul,figure{
 	grid-template-rows: 1fr;
 	margin: 2em 3em 0 0;
 	height: 75%;
+	transform: translateY(-100%);
 }
 .portafolio .grid .proyectos .proyecto{
 	border: 1px solid white;
@@ -598,7 +573,7 @@ ul,figure{
 	overflow: hidden;
 	background: white
 }
-.contacto.animacion .grid .item:first-child{
+.contacto.animacion .grid > .item:first-child{
 	animation-name: stretchRight;
 	-webkit-animation-name: stretchRight;
 	animation-duration: 1.5s;
@@ -632,6 +607,9 @@ ul,figure{
 	position: relative;
 	padding-top: 11em;
 }
+.contacto .grid > .item:first-child{
+	transform: scaleX(0.3);
+}
 .contacto .grid .animanos{
 	color: #009270;
 	font-size: 32px;
@@ -662,6 +640,7 @@ ul,figure{
 	padding: 0 2em 2em;
 	border-radius: 2em;
 	margin-right: 3em;
+	transform: scaleX(0.3);
 }
 .contacto .grid .formulario .title{
 	color: #007993;
@@ -892,17 +871,8 @@ slideRight
 	}							
 }
 @media (max-width: 500px){
-	body{
-		overflow-y: scroll;
-	}
-	.botones{
-		right: 2em;
-	}
-	.slide{
-		height: auto;
-	}
 	.header{
-		padding: 2em 0;
+		padding: .5em 0;
 	}
 	.margen{
 		height: auto;
@@ -973,13 +943,6 @@ slideRight
 	}
 }
 @media (max-width: 800px){
-	.header.scroll .contenedor{
-		filter: inherit;
-	}
-	.header.scroll .contenedor .burger, .header.scroll .contenedor .logo{
-		filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
-		filter: brightness(0) invert(1);
-	}
 	.header .contenedor{
 		width: calc(100% - 5em);
 	}
