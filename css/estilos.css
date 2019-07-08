@@ -490,6 +490,7 @@ ul,figure{
 	flex-direction: column;
 	align-items: flex-end;
 	justify-content: space-between;
+	height: auto;
 }
 .portafolio .grid .portafolio-servicios{
 	list-style: none;
@@ -513,6 +514,7 @@ ul,figure{
 	margin: 2em 3em 0 0;
 	height: 75%;
 	transform: translateY(-100%);
+	margin-bottom: 2em;
 }
 .portafolio .grid .proyectos .proyecto{
 	border: 1px solid white;
@@ -524,8 +526,13 @@ ul,figure{
 	position: relative;
 	color: white;
 	text-decoration: none;
+	height: 280px;
+	overflow: hidden;
 }
 .portafolio .grid .proyectos .proyecto .nombre{
+	z-index: 1000;
+}
+.portafolio .grid .proyectos .proyecto .imagen{
 	z-index: 1000;
 }
 .portafolio .grid .proyectos .proyecto .caracteristicas{
@@ -535,17 +542,23 @@ ul,figure{
 	content: '';
 	width: 0;
 	height: 0;
-	left: 50%;
-	background: #007993;
+	width: 14em;
+	height: 14em;
+	left: calc(50% - 7em);
+	top: calc(50% - 7em);
+	background: rgb(0, 97, 118);
 	border-radius: 50%;
 	position: absolute;
 	z-index: 1;
 	transition: .3s;
+	transform: scale(1);
 }
 .portafolio .grid .proyectos .proyecto:hover:before{
-	width: 12em;
-	height: 12em;
-	left: calc(50% - 6em);
+	width: 14em;
+	height: 14em;
+	left: calc(50% - 7em);
+	top: calc(50% - 7em);
+	transform: scale(2);
 }
 .portafolio .grid .btn{
 	color: white;

@@ -654,6 +654,8 @@ ul,figure{
 		flex-direction: column;
 		align-items: flex-end;
 		justify-content: space-between;
+		height: auto;
+
 		@media(--tablet){
 			& .portafolio-servicios{
 				display: flex;
@@ -692,6 +694,7 @@ ul,figure{
 			margin: 2em 3em 0 0;
 			height: 75%;
 			transform: translateY(-100%);
+			margin-bottom: 2em;
 			@media(--tablet){
 				grid-template-columns: 1fr 1fr;
 				grid-template-rows: 1fr 1fr;
@@ -710,7 +713,12 @@ ul,figure{
 				position: relative;
 				color: white;
 				text-decoration: none;
+				height: 280px;
+				overflow: hidden;
 				& .nombre{
+					z-index: 1000;
+				}
+				& .imagen{
 					z-index: 1000;
 				}
 				& .caracteristicas{
@@ -720,18 +728,24 @@ ul,figure{
 					content: '';
 					width: 0;
 					height: 0;
-					left: 50%;
-					background: var(--colorPrincipal);
+					width: 14em;
+					height: 14em;
+					left: calc((100% - 14em)/2);
+					top: calc((100% - 14em)/2);
+					background: color(var(--colorPrincipal) shade(20%));
 					border-radius: 50%;
 					position: absolute;
 					z-index: 1;
 					transition: .3s;
+					transform: scale(1);
 				}
 				&:hover{
 					&:before{
-						width: 12em;
-						height: 12em;
-						left: calc((100% - 12em)/2);
+						width: 14em;
+						height: 14em;
+						left: calc((100% - 14em)/2);
+						top: calc((100% - 14em)/2);
+						transform: scale(2);
 					}
 				}
 			}
