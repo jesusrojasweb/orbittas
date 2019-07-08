@@ -229,7 +229,7 @@ ul,figure{
 	height: 100%;
 	top: 0;
 	left: 0;
-	z-index: -1;
+	z-index: 0;
 }
 .hero .copy{
 	display: grid;
@@ -244,6 +244,7 @@ ul,figure{
 }
 .hero .copy .item:last-child{
 	padding-top: 1.5em;
+	z-index: 1000;
 }
 .hero .copy .item .title{
 	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
@@ -251,7 +252,8 @@ ul,figure{
 	font-size: 8rem;
 	color: #007993;
 	color: rgba(0, 121, 147, 0.78039);
-	margin: 0
+	margin: 0;
+	z-index: 1000
 }
 .hero .copy .item .title b{
 	color: rgb(0, 121, 147);
@@ -271,9 +273,11 @@ ul,figure{
 	font-size: 24px;
 	font-size: 1.5rem;
 	margin: -2em 0 0;
+	z-index: 1000;
 }
 .hero .copy .item .ilustracion{
 	width: 90%;
+	z-index: 1000;
 }
 .hero .copy .item .btn{
 	color: white;
