@@ -3,7 +3,15 @@ body{
 	margin: 0;
 	padding: 0;
 	position: relative;
-	overflow-x: hidden;
+	overflow-x: hidden
+}
+body::-webkit-scrollbar{
+	width: 10px;
+	background: white;
+}
+body::-webkit-scrollbar-thumb{
+	background: rgb(0, 97, 118);
+	border-radius: 5px;
 }
 /*.botones{
 	position: fixed;
@@ -124,13 +132,13 @@ ul,figure{
 	width: 100%;
 	display: flex;
 	align-items: center;
-	justify-content: space-between;
+	justify-content: space-between
 }
 .header .contenedor .navbar .menu{
 	display: flex;
 	justify-content: space-between;
 	box-sizing: border-box;
-	transition: 1s;
+	transition: 1s
 }
 .header .contenedor .navbar .menu .item{
 	text-decoration: none;
@@ -243,7 +251,7 @@ ul,figure{
 	font-size: 8rem;
 	color: #007993;
 	color: rgba(0, 121, 147, 0.78039);
-	margin: 0;
+	margin: 0
 }
 .hero .copy .item .title b{
 	color: rgb(0, 121, 147);
@@ -320,7 +328,7 @@ ul,figure{
 	flex-direction: column;
 	height: 100vh;
 	color: white;
-	justify-content: space-evenly;
+	justify-content: space-evenly
 	/*@media(--tablet){
 			grid-template-columns: 1fr;
 			grid-template-rows: 1fr;
@@ -337,7 +345,7 @@ ul,figure{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 4em;
-	align-items: center;
+	align-items: center
 }
 .about .grid .item:first-child .contenedor{
 	transform: translateX(-150%);
@@ -369,7 +377,7 @@ ul,figure{
 }
 .about .grid .cualidades .cualidad{
 	display: flex;
-	align-items: center;
+	align-items: center
 }
 .about .grid .cualidades .cualidad:nth-of-type(2) .icono{
 	width: 8%;
@@ -390,7 +398,7 @@ ul,figure{
 	border-radius: 2em;
 	font-size: 16px;
 	font-size: 1rem;
-	transition: .3s;
+	transition: .3s
 }
 .about .grid .btn:hover{
 	box-shadow: 0 0 50px #00b5ff;
@@ -442,7 +450,7 @@ ul,figure{
 	position: relative;
 	padding-top: 12em;
 	padding-right: 9em;
-	height: auto;
+	height: auto
 }
 .servicios .grid .item{
 	transform: scale(0);
@@ -490,9 +498,10 @@ ul,figure{
 	flex-direction: column;
 	align-items: flex-end;
 	justify-content: space-between;
+	height: auto
 }
 .portafolio .grid .portafolio-servicios{
-	list-style: none;
+	list-style: none
 }
 .portafolio .grid .portafolio-servicios .servicio{
 	font-size: 22.4px;
@@ -513,6 +522,7 @@ ul,figure{
 	margin: 2em 3em 0 0;
 	height: 75%;
 	transform: translateY(-100%);
+	margin-bottom: 2em;
 }
 .portafolio .grid .proyectos .proyecto{
 	border: 1px solid white;
@@ -524,8 +534,13 @@ ul,figure{
 	position: relative;
 	color: white;
 	text-decoration: none;
+	height: 280px;
+	overflow: hidden
 }
 .portafolio .grid .proyectos .proyecto .nombre{
+	z-index: 1000;
+}
+.portafolio .grid .proyectos .proyecto .imagen{
 	z-index: 1000;
 }
 .portafolio .grid .proyectos .proyecto .caracteristicas{
@@ -535,17 +550,23 @@ ul,figure{
 	content: '';
 	width: 0;
 	height: 0;
-	left: 50%;
-	background: #007993;
+	width: 14em;
+	height: 14em;
+	left: calc(50% - 7em);
+	top: calc(50% - 7em);
+	background: rgb(0, 97, 118);
 	border-radius: 50%;
 	position: absolute;
 	z-index: 1;
 	transition: .3s;
+	transform: scale(1);
 }
 .portafolio .grid .proyectos .proyecto:hover:before{
-	width: 12em;
-	height: 12em;
-	left: calc(50% - 6em);
+	width: 14em;
+	height: 14em;
+	left: calc(50% - 7em);
+	top: calc(50% - 7em);
+	transform: scale(2);
 }
 .portafolio .grid .btn{
 	color: white;
@@ -557,13 +578,13 @@ ul,figure{
 	border-radius: 2em;
 	font-size: 16px;
 	font-size: 1rem;
-	transition: .3s;
+	transition: .3s
 }
 .portafolio .grid .btn:hover{
 	box-shadow: 0 0 50px #00b5ff;
 }
 .portafolio .grid .btn{
-	margin-right: 3em;
+	margin-right: 3em
 }
 .portafolio .grid .btn:hover{
 	border-color: #00caf5;
@@ -603,21 +624,22 @@ ul,figure{
 	padding-top: 11em;
 }
 .contacto .grid > .item:first-child{
-	transform: scaleX(0.3);
 	transform-origin: 0% 0%;
 	-ms-transform-origin: 0% 0%;
 	-webkit-transform-origin: 0% 0%;
+	transform: scaleX(0.3);
 }
 .contacto .grid .animanos{
 	color: #009270;
-	font-size: 32px;
-	font-size: 2rem;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-size: 48px;
+	font-size: 3rem;
 }
 .contacto .grid .informacion{
-	list-style: none;
+	list-style: none
 }
 .contacto .grid .informacion li{
-	margin-bottom: 1em;
+	margin-bottom: 1em
 }
 .contacto .grid .informacion li a{
 	color: #009270;
@@ -638,10 +660,10 @@ ul,figure{
 	padding: 0 2em 2em;
 	border-radius: 2em;
 	margin-right: 3em;
-	transform: scaleX(0.3);
 	transform-origin: 100% 0%;
 	-ms-transform-origin: 100% 0%;
 	-webkit-transform-origin: 100% 0%;
+	transform: scaleX(0.3)
 }
 .contacto .grid .formulario .title{
 	color: #007993;
@@ -656,7 +678,7 @@ ul,figure{
 	align-items: center;
 	grid-gap: 0 1em;
 	margin: 0;
-	padding: 0;
+	padding: 0
 }
 .contacto .grid .formulario .contact input, .contacto .grid .formulario .contact textarea{
 	background: none;
@@ -666,7 +688,7 @@ ul,figure{
 	padding: 1em;
 	transition: .3s;
 	color: #007993;
-	width: 90%;
+	width: 90%
 }
 .contacto .grid .formulario .contact input::placeholder,.contacto .grid .formulario .contact textarea::placeholder{
 	color: #007993;
@@ -692,7 +714,7 @@ ul,figure{
 	border-radius: 2em;
 	font-size: 16px;
 	font-size: 1rem;
-	transition: .3s;
+	transition: .3s
 }
 .contacto .grid .formulario .contact .btn:hover{
 	box-shadow: 0 0 50px #00b5ff;
@@ -707,7 +729,7 @@ ul,figure{
 	margin-top: 1em;
 	background: none;
 	font-size: 16px;
-	font-size: 1rem;
+	font-size: 1rem
 }
 .contacto .grid .formulario .contact .btn:hover{
 	border-color: #00caf5;
@@ -724,15 +746,15 @@ ul,figure{
 	width: 100%;
 	bottom: 0;
 	padding: 1em;
-	box-sizing: border-box;
+	box-sizing: border-box
 }
 .contacto .grid .footer .menu{
 	display: flex;
 	justify-content: center;
-	list-style: none;
+	list-style: none
 }
 .contacto .grid .footer .menu .item{
-	margin-right: 2em;
+	margin-right: 2em
 }
 .contacto .grid .footer .menu .item a{
 	color: white;
@@ -873,79 +895,69 @@ slideRight
 }
 @media (max-width: 500px){
 	.header{
-		padding: .5em 0;
+		padding: .5em 0
 	}
 	.margen{
 		height: auto;
-		padding: 8em 4em 6em 2em;
+		padding: 8em 4em 6em 2em
 	}
 	.hero{
 		height: 100vh;
-		overflow: hidden;
+		overflow: hidden
 	}
 	.hero .copy{
-		padding: 0 2em;
+		padding: 0 2em
 	}
 	.hero .copy .item:first-child{
-		height: 50% !important;
+		height: 50% !important
 	}
 	.hero .copy .item .title{
-		font-size: 4rem;
+		font-size: 4rem
 	}
 	.about{
-		height: auto;
+		height: auto
 	}
 	.about .grid{
-		height: auto;
+		height: auto
 	}
 	.about .grid .img{
 		margin: 0 !important;
 		width: 100% !important;
 	}
 	.about .grid .item:first-child{
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr
 	}
 	.servicios{
-		height: auto;
+		height: auto
 	}
 	.servicios .grid{
 		padding-right: 4em;
 		padding-top: 8em;
-		grid-template-columns: 1fr !important;
+		grid-template-columns: 1fr !important
 	}
 	.portafolio{
-		height: auto;
+		height: auto
 	}
 	.portafolio .grid .portafolio-servicios{
 		flex-direction: column;
 	}
 	.portafolio .grid .proyectos{
 		grid-template-columns: 1fr !important;
-		margin: 0;
+		margin: 0
 	}
 	.contacto{
-		height: auto;
+		height: auto
 	}
-	.contacto .grid{
-		padding-top: 8em;
+	.contacto .grid .item{
+		width: 80%;
 	}
 	.contacto .grid .sociales{
-		width: 100%;
-	}
-	.contacto .grid .formulario{
-		padding: 0;
-		margin-right: 0;
-	}
-	.contacto .grid .formulario .contact{
-		margin-bottom: 10em;
-	}
-	.contacto .grid .footer .menu{
-		display: none;
+		width: 100%
 	}
 }
 @media (max-width: 800px){
 	.header .contenedor{
-		width: calc(100% - 5em);
+		width: calc(100% - 5em)
 	}
 	.header .contenedor .navbar .menu{
 		position: fixed;
@@ -957,7 +969,7 @@ slideRight
 		background: rgba(0, 121, 147, 0.5);
 		flex-direction: column;
 		justify-content: flex-end;
-		align-items: center;
+		align-items: center
 	}
 	.header .contenedor .navbar .menu .item{
 		color: white;
@@ -973,14 +985,14 @@ slideRight
 		justify-content: flex-start;
 	}
 	.header .contenedor .navbar .logo{
-		margin: 0;
+		margin: 0
 	}
 	.header .contenedor .burger{
-		display: block;
+		display: block
 	}
 	.hero .copy{
 		align-items: center;
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr
 	}
 	.hero .copy .item:last-child{
 		position: absolute;
@@ -991,50 +1003,50 @@ slideRight
 		top: 20%;
 	}
 	.hero .copy .item:first-child{
-		height: 70%;
+		height: 70%
 	}
 	.about .grid .item:first-child .img{
-		width: 90%;
+		width: 90%
 	}
 	.about .grid .cualidades{
 		margin-top: 2em;
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr
 	}
 	.about .grid .cualidades .cualidad .icono{
-		width: 20%;
+		width: 20%
 	}
 	.servicios .grid{
 		grid-template-columns: 1fr 1fr;
-		grid-gap: 2em 8em;
+		grid-gap: 2em 8em
 	}
 	.servicios .grid .item{
 		margin-top: 0 !important;
 	}
 	.portafolio{
-		padding: .5em 0;
+		padding: .5em 0
 	}
 	.portafolio .grid .portafolio-servicios{
 		display: flex;
-		padding: 0 2em;
+		padding: 0 2em
 	}
 	.portafolio .grid .portafolio-servicios span{
 		display: none;
 	}
 	.portafolio .grid .proyectos{
 		grid-template-columns: 1fr 1fr;
-		grid-template-rows: 1fr 1fr;
+		grid-template-rows: 1fr 1fr
 	}
 	.contacto .grid{
-		grid-template-columns: 1fr;
+		grid-template-columns: 1fr
 	}
 }
 @media (min-width: 801px){
 	.about .grid .cualidades{
-		margin-top: 2em;
+		margin-top: 2em
 	}
 }
 @media (max-width: 360px){
 	.portafolio .grid .portafolio-servicios .servicio{
-		font-size: 1.1rem;
+		font-size: 1.1rem
 	}
 }
