@@ -411,11 +411,13 @@ ul,figure{
 				width: 90%;
 				z-index: 1000;
 			}
+			& .container{
+				z-index: 1000;
+			}
 			& .btn{
 				@apply --btn;
 				@apply --gradient;
 				border: none;
-
 
 			}
 		}
