@@ -107,7 +107,10 @@ ul,figure{
 .header.scroll{
 	background: white;
 	padding: 1em 0;
-	border-bottom: 3px solid #00caf5;
+}
+.header.fondo .contenedor{
+	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+	filter: brightness(0) invert(1);
 }
 .header.activo .contenedor .menu:nth-of-type(1){
 	top: 0 !important;
@@ -147,7 +150,20 @@ ul,figure{
 	color: #007993;
 	font-size: 19.2px;
 	font-size: 1.2rem;
-	margin-left: 2em;
+	margin-left: 2em
+}
+.header .contenedor .navbar .menu .item.activo{
+	position: relative
+}
+.header .contenedor .navbar .menu .item.activo:after{
+	position: absolute;
+	content: '';
+	height: 2px;
+	width: 100%;
+	bottom: -5px;
+	left: 0;
+	background: #007993;
+	transition: .3s;
 }
 .header .contenedor .navbar .logo{
 	width: 15%;
@@ -202,6 +218,7 @@ ul,figure{
 .hero{
 	box-sizing: border-box;
 	position: relative;
+	height: 100vh;
 }
 .hero.animacion .copy .item:first-child{
 	animation-name: slideExpandUp;
@@ -527,6 +544,7 @@ ul,figure{
 	height: 75%;
 	transform: translateY(-100%);
 	margin-bottom: 2em;
+	opacity: 0;
 }
 .portafolio .grid .proyectos .proyecto{
 	border: 1px solid white;
@@ -597,27 +615,7 @@ ul,figure{
 }
 .contacto{
 	overflow: hidden;
-	background: white
-}
-.contacto.animacion .grid > .item:first-child{
-	animation-name: stretchRight;
-	-webkit-animation-name: stretchRight;
-	animation-duration: 1.5s;
-	-webkit-animation-duration: 1.5s;
-	animation-delay: .3s;
-	animation-timing-function: ease-out;
-	-webkit-animation-timing-function: ease-out;
-	animation-fill-mode: forwards;
-}
-.contacto.animacion .grid .formulario{
-	animation-name: stretchLeft;
-	-webkit-animation-name: stretchLeft;
-	animation-duration: 1.5s;
-	-webkit-animation-duration: 1.5s;
-	animation-delay: .3s;
-	animation-timing-function: ease-out;
-	-webkit-animation-timing-function: ease-out;
-	animation-fill-mode: forwards;
+	background: white;
 }
 .contacto .grid{
 	display: grid;
@@ -626,12 +624,6 @@ ul,figure{
 	padding-bottom: 0;
 	position: relative;
 	padding-top: 11em;
-}
-.contacto .grid > .item:first-child{
-	transform-origin: 0% 0%;
-	-ms-transform-origin: 0% 0%;
-	-webkit-transform-origin: 0% 0%;
-	transform: scaleX(0.3);
 }
 .contacto .grid .animanos{
 	color: #009270;
@@ -663,11 +655,7 @@ ul,figure{
 	box-sizing: border-box;
 	padding: 0 2em 2em;
 	border-radius: 2em;
-	margin-right: 3em;
-	transform-origin: 100% 0%;
-	-ms-transform-origin: 100% 0%;
-	-webkit-transform-origin: 100% 0%;
-	transform: scaleX(0.3)
+	margin-right: 3em
 }
 .contacto .grid .formulario .title{
 	color: #007993;
@@ -875,9 +863,11 @@ slideRight
 }
 @keyframes Down {
 	0% {
+		opacity: 0;
 		transform: translateY(-100%);
 	}			
 	100% {
+		opacity: 1;
 		transform: translateY(0%);
 	}		
 }

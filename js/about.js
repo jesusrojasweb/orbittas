@@ -48,16 +48,26 @@ for(let i = 0; i < padre.length; i++){
     for(let i = 0; i < botonesList[0].children.length; i++){
       botonesList[0].children[i].classList.remove('activo')
     }
-    if(botonClick == 0 || botonClick == 2){
+    if(botonClick == 0){
+      $header.classList.add('fondo')
+      $header.classList.remove('scroll')
+      $botones.classList.add('scroll')
+    }
+    if(botonClick == 1){
+      $header.classList.remove('fondo')
+      $header.classList.remove('scroll')
+    }
+    if(botonClick == 2){
+      $header.classList.remove('fondo')
       $header.classList.add('scroll')
       $botones.classList.add('scroll')
+    }
+    if(botonClick == 0 || botonClick == 1){
+      document.body.style.overflowY = "hidden"        
     }
     if(botonClick== 1){
      $header.classList.remove('scroll')
      $botones.classList.remove('scroll')
-    }
-    if(botonClick == 0 || botonClick == 1){
-      document.body.style.overflowY = "hidden"        
     }
     window.scrollBy(0, -window.innerHeight);
     padre[botonClick].classList.add('active')
@@ -148,7 +158,15 @@ function slide(direccion, movil) {
       }
 
     }
-    if(next == 0 || next == 2){
+    if(next == 0){
+      $header.classList.add('fondo')
+      $botones.classList.add('scroll')
+    }
+    if(next == 1){
+      $header.classList.remove('fondo')
+      $header.classList.remove('scroll')
+    }
+    if(next == 2){
       $header.classList.add('scroll')
       $botones.classList.add('scroll')
     }
