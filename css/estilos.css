@@ -296,6 +296,9 @@ ul,figure{
 	width: 90%;
 	z-index: 1000;
 }
+.hero .copy .item .container{
+	z-index: 1000;
+}
 .hero .copy .item .btn{
 	color: white;
 	border: 2px solid white;
