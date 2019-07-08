@@ -107,7 +107,6 @@ ul,figure{
 .header.scroll{
 	background: white;
 	padding: 1em 0;
-	border-bottom: 3px solid #00caf5;
 }
 .header.activo .contenedor .menu:nth-of-type(1){
 	top: 0 !important;
@@ -202,6 +201,7 @@ ul,figure{
 .hero{
 	box-sizing: border-box;
 	position: relative;
+	height: 100vh;
 }
 .hero.animacion .copy .item:first-child{
 	animation-name: slideExpandUp;
@@ -527,6 +527,7 @@ ul,figure{
 	height: 75%;
 	transform: translateY(-100%);
 	margin-bottom: 2em;
+	opacity: 0;
 }
 .portafolio .grid .proyectos .proyecto{
 	border: 1px solid white;
@@ -875,9 +876,11 @@ slideRight
 }
 @keyframes Down {
 	0% {
+		opacity: 0;
 		transform: translateY(-100%);
 	}			
 	100% {
+		opacity: 1;
 		transform: translateY(0%);
 	}		
 }

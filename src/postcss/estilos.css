@@ -149,7 +149,6 @@ ul,figure{
 	&.scroll{
 		background: white;
 		padding: 1em 0;
-		border-bottom: 3px solid #00caf5;
 	}
 	&.activo{
 		& .contenedor{
@@ -285,6 +284,7 @@ ul,figure{
 .hero{
 	box-sizing: border-box;
 	position: relative;
+	height: 100vh;
 	@media(--mobile){
 		height: 100vh;
 		overflow: hidden;
@@ -708,6 +708,7 @@ ul,figure{
 			height: 75%;
 			transform: translateY(-100%);
 			margin-bottom: 2em;
+			opacity: 0;
 			@media(--tablet){
 				grid-template-columns: 1fr 1fr;
 				grid-template-rows: 1fr 1fr;
@@ -1153,18 +1154,22 @@ slideRight
 }
 @keyframes Down {
 	0% {
+		opacity: 0;
 		transform: translateY(-100%);
 	}			
 	100% {
+		opacity: 1;
 		transform: translateY(0%);
 	}		
 }
 
 @-webkit-keyframes Down {
 	0% {
+		opacity: 0;
 		-webkit-transform: translateY(-100%);
 	}		
 	100% {
+		opacity: 1;
 		-webkit-transform: translateY(0%);
 	}	
 }
