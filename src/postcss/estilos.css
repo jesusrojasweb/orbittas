@@ -150,6 +150,13 @@ ul,figure{
 		background: white;
 		padding: 1em 0;
 	}
+	
+	&.fondo{
+		& .contenedor{
+			filter: brightness(0) invert(1);
+		}
+	}
+	
 	&.activo{
 		& .contenedor{
 			& .menu{
@@ -218,6 +225,19 @@ ul,figure{
 					color: var(--colorPrincipal);
 					font-size: 1.2rem;
 					margin-left: 2em;
+					&.activo{
+						position: relative;
+						&:after{
+							position: absolute;
+							content: '';
+							height: 2px;
+							width: 100%;
+							bottom: -5px;
+							left: 0;
+							background: var(--colorPrincipal);
+							transition: .3s;
+						}
+					}
 				}
 			}
 			& .logo{
@@ -778,35 +798,6 @@ ul,figure{
 .contacto{
 	overflow: hidden;
 	background: white;
-
-	&.animacion{
-		& .grid{
-			& > .item:first-child{
-				animation-name: stretchRight;
-				-webkit-animation-name: stretchRight;	
-
-				animation-duration: 1.5s;	
-				-webkit-animation-duration: 1.5s;
-				animation-delay: .3s;
-				animation-timing-function: ease-out;	
-				-webkit-animation-timing-function: ease-out;	
-				animation-fill-mode: forwards;
-				
-			}
-			& .formulario{
-				animation-name: stretchLeft;
-				-webkit-animation-name: stretchLeft;	
-
-				animation-duration: 1.5s;	
-				-webkit-animation-duration: 1.5s;
-				animation-delay: .3s;
-				animation-timing-function: ease-out;	
-				-webkit-animation-timing-function: ease-out;	
-				animation-fill-mode: forwards;
-				
-			}
-		}
-	}
 	@media(--mobile){
 		height: auto;
 	}
@@ -824,12 +815,6 @@ ul,figure{
 				& .item{
 					width: 80%;
 				}
-			}
-			& > .item:first-child{
-				transform-origin: 0% 0%;
-				-ms-transform-origin: 0% 0%;
-				-webkit-transform-origin: 0% 0%; 
-				transform: scaleX(0.3);
 			}
 			& .animanos{
 				color: var(--colorSecundario);
@@ -864,10 +849,6 @@ ul,figure{
 				padding: 0 2em 2em;
 				border-radius: 2em;
 				margin-right: 3em;
-				transform-origin: 100% 0%;
-				-ms-transform-origin: 100% 0%;
-				-webkit-transform-origin: 100% 0%;
-				transform: scaleX(0.3);
 				& .title{
 					color: var(--colorPrincipal);
 					font-size: 1.2rem;
