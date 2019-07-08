@@ -325,7 +325,7 @@ ul,figure{
 		height: 100%;
 		top: 0;
 		left: 0;
-		z-index: -1;
+		z-index: 0;
 	}
 	& .copy{
 		display: grid;
@@ -361,12 +361,14 @@ ul,figure{
 			}
 			&:last-child{
 				padding-top: 1.5em;
+				z-index: 1000;
 			}
 			& .title{
 				font-family: var(--fuentePrincipal);
 				font-size: 8rem;
 				color: #007993c7;
 				margin: 0;
+				z-index: 1000;
 				& b{
 					@apply --gradient-inter;
 				}
@@ -383,14 +385,17 @@ ul,figure{
 				font-weight: 600;
 				font-size: 1.5rem;
 				margin: -2em 0 0;
+				z-index: 1000;
 			}
 			& .ilustracion{
 				width: 90%;
+				z-index: 1000;
 			}
 			& .btn{
 				@apply --btn;
 				@apply --gradient;
 				border: none;
+
 
 			}
 		}
