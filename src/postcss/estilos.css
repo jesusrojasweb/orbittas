@@ -773,15 +773,11 @@ ul,figure{
 					position: absolute;
 					z-index: 1;
 					transition: .3s;
-					transform: scale(1);
+					transform: scale(0);
 				}
 				&:hover{
 					&:before{
-						width: 14em;
-						height: 14em;
-						left: calc((100% - 14em)/2);
-						top: calc((100% - 14em)/2);
-						transform: scale(2);
+						transform: scale(1);
 					}
 				}
 			}
