@@ -541,11 +541,11 @@ ul,figure{
 	height: 250px;
 	overflow: hidden;
 	transition: .3s;
-	background: rgb(0, 97, 118)
+	background: #ffffff;
+	background: rgba(255, 255, 255, 0.1)
 }
 .portafolio .grid .proyectos .proyecto:hover{
-	background: #ffffff;
-	background: rgba(255, 255, 255, 0.1);
+	background: rgb(0, 97, 118);
 }
 .portafolio .grid .proyectos .proyecto .nombre{
 	z-index: 1000;
