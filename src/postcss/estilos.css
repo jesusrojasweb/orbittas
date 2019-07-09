@@ -817,6 +817,7 @@ ul,figure{
 				& .title{
 					color: var(--colorPrincipal);
 					font-size: 1.2rem;
+					font-family: var(--fuentePrincipal);
 				}
 				& .contact{
 					width: 100%;
