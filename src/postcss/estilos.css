@@ -791,7 +791,7 @@ ul,figure{
 				}
 			}
 			& .animanos{
-				color: var(--colorSecundario);
+				color: var(--colorPrincipal);
 				font-family: var(--fuentePrincipal);
 				font-size: 3rem;
 			}

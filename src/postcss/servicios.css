@@ -381,7 +381,7 @@ ul,figure{
 				margin-right: 2em;
 			}
 			& .nombre{
-				color: black;
+				color: var(--colorPrincipal);
 				font-size: 2rem;
 				font-family: var(--fuentePrincipal);
 			}
