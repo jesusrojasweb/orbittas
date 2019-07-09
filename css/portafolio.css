@@ -207,6 +207,7 @@ ul,figure{
 	align-self: start;
 	overflow: hidden scroll;
 	height: 100%;
+	grid-gap: 2em;
 	padding-right: 1em
 }
 .portafolio .grid .grilla::-webkit-scrollbar{
@@ -218,7 +219,6 @@ ul,figure{
 	border-radius: 5px;
 }
 .portafolio .grid .grilla .proyecto{
-	border: 2px solid #00caf5;
 	text-align: center;
 	padding: 2em;
 	display: flex;
@@ -227,7 +227,14 @@ ul,figure{
 	position: relative;
 	color: white;
 	text-decoration: none;
-	height: 225px
+	height: 250px;
+	overflow: hidden;
+	transition: .3s;
+	background: #ffffff;
+	background: rgba(255, 255, 255, 0.1)
+}
+.portafolio .grid .grilla .proyecto:hover{
+	background: rgb(0, 97, 118);
 }
 .portafolio .grid .grilla .proyecto .nombre{
 	z-index: 1000;
@@ -238,26 +245,6 @@ ul,figure{
 }
 .portafolio .grid .grilla .proyecto .caracteristicas{
 	z-index: 1000;
-}
-.portafolio .grid .grilla .proyecto:before{
-	content: '';
-	width: 0;
-	height: 0;
-	left: 50%;
-	background: rgb(0, 97, 118);
-	border-radius: 50%;
-	position: absolute;
-	z-index: 1;
-	transition: .3s;
-}
-.portafolio .grid .grilla .proyecto:hover:before{
-	width: 12em;
-	height: 12em;
-	left: calc(50% - 6em);
-}
-.portafolio .grid .grilla .proyecto:nth-of-type(2), .portafolio .grid .grilla .proyecto:nth-of-type(5){
-	border-right: none;
-	border-left: 0;
 }
 @media (max-width: 500px){
 	.header{
