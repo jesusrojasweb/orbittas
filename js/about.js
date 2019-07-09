@@ -39,6 +39,7 @@ for(let i = 0; i < padre.length; i++){
   $boton.addEventListener('click', function (e) {
     e.preventDefault()
     let button = e.toElement
+    console.log(e)
     let botonClick = button.attributes[2].value
     console.log(botonesList)
     for(let i = 0; i < padre.length; i++){
