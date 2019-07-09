@@ -82,6 +82,12 @@ ul,figure{
 	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
 	filter: brightness(0) invert(1);
 }
+.header.scroll.fondo{
+	background: #007993
+}
+.header.scroll.fondo .contendor{
+	filter: none;
+}
 .header.activo .contenedor .menu:nth-of-type(1){
 	top: 0 !important;
 }
