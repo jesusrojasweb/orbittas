@@ -223,6 +223,7 @@ ul,figure{
 	color: #007993;
 	font-size: 19.2px;
 	font-size: 1.2rem;
+	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 }
 .contacto .grid .formulario .contact{
 	width: 100%;
