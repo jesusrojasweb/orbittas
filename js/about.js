@@ -56,10 +56,12 @@ for(let i = 0; i < padre.length; i++){
     if(botonClick == 1){
       $header.classList.remove('fondo')
       $header.classList.remove('scroll')
+      $header.classList.remove('fondo')
     }
     if(botonClick == 2){
       $header.classList.remove('fondo')
       $header.classList.add('scroll')
+      $header.classList.add('fondo')
       $botones.classList.add('scroll')
       document.body.style.overflowY = "scroll"
     }
@@ -171,6 +173,7 @@ function slide(direccion, movil) {
     if(next == 2){
       $header.classList.add('scroll')
       $botones.classList.add('scroll')
+      $header.classList.add('fondo')
     }
     if(next == 0 || next == 1){
       document.body.style.overflowY = "hidden"        

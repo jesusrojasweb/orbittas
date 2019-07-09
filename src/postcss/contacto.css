@@ -125,11 +125,19 @@ ul,figure{
 		background: white;
 		padding: 1em 0;
 	}
+	
 	&.fondo{
 		& .contenedor{
 			filter: brightness(0) invert(1);
 		}
 	}
+	&.scroll.fondo{
+		background: var(--colorPrincipal);
+		& .contendor{
+			filter: none;
+		}
+	}
+	
 	&.activo{
 		& .contenedor{
 			& .menu{
@@ -248,7 +256,6 @@ ul,figure{
 		}
 	}
 }
-
 .margen{
 	padding: 10em 6em 4em;
 	height: 100vh;

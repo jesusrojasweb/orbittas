@@ -11,15 +11,20 @@ const $botonWeb = document.querySelector('.heroWeb')
 const $botonMovil = document.querySelector('.heroMovil')
 
 window.addEventListener('scroll', function(e){
-  let heroTop = $hero.getBoundingClientRect().top
+  let heroTop = $hero.getBoundingClientRect().top;
+  let serviciosTop = $proyectos.getBoundingClientRect().top
 
   if(heroTop < -100){
     $header.classList.add('scroll')
-    $header.classList.remove('fondo')
+    $header.classList.add('fondo')
   }
   if(heroTop > -100){
    $header.classList.remove('scroll')
    $header.classList.add('fondo')
+  }
+  if(serviciosTop <= 100){
+   $header.classList.add('scroll')
+   $header.classList.remove('fondo')
   }
 })
 

@@ -154,6 +154,12 @@ ul,figure{
 			filter: brightness(0) invert(1);
 		}
 	}
+	&.scroll.fondo{
+		background: var(--colorPrincipal);
+		& .contendor{
+			filter: none;
+		}
+	}
 	
 	&.activo{
 		& .contenedor{

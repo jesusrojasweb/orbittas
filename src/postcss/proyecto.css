@@ -118,7 +118,7 @@ ul,figure{
 	display: flex;
 	justify-content: center;
 	position: fixed;
-	z-index: 1000;
+	z-index: 1001;
 	transition: .3s;
 	@media(--mobile){
 		padding: .5em 0;
@@ -127,11 +127,19 @@ ul,figure{
 		background: white;
 		padding: 1em 0;
 	}
+	
 	&.fondo{
 		& .contenedor{
 			filter: brightness(0) invert(1);
 		}
 	}
+	&.scroll.fondo{
+		background: var(--colorPrincipal);
+		& .contendor{
+			filter: none;
+		}
+	}
+	
 	&.activo{
 		& .contenedor{
 			& .menu{

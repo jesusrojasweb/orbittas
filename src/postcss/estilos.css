@@ -156,6 +156,12 @@ ul,figure{
 			filter: brightness(0) invert(1);
 		}
 	}
+	&.scroll.fondo{
+		background: var(--colorPrincipal);
+		& .contendor{
+			filter: none;
+		}
+	}
 	
 	&.activo{
 		& .contenedor{
@@ -432,24 +438,9 @@ ul,figure{
 	}
 	&.animacion{
 		& .grid{
-			& .item:first-child{
-				& .contenedor{
-					animation-name: slideRight;
-					-webkit-animation-name: slideRight;	
-
-					animation-duration: 1.5s;	
-					-webkit-animation-duration: 1.5s;
-					animation-fill-mode: forwards;
-					animation-timing-function: ease-in-out;	
-					-webkit-animation-timing-function: ease-in-out;		
-
-					visibility: visible !important;	
-					
-				}
-			}
-			& .item:last-child{
-				animation-name: slideLeft;
-				-webkit-animation-name: slideLeft;	
+			& .item:first-child .contenedor,& .item:last-child{
+				animation-name: slideRight;
+				-webkit-animation-name: slideRight;	
 
 				animation-duration: 1.5s;	
 				-webkit-animation-duration: 1.5s;
