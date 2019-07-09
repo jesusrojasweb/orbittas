@@ -201,6 +201,11 @@ ul,figure{
 	-webkit-animation-duration: 1.5s;
 	animation-iteration-count: infinite;
 	-webkit-animation-iteration-count: infinite;
+	transition: .3s
+}
+.proyecto .grid .volver:hover span{
+	background: none;
+	box-shadow: 0 0 50px #00b5ff;
 }
 .proyecto .grid .item{
 	text-align: end
