@@ -1,0 +1,9 @@
+@font-face {
+    font-family: "Arlon";
+    src: url("Arlon-Regular.ttf");
+}
+@font-face {
+    font-family: "Arlon";
+    src: url("Arlon-SemiBold.ttf");
+    font-weight: 600;
+}

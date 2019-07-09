@@ -2,7 +2,7 @@
 	--colorPrincipal: #007993;
 	--colorSecundario: #009270;
 	--fuentePrincipal: 'Dolce Vita Heavy Bold', system-ui;
-	--fuenteSecundaria:'Montserrat', system-ui;
+	--fuenteSecundaria:'Arlon', system-ui;
 	--btn: {
 		color: white;
 		border: 2px solid white;
@@ -37,7 +37,7 @@
 @custom-media --tablet (max-width: 800px);
 @custom-media --desktop (width > 800px);
 body{
-	font-family: 'Montserrat', system-ui;
+	font-family: var(--fuenteSecundaria);
 	margin: 0;
 	padding: 0;
 	position: relative;
