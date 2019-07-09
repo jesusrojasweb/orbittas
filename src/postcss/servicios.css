@@ -1,6 +1,7 @@
 :root{
 	--colorPrincipal: #007993;
 	--colorSecundario: #009270;
+	--colorFluerecente: #00caf5;
 	--fuentePrincipal: 'Dolce Vita Heavy Bold', system-ui;
 	--fuenteSecundaria:'Arlon', system-ui;
 	--btn: {
@@ -324,6 +325,29 @@ ul,figure{
 					&:first-child{
 						width: 72.5%;
 					}
+					& .cls-1, & .cls-2{
+						transition: .3s;
+					}
+					&:hover{
+						& .cls-1{
+							fill: var(--colorFluerecente);
+						}
+						&.heroElec .cls-1, &.heroElec .cls-2{
+							fill:none;
+							stroke: var(--colorFluerecente);
+						}
+						&.heroElec .cls-3{
+							fill:var(--colorFluerecente);
+						}
+						&.heroWeb .cls-1{
+							fill:none;
+							stroke:var(--colorFluerecente);
+						}
+						&.heroMovil .cls-1, &.heroMovil .cls-2{
+							fill:none;
+							stroke:var(--colorFluerecente);
+						}
+					}
 				}
 			}
 			& .title{
@@ -340,6 +364,10 @@ ul,figure{
 
 .servicio{
 	background: white;
+	&:nth-of-type(3),&:nth-of-type(5){
+		background: color(var(--colorPrincipal) a(10%));
+		
+	}
 	& .grid{
 		display: grid;
 		grid-template-columns: 1fr 1fr;
