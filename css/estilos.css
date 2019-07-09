@@ -512,26 +512,24 @@ ul,figure{
 	flex-direction: column;
 	align-items: flex-end;
 	justify-content: space-between;
-	height: auto
+	padding-top: 6em
+	/*height: auto;*/
 }
 .portafolio .grid .title{
 	text-align: center;
 	color: white;
 	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	align-self: center;
-	font-size: 32px;
-	font-size: 2rem;
+	font-size: 28.8px;
+	font-size: 1.8rem;
 }
 .portafolio .grid .proyectos{
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
-	grid-template-rows: 1fr;
-	margin: 2em 3em 0 0;
-	height: 75%;
-	margin-bottom: 2em;
+	margin: 0 3em 0 0;
+	grid-gap: 2em;
 }
 .portafolio .grid .proyectos .proyecto{
-	border: 1px solid white;
 	text-align: center;
 	padding: 2em;
 	display: flex;
@@ -540,15 +538,18 @@ ul,figure{
 	position: relative;
 	color: white;
 	text-decoration: none;
-	height: 280px;
+	height: 250px;
 	overflow: hidden;
-	transition: .3s
+	transition: .3s;
+	background: rgb(0, 97, 118)
 }
 .portafolio .grid .proyectos .proyecto:hover{
-	background: rgb(0, 97, 118);
+	background: #ffffff;
+	background: rgba(255, 255, 255, 0.1);
 }
 .portafolio .grid .proyectos .proyecto .nombre{
 	z-index: 1000;
+	margin: 0;
 }
 .portafolio .grid .proyectos .proyecto .imagen{
 	z-index: 1000;
