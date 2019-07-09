@@ -61,8 +61,10 @@ for(let i = 0; i < padre.length; i++){
       $header.classList.remove('fondo')
       $header.classList.add('scroll')
       $botones.classList.add('scroll')
+      document.body.style.overflowY = "scroll"
     }
     if(botonClick == 0 || botonClick == 1){
+      window.scrollBy(0, -window.innerHeight);
       document.body.style.overflowY = "hidden"        
     }
     if(botonClick== 1){
