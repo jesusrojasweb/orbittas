@@ -722,9 +722,9 @@ ul,figure{
 				height: 250px;
 				overflow: hidden;
 				transition: .3s;
-				background: color(var(--colorPrincipal) shade(20%));
+				background: color(white a(10%));
 				&:hover{
-					background: color(white a(10%));
+					background: color(var(--colorPrincipal) shade(20%));
 				}
 				& .nombre{
 					z-index: 1000;
