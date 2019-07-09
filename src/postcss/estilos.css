@@ -673,7 +673,8 @@ ul,figure{
 		flex-direction: column;
 		align-items: flex-end;
 		justify-content: space-between;
-		height: auto;
+		padding-top: 6em;
+		/*height: auto;*/
 
 		@media(--tablet){
 			& .portafolio-servicios{
@@ -694,15 +695,13 @@ ul,figure{
 			color: white;
 			font-family: var(--fuentePrincipal);
 			align-self: center;
-			font-size: 2rem;
+			font-size: 1.8rem;
 		}
 		& .proyectos{
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
-			grid-template-rows: 1fr;
-			margin: 2em 3em 0 0;
-			height: 75%;
-			margin-bottom: 2em;
+			margin: 0 3em 0 0;
+			grid-gap: 2em;
 			@media(--tablet){
 				grid-template-columns: 1fr 1fr;
 				grid-template-rows: 1fr 1fr;
@@ -712,7 +711,6 @@ ul,figure{
 				margin: 0;
 			}
 			& .proyecto{
-				border: 1px solid white;
 				text-align: center;
 				padding: 2em;
 				display: flex;
@@ -721,14 +719,16 @@ ul,figure{
 				position: relative;
 				color: white;
 				text-decoration: none;
-				height: 280px;
+				height: 250px;
 				overflow: hidden;
 				transition: .3s;
+				background: color(var(--colorPrincipal) shade(20%));
 				&:hover{
-					background: color(var(--colorPrincipal) shade(20%));
+					background: color(white a(10%));
 				}
 				& .nombre{
 					z-index: 1000;
+					margin: 0;
 				}
 				& .imagen{
 					z-index: 1000;
