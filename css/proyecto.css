@@ -73,7 +73,7 @@ ul,figure{
 	display: flex;
 	justify-content: center;
 	position: fixed;
-	z-index: 1001;
+	z-index: 1000;
 	transition: .3s;
 }
 .header.scroll{
@@ -195,6 +195,12 @@ ul,figure{
 	bottom: 2em;
 	text-decoration: none;
 	z-index: 900;
+	animation-name: moving;
+	-webkit-animation-name: moving;
+	animation-duration: 1.5s;
+	-webkit-animation-duration: 1.5s;
+	animation-iteration-count: infinite;
+	-webkit-animation-iteration-count: infinite;
 }
 .proyecto .grid .item{
 	text-align: end
@@ -364,6 +370,17 @@ ul,figure{
 	}	
 	100% {
 		transform: translateY(0%);
+	}			
+}
+@keyframes moving {
+	0% {
+		transform: translateX(0%);	
+	}
+	50% {
+		transform: translateX(10%);	
+	}	
+	100% {
+		transform: translateX(0%);
 	}			
 }
 @media (max-width: 500px){
