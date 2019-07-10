@@ -153,14 +153,24 @@ ul,figure{
 	
 	&.fondo{
 		& .contenedor{
-			filter: brightness(0) invert(1);
+			& .navbar{
+				& .menu{
+					filter: brightness(0) invert(1);
+					@media(--tablet){
+						filter: none;
+					}
+				}
+				& .logo{
+					filter: brightness(0) invert(1);	
+				}
+				& .burger{
+					filter: brightness(0) invert(1);
+				}
+			}
 		}
 	}
 	&.scroll.fondo{
 		background: var(--colorPrincipal);
-		& .contendor{
-			filter: none;
-		}
 	}
 	
 	&.activo{
@@ -187,7 +197,7 @@ ul,figure{
 		box-sizing: border-box;
 		z-index: 1200;
 		position: relative;
-		@media(--tablet){
+		@media(--mobile){
 			width: calc(100% - 5em);
 		}
 		& .navbar{
@@ -205,15 +215,15 @@ ul,figure{
 					left: 0;
 					width: 100% !important;
 					margin: 0 !important;
-					height: 50vh;
+					height: 100vh;
 					background: color(var(--colorPrincipal) a(50%));
 					flex-direction: column;
-					justify-content: flex-end;
+					justify-content: center;
 					align-items: center;
 					& .item{
 						color: white;
 						font-size: 2rem;
-						margin-bottom: 2em;
+						margin: 1em 0;
 					}
 					&:nth-of-type(1){
 						top: -100%;
@@ -251,6 +261,7 @@ ul,figure{
 				transition: 1.2s;
 				@media(--tablet){
 					margin: 0;
+					width: 40%;
 				}
 			}
 		}
