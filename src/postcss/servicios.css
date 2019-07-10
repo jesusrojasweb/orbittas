@@ -298,7 +298,7 @@ ul,figure{
 }
 
 .hero{
-	background: color(var(--colorPrincipal) shade(30%));
+	background: var(--colorPrincipal);
 	overflow: hidden;
 	& .margen{
 		position: relative;

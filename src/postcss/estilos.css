@@ -458,9 +458,10 @@ ul,figure{
 	& .grid{
 		display: flex;
 		flex-direction: column;
-		height: 100vh;
+		height: 97vh;
 		color: white;
 		justify-content: space-evenly;
+		padding-top:4em;
 		/*@media(--tablet){
 			grid-template-columns: 1fr;
 			grid-template-rows: 1fr;
@@ -603,7 +604,7 @@ ul,figure{
 		grid-gap: 5em;
 		text-align: center;
 		position: relative;
-		padding-top: 12em;
+		padding-top:4em;
 		padding-right: 9em;
 		height: auto;
 		@media(--tablet){

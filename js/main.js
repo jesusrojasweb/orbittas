@@ -46,19 +46,19 @@ window.addEventListener('scroll', function (e) {
     $header.classList.add('scroll')
     $header.classList.remove('fondo')
   }
-  if(coordsAbout.top <= 250){
+  if(coordsAbout.top <= 100){
     $about.classList.add('animacion')
     $header.classList.add('fondo')
   }
-  if(coordsServicios.top <= 250){
+  if(coordsServicios.top <= 100){
     $servicios.classList.add('animacion')
     $header.classList.remove('fondo')
   }
-  if(coordsPortafolio.top <= 250){
+  if(coordsPortafolio.top <= 100){
     $portafolio.classList.add('animacion')
     $header.classList.add('fondo')
   }
-  if(coordsContacto.top <= 250){
+  if(coordsContacto.top <= 100){
     $contacto.classList.add('animacion')
     $header.classList.remove('fondo')
   }
