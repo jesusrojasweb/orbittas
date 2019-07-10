@@ -121,15 +121,18 @@ ul,figure{
   box-sizing: border-box;
   top: 0;
   z-index: 5;
+  visibility: hidden;
 }
 
 .active{
   animation: slideDown 1s forwards;
   z-index: 1000;
+  visibility: visible;
   
 }
 .prev{
   z-index: 50;
+  visibility: visible;
 }
 .header{
 	padding: 3em 0;
