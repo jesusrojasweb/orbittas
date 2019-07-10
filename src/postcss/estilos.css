@@ -493,7 +493,7 @@ ul,figure{
 				grid-template-columns: 1fr;
 			}
 			& .img{
-				width: 60%;
+				width: 70%;
 				@media(--tablet){
 					width: 90%;
 				}
