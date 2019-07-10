@@ -287,12 +287,16 @@ ul,figure{
 					color: color(white a(60%));
 					text-decoration: none;
 					font-family: var(--fuentePrincipal);
-					font-size: 1.2rem;
+					font-size: 1.3rem;
 					display: flex;
 					justify-content: space-between;
+					transition: .3s;
 					& span{
 						font-size: 1.5rem;
 						margin-left: .5em;
+					}
+					&:hover{
+						color: var(--colorFluerecente);
 					}
 				}
 			}
