@@ -1,7 +1,6 @@
 :root{
 	--colorPrincipal: #007993;
 	--colorSecundario: #009270;
-	--colorFluerecente: #00caf5;
 	--fuentePrincipal: 'Dolce Vita Heavy Bold', system-ui;
 	--fuenteSecundaria:'Arlon', system-ui;
 	--btn: {
@@ -84,18 +83,6 @@ body{
 			}
 		}
 	}
-	&.scroll.fondo{
-		& .boton{
-			&.activo{
-				&:after{
-					background: var(--colorFluerecente);
-				}
-			}
-			&:after{
-				background: color(var(--colorFluerecente) a(50%));
-			}
-		}
-	}
 	& .boton{
 		width: 100%;
 		height: 100%;
@@ -165,7 +152,7 @@ ul,figure{
 	
 	&.fondo{
 		& .contenedor{
-			/*filter: brightness(0) invert(1);*/
+			filter: brightness(0) invert(1);
 		}
 	}
 	&.scroll.fondo{
@@ -301,7 +288,7 @@ ul,figure{
 }
 
 .hero{
-	background: #e5f1f4;
+	background: var(--colorPrincipal);
 	& .margen{
 		display: grid;
 		align-items: center;
@@ -310,7 +297,7 @@ ul,figure{
 		grid-gap: 2em;
 		& .item{
 			& .title{
-				color: var(--colorPrincipal);
+				color: white;
 				font-family: var(--fuentePrincipal);
 				font-size: 5.8rem;
 				margin: 0;
@@ -319,7 +306,7 @@ ul,figure{
 				}
 			}
 			& .descripcion{
-				color: var(--colorPrincipal);
+				color: white;
 			}
 		}
 	}
