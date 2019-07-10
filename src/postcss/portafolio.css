@@ -280,11 +280,11 @@ ul,figure{
 				margin-bottom: 2em;
 				&.activo{
 					& a{
-						color: color(white a(60%));
+						color: white;
 					}
 				}
 				& a{
-					color: white;
+					color: color(white a(60%));
 					text-decoration: none;
 					font-family: var(--fuentePrincipal);
 					font-size: 1.2rem;
