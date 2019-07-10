@@ -278,6 +278,11 @@ ul,figure{
 			padding-bottom: 4em;
 			& .item{
 				margin-bottom: 2em;
+				&.activo{
+					& a{
+						color: color(white a(60%));
+					}
+				}
 				& a{
 					color: white;
 					text-decoration: none;

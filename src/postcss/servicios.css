@@ -47,7 +47,7 @@ body{
 		background: white;
 	}
 	&::-webkit-scrollbar-thumb{
-		background: var(--colorPrincipal);
+		background: color(var(--colorPrincipal) shade(40%));
 		border-radius: 5px;
 	}
 	/*&.scroll{
