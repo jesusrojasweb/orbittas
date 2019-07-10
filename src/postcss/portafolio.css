@@ -264,7 +264,7 @@ ul,figure{
 	box-sizing: border-box;
 }
 .portafolio{
-	background: var(--colorPrincipal);
+	background: #00a3c6;
 	& .grid{
 		display: grid;
 		grid-template-columns: 2fr 5fr;
@@ -296,7 +296,7 @@ ul,figure{
 						margin-left: .5em;
 					}
 					&:hover{
-						color: var(--colorFluerecente);
+						color: #00e1f5;
 					}
 				}
 			}
