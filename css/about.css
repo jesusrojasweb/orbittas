@@ -3,7 +3,7 @@ body{
 	margin: 0;
 	padding: 0;
 	position: relative;
-	background: #007993;
+	/*background: var(--colorPrincipal);*/
 	overflow: hidden
 }
 body::-webkit-scrollbar{
@@ -15,9 +15,9 @@ body::-webkit-scrollbar-thumb{
 	border-radius: 5px;
 }
 body{
-	/* @media(--mobile){
+	/*@media(--mobile){
 		overflow-y: scroll;
-	} */
+	}*/
 }
 .botones{
 	position: fixed;
@@ -102,8 +102,7 @@ ul,figure{
 	padding: 1em 0;
 }
 .header.fondo .contenedor{
-	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
-	filter: brightness(0) invert(1);
+	/*filter: brightness(0) invert(1);*/
 }
 .header.scroll.fondo{
 	background: #007993
@@ -198,7 +197,7 @@ ul,figure{
 	box-sizing: border-box;
 }
 .hero{
-	background: #007993
+	background: #e5f1f4
 }
 .hero .margen{
 	display: grid;
@@ -208,7 +207,7 @@ ul,figure{
 	grid-gap: 2em
 }
 .hero .margen .item .title{
-	color: white;
+	color: #007993;
 	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	font-size: 92.8px;
 	font-size: 5.8rem;
@@ -218,7 +217,7 @@ ul,figure{
 	margin-left: 1em;
 }
 .hero .margen .item .descripcion{
-	color: white;
+	color: #007993;
 }
 .valores{
 	background: white
