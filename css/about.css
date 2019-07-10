@@ -32,7 +32,7 @@ body{
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	flex-direction: column
+	flex-direction: column;
 }
 .botones.scroll .boton.activo:after{
 	background: white;
@@ -101,15 +101,20 @@ ul,figure{
 	background: white;
 	padding: 1em 0;
 }
-.header.fondo .contenedor{
+.header.fondo .contenedor .navbar .menu{
+	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+	filter: brightness(0) invert(1);
+}
+.header.fondo .contenedor .navbar .logo{
+	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+	filter: brightness(0) invert(1);
+}
+.header.fondo .contenedor .burger{
 	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
 	filter: brightness(0) invert(1);
 }
 .header.scroll.fondo{
-	background: #007993
-}
-.header.scroll.fondo .contendor{
-	filter: none;
+	background: #007993;
 }
 .header.activo .contenedor .menu:nth-of-type(1){
 	top: 0 !important;
@@ -205,14 +210,14 @@ ul,figure{
 	align-items: center;
 	grid-template-columns: 1fr 1fr;
 	width: 100%;
-	grid-gap: 2em
+	grid-gap: 2em;
 }
 .hero .margen .item .title{
 	color: white;
 	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	font-size: 92.8px;
 	font-size: 5.8rem;
-	margin: 0
+	margin: 0;
 }
 .hero .margen .item .title .sangria{
 	margin-left: 1em;
@@ -228,7 +233,7 @@ ul,figure{
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 5em;
 	text-align: center;
-	align-content: end
+	align-content: end;
 }
 .valores .grid .body .valor{
 	color: #007993;
@@ -264,7 +269,7 @@ ul,figure{
 .equipo .contenedor .grid .item{
 	width: 30%;
 	margin-right: 2em;
-	margin-bottom: 4em
+	margin-bottom: 4em;
 }
 .equipo .contenedor .grid .item .head{
 	position: relative
@@ -317,30 +322,49 @@ ul,figure{
 	}	
 }
 @media (max-width: 500px){
+	.botones{
+		right: 2em
+	}
 	.header{
-		padding: .5em 0
+		padding: 2em 0
+	}
+	.header .contenedor{
+		width: calc(100% - 5em)
+	}
+	.hero .margen{
+		padding: 10em 3em 4em
+	}
+	.hero .margen .item .title{
+		font-size: 2.8rem
+	}
+	.valores .grid{
+		grid-template-columns: 1fr !important;
+		height: auto
+	}
+	.equipo .contenedor .grid .item{
+		width: 100% !important
 	}
 }
 @media (max-width: 800px){
-	.header .contenedor{
-		width: calc(100% - 5em)
+	.header.fondo .contenedor .navbar .menu{
+		filter: none
 	}
 	.header .contenedor .navbar .menu{
 		position: fixed;
 		left: 0;
 		width: 100% !important;
 		margin: 0 !important;
-		height: 50vh;
+		height: 100vh;
 		background: #007993;
 		background: rgba(0, 121, 147, 0.5);
 		flex-direction: column;
-		justify-content: flex-end;
+		justify-content: center;
 		align-items: center
 	}
 	.header .contenedor .navbar .menu .item{
 		color: white;
 		font-size: 2rem;
-		margin-bottom: 2em;
+		margin: 1em 0;
 	}
 	.header .contenedor .navbar .menu:nth-of-type(1){
 		top: -100%;
@@ -351,9 +375,40 @@ ul,figure{
 		justify-content: flex-start;
 	}
 	.header .contenedor .navbar .logo{
-		margin: 0
+		margin: 0;
+		width: 40%
 	}
 	.header .contenedor .burger{
 		display: block
+	}
+	.hero .margen{
+		grid-template-columns: 1fr;
+		height: 100%
+	}
+	.hero .margen .item{
+		height: auto
+	}
+	.hero .margen .item:first-child{
+		align-self: end;
+	}
+	.hero .margen .item:last-child{
+		align-self: start;
+	}
+	.valores .grid{
+		grid-template-columns: 1fr 1fr;
+		grid-gap: 2em 8em
+	}
+	.valores .grid .body .valor{
+		margin: 0
+	}
+	.equipo .contenedor .grid .item{
+		width: 45%;
+		margin-right: 0
+	}
+	.equipo .contenedor .grid .item:nth-of-type(4){
+		margin-left: 0
+	}
+	.equipo .contenedor .grid .item:nth-of-type(5){
+		margin-right: 0
 	}
 }

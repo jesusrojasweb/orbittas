@@ -116,24 +116,12 @@ ul,figure{
 	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
 	filter: brightness(0) invert(1);
 }
-.header.fondo .contenedor .navbar .burger{
+.header.fondo .contenedor .burger{
 	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
 	filter: brightness(0) invert(1);
 }
 .header.scroll.fondo{
-	background: #007993
-}
-.header.scroll.fondo .contenedor .navbar .menu{
-	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
-	filter: brightness(0) invert(1);
-}
-.header.scroll.fondo .contenedor .navbar .logo{
-	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
-	filter: brightness(0) invert(1);
-}
-.header.scroll.fondo .contenedor .navbar .burger{
-	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
-	filter: brightness(0) invert(1);
+	background: #007993;
 }
 .header.activo .contenedor .menu:nth-of-type(1){
 	top: 0 !important;
@@ -657,7 +645,7 @@ ul,figure{
 	box-sizing: border-box;
 	padding: 0 2em 2em;
 	border-radius: 2em;
-	margin-right: 3em
+	margin-right: 3em;
 }
 .contacto .grid .formulario .title{
 	color: #007993;
@@ -746,7 +734,7 @@ ul,figure{
 .contacto .grid .footer .menu{
 	display: flex;
 	justify-content: center;
-	list-style: none
+	list-style: none;
 }
 .contacto .grid .footer .menu .item{
 	margin-right: 2em
@@ -892,7 +880,7 @@ slideRight
 }
 @media (max-width: 500px){
 	.header{
-		padding: .5em 0
+		padding: 2em 0
 	}
 	.header .contenedor{
 		width: calc(100% - 5em)
@@ -924,6 +912,9 @@ slideRight
 		margin: 0 !important;
 		width: 100% !important;
 	}
+	.about .grid .item:last-child{
+		margin-bottom: 4em
+	}
 	.about .grid .item:first-child{
 		grid-template-columns: 1fr
 	}
@@ -943,23 +934,27 @@ slideRight
 	}
 	.portafolio .grid .proyectos{
 		grid-template-columns: 1fr !important;
-		margin: 0
+		margin: 0 0 4em
 	}
 	.contacto{
 		height: auto
 	}
+	.contacto .grid{
+		padding-top: 4em;
+		height: auto
+	}
 	.contacto .grid .item{
-		width: 80%;
+		/*width: 80%;*/
 	}
 	.contacto .grid .sociales{
 		width: 100%
 	}
+	.contacto .grid .footer .menu{
+		display: none
+	}
 }
 @media (max-width: 800px){
 	.header.fondo .contenedor .navbar .menu{
-		filter: none
-	}
-	.header.scroll.fondo .contenedor .navbar .menu{
 		filter: none
 	}
 	.header .contenedor .navbar .menu{
@@ -1042,6 +1037,16 @@ slideRight
 	}
 	.contacto .grid{
 		grid-template-columns: 1fr
+	}
+	.contacto .grid .formulario{
+		margin-right: 0;
+		padding: 0;
+		margin-bottom: 8em
+	}
+}
+@media (max-width: 320px){
+	.hero .copy .item:first-child{
+		height: 70% !important
 	}
 }
 @media (min-width: 801px){

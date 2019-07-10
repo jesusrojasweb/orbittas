@@ -3,9 +3,6 @@ body{
 	margin: 0;
 	padding: 0;
 	position: relative;
-	/*@media(--mobile){
-		overflow-y: scroll;
-	}*/
 }
 .botones{
 	position: fixed;
@@ -32,7 +29,7 @@ body{
 .botones .boton{
 	width: 100%;
 	height: 100%;
-	position: relative
+	position: relative;
 }
 .botones .boton.activo:after{
 	background: #007993;
@@ -78,15 +75,20 @@ ul,figure{
 	background: white;
 	padding: 1em 0;
 }
-.header.fondo .contenedor{
+.header.fondo .contenedor .navbar .menu{
+	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+	filter: brightness(0) invert(1);
+}
+.header.fondo .contenedor .navbar .logo{
+	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+	filter: brightness(0) invert(1);
+}
+.header.fondo .contenedor .burger{
 	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
 	filter: brightness(0) invert(1);
 }
 .header.scroll.fondo{
-	background: #007993
-}
-.header.scroll.fondo .contendor{
-	filter: none;
+	background: #007993;
 }
 .header.activo .contenedor .menu:nth-of-type(1){
 	top: 0 !important;
@@ -111,13 +113,13 @@ ul,figure{
 	width: 100%;
 	display: flex;
 	align-items: center;
-	justify-content: space-between
+	justify-content: space-between;
 }
 .header .contenedor .navbar .menu{
 	display: flex;
 	justify-content: space-between;
 	box-sizing: border-box;
-	transition: 1s
+	transition: 1s;
 }
 .header .contenedor .navbar .menu .item{
 	text-decoration: none;
@@ -126,10 +128,10 @@ ul,figure{
 	color: #007993;
 	font-size: 19.2px;
 	font-size: 1.2rem;
-	margin-left: 2em
+	margin-left: 2em;
 }
 .header .contenedor .navbar .menu .item.activo{
-	position: relative
+	position: relative;
 }
 .header .contenedor .navbar .menu .item.activo:after{
 	position: absolute;
@@ -183,15 +185,15 @@ ul,figure{
 	align-items: center;
 	grid-gap: 5em;
 	padding-bottom: 0;
-	align-self: top
+	align-self: top;
 }
 .portafolio .grid .menu{
 	list-style: none;
 	width: 90%;
-	padding-bottom: 4em
+	padding-bottom: 4em;
 }
 .portafolio .grid .menu .item{
-	margin-bottom: 2em
+	margin-bottom: 2em;
 }
 .portafolio .grid .menu .item.activo a{
 	color: white;
@@ -205,7 +207,7 @@ ul,figure{
 	font-size: 1.3rem;
 	display: flex;
 	justify-content: space-between;
-	transition: .3s
+	transition: .3s;
 }
 .portafolio .grid .menu .item a span{
 	font-size: 24px;
@@ -219,7 +221,7 @@ ul,figure{
 	overflow: hidden scroll;
 	height: 100%;
 	grid-gap: 2em;
-	padding-right: 1em
+	padding-right: 1em;
 }
 .portafolio .grid .grilla::-webkit-scrollbar{
 	width: 7px;
@@ -242,7 +244,7 @@ ul,figure{
 	overflow: hidden;
 	transition: .3s;
 	background: #ffffff;
-	background: rgba(255, 255, 255, 0.08)
+	background: rgba(255, 255, 255, 0.08);
 }
 .portafolio .grid .grilla .proyecto:hover{
 	background: rgb(0, 97, 118);
@@ -258,30 +260,44 @@ ul,figure{
 	z-index: 1000;
 }
 @media (max-width: 500px){
+	body{
+		overflow: hidden scroll;
+	}
 	.header{
-		padding: .5em 0
+		padding: 2em 0;
+	}
+	.header .contenedor{
+		width: calc(100% - 5em);
+	}
+	.margen{
+		padding: 10em 3em 4em !important;
+	}
+	.portafolio .grid{
+		grid-template-columns: 1fr;
+		height: auto;
+		grid-gap: 0;
 	}
 }
 @media (max-width: 800px){
-	.header .contenedor{
-		width: calc(100% - 5em)
+	.header.fondo .contenedor .navbar .menu{
+		filter: none;
 	}
 	.header .contenedor .navbar .menu{
 		position: fixed;
 		left: 0;
 		width: 100% !important;
 		margin: 0 !important;
-		height: 50vh;
+		height: 100vh;
 		background: #007993;
 		background: rgba(0, 121, 147, 0.5);
 		flex-direction: column;
-		justify-content: flex-end;
-		align-items: center
+		justify-content: center;
+		align-items: center;
 	}
 	.header .contenedor .navbar .menu .item{
 		color: white;
 		font-size: 2rem;
-		margin-bottom: 2em;
+		margin: 1em 0;
 	}
 	.header .contenedor .navbar .menu:nth-of-type(1){
 		top: -100%;
@@ -292,9 +308,13 @@ ul,figure{
 		justify-content: flex-start;
 	}
 	.header .contenedor .navbar .logo{
-		margin: 0
+		margin: 0;
+		width: 40%;
 	}
 	.header .contenedor .burger{
-		display: block
+		display: block;
+	}
+	.portafolio .grid .grilla{
+		grid-template-columns: 1fr;
 	}
 }

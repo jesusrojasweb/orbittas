@@ -43,9 +43,9 @@ body{
 	position: relative;
 	overflow: hidden;
 	/*overflow: hidden;*/
-	/*@media(--mobile){
+	@media(--tablet){
 		overflow-y: scroll;
-	}*/
+	}
 }
 .botones{
 	position: fixed;
@@ -118,10 +118,10 @@ ul,figure{
 	display: flex;
 	justify-content: center;
 	position: fixed;
-	z-index: 1000;
+	z-index: 900;
 	transition: .3s;
 	@media(--mobile){
-		padding: .5em 0;
+		padding: 2em 0;
 	}
 	&.scroll{
 		background: white;
@@ -130,14 +130,24 @@ ul,figure{
 	
 	&.fondo{
 		& .contenedor{
-			filter: brightness(0) invert(1);
+			& .navbar{
+				& .menu{
+					filter: brightness(0) invert(1);
+					@media(--tablet){
+						filter: none;
+					}
+				}
+				& .logo{
+					filter: brightness(0) invert(1);	
+				}
+			}
+			& .burger{
+				filter: brightness(0) invert(1);
+			}
 		}
 	}
 	&.scroll.fondo{
 		background: var(--colorPrincipal);
-		& .contendor{
-			filter: none;
-		}
 	}
 	
 	&.activo{
@@ -164,7 +174,7 @@ ul,figure{
 		box-sizing: border-box;
 		z-index: 1200;
 		position: relative;
-		@media(--tablet){
+		@media(--mobile){
 			width: calc(100% - 5em);
 		}
 		& .navbar{
@@ -182,15 +192,15 @@ ul,figure{
 					left: 0;
 					width: 100% !important;
 					margin: 0 !important;
-					height: 50vh;
+					height: 100vh;
 					background: color(var(--colorPrincipal) a(50%));
 					flex-direction: column;
-					justify-content: flex-end;
+					justify-content: center;
 					align-items: center;
 					& .item{
 						color: white;
 						font-size: 2rem;
-						margin-bottom: 2em;
+						margin: 1em 0;
 					}
 					&:nth-of-type(1){
 						top: -100%;
@@ -228,6 +238,7 @@ ul,figure{
 				transition: 1.2s;
 				@media(--tablet){
 					margin: 0;
+					width: 40%;
 				}
 			}
 		}
@@ -267,11 +278,25 @@ ul,figure{
 .proyecto{
 	background: var(--colorPrincipal);
 	position: relative;
+	@media(--tablet){
+		width: 100%;
+		height: auto;
+	}
 	& .grid{
 		display: grid;
 		grid-template-columns: 1fr 1fr;
 		grid-gap: 5em;
 		position: relative;
+		background: var(--colorPrincipal);
+		@media(--tablet){
+			grid-template-columns: 1fr;
+			width: 100%;
+			position: fixed;
+		}
+		@media(--mobile){
+			padding: 7em 3em 4em;
+			grid-gap: 1em;
+		}
 		& .volver{
 			position: absolute;
 			color: white;
@@ -289,6 +314,13 @@ ul,figure{
 			animation-iteration-count: infinite;
 			-webkit-animation-iteration-count: infinite;
 			transition: .3s;
+			@media(--tablet){
+				bottom: inherit;
+				top: 6em;
+			}
+			@media(--mobile){
+				left: 1em;
+			}
 			&:hover{
 				& span{
 					background: none;
@@ -299,6 +331,9 @@ ul,figure{
 		}
 		& .item{
 			text-align: end;
+			@media(--tablet){
+				text-align: center;
+			}
 			& .caption{
 				color: white;
 				opacity: .5;
@@ -323,6 +358,13 @@ ul,figure{
 				align-items: center;
 				justify-content: flex-end;
 				text-decoration: none;
+				@media(--tablet){
+					display: flex;
+					justify-content: center;
+					& .texto{
+						display: none;
+					}
+				}
 				& .icono{
 					width: 4%;
 					margin-left: 1em;
@@ -334,11 +376,22 @@ ul,figure{
 
 					animation-iteration-count: infinite;
 					-webkit-animation-iteration-count: infinite;
+					@media(--mobile){
+						width: 8%;
+					}
 				}
 			}
 			&.imagen{
 				width: 100%;
 				height: 100%;
+				@media(--tablet){
+					display: flex;
+					justify-content: center;
+					& img{
+						width: 80%;
+					}
+					
+				}
 			}
 		}
 	}
@@ -352,6 +405,9 @@ ul,figure{
 		z-index: 1000;
 		transition: .3s;
 		transition: 1s;
+		@media(--tablet){
+			display: none;
+		}
 		&.active{
 			left: 0;
 		}
@@ -381,6 +437,16 @@ ul,figure{
 		overflow: hidden scroll;
 		height: 100%;
 		transition: 1s;
+		@media(--tablet){
+			overflow: hidden;
+			height: auto;
+			right: 0;
+			top: 100vh;
+			width: 100%;
+		}
+		@media(--mobile){
+			padding: 5em 3em;
+		}
 		&::-webkit-scrollbar{
 			width: 9px;
 		}

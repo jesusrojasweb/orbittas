@@ -71,6 +71,9 @@ body{
 	justify-content: center;
 	align-items: center;
 	flex-direction: column;
+	@media(--mobile){
+		right: 2em;
+	}
 	&.scroll{
 		& .boton{
 			&.activo{
@@ -143,7 +146,7 @@ ul,figure{
 	z-index: 1001;
 	transition: .3s;
 	@media(--mobile){
-		padding: .5em 0;
+		padding: 2em 0;
 	}
 	&.scroll{
 		background: white;
@@ -152,14 +155,24 @@ ul,figure{
 	
 	&.fondo{
 		& .contenedor{
-			filter: brightness(0) invert(1);
+			& .navbar{
+				& .menu{
+					filter: brightness(0) invert(1);
+					@media(--tablet){
+						filter: none;
+					}
+				}
+				& .logo{
+					filter: brightness(0) invert(1);	
+				}
+			}
+			& .burger{
+				filter: brightness(0) invert(1);
+			}
 		}
 	}
 	&.scroll.fondo{
 		background: var(--colorPrincipal);
-		& .contendor{
-			filter: none;
-		}
 	}
 	
 	&.activo{
@@ -186,7 +199,7 @@ ul,figure{
 		box-sizing: border-box;
 		z-index: 1200;
 		position: relative;
-		@media(--tablet){
+		@media(--mobile){
 			width: calc(100% - 5em);
 		}
 		& .navbar{
@@ -204,15 +217,15 @@ ul,figure{
 					left: 0;
 					width: 100% !important;
 					margin: 0 !important;
-					height: 50vh;
+					height: 100vh;
 					background: color(var(--colorPrincipal) a(50%));
 					flex-direction: column;
-					justify-content: flex-end;
+					justify-content: center;
 					align-items: center;
 					& .item{
 						color: white;
 						font-size: 2rem;
-						margin-bottom: 2em;
+						margin: 1em 0;
 					}
 					&:nth-of-type(1){
 						top: -100%;
@@ -250,6 +263,7 @@ ul,figure{
 				transition: 1.2s;
 				@media(--tablet){
 					margin: 0;
+					width: 40%;
 				}
 			}
 		}
@@ -295,12 +309,31 @@ ul,figure{
 		grid-template-columns: 1fr 1fr;
 		width: 100%;
 		grid-gap: 2em;
+		@media(--mobile){
+			padding: 10em 3em 4em;
+		}
+		@media(--tablet){
+			grid-template-columns: 1fr;
+			height: 100%;
+		}
 		& .item{
+			@media(--tablet){
+				height: auto;
+				&:first-child{
+					align-self: end;
+				}
+				&:last-child{
+					align-self: start;
+				}
+			}
 			& .title{
 				color: white;
 				font-family: var(--fuentePrincipal);
 				font-size: 5.8rem;
 				margin: 0;
+				@media(--mobile){
+					font-size: 2.8rem;
+				}
 				& .sangria{
 					margin-left: 1em;
 				}
@@ -319,11 +352,22 @@ ul,figure{
 		grid-gap: 5em;
 		text-align: center;
 		align-content: end;
+		@media(--tablet){
+			grid-template-columns: 1fr 1fr;
+			grid-gap: 2em 8em;
+		}
+		@media(--mobile){
+			grid-template-columns: 1fr !important;
+			height: auto;
+		}
 		& .body{
 			& .valor{
 				color: var(--colorPrincipal);
 				font-family: var(--fuenteSecundaria);
 				font-size: 1.5rem;
+				@media(--tablet){
+					margin: 0;
+				}
 			}
 			& .descripcion{
 				margin-bottom: 0;
@@ -353,6 +397,13 @@ ul,figure{
 				width: 30%;
 				margin-right: 2em;
 				margin-bottom: 4em;
+				@media(--tablet){
+					width: 45%;
+					margin-right: 0;
+				}
+				@media(--mobile){
+					width: 100% !important;
+				}
 				& .head{
 					position: relative;
 					& .hover{
@@ -379,9 +430,15 @@ ul,figure{
 				}
 				&:nth-of-type(4){
 					margin-left: 10em;
+					@media(--tablet){
+						margin-left: 0;
+					}
 				}
 				&:nth-of-type(5){
 					margin-right: 10em;
+					@media(--tablet){
+						margin-right: 0;
+					}
 				}
 			}
 		}

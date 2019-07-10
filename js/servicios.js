@@ -4,6 +4,14 @@ const $proyectos = document.getElementById('proyectos')
 const $electronica = document.getElementById('electronica')
 const $web = document.getElementById('web')
 const $movil = document.getElementById('movil')
+const $burger = document.getElementById('burger')
+const $close = document.getElementById('close')
+$burger.addEventListener('click', function (e) {
+  $header.classList.add('activo')
+})
+$close.addEventListener('click', function (e) {
+  $header.classList.remove('activo')
+})
 
 const $botonProyectos = document.querySelector('.heroProyectos')
 const $botonElec = document.querySelector('.heroElec')
