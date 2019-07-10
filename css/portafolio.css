@@ -175,7 +175,7 @@ ul,figure{
 	box-sizing: border-box;
 }
 .portafolio{
-	background: #007993
+	background: #00a3c6
 }
 .portafolio .grid{
 	display: grid;
@@ -213,7 +213,7 @@ ul,figure{
 	margin-left: .5em;
 }
 .portafolio .grid .menu .item a:hover{
-	color: #00caf5;
+	color: #00e1f5;
 }
 .portafolio .grid .grilla{
 	display: grid;
