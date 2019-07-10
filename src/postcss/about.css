@@ -41,7 +41,7 @@ body{
 	margin: 0;
 	padding: 0;
 	position: relative;
-	background: var(--colorPrincipal);
+	/*background: var(--colorPrincipal);*/
 	overflow: hidden;
 	&::-webkit-scrollbar{
 		width: 7px;
@@ -152,7 +152,7 @@ ul,figure{
 	
 	&.fondo{
 		& .contenedor{
-			filter: brightness(0) invert(1);
+			/*filter: brightness(0) invert(1);*/
 		}
 	}
 	&.scroll.fondo{
@@ -288,7 +288,7 @@ ul,figure{
 }
 
 .hero{
-	background: var(--colorPrincipal);
+	background: #e5f1f4;
 	& .margen{
 		display: grid;
 		align-items: center;
@@ -297,7 +297,7 @@ ul,figure{
 		grid-gap: 2em;
 		& .item{
 			& .title{
-				color: white;
+				color: var(--colorPrincipal);
 				font-family: var(--fuentePrincipal);
 				font-size: 5.8rem;
 				margin: 0;
@@ -306,7 +306,7 @@ ul,figure{
 				}
 			}
 			& .descripcion{
-				color: white;
+				color: var(--colorPrincipal);
 			}
 		}
 	}
