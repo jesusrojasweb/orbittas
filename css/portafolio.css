@@ -197,7 +197,8 @@ ul,figure{
 	color: white;
 }
 .portafolio .grid .menu .item a{
-	color: #00caf5;
+	color: #ffffff;
+	color: rgba(255, 255, 255, 0.5);
 	text-decoration: none;
 	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	font-size: 20.8px;
