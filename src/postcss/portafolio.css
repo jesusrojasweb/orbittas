@@ -42,9 +42,9 @@ body{
 	margin: 0;
 	padding: 0;
 	position: relative;
-	/*@media(--mobile){
-		overflow-y: scroll;
-	}*/
+	@media(--mobile){
+		overflow: hidden scroll;
+	}
 }
 .botones{
 	position: fixed;
@@ -120,7 +120,7 @@ ul,figure{
 	z-index: 1001;
 	transition: .3s;
 	@media(--mobile){
-		padding: .5em 0;
+		padding: 2em 0;
 	}
 	&.scroll{
 		background: white;
@@ -129,14 +129,24 @@ ul,figure{
 	
 	&.fondo{
 		& .contenedor{
-			filter: brightness(0) invert(1);
+			& .navbar{
+				& .menu{
+					filter: brightness(0) invert(1);
+					@media(--tablet){
+						filter: none;
+					}
+				}
+				& .logo{
+					filter: brightness(0) invert(1);	
+				}
+			}
+			& .burger{
+				filter: brightness(0) invert(1);
+			}
 		}
 	}
 	&.scroll.fondo{
 		background: var(--colorPrincipal);
-		& .contendor{
-			filter: none;
-		}
 	}
 	
 	&.activo{
@@ -163,7 +173,7 @@ ul,figure{
 		box-sizing: border-box;
 		z-index: 1200;
 		position: relative;
-		@media(--tablet){
+		@media(--mobile){
 			width: calc(100% - 5em);
 		}
 		& .navbar{
@@ -181,15 +191,15 @@ ul,figure{
 					left: 0;
 					width: 100% !important;
 					margin: 0 !important;
-					height: 50vh;
+					height: 100vh;
 					background: color(var(--colorPrincipal) a(50%));
 					flex-direction: column;
-					justify-content: flex-end;
+					justify-content: center;
 					align-items: center;
 					& .item{
 						color: white;
 						font-size: 2rem;
-						margin-bottom: 2em;
+						margin: 1em 0;
 					}
 					&:nth-of-type(1){
 						top: -100%;
@@ -227,6 +237,7 @@ ul,figure{
 				transition: 1.2s;
 				@media(--tablet){
 					margin: 0;
+					width: 40%;
 				}
 			}
 		}
@@ -258,10 +269,14 @@ ul,figure{
 	}
 }
 
+
 .margen{
 	padding: 10em 6em 4em;
 	height: 100vh;
 	box-sizing: border-box;
+	@media(--mobile){
+		padding: 10em 3em 4em !important;
+	}
 }
 .portafolio{
 	background: var(--colorPrincipal);
@@ -272,6 +287,11 @@ ul,figure{
 		grid-gap: 5em;
 		padding-bottom: 0;
 		align-self: top;
+		@media(--mobile){
+			grid-template-columns: 1fr;
+			height: auto;
+			grid-gap: 0;
+		}
 		& .menu{
 			list-style: none;
 			width: 90%;
@@ -306,6 +326,9 @@ ul,figure{
 			height: 100%;
 			grid-gap: 2em;
 			padding-right: 1em;
+			@media(--tablet){
+				grid-template-columns: 1fr;
+			}
 			&::-webkit-scrollbar{
 				width: 7px;
 				margin-left: 1em;

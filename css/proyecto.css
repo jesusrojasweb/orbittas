@@ -5,9 +5,6 @@ body{
 	position: relative;
 	overflow: hidden;
 	/*overflow: hidden;*/
-	/*@media(--mobile){
-		overflow-y: scroll;
-	}*/
 }
 .botones{
 	position: fixed;
@@ -73,22 +70,27 @@ ul,figure{
 	display: flex;
 	justify-content: center;
 	position: fixed;
-	z-index: 1000;
+	z-index: 900;
 	transition: .3s;
 }
 .header.scroll{
 	background: white;
 	padding: 1em 0;
 }
-.header.fondo .contenedor{
+.header.fondo .contenedor .navbar .menu{
+	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+	filter: brightness(0) invert(1);
+}
+.header.fondo .contenedor .navbar .logo{
+	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
+	filter: brightness(0) invert(1);
+}
+.header.fondo .contenedor .burger{
 	filter: url('data:image/svg+xml;charset=utf-8,<svg xmlns="http://www.w3.org/2000/svg"><filter id="filter"><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="linear" slope="1" /><feFuncG type="linear" slope="1" /><feFuncB type="linear" slope="1" /></feComponentTransfer><feComponentTransfer color-interpolation-filters="sRGB"><feFuncR type="table" tableValues="1 0" /><feFuncG type="table" tableValues="1 0" /><feFuncB type="table" tableValues="1 0" /></feComponentTransfer></filter></svg>#filter');
 	filter: brightness(0) invert(1);
 }
 .header.scroll.fondo{
-	background: #007993
-}
-.header.scroll.fondo .contendor{
-	filter: none;
+	background: #007993;
 }
 .header.activo .contenedor .menu:nth-of-type(1){
 	top: 0 !important;
@@ -178,13 +180,14 @@ ul,figure{
 }
 .proyecto{
 	background: #007993;
-	position: relative
+	position: relative;
 }
 .proyecto .grid{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 5em;
-	position: relative
+	position: relative;
+	background: #007993;
 }
 .proyecto .grid .volver{
 	position: absolute;
@@ -201,14 +204,14 @@ ul,figure{
 	-webkit-animation-duration: 1.5s;
 	animation-iteration-count: infinite;
 	-webkit-animation-iteration-count: infinite;
-	transition: .3s
+	transition: .3s;
 }
 .proyecto .grid .volver:hover span{
 	background: none;
 	box-shadow: 0 0 50px #00b5ff;
 }
 .proyecto .grid .item{
-	text-align: end
+	text-align: end;
 }
 .proyecto .grid .item .caption{
 	color: white;
@@ -249,7 +252,7 @@ ul,figure{
 }
 .proyecto .grid .item.imagen{
 	width: 100%;
-	height: 100%;
+	height: 100%
 }
 .proyecto .hover{
 	width: 30%;
@@ -261,7 +264,7 @@ ul,figure{
 	left: -100%;
 	z-index: 1000;
 	transition: .3s;
-	transition: 1s
+	transition: 1s;
 }
 .proyecto .hover.active{
 	left: 0;
@@ -291,7 +294,7 @@ ul,figure{
 	padding: 5em 6em;
 	overflow: hidden scroll;
 	height: 100%;
-	transition: 1s
+	transition: 1s;
 }
 .proyecto .detalle::-webkit-scrollbar{
 	width: 9px;
@@ -388,31 +391,29 @@ ul,figure{
 		transform: translateX(0%);
 	}			
 }
-@media (max-width: 500px){
-	.header{
-		padding: .5em 0
-	}
-}
 @media (max-width: 800px){
-	.header .contenedor{
-		width: calc(100% - 5em)
+	body{
+		overflow-y: scroll
+	}
+	.header.fondo .contenedor .navbar .menu{
+		filter: none
 	}
 	.header .contenedor .navbar .menu{
 		position: fixed;
 		left: 0;
 		width: 100% !important;
 		margin: 0 !important;
-		height: 50vh;
+		height: 100vh;
 		background: #007993;
 		background: rgba(0, 121, 147, 0.5);
 		flex-direction: column;
-		justify-content: flex-end;
+		justify-content: center;
 		align-items: center
 	}
 	.header .contenedor .navbar .menu .item{
 		color: white;
 		font-size: 2rem;
-		margin-bottom: 2em;
+		margin: 1em 0;
 	}
 	.header .contenedor .navbar .menu:nth-of-type(1){
 		top: -100%;
@@ -423,9 +424,71 @@ ul,figure{
 		justify-content: flex-start;
 	}
 	.header .contenedor .navbar .logo{
-		margin: 0
+		margin: 0;
+		width: 40%
 	}
 	.header .contenedor .burger{
 		display: block
+	}
+	.proyecto{
+		width: 100%;
+		height: auto
+	}
+	.proyecto .grid{
+		grid-template-columns: 1fr;
+		width: 100%;
+		position: fixed
+	}
+	.proyecto .grid .volver{
+		bottom: inherit;
+		top: 6em
+	}
+	.proyecto .grid .item{
+		text-align: center
+	}
+	.proyecto .grid .item .boton{
+		display: flex;
+		justify-content: center
+	}
+	.proyecto .grid .item .boton .texto{
+		display: none;
+	}
+	.proyecto .grid .item.imagen{
+		display: flex;
+		justify-content: center
+	}
+	.proyecto .grid .item.imagen img{
+		width: 80%;
+	}
+	.proyecto .hover{
+		display: none
+	}
+	.proyecto .detalle{
+		overflow: hidden;
+		height: auto;
+		right: 0;
+		top: 100vh;
+		width: 100%
+	}
+}
+@media (max-width: 500px){
+	.header{
+		padding: 2em 0
+	}
+	.header .contenedor{
+		width: calc(100% - 5em)
+	}
+	.proyecto .grid{
+		padding: 7em 3em 4em;
+		grid-gap: 1em
+	}
+	.proyecto .grid .volver{
+		left: 1em
+	}
+	.proyecto .grid .item .boton .icono{
+		width: 8%
+	}
+	.proyecto .detalle{
+		padding: 5em 3em
 	}
 }

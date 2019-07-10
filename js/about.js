@@ -19,6 +19,13 @@ let alto = window.screen.availHeight;
 
 let gesuredZone = document.querySelector('body');
 
+$burger.addEventListener('click', function (e) {
+  $header.classList.add('activo')
+})
+$close.addEventListener('click', function (e) {
+  $header.classList.remove('activo')
+})
+
 //botones
 for(let i = 0; i < padre.length; i++){
   const $boton = document.createElement('a');
