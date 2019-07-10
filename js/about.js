@@ -52,14 +52,17 @@ for(let i = 0; i < padre.length; i++){
     if(botonClick == 0){
       $header.classList.add('fondo')
       $header.classList.remove('scroll')
+      $botones.classList.add('fondo')
       $botones.classList.add('scroll')
     }
     if(botonClick == 1){
+      $botones.classList.remove('fondo')
       $header.classList.remove('fondo')
       $header.classList.remove('scroll')
       $header.classList.remove('fondo')
     }
     if(botonClick == 2){
+      $botones.classList.remove('fondo')
       $header.classList.remove('fondo')
       $header.classList.add('scroll')
       $header.classList.add('fondo')
@@ -165,9 +168,11 @@ function slide(direccion, movil) {
     }
     if(next == 0){
       $header.classList.add('fondo')
+      $botones.classList.add('fondo')
       $botones.classList.add('scroll')
     }
     if(next == 1){
+      $botones.classList.remove('fondo')
       $header.classList.remove('fondo')
       $header.classList.remove('scroll')
     }
