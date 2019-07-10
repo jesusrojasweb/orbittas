@@ -664,8 +664,7 @@ ul,figure{
 		display: flex;
 		flex-direction: column;
 		align-items: flex-end;
-		justify-content: space-between;
-		padding-top: 6em;
+		padding-top: 2em;
 		/*height: auto;*/
 
 		@media(--tablet){
@@ -692,7 +691,7 @@ ul,figure{
 		& .proyectos{
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
-			margin: 0 3em 0 0;
+			margin: 2em 3em 2em 0;
 			grid-gap: 2em;
 			@media(--tablet){
 				grid-template-columns: 1fr 1fr;
