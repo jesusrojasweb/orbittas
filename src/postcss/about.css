@@ -1,6 +1,7 @@
 :root{
 	--colorPrincipal: #007993;
 	--colorSecundario: #009270;
+	--colorFluerecente: #00caf5;
 	--fuentePrincipal: 'Dolce Vita Heavy Bold', system-ui;
 	--fuenteSecundaria:'Arlon', system-ui;
 	--btn: {
@@ -80,6 +81,18 @@ body{
 			}
 			&:after{
 				background: color(white a(50%));
+			}
+		}
+	}
+	&.scroll.fondo{
+		& .boton{
+			&.activo{
+				&:after{
+					background: var(--colorFluerecente);
+				}
+			}
+			&:after{
+				background: color(var(--colorFluerecente) a(50%));
 			}
 		}
 	}

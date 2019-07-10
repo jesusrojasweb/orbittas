@@ -264,7 +264,7 @@ ul,figure{
 	box-sizing: border-box;
 }
 .portafolio{
-	background: #00a3c6;
+	background: var(--colorPrincipal);
 	& .grid{
 		display: grid;
 		grid-template-columns: 2fr 5fr;
@@ -284,7 +284,7 @@ ul,figure{
 					}
 				}
 				& a{
-					color: color(white a(60%));
+					color: var(--colorFluerecente);
 					text-decoration: none;
 					font-family: var(--fuentePrincipal);
 					font-size: 1.3rem;
@@ -294,9 +294,6 @@ ul,figure{
 					& span{
 						font-size: 1.5rem;
 						margin-left: .5em;
-					}
-					&:hover{
-						color: #00e1f5;
 					}
 				}
 			}
@@ -331,7 +328,7 @@ ul,figure{
 				height: 250px;
 				overflow: hidden;
 				transition: .3s;
-				background: color(white a(10%));
+				background: color(white a(8%));
 				&:hover{
 					background: color(var(--colorPrincipal) shade(20%));
 				}
