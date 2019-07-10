@@ -201,15 +201,19 @@ ul,figure{
 	color: rgba(255, 255, 255, 0.6);
 	text-decoration: none;
 	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
-	font-size: 19.2px;
-	font-size: 1.2rem;
+	font-size: 20.8px;
+	font-size: 1.3rem;
 	display: flex;
-	justify-content: space-between
+	justify-content: space-between;
+	transition: .3s
 }
 .portafolio .grid .menu .item a span{
 	font-size: 24px;
 	font-size: 1.5rem;
 	margin-left: .5em;
+}
+.portafolio .grid .menu .item a:hover{
+	color: #00caf5;
 }
 .portafolio .grid .grilla{
 	display: grid;
