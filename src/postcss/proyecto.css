@@ -118,7 +118,7 @@ ul,figure{
 	display: flex;
 	justify-content: center;
 	position: fixed;
-	z-index: 1001;
+	z-index: 900;
 	transition: .3s;
 	@media(--mobile){
 		padding: 2em 0;
