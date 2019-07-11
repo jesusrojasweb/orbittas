@@ -2,7 +2,7 @@
 	--colorPrincipal: #007993;
 	--colorSecundario: #009270;
 	--colorFluerecente: #00caf5;
-	--fuentePrincipal: 'Dolce Vita Heavy Bold', system-ui;
+	--fuentePrincipal: 'Dolce Vita', system-ui;
 	--fuenteSecundaria:'Arlon', system-ui;
 	--btn: {
 		color: white;
@@ -42,7 +42,6 @@ body{
 	margin: 0;
 	padding: 0;
 	position: relative;
-	background: var(--colorPrincipal);
 	overflow: hidden;
 	@media(--mobile){
 		overflow: hidden scroll;
@@ -218,7 +217,7 @@ ul,figure{
 					font-family: var(--fuentePrincipal);
 					text-transform: uppercase;
 					color: var(--colorPrincipal);
-					font-size: 1.2rem;
+					font-size: 1.1rem;
 					margin-left: 2em;
 					&.activo{
 						position: relative;
@@ -289,7 +288,7 @@ ul,figure{
 	}
 }
 .portafolio{
-	background: var(--colorPrincipal);
+	/*background: var(--colorPrincipal);*/
 	& .grid{
 		display: grid;
 		grid-template-columns: 2fr 5fr;
@@ -310,11 +309,11 @@ ul,figure{
 				margin-bottom: 2em;
 				&.activo{
 					& a{
-						color: white;
+						color: var(--colorPrincipal);
 					}
 				}
 				& a{
-					color: color(white a(50%));
+					color: color(var(--colorFluerecente) a(80%));
 					text-decoration: none;
 					font-family: var(--fuentePrincipal);
 					font-size: 1.3rem;
@@ -361,19 +360,21 @@ ul,figure{
 				height: 250px;
 				overflow: hidden;
 				transition: .3s;
-				background: color(white a(8%));
+				background: #f7f7f7;
 				&:hover{
-					background: color(var(--colorPrincipal) shade(20%));
+					background: color(#f7f7f7 shade(20%));
 				}
 				& .nombre{
 					z-index: 1000;
 					margin: 0;
+					color: var(--colorPrincipal);
 				}
 				& .imagen{
 					z-index: 1000;
 				}
 				& .caracteristicas{
 					z-index: 1000;
+					color: var(--colorPrincipal);
 				}
 			}
 		}

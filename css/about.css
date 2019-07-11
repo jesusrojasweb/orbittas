@@ -154,11 +154,11 @@ ul,figure{
 }
 .header .contenedor .navbar .menu .item{
 	text-decoration: none;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	text-transform: uppercase;
 	color: #007993;
-	font-size: 19.2px;
-	font-size: 1.2rem;
+	font-size: 17.6px;
+	font-size: 1.1rem;
 	margin-left: 2em
 }
 .header .contenedor .navbar .menu .item.activo{
@@ -220,7 +220,7 @@ ul,figure{
 }
 .hero .margen .item .title{
 	color: white;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	font-size: 92.8px;
 	font-size: 5.8rem;
 	margin: 0;
@@ -261,7 +261,7 @@ ul,figure{
 }
 .equipo .contenedor .title{
 	color: white;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	font-size: 48px;
 	font-size: 3rem;
 }

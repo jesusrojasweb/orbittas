@@ -157,11 +157,11 @@ ul,figure{
 }
 .header .contenedor .navbar .menu .item{
 	text-decoration: none;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	text-transform: uppercase;
 	color: #007993;
-	font-size: 19.2px;
-	font-size: 1.2rem;
+	font-size: 17.6px;
+	font-size: 1.1rem;
 	margin-left: 2em
 }
 .header .contenedor .navbar .menu .item.activo{
@@ -283,7 +283,7 @@ ul,figure{
 	z-index: 1000;
 }
 .hero .copy .item .title{
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	font-size: 128px;
 	font-size: 8rem;
 	color: #007993;
@@ -323,7 +323,7 @@ ul,figure{
 	border: 2px solid white;
 	padding: 1em 2em;
 	text-transform: uppercase;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	text-decoration: none;
 	border-radius: 2em;
 	font-size: 16px;
@@ -412,7 +412,7 @@ ul,figure{
 	border: 2px solid white;
 	padding: 1em 2em;
 	text-transform: uppercase;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	text-decoration: none;
 	border-radius: 2em;
 	font-size: 16px;
@@ -434,6 +434,32 @@ ul,figure{
 .servicios.active, .servicios.prev{
 	display: flex;
 }
+.servicios .grid{
+	display: grid;
+	grid-template-columns: repeat(4,1fr);
+	grid-gap: 5em;
+	text-align: center;
+	position: relative;
+	padding-top:4em;
+	padding-right: 9em;
+	align-items: center
+}
+.servicios .grid #pro .cls-1,.servicios .grid #elec .cls-4,.servicios .grid #web .cls-1,.servicios .grid #pro .cls-2,.servicios .grid #elec .cls-5,.servicios .grid #web .cls-2,.servicios .grid #movil .cls-2{
+	fill: #bfdedb;
+}
+.servicios .grid #pro .cls-1, .servicios .grid #pro .cls-2, .servicios .grid #elec .cls-4, .servicios .grid #elec .cls-5, .servicios .grid #elec .cls-6, .servicios .grid #web .cls-1, .servicios .grid #web .cls-2, .servicios .grid #web .cls-3, .servicios .grid #movil .cls-2, .servicios .grid #movil .cls-3{
+	animation: rotate 50s;
+	animation-iteration-count: infinite;
+	transform-origin: 50%;
+	animation-timing-function: linear;
+}
+.servicios .grid .nombre-servicios{
+	color: #007993;
+	font-family: 'Arlon', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+}
+.servicios .grid .descripcion{
+	color: #009270;
+}
 .servicios.animacion #pro .cls-2 {
 	transition: 2s;
 	fill: #007e70;
@@ -450,52 +476,7 @@ ul,figure{
 	transition: 8s;
 	fill: #007e70;
 }
-.servicios.animacion .grid .item{
-	animation-name: fadeIn;
-	-webkit-animation-name: fadeIn;
-	animation-duration: 1.5s;
-	-webkit-animation-duration: 1.5s;
-	animation-fill-mode: forwards;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-timing-function: ease-in-out;
-	animation-fill-mode: forwards;
-	visibility: visible !important;
-}
-.servicios .grid{
-	display: grid;
-	grid-template-columns: repeat(4,1fr);
-	grid-gap: 5em;
-	text-align: center;
-	position: relative;
-	padding-top:4em;
-	padding-right: 9em;
-	height: auto
-}
-.servicios .grid .item{
-	transform: scale(0);
-	opacity: 0.0;
-}
-.servicios .grid .item:nth-of-type(2){
-	margin-top: 2em;
-	animation-delay: .1s;
-}
-.servicios .grid .item:nth-of-type(3){
-	margin-top: 4em;
-	animation-delay: .25s;
-}
-.servicios .grid .item:nth-of-type(4){
-	margin-top: 6em;
-	animation-delay: .5s;
-}
-.servicios .grid .nombre-servicios{
-	color: #007993;
-	font-family: 'Arlon', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
-}
-.servicios .grid .descripcion{
-	color: #009270;
-}
 .portafolio{
-	background: #007993;
 	align-items: center;
 	overflow: hidden
 }
@@ -506,13 +487,14 @@ ul,figure{
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-	padding-top: 2em
+	padding-top: 2em;
+	justify-content: center
 	/*height: auto;*/
 }
 .portafolio .grid .title{
 	text-align: center;
-	color: white;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	color: #007993;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	align-self: center;
 	font-size: 28.8px;
 	font-size: 1.8rem;
@@ -535,21 +517,22 @@ ul,figure{
 	height: 250px;
 	overflow: hidden;
 	transition: .3s;
-	background: #ffffff;
-	background: rgba(255, 255, 255, 0.1)
+	background: #f7f7f7
 }
 .portafolio .grid .proyectos .proyecto:hover{
-	background: rgb(0, 97, 118);
+	background: rgb(198, 198, 198);
 }
 .portafolio .grid .proyectos .proyecto .nombre{
 	z-index: 1000;
 	margin: 0;
+	color: #007993;
 }
 .portafolio .grid .proyectos .proyecto .imagen{
 	z-index: 1000;
 }
 .portafolio .grid .proyectos .proyecto .caracteristicas{
 	z-index: 1000;
+	color: #007993;
 }
 .portafolio .grid .proyectos .proyecto{
 	/*&:before{
@@ -578,23 +561,22 @@ ul,figure{
 	border: 2px solid white;
 	padding: 1em 2em;
 	text-transform: uppercase;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	text-decoration: none;
 	border-radius: 2em;
 	font-size: 16px;
 	font-size: 1rem;
-	transition: .3s
+	transition: .3s;
 }
 .portafolio .grid .btn:hover{
 	box-shadow: 0 0 50px #00b5ff;
 }
 .portafolio .grid .btn{
-	margin-right: 3em
-}
-.portafolio .grid .btn:hover{
-	border-color: #00caf5;
-	background: #00caf5;
-	color: #007993;
+	background: rgb(0, 121, 147);
+	background: linear-gradient(90deg, rgba(0, 121, 147, 1) 0%, rgba(0, 146, 112, 1) 100%) !important;
+	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#007993",endColorstr="#009270",GradientType=1) !important;
+	border: none;
+	margin-right: 3em;
 }
 .contacto{
 	overflow: hidden;
@@ -610,7 +592,7 @@ ul,figure{
 }
 .contacto .grid .animanos{
 	color: #007993;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	font-size: 48px;
 	font-size: 3rem;
 }
@@ -644,7 +626,7 @@ ul,figure{
 	color: #007993;
 	font-size: 19.2px;
 	font-size: 1.2rem;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 }
 .contacto .grid .formulario .contact{
 	width: 100%;
@@ -685,7 +667,7 @@ ul,figure{
 	border: 2px solid white;
 	padding: 1em 2em;
 	text-transform: uppercase;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	text-decoration: none;
 	border-radius: 2em;
 	font-size: 16px;
@@ -735,7 +717,7 @@ ul,figure{
 .contacto .grid .footer .menu .item a{
 	color: white;
 	text-decoration: none;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 }
 .contacto .grid .footer .copy{
 	display: flex;
@@ -870,6 +852,14 @@ slideRight
 	100% {
 		transform: scaleX(1);
 	}							
+}
+@keyframes rotate{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
 }
 @media (max-width: 500px){
 	.header{

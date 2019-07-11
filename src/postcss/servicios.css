@@ -2,7 +2,7 @@
 	--colorPrincipal: #007993;
 	--colorSecundario: #009270;
 	--colorFluerecente: #00caf5;
-	--fuentePrincipal: 'Dolce Vita Heavy Bold', system-ui;
+	--fuentePrincipal: 'Dolce Vita', system-ui;
 	--fuenteSecundaria:'Arlon', system-ui;
 	--btn: {
 		color: white;
@@ -239,7 +239,7 @@ ul,figure{
 					font-family: var(--fuentePrincipal);
 					text-transform: uppercase;
 					color: var(--colorPrincipal);
-					font-size: 1.2rem;
+					font-size: 1.1rem;
 					margin-left: 2em;
 					&.activo{
 						position: relative;
@@ -394,6 +394,9 @@ ul,figure{
 				font-family: var(--fuentePrincipal);
 				font-size: 5rem;
 				margin-bottom: 0;
+				& .ancho{
+					font-size: 4.2rem;
+				}
 				@media(--mobile){
 					font-size: 3rem;
 				}

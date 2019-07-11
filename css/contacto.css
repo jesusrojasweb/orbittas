@@ -131,11 +131,11 @@ ul,figure{
 }
 .header .contenedor .navbar .menu .item{
 	text-decoration: none;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	text-transform: uppercase;
 	color: #007993;
-	font-size: 19.2px;
-	font-size: 1.2rem;
+	font-size: 17.6px;
+	font-size: 1.1rem;
 	margin-left: 2em
 }
 .header .contenedor .navbar .menu .item.activo{
@@ -200,7 +200,7 @@ ul,figure{
 }
 .contacto .grid .animanos{
 	color: #007993;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	font-size: 48px;
 	font-size: 3rem;
 }
@@ -234,7 +234,7 @@ ul,figure{
 	color: #007993;
 	font-size: 19.2px;
 	font-size: 1.2rem;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 }
 .contacto .grid .formulario .contact{
 	width: 100%;
@@ -275,7 +275,7 @@ ul,figure{
 	border: 2px solid white;
 	padding: 1em 2em;
 	text-transform: uppercase;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	text-decoration: none;
 	border-radius: 2em;
 	font-size: 16px;
@@ -325,7 +325,7 @@ ul,figure{
 .contacto .grid .footer .menu .item a{
 	color: white;
 	text-decoration: none;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 }
 .contacto .grid .footer .copy{
 	display: flex;
