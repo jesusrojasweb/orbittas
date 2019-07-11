@@ -202,13 +202,14 @@ ul,figure{
 }
 .portafolio .grid .menu .item{
 	margin-bottom: 2em;
-}
-.portafolio .grid .menu .item.activo a{
-	color: #007993;
+	/*&.activo{
+					& a{
+					}
+				}*/
 }
 .portafolio .grid .menu .item a{
-	color: #00caf5;
-	color: rgba(0, 202, 245, 0.8);
+	color: #007993;
+	/*color: color(var(--colorFluerecente) a(80%));*/
 	text-decoration: none;
 	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	font-size: 20.8px;
@@ -236,7 +237,7 @@ ul,figure{
 	margin-left: 1em;
 }
 .portafolio .grid .grilla::-webkit-scrollbar-thumb{
-	background: white;
+	background: #007993;
 	border-radius: 5px;
 }
 .portafolio .grid .grilla .proyecto{

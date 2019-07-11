@@ -484,6 +484,12 @@ ul,figure{
 				width: 100% !important;
 			}
 		}
+		& .item{
+			& .imagen{
+				display: flex;
+				justify-content: center;
+			}
+		}
 		& .item:last-child{
 			@media(--mobile){
 				margin-bottom: 4em;
