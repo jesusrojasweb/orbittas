@@ -3,7 +3,6 @@ body{
 	margin: 0;
 	padding: 0;
 	position: relative;
-	background: #007993;
 	overflow: hidden;
 }
 .botones{
@@ -126,11 +125,11 @@ ul,figure{
 }
 .header .contenedor .navbar .menu .item{
 	text-decoration: none;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	text-transform: uppercase;
 	color: #007993;
-	font-size: 19.2px;
-	font-size: 1.2rem;
+	font-size: 17.6px;
+	font-size: 1.1rem;
 	margin-left: 2em;
 }
 .header .contenedor .navbar .menu .item.activo{
@@ -186,7 +185,7 @@ ul,figure{
 	width: 100%;
 }
 .portafolio{
-	background: #007993
+	/*background: var(--colorPrincipal);*/
 }
 .portafolio .grid{
 	display: grid;
@@ -205,13 +204,13 @@ ul,figure{
 	margin-bottom: 2em;
 }
 .portafolio .grid .menu .item.activo a{
-	color: white;
+	color: #007993;
 }
 .portafolio .grid .menu .item a{
-	color: #ffffff;
-	color: rgba(255, 255, 255, 0.5);
+	color: #00caf5;
+	color: rgba(0, 202, 245, 0.8);
 	text-decoration: none;
-	font-family: 'Dolce Vita Heavy Bold', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
+	font-family: 'Dolce Vita', system-ui, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Droid Sans, Helvetica Neue;
 	font-size: 20.8px;
 	font-size: 1.3rem;
 	display: flex;
@@ -252,21 +251,22 @@ ul,figure{
 	height: 250px;
 	overflow: hidden;
 	transition: .3s;
-	background: #ffffff;
-	background: rgba(255, 255, 255, 0.08);
+	background: #f7f7f7;
 }
 .portafolio .grid .grilla .proyecto:hover{
-	background: rgb(0, 97, 118);
+	background: rgb(198, 198, 198);
 }
 .portafolio .grid .grilla .proyecto .nombre{
 	z-index: 1000;
 	margin: 0;
+	color: #007993;
 }
 .portafolio .grid .grilla .proyecto .imagen{
 	z-index: 1000;
 }
 .portafolio .grid .grilla .proyecto .caracteristicas{
 	z-index: 1000;
+	color: #007993;
 }
 @media (max-width: 500px){
 	body{
