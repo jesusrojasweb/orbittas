@@ -46,6 +46,7 @@ body{
 	&::-webkit-scrollbar{
 		width: 7px;
 		margin-left: 1em;
+		background: var(--colorPrincipal);
 	}
 	&::-webkit-scrollbar-thumb{
 
@@ -404,7 +405,7 @@ ul,figure{
 			justify-content: space-between;
 			margin-top: 5em;
 			& .item{
-				width: 30%;
+				width: 25%;
 				margin-right: 2em;
 				margin-bottom: 4em;
 				@media(--tablet){
