@@ -363,6 +363,10 @@ ul,figure{
 			}
 		}*/
 }
+.about .grid .item .imagen{
+	display: flex;
+	justify-content: center;
+}
 .about .grid .item:first-child{
 	display: grid;
 	grid-template-columns: 1fr 1fr;

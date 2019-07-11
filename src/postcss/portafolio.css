@@ -307,13 +307,13 @@ ul,figure{
 			padding-bottom: 4em;
 			& .item{
 				margin-bottom: 2em;
-				&.activo{
+				/*&.activo{
 					& a{
-						color: var(--colorPrincipal);
 					}
-				}
+				}*/
 				& a{
-					color: color(var(--colorFluerecente) a(80%));
+					color: var(--colorPrincipal);
+					/*color: color(var(--colorFluerecente) a(80%));*/
 					text-decoration: none;
 					font-family: var(--fuentePrincipal);
 					font-size: 1.3rem;
@@ -344,7 +344,7 @@ ul,figure{
 			}
 			&::-webkit-scrollbar-thumb{
 
-				background: white;
+				background: var(--colorPrincipal);
 				border-radius: 5px;
 
 			}
