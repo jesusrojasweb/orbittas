@@ -228,6 +228,10 @@ ul,figure{
 .hero .margen .item .title .sangria{
 	margin-left: 1em;
 }
+.hero .margen .item .title .spacing{
+	letter-spacing: -25px;
+	margin-right: 25px;
+}
 .hero .margen .item .descripcion{
 	color: white;
 }

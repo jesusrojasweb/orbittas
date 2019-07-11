@@ -343,6 +343,10 @@ ul,figure{
 				& .sangria{
 					margin-left: 1em;
 				}
+				& .spacing{
+					letter-spacing: -25px;
+					margin-right: 25px;
+				}
 			}
 			& .descripcion{
 				color: white;
