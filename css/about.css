@@ -9,6 +9,7 @@ body{
 body::-webkit-scrollbar{
 	width: 7px;
 	margin-left: 1em;
+	background: #007993;
 }
 body::-webkit-scrollbar-thumb{
 	background: white;
@@ -277,7 +278,7 @@ ul,figure{
 	margin-top: 5em
 }
 .equipo .contenedor .grid .item{
-	width: 30%;
+	width: 25%;
 	margin-right: 2em;
 	margin-bottom: 4em;
 }
