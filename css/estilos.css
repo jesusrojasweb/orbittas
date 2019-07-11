@@ -366,7 +366,16 @@ ul,figure{
 }
 .about .grid .item .imagen{
 	display: flex;
-	justify-content: center;
+	justify-content: center
+}
+.about .grid .item .imagen .cls-4{
+	animation: rotate 40s;
+	animation-iteration-count: infinite;
+	animation-timing-function: linear;
+	transform-origin: 50%;
+}
+.about .grid .item .imagen svg{
+	width: 70%;
 }
 .about .grid .item:first-child{
 	display: grid;
@@ -503,6 +512,7 @@ ul,figure{
 	align-self: center;
 	font-size: 28.8px;
 	font-size: 1.8rem;
+	margin-top: 4em;
 }
 .portafolio .grid .proyectos{
 	display: grid;

@@ -489,6 +489,15 @@ ul,figure{
 			& .imagen{
 				display: flex;
 				justify-content: center;
+				& .cls-4{
+					animation: rotate 40s;
+					animation-iteration-count: infinite;
+					animation-timing-function: linear;
+					transform-origin: 50%;
+				}
+				& svg{
+					width: 70%;
+				}
 			}
 		}
 		& .item:last-child{
@@ -675,6 +684,7 @@ ul,figure{
 			font-family: var(--fuentePrincipal);
 			align-self: center;
 			font-size: 1.8rem;
+			margin-top: 4em;
 		}
 		& .proyectos{
 			display: grid;
