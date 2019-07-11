@@ -393,7 +393,11 @@ ul,figure{
 				color: white;
 				font-family: var(--fuentePrincipal);
 				font-size: 5rem;
-				margin-bottom: 0;
+				margin-bottom: 1em;
+				& .spacing{
+					letter-spacing: -25px;
+					margin-right: 25px;
+				}
 				& .ancho{
 					font-size: 4.2rem;
 				}
