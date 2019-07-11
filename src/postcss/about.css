@@ -390,6 +390,9 @@ ul,figure{
 .equipo{
 	background: var(--colorPrincipal);
 	height: auto;
+	& .margen{
+		padding-top: 14em;
+	}
 	& .contenedor{
 		text-align: center;
 		height: auto;
@@ -403,7 +406,7 @@ ul,figure{
 			flex-wrap: wrap;
 			width: 100%;
 			justify-content: space-between;
-			margin-top: 5em;
+			margin-top: 2em;
 			& .item{
 				width: 25%;
 				margin-right: 2em;

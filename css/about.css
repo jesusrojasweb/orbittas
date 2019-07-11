@@ -260,6 +260,9 @@ ul,figure{
 	background: #007993;
 	height: auto
 }
+.equipo .margen{
+	padding-top: 14em;
+}
 .equipo .contenedor{
 	text-align: center;
 	height: auto
@@ -275,7 +278,7 @@ ul,figure{
 	flex-wrap: wrap;
 	width: 100%;
 	justify-content: space-between;
-	margin-top: 5em
+	margin-top: 2em
 }
 .equipo .contenedor .grid .item{
 	width: 25%;
