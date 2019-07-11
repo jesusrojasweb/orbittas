@@ -110,6 +110,7 @@ ul,figure{
 	box-sizing: border-box;
 	z-index: 1200;
 	position: relative;
+	max-width: 1420px;
 }
 .header .contenedor .navbar{
 	width: 100%;
@@ -177,6 +178,12 @@ ul,figure{
 	padding: 11em 6em 4em;
 	height: 100vh;
 	box-sizing: border-box;
+	max-width: 1420px;
+	width: 100%;
+}
+.slide{
+	display: flex;
+	justify-content: center;
 }
 .proyecto{
 	background: #007993;

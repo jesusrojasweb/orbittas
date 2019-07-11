@@ -141,6 +141,7 @@ ul,figure{
 	box-sizing: border-box;
 	z-index: 1200;
 	position: relative;
+	max-width: 1420px;
 }
 .header .contenedor .navbar{
 	width: 100%;
@@ -204,6 +205,10 @@ ul,figure{
 	right: 0;
 	visibility: hidden;
 }
+.slide{
+	display: flex;
+	justify-content: center;
+}
 .cls-22{
 	animation-name: floating;
 	-webkit-animation-name: floating;
@@ -222,14 +227,16 @@ ul,figure{
 	fill: #fcd121;
 }
 .margen{
-	padding: 10em 6em 4em;
-	height: 100vh;
+	padding: 7em 6em 4em;
+	height: 1066px;
 	box-sizing: border-box;
+	height: 700px;
+	max-width: 1420px;
+	width: 100%;
 }
 .hero{
 	box-sizing: border-box;
 	position: relative;
-	height: 100vh;
 }
 .hero.animacion .copy .item:first-child{
 	animation-name: slideExpandUp;
@@ -262,7 +269,8 @@ ul,figure{
 .hero .copy{
 	display: grid;
 	grid-template-columns: 4fr 3fr;
-	height: 100%;
+	/*height: 100%;*/
+	width: 100%;
 	transition: .3s;
 }
 .hero .copy .item:first-child{
@@ -300,7 +308,7 @@ ul,figure{
 	font-weight: 600;
 	font-size: 24px;
 	font-size: 1.5rem;
-	margin: -2em 0 0;
+	margin: -4em 0 0;
 	z-index: 1000;
 }
 .hero .copy .item .ilustracion{
@@ -333,25 +341,16 @@ ul,figure{
 }
 .about{
 	background: #007993;
-	align-items: center
+	align-items: center;
+	width: 100%
 }
 .about.active, .about.prev{
 	display: flex;
 }
-.about.animacion .grid .item:first-child .contenedor,.about.animacion .grid .item:last-child{
-	animation-name: slideRight;
-	-webkit-animation-name: slideRight;
-	animation-duration: 1.5s;
-	-webkit-animation-duration: 1.5s;
-	animation-fill-mode: forwards;
-	animation-timing-function: ease-in-out;
-	-webkit-animation-timing-function: ease-in-out;
-	visibility: visible !important;
-}
 .about .grid{
 	display: flex;
 	flex-direction: column;
-	height: 97vh;
+	/*height: 97vh;*/
 	color: white;
 	justify-content: space-evenly;
 	padding-top:4em
@@ -364,17 +363,11 @@ ul,figure{
 			}
 		}*/
 }
-.about .grid .item:last-child{
-	transform: translateX(150%);
-}
 .about .grid .item:first-child{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	grid-gap: 4em;
-	align-items: center
-}
-.about .grid .item:first-child .contenedor{
-	transform: translateX(-150%);
+	align-items: center;
 }
 .about .grid .item:first-child .img{
 	width: 70%;
