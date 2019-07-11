@@ -42,6 +42,8 @@ body{
 	margin: 0;
 	padding: 0;
 	position: relative;
+	background: var(--colorPrincipal);
+	overflow: hidden;
 	@media(--mobile){
 		overflow: hidden scroll;
 	}
@@ -173,6 +175,7 @@ ul,figure{
 		box-sizing: border-box;
 		z-index: 1200;
 		position: relative;
+		max-width: 1420px;
 		@media(--mobile){
 			width: calc(100% - 5em);
 		}
@@ -268,14 +271,21 @@ ul,figure{
 		}
 	}
 }
+.slide{
+	display: flex;
+	justify-content: center;
+}
 
 
 .margen{
-	padding: 10em 6em 4em;
-	height: 100vh;
+	padding: 12em 6em 4em;
 	box-sizing: border-box;
+	height: 100vh;
+	max-width: 1420px;
+	width: 100%;
 	@media(--mobile){
-		padding: 10em 3em 4em !important;
+		height: auto;
+		padding: 8em 4em 6em 2em;
 	}
 }
 .portafolio{

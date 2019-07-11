@@ -196,6 +196,7 @@ ul,figure{
 		box-sizing: border-box;
 		z-index: 1200;
 		position: relative;
+		max-width: 1420px;
 		@media(--mobile){
 			width: calc(100% - 5em);
 		}
@@ -291,11 +292,15 @@ ul,figure{
 		}
 	}
 }
-
+.slide{
+	display: flex;
+	justify-content: center;
+}
 .margen{
 	padding: 10em 6em 4em;
 	height: 100vh;
 	box-sizing: border-box;
+	max-width: 1420px;
 	@media(--mobile){
 		padding: 10em 3em 4em;
 	}

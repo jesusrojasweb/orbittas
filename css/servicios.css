@@ -136,6 +136,7 @@ ul,figure{
 	box-sizing: border-box;
 	z-index: 1200;
 	position: relative;
+	max-width: 1420px;
 }
 .header .contenedor .navbar{
 	width: 100%;
@@ -199,10 +200,15 @@ ul,figure{
 	right: 0;
 	visibility: hidden;
 }
+.slide{
+	display: flex;
+	justify-content: center;
+}
 .margen{
 	padding: 10em 6em 4em;
 	height: 100vh;
 	box-sizing: border-box;
+	max-width: 1420px;
 }
 .right{
 	padding-left: 8em

@@ -197,6 +197,7 @@ ul,figure{
 		box-sizing: border-box;
 		z-index: 1200;
 		position: relative;
+		max-width: 1420px;
 		@media(--mobile){
 			width: calc(100% - 5em);
 		}
@@ -292,6 +293,10 @@ ul,figure{
 		}
 	}
 }
+.slide{
+	display: flex;
+	justify-content: center;
+}
 .cls-22{
 	animation-name: floating;
 	-webkit-animation-name: floating;
@@ -310,9 +315,12 @@ ul,figure{
 	}
 }
 .margen{
-	padding: 10em 6em 4em;
-	height: 100vh;
+	padding: 7em 6em 4em;
+	height: 1066px;
 	box-sizing: border-box;
+	height: 700px;
+	max-width: 1420px;
+	width: 100%;
 	@media(--mobile){
 		height: auto;
 		padding: 8em 4em 6em 2em;
@@ -321,7 +329,6 @@ ul,figure{
 .hero{
 	box-sizing: border-box;
 	position: relative;
-	height: 100vh;
 	@media(--mobile){
 		height: 100vh;
 		overflow: hidden;
@@ -367,7 +374,8 @@ ul,figure{
 	& .copy{
 		display: grid;
 		grid-template-columns: 4fr 3fr;
-		height: 100%;
+		/*height: 100%;*/
+		width: 100%;
 		transition: .3s;
 		@media(--mobile){
 			padding: 0 2em;
@@ -424,7 +432,7 @@ ul,figure{
 				color: color(var(--colorPrincipal) a(80%));
 				font-weight: 600;
 				font-size: 1.5rem;
-				margin: -2em 0 0;
+				margin: -4em 0 0;
 				z-index: 1000;
 			}
 			& .ilustracion{
@@ -446,25 +454,10 @@ ul,figure{
 .about{
 	background: var(--colorPrincipal);
 	align-items: center;
+	width: 100%;
 	&.active, &.prev{
 		display: flex;
 
-	}
-	&.animacion{
-		& .grid{
-			& .item:first-child .contenedor,& .item:last-child{
-				animation-name: slideRight;
-				-webkit-animation-name: slideRight;	
-
-				animation-duration: 1.5s;	
-				-webkit-animation-duration: 1.5s;
-				animation-fill-mode: forwards;
-				animation-timing-function: ease-in-out;	
-				-webkit-animation-timing-function: ease-in-out;		
-
-				visibility: visible !important;	
-			}
-		}
 	}
 	@media(--mobile){
 		height: auto;
@@ -472,7 +465,7 @@ ul,figure{
 	& .grid{
 		display: flex;
 		flex-direction: column;
-		height: 97vh;
+		/*height: 97vh;*/
 		color: white;
 		justify-content: space-evenly;
 		padding-top:4em;
@@ -492,7 +485,6 @@ ul,figure{
 			}
 		}
 		& .item:last-child{
-			transform: translateX(150%);
 			@media(--mobile){
 				margin-bottom: 4em;
 			}
@@ -502,10 +494,6 @@ ul,figure{
 			grid-template-columns: 1fr 1fr;
 			grid-gap: 4em;
 			align-items: center;
-			& .contenedor{
-
-				transform: translateX(-150%);
-			}
 			@media(--mobile){
 				grid-template-columns: 1fr;
 			}

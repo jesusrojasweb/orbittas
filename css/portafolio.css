@@ -3,6 +3,8 @@ body{
 	margin: 0;
 	padding: 0;
 	position: relative;
+	background: #007993;
+	overflow: hidden;
 }
 .botones{
 	position: fixed;
@@ -108,6 +110,7 @@ ul,figure{
 	box-sizing: border-box;
 	z-index: 1200;
 	position: relative;
+	max-width: 1420px;
 }
 .header .contenedor .navbar{
 	width: 100%;
@@ -171,10 +174,16 @@ ul,figure{
 	right: 0;
 	visibility: hidden;
 }
+.slide{
+	display: flex;
+	justify-content: center;
+}
 .margen{
-	padding: 10em 6em 4em;
-	height: 100vh;
+	padding: 12em 6em 4em;
 	box-sizing: border-box;
+	height: 100vh;
+	max-width: 1420px;
+	width: 100%;
 }
 .portafolio{
 	background: #007993
@@ -270,7 +279,8 @@ ul,figure{
 		width: calc(100% - 5em);
 	}
 	.margen{
-		padding: 10em 3em 4em !important;
+		height: auto;
+		padding: 8em 4em 6em 2em;
 	}
 	.portafolio .grid{
 		grid-template-columns: 1fr;
