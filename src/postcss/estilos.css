@@ -417,6 +417,7 @@ ul,figure{
 				color: #007993c7;
 				margin: 0;
 				z-index: 1000;
+				line-height: 1em;
 				& b{
 					@apply --gradient-inter;
 				}
