@@ -479,7 +479,7 @@ ul,figure{
 		color: white;
 		justify-content: space-evenly;
 		padding-top:4em;
-		z-index: 900;
+		
 		/*@media(--tablet){
 			grid-template-columns: 1fr;
 			grid-template-rows: 1fr;
@@ -496,9 +496,13 @@ ul,figure{
 			}
 		}
 		& .item{
+			& .contenedor{
+				z-index: 1000;
+			}
 			& .imagen{
 				display: flex;
 				justify-content: center;
+
 				& .cls-4{
 					animation: rotate 40s;
 					animation-iteration-count: infinite;
@@ -507,6 +511,7 @@ ul,figure{
 				}
 				& svg{
 					width: 70%;
+					z-index: 900;
 				}
 			}
 		}
@@ -532,6 +537,7 @@ ul,figure{
 		}
 		& .descripcion{
 			margin: 0;
+			background: var(--colorPrincipal);
 		}
 		& .item:last-child{
 			justify-self: flex-end;
@@ -549,6 +555,7 @@ ul,figure{
 			display: grid;
 			grid-template-columns: 1fr 1fr;
 			grid-gap: 2em;
+
 			@media(--tablet){
 				margin-top: 2em;
 				grid-template-columns: 1fr;
@@ -577,6 +584,7 @@ ul,figure{
 		}
 		& .btn{
 			@apply --btn;
+			z-index: 900;
 			&:hover{
 				border-color: #00caf5;
 				background: #00caf5;
