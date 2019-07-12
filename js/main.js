@@ -54,10 +54,6 @@ window.addEventListener('scroll', function (e) {
     $servicios.classList.add('animacion')
     $header.classList.remove('fondo')
   }
-  if(coordsPortafolio.top <= 100){
-    $portafolio.classList.add('animacion')
-    $header.classList.add('fondo')
-  }
   if(coordsContacto.top <= 100){
     $contacto.classList.add('animacion')
     $header.classList.remove('fondo')
