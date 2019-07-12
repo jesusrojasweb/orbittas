@@ -310,6 +310,15 @@ ul,figure{
 
 .hero{
 	background: var(--colorPrincipal);
+	position: relative;
+	& #particles-js{
+		position: absolute;
+		width: 100%;
+		height: 25%;
+		bottom: 0;
+		left: 0;
+		z-index: 0;
+	}
 	& .margen{
 		display: grid;
 		align-items: center;
