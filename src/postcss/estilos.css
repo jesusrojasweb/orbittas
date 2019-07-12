@@ -627,7 +627,7 @@ ul,figure{
 			fill: #bfdedb;
 		}
 		& #pro .cls-1, & #pro .cls-2,& #elec .cls-4, & #elec .cls-5, & #elec .cls-6, & #web .cls-1, & #web .cls-2,& #web .cls-3 , & #movil .cls-2, & #movil .cls-3{
-			animation: rotate 50s;
+			animation: rotateLeft 50s;
 			animation-iteration-count: infinite;
 			transform-origin: 50%;
 			animation-timing-function: linear;
@@ -648,18 +648,18 @@ ul,figure{
 	&.animacion{
 		& #pro .cls-2 {
 		    transition: 2s;
-		    fill: #007e70;
+		    fill: var(--colorPrincipal);
 		}& #elec .cls-5 {
 		    transition: 4s;
-		    fill: #007e70;
+		    fill: var(--colorPrincipal);
 		}
 		& #web .cls-2 {
 		    transition: 6s;
-		    fill: #007e70;
+		    fill: var(--colorPrincipal);
 		}
 		& #movil .cls-2 {
 		    transition: 8s;
-		    fill: #007e70;
+		    fill: var(--colorPrincipal);
 		}
 	}
 }
@@ -1203,5 +1203,29 @@ slideRight
 	}
 	100%{
 		transform: rotate(360deg);
+	}
+}
+@-webkit-keyframes rotate{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+@keyframes rotateLeft{
+	0%{
+		transform: rotate(360deg);
+	}
+	100%{
+		transform: rotate(0deg);
+	}
+}
+@-webkit-keyframes rotateLeft{
+	0%{
+		transform: rotate(360deg);
+	}
+	100%{
+		transform: rotate(0deg);
 	}
 }

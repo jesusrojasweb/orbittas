@@ -483,7 +483,7 @@ ul,figure{
 	fill: #bfdedb;
 }
 .servicios .grid #pro .cls-1, .servicios .grid #pro .cls-2, .servicios .grid #elec .cls-4, .servicios .grid #elec .cls-5, .servicios .grid #elec .cls-6, .servicios .grid #web .cls-1, .servicios .grid #web .cls-2, .servicios .grid #web .cls-3, .servicios .grid #movil .cls-2, .servicios .grid #movil .cls-3{
-	animation: rotate 50s;
+	animation: rotateLeft 50s;
 	animation-iteration-count: infinite;
 	transform-origin: 50%;
 	animation-timing-function: linear;
@@ -497,19 +497,19 @@ ul,figure{
 }
 .servicios.animacion #pro .cls-2 {
 	transition: 2s;
-	fill: #007e70;
+	fill: #007993;
 }
 .servicios.animacion #elec .cls-5 {
 	transition: 4s;
-	fill: #007e70;
+	fill: #007993;
 }
 .servicios.animacion #web .cls-2 {
 	transition: 6s;
-	fill: #007e70;
+	fill: #007993;
 }
 .servicios.animacion #movil .cls-2 {
 	transition: 8s;
-	fill: #007e70;
+	fill: #007993;
 }
 .portafolio{
 	align-items: center;
@@ -907,6 +907,14 @@ slideRight
 	}
 	100%{
 		transform: rotate(360deg);
+	}
+}
+@keyframes rotateLeft{
+	0%{
+		transform: rotate(360deg);
+	}
+	100%{
+		transform: rotate(0deg);
 	}
 }
 @media (max-width: 500px){
