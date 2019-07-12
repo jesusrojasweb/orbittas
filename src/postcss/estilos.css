@@ -516,6 +516,7 @@ ul,figure{
 			}
 		}
 		& .item:last-child{
+			z-index: 1000;
 			@media(--mobile){
 				margin-bottom: 4em;
 			}
@@ -566,6 +567,7 @@ ul,figure{
 			& .cualidad{
 				display: flex;
 				align-items: center;
+				background: var(--colorPrincipal);
 				&:nth-of-type(2){
 					& .icono{
 						width: 8%;

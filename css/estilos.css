@@ -390,6 +390,9 @@ ul,figure{
 	width: 70%;
 	z-index: 900;
 }
+.about .grid .item:last-child{
+	z-index: 1000;
+}
 .about .grid .item:first-child{
 	display: grid;
 	grid-template-columns: 1fr 1fr;
@@ -424,7 +427,8 @@ ul,figure{
 }
 .about .grid .cualidades .cualidad{
 	display: flex;
-	align-items: center
+	align-items: center;
+	background: #007993
 }
 .about .grid .cualidades .cualidad:nth-of-type(2) .icono{
 	width: 8%;
