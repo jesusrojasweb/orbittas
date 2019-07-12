@@ -403,7 +403,8 @@ ul,figure{
 				color: white;
 				font-family: var(--fuentePrincipal);
 				font-size: 5.8rem;
-				margin-bottom: 1em;
+				margin-bottom: 1.5em;
+				line-height: 1em;
 				& .spacing{
 					letter-spacing: -25px;
 					margin-right: 25px;
