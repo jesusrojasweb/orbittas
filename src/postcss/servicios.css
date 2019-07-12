@@ -410,7 +410,7 @@ ul,figure{
 					margin-right: 25px;
 				}
 				& .ancho{
-					font-size: 4.2rem;
+					font-size: 4.7rem;
 				}
 				@media(--mobile){
 					font-size: 3rem;
