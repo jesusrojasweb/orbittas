@@ -6,7 +6,7 @@ const $close = document.getElementById('close')
 
 const $header = document.getElementById('header')
 const $luz = document.querySelector('.cls-25')
-
+let contador = 0
 let botonesList
 let $boton
 const padre = $sliderList[0].children;
@@ -61,12 +61,14 @@ for(let i = 0; i < padre.length; i++){
       $header.classList.remove('scroll')
       $botones.classList.add('fondo')
       $botones.classList.add('scroll')
+      contador = 0;
     }
     if(botonClick == 1){
       $botones.classList.remove('fondo')
       $header.classList.remove('fondo')
       $header.classList.remove('scroll')
       $header.classList.remove('fondo')
+      contador = 0;
     }
     if(botonClick == 2){
       $botones.classList.remove('fondo')
@@ -74,7 +76,11 @@ for(let i = 0; i < padre.length; i++){
       $header.classList.add('scroll')
       $header.classList.add('fondo')
       $botones.classList.add('scroll')
-      document.body.style.overflowY = "scroll"
+      setTimeout(()=> {
+        document.body.style.overflowY = "scroll"
+        console.log("Hola")
+      },1000)
+      
     }
     if(botonClick == 0 || botonClick == 1){
       window.scrollBy(0, -window.innerHeight);
@@ -124,7 +130,6 @@ function slide(direccion, movil) {
     // console.log(`Equipo top :${bottomEquipo}`)
     // console.log(`Ato viewport: ${alto}`)
     // console.log(`Equipo height :${$equipo.getBoundingClientRect().height}`)
-    console.log(`bottomEquipo < alto ${coords.bottom < alto}`)
     let next
     let bottom
     //coords.bottom >= alto.bottom
@@ -156,7 +161,7 @@ function slide(direccion, movil) {
         bottom = false
       }
       if(next == 2){
-        document.body.style.overflowY = "scroll"
+       
       }
       
       
@@ -171,6 +176,13 @@ function slide(direccion, movil) {
         next = padre.length;
         bottom = true
       }
+      if(next == 1){
+        contador = 0;
+      }
+      if(next == 0 || next == 1){
+        document.body.style.overflowY = "hidden"
+      }
+
 
     }
     if(next == 0){
@@ -187,10 +199,16 @@ function slide(direccion, movil) {
       $header.classList.add('scroll')
       $botones.classList.add('scroll')
       $header.classList.add('fondo')
+      console.log(contador)
+      if(contador === 0){
+        setTimeout(()=> {
+          document.body.style.overflowY = "scroll"
+          console.log("Hola")
+        },1000)
+        contador = 1
+      }
     }
-    if(next == 0 || next == 1){
-      document.body.style.overflowY = "hidden"        
-    }
+    
     if(next== 1){
      $header.classList.remove('scroll')
      $botones.classList.remove('scroll')

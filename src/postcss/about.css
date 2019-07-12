@@ -391,7 +391,7 @@ ul,figure{
 	background: var(--colorPrincipal);
 	height: auto;
 	& .margen{
-		padding-top: 14em;
+		padding-top: 7em;
 	}
 	& .contenedor{
 		text-align: center;
