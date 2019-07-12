@@ -387,7 +387,6 @@ ul,figure{
 						@apply --gradient;
 						border: none;
 						padding: .5em 2em;
-						width: 50%;
 						margin-top: 1em;
 						background: none;
 						font-size: 1rem;
@@ -411,15 +410,31 @@ ul,figure{
 				bottom: 0;
 				padding: 1em;
 				box-sizing: border-box;
+				& .contenedor{
+					width: 100%;
+					height: 100%;
+					position: relative;
+					& #particles-js{
+						position: absolute;
+						width: 100%;
+						height: 100%;
+						top: 0;
+						left: 0;
+						z-index: 0;
+					}
+				}
 				& .menu{
 					display: flex;
 					justify-content: center;
 					list-style: none;
+					z-index: 1000;
 					@media(--mobile){
 						display: none;
 					}
 					& .item{
 						margin-right: 2em;
+						z-index: 1000;
+						background: var(--colorPrincipal);
 						& a{
 							color: white;
 							text-decoration: none;

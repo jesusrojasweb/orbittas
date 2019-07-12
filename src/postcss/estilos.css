@@ -896,7 +896,6 @@ ul,figure{
 						@apply --gradient;
 						border: none;
 						padding: .5em 2em;
-						width: 50%;
 						margin-top: 1em;
 						background: none;
 						font-size: 1rem;

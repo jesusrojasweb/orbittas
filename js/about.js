@@ -1,23 +1,18 @@
 const $sliderList = document.querySelectorAll('.slider')
 const $botones = document.querySelector('.botones')
-const $equipo = document.querySelector('.equipo')
 const $burger = document.getElementById('burger')
 const $close = document.getElementById('close')
-
+const $menu = document.querySelectorAll('.menuHeader')
 const $header = document.getElementById('header')
 const $luz = document.querySelector('.cls-25')
-let contador = 0
-let botonesList
-let $boton
-const padre = $sliderList[0].children;
-let lastScrollTop = 0;
-let touchstartY = 0;
-let touchstartX = 0;
-let touchendX = 0;
-let touchendY = 0;
-let alto = window.screen.availHeight;
+const $copy = document.getElementById('copy')
 
-let gesuredZone = document.querySelector('body');
+const $hero = document.querySelector('.hero')
+const $valores = document.querySelector('.valores')
+const $equipo = document.querySelector('.equipo')
+
+
+//--------------Burger menu
 
 $burger.addEventListener('click', function (e) {
   $header.classList.add('activo')
@@ -26,236 +21,25 @@ $close.addEventListener('click', function (e) {
   $header.classList.remove('activo')
 })
 
-//botones
-for(let i = 0; i < padre.length; i++){
-  const $boton = document.createElement('a');
-  if(i == 0){
-    setAttributes($boton, {
-      href: '#',
-      class: 'boton activo',
-      id: i
-    })
-    
-  } else{
-    setAttributes($boton, {
-      href: '#',
-      class: 'boton',
-      id: i
-    })
+window.addEventListener('scroll', function (e) {
+  let coordsHero = $hero.getBoundingClientRect()
+  let coordsValores = $valores.getBoundingClientRect()
+  let coordsEquipo = $equipo.getBoundingClientRect()
+  console.log(coordsHero.top)
+  
+  if(coordsHero.top > -100){
+    $header.classList.add('fondo')
+    $header.classList.remove('scroll')
   }
-  $boton.addEventListener('click', function (e) {
-    e.preventDefault()
-    let button = e.toElement
-    console.log(e)
-    let botonClick = button.attributes[2].value
-    console.log(botonesList)
-    for(let i = 0; i < padre.length; i++){
-      let hijo = padre[i].classList.remove('prev')
-      hijo = padre[i].classList.remove('active')
-    }
-    for(let i = 0; i < botonesList[0].children.length; i++){
-      botonesList[0].children[i].classList.remove('activo')
-    }
-    if(botonClick == 0){
-      $header.classList.add('fondo')
-      $header.classList.remove('scroll')
-      $botones.classList.add('fondo')
-      $botones.classList.add('scroll')
-      contador = 0;
-    }
-    if(botonClick == 1){
-      $botones.classList.remove('fondo')
-      $header.classList.remove('fondo')
-      $header.classList.remove('scroll')
-      $header.classList.remove('fondo')
-      contador = 0;
-    }
-    if(botonClick == 2){
-      $botones.classList.remove('fondo')
-      $header.classList.remove('fondo')
-      $header.classList.add('scroll')
-      $header.classList.add('fondo')
-      $botones.classList.add('scroll')
-      setTimeout(()=> {
-        document.body.style.overflowY = "scroll"
-        console.log("Hola")
-      },1000)
-      
-    }
-    if(botonClick == 0 || botonClick == 1){
-      window.scrollBy(0, -window.innerHeight);
-      document.body.style.overflowY = "hidden"        
-    }
-    if(botonClick== 1){
-     $header.classList.remove('scroll')
-     $botones.classList.remove('scroll')
-    }
-    window.scrollBy(0, -window.innerHeight);
-    padre[botonClick].classList.add('active')
-    padre[botonClick].classList.add('animacion')
-    button.classList.add('activo')
-  })
-  $botones.append($boton)
-}
-botonesList = document.querySelectorAll('.botones')
-$boton = document.querySelectorAll('.boton')
-let botonPadre = botonesList[0].children
-
-function setAttributes($element,attributes) {
-  for(const attribute in attributes){
-    $element.setAttribute(attribute, attributes[attribute])
+  if(coordsHero.top <= -100){
+    $header.classList.add('scroll')
+    $header.classList.add('fondo')
   }
-}
-
-
-//detectando scroll en desktop
-window.addEventListener( 'mousewheel',function(e){
-  for(let i = 0; i < padre.length; i++){
-    padre[i].classList.remove('prev')
+  if(coordsValores.top <= 100){
+    $header.classList.remove('fondo')
   }
-  if(e.deltaY > 0){
-    slide(true,false)
+  if(coordsEquipo.top <= 100){
+   $header.classList.add('fondo')
   }
-  if(e.deltaY < 0){
-    slide(false,false)
-  }
+  
 })
-function slide(direccion, movil) {
-  for(let i = 0; i < $sliderList[0].children.length; i++){
-    let topEquipo = $equipo.getBoundingClientRect().top
-    let bottomEquipo = $equipo.getBoundingClientRect().bottom
-    let hijo = padre[i];
-    let boton = botonPadre[i]
-    let coords = hijo.getBoundingClientRect();
-    // console.log(`Equipo top :${bottomEquipo}`)
-    // console.log(`Ato viewport: ${alto}`)
-    // console.log(`Equipo height :${$equipo.getBoundingClientRect().height}`)
-    let next
-    let bottom
-    //coords.bottom >= alto.bottom
-    // console.log(hijo)
-    // console.log(`Estas son las coordenadas`)
-    // console.log(coords)
-    // console.log(coords.top )
-    // console.log(`Este es el alto${alto}`)
-    //detectamos direccion del scroll
-    if(direccion){
-      //detectamos si es un dispositivo movil
-      if(movil){
-        if(true){
-          next = i + 1
-          if(next >= padre.length ){
-            next = i;
-            window.scrollBy(0, -window.innerHeight);
-            console.log("estamos en next")
-          }
-        } 
-        if(false){
-          console.log("salimos")
-          break;
-        }
-      }
-      next = i + 1
-      if(next >= padre.length ){
-        next = i;
-        bottom = false
-      }
-      if(next == 2){
-       
-      }
-      
-      
-    }
-    if(!direccion){
-      next = i - 1 
-      if(next < 0 ){
-        next = i;
-        bottom = true
-      }
-      if(topEquipo < 0){
-        next = padre.length;
-        bottom = true
-      }
-      if(next == 1){
-        contador = 0;
-      }
-      if(next == 0 || next == 1){
-        document.body.style.overflowY = "hidden"
-      }
-
-
-    }
-    if(next == 0){
-      $header.classList.add('fondo')
-      $botones.classList.add('fondo')
-      $botones.classList.add('scroll')
-    }
-    if(next == 1){
-      $botones.classList.remove('fondo')
-      $header.classList.remove('fondo')
-      $header.classList.remove('scroll')
-    }
-    if(next == 2){
-      $header.classList.add('scroll')
-      $botones.classList.add('scroll')
-      $header.classList.add('fondo')
-      console.log(contador)
-      if(contador === 0){
-        setTimeout(()=> {
-          document.body.style.overflowY = "scroll"
-          console.log("Hola")
-        },1000)
-        contador = 1
-      }
-    }
-    
-    if(next== 1){
-     $header.classList.remove('scroll')
-     $botones.classList.remove('scroll')
-    }
-    let siguiente = padre[next];
-    let botonSiguiente = botonPadre[next]
-    if(hijo.classList[2] == "active" || hijo.classList[3] == "active" || hijo.classList[4] == "active" || hijo.classList[5] == "active"){
-      if(!bottom){
-        scroll(hijo,siguiente,boton,botonSiguiente)
-      }
-      break;
-    }
-  }
-}
-
-function scroll(hijo, siguiente,boton,botonSiguiente){
-  hijo.classList.remove('active')
-  hijo.classList.add('prev')
-  boton.classList.remove('activo')
-  siguiente.classList.add('active')
-  botonSiguiente.classList.add('activo')
-}
-
-//detectando scroll en movil
-gesuredZone.addEventListener('touchstart', function(event) {
-    touchstartX = touchendX = event.changedTouches[0].screenX;
-    touchstartY = event.changedTouches[0].screenY;
-}, false);
-gesuredZone.addEventListener('touchend', function(event) {
-    touchendX = event.changedTouches[0].screenX;
-    touchendY = event.changedTouches[0].screenY;
-    handleGesure();
-}, false); 
-//gestos
-function handleGesure() {
-    for(let i = 0; i < padre.length; i++){
-      let hijo = padre[i].classList.remove('prev')
-    }
-
-    if (touchendY < touchstartY) {
-        slide(true, true)
-    }if (touchendY > touchstartY) {
-        slide(false)
-        console.log("Subiste")
-    }
-    if (touchendY == touchstartY) {
-      arriba()
-    }
-}
-
