@@ -6,8 +6,7 @@ const $menu = document.querySelectorAll('.menuHeader')
 const $header = document.getElementById('header')
 const $luz = document.querySelector('.cls-25')
 const $copy = document.getElementById('copy')
-const $una = document.getElementById('una')
-const $idea = document.getElementById('idea')
+const $desarrollamos = document.getElementById('desarrollamos')
 
 const $hero = document.querySelector('.hero')
 const $about = document.querySelector('.about')
@@ -28,34 +27,29 @@ let termino = false
 let segunda = false
 let interval
 let count = 0
-const una = 'una'
-const unaArray = una.split('')
 
-
-const idea = 'idea?'
-const ideaArray = idea.split()
+const des = 'Nosotros la desarrollamos'
 
 function escritura(palabra, html, segunda) {
-  interval = setInterval(()=> escribir(palabra, html, segunda), 500)
+  interval = setInterval(()=> escribir(palabra, html, segunda), 200)
 }
 function escribir(palabra, html, segunda) {
   let array = palabra.split('')
+  console.log(array)
 
   if(count < array.length){
-    html.innerText += array[count]
+    
+    html.innerHTML += array[count]
     count++
   } 
   if(count > (array.length -1)){
     clearInterval(interval)
     termino = true
     count = 0
-    if(!segunda){
-      escritura(idea, $idea, true)
-    }
   }
 }
 
-escritura(una, $una, false)
+escritura(des, $desarrollamos, false)
 
 
 

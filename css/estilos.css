@@ -297,15 +297,6 @@ ul,figure{
 	z-index: 1000;
 	line-height: 1em
 }
-.hero .copy .item .title .cursor{
-	margin: 1em 0 0 .1em;
-	border-left: .1em solid rgba(0, 121, 147, 0.8);
-	animation: intermitente .5s;
-	animation-delay: 5s;
-	animation-iteration-count: infinite;
-	animation-timing-function: step-end;
-	animation-direction: alternate;
-}
 .hero .copy .item .title b{
 	color: rgb(0, 121, 147);
 	color: -moz-linear-gradient(90deg, rgba(0, 121, 147, 1) 0%, rgba(0, 146, 112, 1) 100%);
@@ -324,7 +315,16 @@ ul,figure{
 	font-size: 24px;
 	font-size: 1.5rem;
 	margin: -4em 0 0;
-	z-index: 1000;
+	z-index: 1000
+}
+.hero .copy .item .subtitle .cursor{
+	margin: 1em 0 0 .1em;
+	border-left: .1em solid rgba(0, 121, 147, 0.8);
+	animation: intermitente .5s;
+	animation-delay: 6s;
+	animation-iteration-count: infinite;
+	animation-timing-function: step-end;
+	animation-direction: alternate;
 }
 .hero .copy .item .ilustracion{
 	width: 90%;

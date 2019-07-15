@@ -418,15 +418,7 @@ ul,figure{
 				margin: 0;
 				z-index: 1000;
 				line-height: 1em;
-				& .cursor{
-					margin: 1em 0 0 .1em;
-					border-left: .1em solid color(var(--colorPrincipal) a(80%));
-					animation: intermitente .5s;
-					animation-delay: 5s;
-					animation-iteration-count: infinite;
-					animation-timing-function: step-end;
-					animation-direction: alternate;
-				}
+				
 				& b{
 					@apply --gradient-inter;
 				}
@@ -444,6 +436,15 @@ ul,figure{
 				font-size: 1.5rem;
 				margin: -4em 0 0;
 				z-index: 1000;
+				& .cursor{
+					margin: 1em 0 0 .1em;
+					border-left: .1em solid color(var(--colorPrincipal) a(80%));
+					animation: intermitente .5s;
+					animation-delay: 6s;
+					animation-iteration-count: infinite;
+					animation-timing-function: step-end;
+					animation-direction: alternate;
+				}
 			}
 			& .ilustracion{
 				width: 90%;
