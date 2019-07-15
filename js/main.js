@@ -7,6 +7,7 @@ const $header = document.getElementById('header')
 const $luz = document.querySelector('.cls-25')
 const $copy = document.getElementById('copy')
 const $desarrollamos = document.getElementById('desarrollamos')
+const cursor = document.querySelector('.cursor')
 
 const $hero = document.querySelector('.hero')
 const $about = document.querySelector('.about')
@@ -31,7 +32,7 @@ let count = 0
 const des = 'Nosotros la desarrollamos'
 
 function escritura(palabra, html, segunda) {
-  interval = setInterval(()=> escribir(palabra, html, segunda), 200)
+  interval = setInterval(()=> escribir(palabra, html, segunda), 100)
 }
 function escribir(palabra, html, segunda) {
   let array = palabra.split('')
@@ -44,7 +45,8 @@ function escribir(palabra, html, segunda) {
   } 
   if(count > (array.length -1)){
     clearInterval(interval)
-    termino = true
+    console.log("termino")
+    cursor.style.display = 'none'
     count = 0
   }
 }

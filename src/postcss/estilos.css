@@ -396,7 +396,7 @@ ul,figure{
 			&:first-child{
 				display: flex;
 				flex-direction: column;
-				justify-content: space-around;
+				justify-content: center;
 				@media(--tablet){
 					height: 70%;
 				}
@@ -434,16 +434,11 @@ ul,figure{
 				color: color(var(--colorPrincipal) a(80%));
 				font-weight: 600;
 				font-size: 1.5rem;
-				margin: -4em 0 0;
+				margin: 0;
 				z-index: 1000;
 				& .cursor{
 					margin: 1em 0 0 .1em;
 					border-left: .1em solid color(var(--colorPrincipal) a(80%));
-					animation: intermitente .5s;
-					animation-delay: 6s;
-					animation-iteration-count: infinite;
-					animation-timing-function: step-end;
-					animation-direction: alternate;
 				}
 			}
 			& .ilustracion{
@@ -452,6 +447,7 @@ ul,figure{
 			}
 			& .container{
 				z-index: 1000;
+				margin-top: 2em;
 			}
 			& .btn{
 				@apply --btn;
@@ -1239,16 +1235,5 @@ slideRight
 	}
 	100%{
 		transform: rotate(0deg);
-	}
-}
-@keyframes intermitente{
-	0%{
-		opacity: 0;
-	}
-	50%{
-		opacity: 1;
-	}
-	100%{
-		opacity: 0;
 	}
 }
