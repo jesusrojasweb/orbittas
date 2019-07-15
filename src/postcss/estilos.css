@@ -635,7 +635,7 @@ ul,figure{
 			fill: #fff0;
 		}
 		& svg{
-			width: 60% !important;
+			width: 30% !important;
 			& .cls-1.activo, & .cls-2.activo{
 				fill: color(white a(50%));
 			}
