@@ -617,7 +617,6 @@ ul,figure{
 }
 .conexion{
 	@apply --gradiente;
-	overflow: hidden;
 	height: 250px;
 	position: relative;
 	display: flex;
@@ -631,6 +630,7 @@ ul,figure{
 		align-items: center;
 		height: 100%;
 		z-index: 900;
+		transform: rotate(-12deg);
 		& .cls-1, & .cls-2{
 			transition: .3s;
 			fill: #fff0;
