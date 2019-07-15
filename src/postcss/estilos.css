@@ -630,13 +630,13 @@ ul,figure{
 		align-items: center;
 		height: 100%;
 		z-index: 900;
-		transform: rotate(-12deg);
+		transform: rotate(-14deg) translate(10px,0);
 		& .cls-1, & .cls-2{
 			transition: .3s;
 			fill: #fff0;
 		}
 		& svg{
-			width: 30% !important;
+			width: 55% !important;
 			& .cls-1.activo, & .cls-2.activo{
 				fill: color(white a(50%));
 			}
