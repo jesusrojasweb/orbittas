@@ -6,6 +6,8 @@ const $menu = document.querySelectorAll('.menuHeader')
 const $header = document.getElementById('header')
 const $luz = document.querySelector('.cls-25')
 const $copy = document.getElementById('copy')
+const $una = document.getElementById('una')
+const $idea = document.getElementById('idea')
 
 const $hero = document.querySelector('.hero')
 const $about = document.querySelector('.about')
@@ -20,6 +22,44 @@ $luz.addEventListener("mouseover",function () {
 $luz.addEventListener("mouseout",function () {
   $copy.style.backgroundColor = '#ffffff00'
 })
+
+// ---------------------------
+let termino = false
+let segunda = false
+let interval
+let count = 0
+const una = 'una'
+const unaArray = una.split('')
+
+
+const idea = 'idea?'
+const ideaArray = idea.split()
+
+function escritura(palabra, html, segunda) {
+  interval = setInterval(()=> escribir(palabra, html, segunda), 500)
+}
+function escribir(palabra, html, segunda) {
+  let array = palabra.split('')
+
+  if(count < array.length){
+    html.innerText += array[count]
+    count++
+  } 
+  if(count > (array.length -1)){
+    clearInterval(interval)
+    termino = true
+    count = 0
+    if(!segunda){
+      escritura(idea, $idea, true)
+    }
+  }
+}
+
+escritura(una, $una, false)
+
+
+
+
 
 
 //--------------Burger menu

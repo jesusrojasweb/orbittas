@@ -238,13 +238,18 @@ ul,figure{
 	box-sizing: border-box;
 	position: relative;
 }
-.hero.animacion .copy .item:first-child{
-	animation-name: slideExpandUp;
-	-webkit-animation-name: slideExpandUp;
-	animation-duration: 1.6s;
-	-webkit-animation-duration: 1.6s;
-	animation-timing-function: ease-out;
-	-webkit-animation-timing-function: ease -out;
+.hero.animacion .copy{
+	/*& .item:first-child{
+				
+				animation-name: slideExpandUp;
+				-webkit-animation-name: slideExpandUp;	
+
+				animation-duration: 1.6s;	
+				-webkit-animation-duration: 1.6s;
+
+				animation-timing-function: ease-out;	
+				-webkit-animation-timing-function: ease -out;
+			}*/
 }
 .hero.animacion .copy .item:last-child{
 	animation-name: fadeIn;
@@ -291,6 +296,15 @@ ul,figure{
 	margin: 0;
 	z-index: 1000;
 	line-height: 1em
+}
+.hero .copy .item .title .cursor{
+	margin: 1em 0 0 .1em;
+	border-left: .1em solid rgba(0, 121, 147, 0.8);
+	animation: intermitente .5s;
+	animation-delay: 5s;
+	animation-iteration-count: infinite;
+	animation-timing-function: step-end;
+	animation-direction: alternate;
 }
 .hero .copy .item .title b{
 	color: rgb(0, 121, 147);
@@ -914,6 +928,17 @@ slideRight
 	}
 	100%{
 		transform: rotate(0deg);
+	}
+}
+@keyframes intermitente{
+	0%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
 	}
 }
 @media (max-width: 500px){

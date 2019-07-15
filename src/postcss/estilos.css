@@ -334,7 +334,7 @@ ul,figure{
 		overflow: hidden;
 	}
 	&.animacion{
-		& .copy{
+		& .copy{/*
 			& .item:first-child{
 				
 				animation-name: slideExpandUp;
@@ -345,7 +345,7 @@ ul,figure{
 
 				animation-timing-function: ease-out;	
 				-webkit-animation-timing-function: ease -out;
-			}
+			}*/
 			& .item:last-child{
 
 				animation-name: fadeIn;
@@ -418,6 +418,15 @@ ul,figure{
 				margin: 0;
 				z-index: 1000;
 				line-height: 1em;
+				& .cursor{
+					margin: 1em 0 0 .1em;
+					border-left: .1em solid color(var(--colorPrincipal) a(80%));
+					animation: intermitente .5s;
+					animation-delay: 5s;
+					animation-iteration-count: infinite;
+					animation-timing-function: step-end;
+					animation-direction: alternate;
+				}
 				& b{
 					@apply --gradient-inter;
 				}
@@ -1226,5 +1235,16 @@ slideRight
 	}
 	100%{
 		transform: rotate(0deg);
+	}
+}
+@keyframes intermitente{
+	0%{
+		opacity: 0;
+	}
+	50%{
+		opacity: 1;
+	}
+	100%{
+		opacity: 0;
 	}
 }
