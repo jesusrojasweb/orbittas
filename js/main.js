@@ -36,7 +36,6 @@ function escritura(palabra, html, segunda) {
 }
 function escribir(palabra, html, segunda) {
   let array = palabra.split('')
-  console.log(array)
 
   if(count < array.length){
     

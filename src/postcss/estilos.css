@@ -604,6 +604,38 @@ ul,figure{
 		}
 	}
 }
+.conexion{
+	@apply --gradient;
+	overflow: hidden;
+	height: 250px;
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	& .textura{
+		position: absolute;
+		width: 100%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+		z-index: 900;
+		& .cls-1, & .cls-2{
+			transition: .3s;
+			fill: #fff0;
+		}
+		& svg{
+			width: 60% !important;
+			& .cls-1.activo, & .cls-2.activo{
+				fill: color(white a(50%));
+			}
+		}
+	}
+	& .title{
+		color: white;
+		z-index: 1000;
+	}
+}
 .servicios{
 	align-items: center;
 	background: white;
