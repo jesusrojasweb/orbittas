@@ -292,7 +292,7 @@ ul,figure{
 
 .margen{
 	padding: 10em 6em 4em;
-	height: 100vh;
+	min-height: 100vh;
 	box-sizing: border-box;
 	max-width: 1420px;
 }
@@ -357,11 +357,12 @@ ul,figure{
 .valores{
 	background: white;
 	& .grid{
+		padding-top: 4em;
 		display: grid;
 		grid-template-columns: repeat(4, 1fr);
 		grid-gap: 7em;
 		text-align: center;
-		align-content: end;
+		align-items: center;
 		@media(--tablet){
 			grid-template-columns: 1fr 1fr;
 			grid-gap: 2em 8em;

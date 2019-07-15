@@ -194,7 +194,7 @@ ul,figure{
 }
 .margen{
 	padding: 10em 6em 4em;
-	height: 100vh;
+	min-height: 100vh;
 	box-sizing: border-box;
 	max-width: 1420px;
 }
@@ -239,11 +239,12 @@ ul,figure{
 	background: white
 }
 .valores .grid{
+	padding-top: 4em;
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
 	grid-gap: 7em;
 	text-align: center;
-	align-content: end;
+	align-items: center;
 }
 .valores .grid .body .valor{
 	color: #007993;
