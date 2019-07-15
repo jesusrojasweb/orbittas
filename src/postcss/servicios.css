@@ -320,6 +320,16 @@ ul,figure{
 .hero{
 	background: var(--colorPrincipal);
 	overflow: hidden;
+	position: relative;
+	& #particles-js{
+		position: absolute;
+		width: 100%;
+		height: 25%;
+		bottom: 0;
+		left: 0;
+		z-index: 0;
+	}
+
 	& .margen{
 		position: relative;
 		
@@ -393,13 +403,14 @@ ul,figure{
 				color: white;
 				font-family: var(--fuentePrincipal);
 				font-size: 5.8rem;
-				margin-bottom: 1em;
+				margin-bottom: 1.5em;
+				line-height: 1em;
 				& .spacing{
 					letter-spacing: -25px;
 					margin-right: 25px;
 				}
 				& .ancho{
-					font-size: 4.2rem;
+					font-size: 4.7rem;
 				}
 				@media(--mobile){
 					font-size: 3rem;

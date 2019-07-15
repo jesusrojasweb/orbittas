@@ -291,7 +291,6 @@ ul,figure{
 	filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#007993",endColorstr="#009270",GradientType=1) !important;
 	border: none;
 	padding: .5em 2em;
-	width: 50%;
 	margin-top: 1em;
 	background: none;
 	font-size: 16px;
@@ -314,13 +313,29 @@ ul,figure{
 	padding: 1em;
 	box-sizing: border-box
 }
+.contacto .grid .footer .contenedor{
+	width: 100%;
+	height: 100%;
+	position: relative
+}
+.contacto .grid .footer .contenedor #particles-js{
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	z-index: 0;
+}
 .contacto .grid .footer .menu{
 	display: flex;
 	justify-content: center;
 	list-style: none;
+	z-index: 1000;
 }
 .contacto .grid .footer .menu .item{
-	margin-right: 2em
+	margin-right: 2em;
+	z-index: 1000;
+	background: #007993
 }
 .contacto .grid .footer .menu .item a{
 	color: white;
