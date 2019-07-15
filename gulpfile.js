@@ -19,7 +19,8 @@ gulp.task('css', ()=>{
   const processor = [
     atImport(),//cssnested,
     cssnext({browsers: ['> 5%', 'ie 8']}),
-    mqpacker()
+    mqpacker(),
+    cssnano
   ]
   return gulp.src('./src/postcss/*.css')
     //.pipe(sourcemaps.init())

@@ -549,6 +549,9 @@ ul,figure{
 		& .descripcion{
 			margin: 0;
 			background: var(--colorPrincipal);
+			&:first-child{
+				margin-bottom: 1em;
+			}
 		}
 		& .item:last-child{
 			justify-self: flex-end;
