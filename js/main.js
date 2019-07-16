@@ -12,7 +12,7 @@ const cursor = document.querySelector('.cursor')
 const $hero = document.querySelector('.hero')
 const $about = document.querySelector('.about')
 const $servicios = document.querySelector('.servicios')
-const $portafolio = document.querySelector('.conexionPortafolio')
+const $portafolio = document.querySelector('.portafolio')
 const $contacto = document.querySelector('.contacto')
 
 
@@ -81,19 +81,19 @@ window.addEventListener('scroll', function (e) {
     $header.classList.add('scroll')
     $header.classList.remove('fondo')
   }
-  if(coordsAbout.top <= 100){
+  if(coordsAbout.top <= 95){
     $about.classList.add('animacion')
     $header.classList.add('fondo')
   }
-  if(coordsServicios.top <= 100){
+  if(coordsServicios.top <= 95){
     $servicios.classList.add('animacion')
     $header.classList.remove('fondo')
   }
-  if(coordsPortafolio.top <= 100){
+  if(coordsPortafolio.top <= 95){
     $portafolio.classList.add('animacion')
     $header.classList.add('fondo')
   }
-  if(coordsContacto.top <= 100){
+  if(coordsContacto.top <= 95){
     $contacto.classList.add('animacion')
     $header.classList.remove('fondo')
   }
