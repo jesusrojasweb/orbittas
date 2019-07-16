@@ -235,7 +235,7 @@ ul,figure{
 }
 .contacto{
 	overflow: hidden;
-	background: white;
+	background: var(--colorPrincipal);
 	@media(--mobile){
 		height: auto;
 	}
@@ -245,7 +245,7 @@ ul,figure{
 			grid-gap: 0 2em;
 			padding-bottom: 0;
 			position: relative;
-			padding-top: 11em;
+			padding-top: 8em;
 			height: 700px;
 			@media(--tablet){
 				grid-template-columns: 1fr;
@@ -258,7 +258,7 @@ ul,figure{
 				}
 			}
 			& .animanos{
-				color: var(--colorPrincipal);
+				color: white;
 				font-family: var(--fuentePrincipal);
 				font-size: 3rem;
 			}
@@ -270,7 +270,7 @@ ul,figure{
 				flex-direction: column;
 				align-items: center;
 				& a{
-					color: var(--colorPrincipal);
+					color: white;
 					font-size: 2.5rem;
 				}
 				& .tooltip{
@@ -308,31 +308,34 @@ ul,figure{
 				& input[type="name"],& input[type="email"],& input[type="text"], & textarea{
 					background: none;
 					border: none;
-					border-bottom: 2px solid color(var(--colorPrincipal) a(50%));
+					border-bottom: 2px solid color(white a(50%));
 					font-family: var(--fuenteSecundaria);
 					padding: 1em;
 					transition: .3s;
-					color: var(--colorPrincipal);
+					color: white;
 					&::placeholder{
-						color: color(var(--colorPrincipal) a(50%));
+						color: color(white a(50%));
 					}
 					&:focus{
-						border-bottom-color: var(--colorPrincipal);
+						border-bottom-color: white;
 						outline: none;
 					}
 				}
 				& textarea{
 					grid-column: 2 span;
 					grid-row: 3 span;
-					border: 2px solid color(var(--colorPrincipal) a(50%));
+					border: 2px solid color(white a(50%));
 					border-radius: 5px;
+					&:focus{
+						border-color: white;
+					}
 				}
 				& .custom-file-upload{
 				  background: none;
 				  cursor: pointer;
 				  border: none;
 				  & span{
-				  	color: var(--colorPrincipal);
+				  	color: white;
 				  	font-size: 1.5rem;
 				  }
 				}
@@ -354,6 +357,14 @@ ul,figure{
 				}
 				& .btn{
 					@apply --btn;
+					background: none;
+					z-index: 900;
+					&:hover{
+						border-color: #00caf5;
+						background: #00caf5;
+						color: var(--colorPrincipal);
+					}
+					/*@apply --btn;
 					@apply --gradient;
 					border: none;
 					padding: .5em 2em;
@@ -363,7 +374,7 @@ ul,figure{
 						border-color: #00caf5;
 						background: #00caf5;
 						color: white;
-					}
+					}*/
 
 				}
 			}
@@ -372,7 +383,7 @@ ul,figure{
 				flex-direction: column;
 				align-content: center;
 				grid-column: 2 span;
-				background: var(--colorPrincipal);
+				background: white;
 				position: absolute;
 				width: 100%;
 				bottom: 0;
@@ -388,7 +399,7 @@ ul,figure{
 					& .item{
 						margin-right: 2em;
 						& a{
-							color: white;
+							color: var(--colorPrincipal);
 							text-decoration: none;
 							font-family: var(--fuentePrincipal);
 						}
@@ -397,7 +408,7 @@ ul,figure{
 				& .copy{
 					display: flex;
 					justify-content: center;
-					color: white;
+					color: var(--colorPrincipal);
 					margin-bottom: 0;
 				}
 			}
