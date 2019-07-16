@@ -45,55 +45,6 @@ body{
 		overflow-y: scroll;
 	}*/
 }
-.botones{
-	position: fixed;
-	padding: 1em 0;
-	box-sizing: border-box;
-	border-radius: 2em;
-	height: 30%;
-	width: 30px;
-	top: 35%;
-	right: 4em;
-	z-index: 1500;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-direction: column;
-	&.scroll{
-		& .boton{
-			&.activo{
-				&:after{
-					background: white;
-				}
-			}
-			&:after{
-				background: color(white a(50%));
-			}
-		}
-	}
-	& .boton{
-		width: 100%;
-		height: 100%;
-		position: relative;
-		&.activo{
-			&:after{
-				background: var(--colorPrincipal);
-			}
-		}
-		&:after{
-			position: absolute;
-			content: '';
-			width: 10px;
-			height: 10px;
-			background: color(var(--colorPrincipal) a(50%));
-			box-sizing: border-box;
-			border-radius: 50%;
-			top: 16%;
-			right: 0;
-			transition: .3s;
-		}
-	}
-}
 .slide{
 	display: flex;
 	justify-content: center;
@@ -290,11 +241,12 @@ ul,figure{
 	}
 	& .grid{
 			display: grid;
-			grid-template-columns: 1fr 1fr;
-			grid-gap: 0 4em;
+			grid-template-columns: 1fr 50px;
+			grid-gap: 0 2em;
 			padding-bottom: 0;
 			position: relative;
 			padding-top: 11em;
+			height: 700px;
 			@media(--tablet){
 				grid-template-columns: 1fr;
 			}
@@ -310,93 +262,109 @@ ul,figure{
 				font-family: var(--fuentePrincipal);
 				font-size: 3rem;
 			}
-			& .informacion{
-				list-style: none;
-				& li{
-					margin-bottom: 1em;
-					& a{
-						color: var(--colorSecundario);
-						font-weight: 600;
-						text-decoration: none;
-					}
-				}
-			}
 			& .sociales{
 				display: flex;
 				list-style: none;
-				width: 40%;
+				width: 100%;
 				margin-top: 2em;
-				@media(--mobile){
-					width: 100%;
+				flex-direction: column;
+				align-items: center;
+				& a{
+					color: var(--colorPrincipal);
+					font-size: 2.5rem;
 				}
-				& .item{
-					margin-right: 1em;
+				& .tooltip{
+					position: relative;
+					& .tiptext{
+						visibility: hidden;
+						background: black;
+						color: white;
+						text-align: center;
+						border-radius: 5px;
+						padding: 6px 1em;
+						position: absolute;
+						z-index: 1;
+						box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+						top: -9px;
+						right: 125%;
+						font-size: 1rem;
+						opacity: 0;
+						transition: .3s;
+						width: 8em
+					}
+					&:hover .tiptext {
+					    visibility: visible;
+					    opacity: 1;
+					}
 				}
 			}
 			& .formulario{
-				box-sizing: border-box;
-				padding: 0 2em 2em;
-				border-radius: 2em;
-				margin-right: 3em;
-				@media(--tablet){
-					margin-right: 0;
-					padding: 0;
-					margin-bottom: 8em;
-				}
-				& .title{
+				width: 100%;
+				display: grid;
+				grid-template-columns: repeat(4, 1fr);
+				grid-gap: 2em;
+				margin: 0;
+				padding: 0;
+				& input[type="name"],& input[type="email"],& input[type="text"], & textarea{
+					background: none;
+					border: none;
+					border-bottom: 2px solid color(var(--colorPrincipal) a(50%));
+					font-family: var(--fuenteSecundaria);
+					padding: 1em;
+					transition: .3s;
 					color: var(--colorPrincipal);
-					font-size: 1.2rem;
-					font-family: var(--fuentePrincipal);
+					&::placeholder{
+						color: color(var(--colorPrincipal) a(50%));
+					}
+					&:focus{
+						border-bottom-color: var(--colorPrincipal);
+						outline: none;
+					}
 				}
-				& .contact{
-					width: 100%;
-					height: 100%;
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					grid-gap: 0 1em;
-					margin: 0;
-					padding: 0;
-					& input, & textarea{
-						background: none;
-						border: none;
-						border-bottom: 2px solid color(var(--colorPrincipal) a(50%));
-						font-family: var(--fuenteSecundaria);
-						padding: 1em;
-						transition: .3s;
-						color: var(--colorPrincipal);
-						width: 90%;
-						&::placeholder{
-							color: color(var(--colorPrincipal) a(50%));
-						}
-						&:focus{
-							border-bottom-color: var(--colorPrincipal);
-							outline: none;
-						}
-					}
-					& textarea{
+				& textarea{
+					grid-column: 2 span;
+					grid-row: 3 span;
+					border: 2px solid color(var(--colorPrincipal) a(50%));
+					border-radius: 5px;
+				}
+				& .custom-file-upload{
+				  background: none;
+				  cursor: pointer;
+				  border: none;
+				  & span{
+				  	color: var(--colorPrincipal);
+				  	font-size: 1.5rem;
+				  }
+				}
+				& input[type="file"]{
+				  display: none;
+				}
+				& input{
+					&:nth-of-type(3){
 						grid-column: 2 span;
+						grid-row-start: 2;
 					}
-					& input{
-						&:nth-of-type(3){
-							grid-column: 2 span;
-						}
+				}
+				& .botones{
+					display: grid;
+					grid-template-columns: 1fr 2rem;
+					grid-gap: 2em;
+					grid-column: 2 span;
+					align-items: center;
+				}
+				& .btn{
+					@apply --btn;
+					@apply --gradient;
+					border: none;
+					padding: .5em 2em;
+					background: none;
+					font-size: 1rem;
+					&:hover{
+						border-color: #00caf5;
+						background: #00caf5;
+						color: white;
 					}
-					& .btn{
-						@apply --btn;
-						@apply --gradient;
-						border: none;
-						padding: .5em 2em;
-						margin-top: 1em;
-						background: none;
-						font-size: 1rem;
-						&:hover{
-							border-color: #00caf5;
-							background: #00caf5;
-							color: var(--colorPrincipal);
-						}
 
-					}
 				}
 			}
 			& .footer{
@@ -410,31 +378,15 @@ ul,figure{
 				bottom: 0;
 				padding: 1em;
 				box-sizing: border-box;
-				& .contenedor{
-					width: 100%;
-					height: 100%;
-					position: relative;
-					& #particles-js{
-						position: absolute;
-						width: 100%;
-						height: 100%;
-						top: 0;
-						left: 0;
-						z-index: 0;
-					}
-				}
 				& .menu{
 					display: flex;
 					justify-content: center;
 					list-style: none;
-					z-index: 1000;
 					@media(--mobile){
 						display: none;
 					}
 					& .item{
 						margin-right: 2em;
-						z-index: 1000;
-						background: var(--colorPrincipal);
 						& a{
 							color: white;
 							text-decoration: none;
