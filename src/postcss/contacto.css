@@ -245,8 +245,8 @@ ul,figure{
 			grid-gap: 0 2em;
 			padding-bottom: 0;
 			position: relative;
-			padding-top: 8em;
-			height: 700px;
+			padding-top: 7em;
+			height: 100vh;
 			@media(--tablet){
 				grid-template-columns: 1fr;
 			}
