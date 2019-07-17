@@ -890,6 +890,7 @@ ul,figure{
 				color: var(--colorPrincipal);
 				font-family: var(--fuentePrincipal);
 				font-size: 2rem;
+				margin-bottom: 1.5em;
 			}
 			& .sociales{
 				display: flex;
