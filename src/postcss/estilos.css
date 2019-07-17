@@ -874,7 +874,7 @@ ul,figure{
 			padding-bottom: 0;
 			position: relative;
 			padding-top: 2em;
-			height: 105vh;
+			height: 90vh;
 			box-sizing: border-box;
 			@media(--tablet){
 				grid-template-columns: 1fr;
@@ -889,7 +889,7 @@ ul,figure{
 			& .animanos{
 				color: var(--colorPrincipal);
 				font-family: var(--fuentePrincipal);
-				font-size: 3rem;
+				font-size: 2rem;
 			}
 			& .sociales{
 				display: flex;
@@ -932,6 +932,7 @@ ul,figure{
 					display: flex;
 					flex-direction: column;
 					align-items: center;
+					width: 95%;
 					& .btn{
 						@apply --btn;
 						@apply --gradient;
@@ -1028,7 +1029,7 @@ ul,figure{
 					display: flex;
 					justify-content: center;
 					color: white;
-					margin-bottom: 0;
+					margin: 0;
 				}
 			}
 		}
