@@ -718,7 +718,7 @@ ul,figure{
 			font-family: var(--fuenteSecundaria);
 		}
 		& .descripcion{
-			color: var(--colorSecundario);
+			color: black;
 		}
 	}
 	&.animacion{
