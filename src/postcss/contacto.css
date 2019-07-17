@@ -266,9 +266,10 @@ ul,figure{
 				display: flex;
 				list-style: none;
 				width: 100%;
-				margin-top: 2em;
+				margin-top: 5em;
 				flex-direction: column;
 				align-items: center;
+				align-self: end;
 				& a{
 					color: white;
 					font-size: 2.5rem;
