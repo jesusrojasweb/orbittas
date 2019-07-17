@@ -1,6 +1,7 @@
 :root{
 	--colorPrincipal: #007993;
 	--colorSecundario: #009270;
+	--colorFluerecente: #00caf5;
 	--fuentePrincipal: 'Dolce Vita', system-ui;
 	--fuenteSecundaria:'Arlon', system-ui;
 	--btn: {
@@ -371,6 +372,27 @@ ul,figure{
 			grid-template-columns: 1fr !important;
 			height: auto;
 		}
+		& .head{
+			&.empatia .cls-4{
+				animation: palpitar 1.5s;
+				transform-origin: 50%;
+				animation-iteration-count: infinite;
+			}
+			&.pasion .cls-3{
+				animation: floating 1.5s;
+				animation-iteration-count: infinite;
+			}
+			&.focus .enfoque{
+				animation: aparecer 2s;
+				animation-iteration-count: infinite;
+				animation-timing-function: ease-out;
+				transform-origin: 50%;
+			}
+			&.equipoIcono .muneco{
+				animation: color 2s;
+				animation-iteration-count: infinite;
+			}
+		}
 		& .body{
 			& .valor{
 				color: var(--colorPrincipal);
@@ -471,6 +493,14 @@ ul,figure{
 	visibility: visible !important;			
 }
 
+@keyframes palpitar {
+	0% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}	
+}
 @keyframes slideDown {
 	0% {
 		transform: translateY(100%);
@@ -487,4 +517,73 @@ ul,figure{
 	100% {
 		-webkit-transform: translateY(0%);
 	}	
+}
+@keyframes floating {
+	0% {
+		transform: translateY(-1%);	
+	}
+	50% {
+		transform: translateY(1%);	
+	}	
+	100% {
+		transform: translateY(-1%);
+	}			
+}
+
+@-webkit-keyframes floating {
+	0% {
+		transform: translateY(-1%);	
+	}
+	50% {
+		transform: translateY(1%);	
+	}	
+	100% {
+		transform: translateY(-1%);
+	}				
+}
+@keyframes aparecer {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(0.5);
+	}	
+	100% {
+		transform: scale(1);
+	}			
+}
+
+@-webkit-keyframes aparecer {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(0.2);
+	}	
+	100% {
+		transform: scale(1);
+	}				
+}
+@keyframes color {
+	0% {
+		fill: #669da8;
+	}
+	50% {
+		fill: var(--colorFluerecente);
+	}			
+	100% {
+		fill: #669da8;
+	}
+}
+
+@-webkit-keyframes color {
+	0% {
+		fill: #669da8;
+	}
+	50% {
+		fill: var(--colorFluerecente);
+	}				
+	100% {
+		fill: #669da8;
+	}
 }
