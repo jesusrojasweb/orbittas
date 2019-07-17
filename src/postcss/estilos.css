@@ -876,6 +876,9 @@ ul,figure{
 			padding-top: 2em;
 			height: 90vh;
 			box-sizing: border-box;
+			@media(min-width: 1420px){
+				height: 700px;
+			}
 			@media(--tablet){
 				grid-template-columns: 1fr;
 			}
@@ -957,6 +960,10 @@ ul,figure{
 				grid-template-columns: repeat(5,1fr);
 				grid-gap: 5em;
 				margin-bottom: 2em;
+
+				@media(min-width: 1420px){
+					grid-gap: 2em;
+				}
 				& .descripcion{
 					text-align: center;
 				}
