@@ -270,6 +270,10 @@ ul,figure{
 				font-family: var(--fuentePrincipal);
 				font-size: 3rem;
 			}
+			& > .item:first-child{
+				align-self: center;
+				margin-bottom: 8em;
+			}
 			& .sociales{
 				display: flex;
 				list-style: none;
