@@ -874,7 +874,7 @@ ul,figure{
 			padding-bottom: 0;
 			position: relative;
 			padding-top: 2em;
-			height: 86vh;
+			height: 100vh;
 			box-sizing: border-box;
 			@media(--tablet){
 				grid-template-columns: 1fr;
@@ -890,6 +890,7 @@ ul,figure{
 				color: var(--colorPrincipal);
 				font-family: var(--fuentePrincipal);
 				font-size: 3rem;
+				align-self: flex-start;
 			}
 			& .sociales{
 				display: flex;
@@ -927,73 +928,72 @@ ul,figure{
 					}
 				}
 			}
-			& .formulario{
-				width: 100%;
-				display: grid;
-				grid-template-columns: repeat(4, 1fr);
-				grid-gap: 2em;
-				margin: 0;
-				padding: 0;
-				& input[type="name"],& input[type="email"],& input[type="text"], & textarea{
-					background: none;
-					border: none;
-					border-bottom: 2px solid color(var(--colorPrincipal) a(50%));
-					font-family: var(--fuenteSecundaria);
-					padding: 1em;
-					transition: .3s;
-					color: var(--colorPrincipal);
-					&::placeholder{
-						color: color(var(--colorPrincipal) a(50%));
-					}
-					&:focus{
-						border-bottom-color: var(--colorPrincipal);
-						outline: none;
-					}
-				}
-				& textarea{
-					grid-column: 2 span;
-					grid-row: 3 span;
-					border: 2px solid color(var(--colorPrincipal) a(50%));
-					border-radius: 5px;
-				}
-				& .custom-file-upload{
-				  background: none;
-				  cursor: pointer;
-				  border: none;
-				  & span{
-				  	color: var(--colorPrincipal);
-				  	font-size: 1.5rem;
-				  }
-				}
-				& input[type="file"]{
-				  display: none;
-				}
-				& input{
-					&:nth-of-type(3){
-						grid-column: 2 span;
-						grid-row-start: 2;
-					}
-				}
-				& .botones{
-					display: grid;
-					grid-template-columns: 1fr 2rem;
-					grid-gap: 2em;
-					grid-column: 2 span;
+			& > .item{
+				&:first-child{
+					display: flex;
+					flex-direction: column;
 					align-items: center;
-				}
-				& .btn{
-					@apply --btn;
-					@apply --gradient;
-					border: none;
-					padding: .5em 2em;
-					background: none;
-					font-size: 1rem;
-					&:hover{
-						border-color: #00caf5;
-						background: #00caf5;
-						color: white;
-					}
+					& .btn{
+						@apply --btn;
+						@apply --gradient;
+						border: none;
 
+					}
+					& .informacion{
+						display: flex;
+						width: 80%;
+						justify-content: space-between;
+						margin-top: 2em;
+						& .info{
+							list-style: none;
+						}
+					}
+				}
+			}
+			& .iconos{
+				display: grid;
+				grid-template-columns: repeat(5,1fr);
+				grid-gap: 5em;
+				& .descripcion{
+					text-align: center;
+				}
+				& .icono{
+					&.escucha .cls-3{
+						animation: floatingLeft 1.5s;
+						animation-iteration-count: infinite;
+					}
+					&.ejecuta .rotate{
+						animation: tossing 2s;
+						animation-iteration-count: infinite;
+						transform-origin: 50%;
+						animation-timing-function: ease-in-out;
+					}
+					&.estudio .cls-3{
+						animation: aparecer 1.5s;
+						animation-timing-function: ease-in;
+						animation-iteration-count: infinite;
+						animation-direction: alternate;
+						&:nth-of-type(2){
+							animation-delay: .5s;
+						}
+					}
+					&.planea .cls-3{
+						animation-name: pulse;
+						-webkit-animation-name: pulse;	
+
+						animation-duration: 1.5s;	
+						-webkit-animation-duration: 1.5s;
+
+						animation-iteration-count: infinite;
+						-webkit-animation-iteration-count: infinite;
+						transform-origin: center;
+					}
+					&.comania .hombre{
+						animation: pulse 2s;
+						animation-iteration-count: infinite;
+						transform-origin: center bottom;
+						animation-timing-function: ease-in-out;
+					}
 				}
 			}
 			& .footer{
@@ -1227,6 +1227,29 @@ slideRight
 		transform: translateY(-1%);
 	}				
 }
+@keyframes floatingLeft {
+	0% {
+		transform: translateX(-1%);	
+	}
+	50% {
+		transform: translateX(1%);	
+	}	
+	100% {
+		transform: translateX(-1%);
+	}			
+}
+
+@-webkit-keyframes floatingLeft {
+	0% {
+		transform: translateX(-1%);	
+	}
+	50% {
+		transform: translateX(1%);	
+	}	
+	100% {
+		transform: translateX(-1%);
+	}				
+}
 @keyframes Down {
 	0% {
 		opacity: 0;
@@ -1315,4 +1338,72 @@ slideRight
 	100%{
 		transform: rotate(0deg);
 	}
+}
+@keyframes aparecer{
+	0%{
+		transform: translateY(0px);
+	}
+	25%{
+		transform: translateY(0px);
+	}
+	100%{
+		transform: translateY(100%);
+	}
+}
+@-webkit-keyframes aparecer{
+	0%{
+		transform: translateY(0px);
+	}
+	25%{
+		transform: translateY(0px);
+	}
+	100%{
+		transform: translateY(100%);
+	}
+}
+@keyframes pulse {
+	0% {
+		transform: scale(0.9);
+	}
+	50% {
+		transform: scale(1);
+	}	
+	100% {
+		transform: scale(0.9);
+	}			
+}
+
+@-webkit-keyframes pulse {
+	0% {
+		-webkit-transform: scale(0.95);
+	}
+	50% {
+		-webkit-transform: scale(1);
+	}	
+	100% {
+		-webkit-transform: scale(0.95);
+	}			
+}
+@keyframes tossing {
+	0% {
+		transform: rotate(-4deg);	
+	}
+	50% {
+		transform: rotate(4deg);
+	}
+	100% {
+		transform: rotate(-4deg);	
+	}						
+}
+
+@-webkit-keyframes tossing {
+	0% {
+		-webkit-transform: rotate(-4deg);	
+	}
+	50% {
+		-webkit-transform: rotate(4deg);
+	}
+	100% {
+		-webkit-transform: rotate(-4deg);	
+	}				
 }
