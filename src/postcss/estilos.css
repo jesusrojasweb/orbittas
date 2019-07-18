@@ -824,7 +824,6 @@ ul,figure{
 				grid-template-rows: 1fr 1fr;
 			}
 			@media(--mobile){
-				grid-template-columns: 1fr !important;
 				margin: 0 0 4em;
 			}
 			& .proyecto{
