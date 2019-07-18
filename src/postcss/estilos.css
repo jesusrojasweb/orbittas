@@ -897,7 +897,7 @@ ul,figure{
 					z-index: 1000;
 					color: white;
 					@media(--mobile){
-						font-size: .8rem;
+						font-size: .65rem;
 					}
 				}
 				/*&:before{
