@@ -708,12 +708,13 @@ ul,figure{
 		}
 		& .item{
 			@media(--mobile){
-				display: flex;
+				display: grid;
 				text-align: left;
 				flex-direction: row-reverse;
-				& svg{
-					width: 25vw;
-					margin-top: 3em;
+				grid-template-columns: 2fr 1fr;
+				grid-gap: 0 2em;
+				& .head{
+					grid-area: 2 / 2 / 3 / 3;
 				}
 			}
 			&:hover{
@@ -746,6 +747,9 @@ ul,figure{
 		& .nombre-servicios{
 			color: var(--colorPrincipal);
 			font-family: var(--fuenteSecundaria);
+			@media(--mobile){
+				grid-column: 2 span;
+			}
 		}
 		& .descripcion{
 			color: black;
