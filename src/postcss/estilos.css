@@ -713,6 +713,7 @@ ul,figure{
 				flex-direction: row-reverse;
 				& svg{
 					width: 25vw;
+					margin-top: 3em;
 				}
 			}
 			&:hover{
@@ -840,6 +841,9 @@ ul,figure{
 				transition: .3s;
 				background: color(var(--colorPrincipal) shade(20%));
 				border-radius: 5px;
+				@media(--mobile){
+					height: 200px;
+				}
 				&:hover{
 					background: color(white a(10%));
 				}
