@@ -332,8 +332,11 @@ ul,figure{
 	height: 700px;
 	max-width: 1420px;
 	width: 100%;
+	@media(--tablet){
+		height: 100vh;
+	}
 	@media(--mobile){
-		height: auto;
+		height: auto !important;
 		padding: 8em 4em 6em 2em;
 	}
 }
@@ -530,6 +533,9 @@ ul,figure{
 				& svg{
 					width: 70%;
 					z-index: 900;
+					@media(--mobile){
+						width: 100%;
+					}
 				}
 			}
 		}
@@ -546,6 +552,19 @@ ul,figure{
 			align-items: center;
 			@media(--mobile){
 				grid-template-columns: 1fr;
+				margin-bottom: 3em;
+			}
+			& .contenedor{
+				@media(--tablet){
+					grid-column: 2 span;
+
+				}
+			}
+			& .imagen{
+				@media(--tablet){
+					grid-column: 2 span;
+
+				}	
 			}
 			& .img{
 				width: 70%;
@@ -580,6 +599,8 @@ ul,figure{
 
 			@media(--tablet){
 				margin-top: 2em;
+			}
+			@media(--mobile){
 				grid-template-columns: 1fr;
 			}
 			@media(--desktop){
@@ -779,6 +800,7 @@ ul,figure{
 			}
 		}
 		@media(--mobile){
+			padding-right: 2em !important;
 			& .portafolio-servicios{
 				flex-direction: column;
 			}
@@ -852,6 +874,9 @@ ul,figure{
 			@apply --btn;
 			z-index: 1000;
 			margin-right: 3em;
+			@media(--mobile){
+				margin-right: 0;
+			}
 			&:hover{
 				border-color: #00caf5;
 				background: #00caf5;
@@ -864,183 +889,204 @@ ul,figure{
 .contacto{
 	overflow: hidden;
 	background: white;
-	@media(--mobile){
-		height: auto;
-	}
+	
 	& .grid{
-			display: grid;
-			grid-template-columns: 1fr 50px;
-			grid-gap: 0 2em;
-			padding-bottom: 0;
-			position: relative;
-			padding-top: 2em;
-			height: 90vh;
-			box-sizing: border-box;
-			@media(min-width: 1420px){
-				height: 700px;
+		display: grid;
+		grid-template-columns: 1fr 50px;
+		grid-gap: 0 2em;
+		padding-bottom: 0;
+		position: relative;
+		padding-top: 2em;
+		height: 90vh;
+		box-sizing: border-box;
+		@media(--tablet){
+			grid-template-columns: 1fr;
+			height: 92.5vh;
+		}
+		@media(--mobile){
+			height: auto !important;
+			padding-bottom: 6em;
+		}
+		@media(min-width: 1420px){
+			height: 700px;
+		}
+		@media(--tablet){
+			grid-template-columns: 1fr;
+		}
+		@media(--mobile){
+			padding-top: 4em;
+			height: auto;
+			& .item{
+				/*width: 80%;*/
 			}
+		}
+		& .animanos{
+			color: var(--colorPrincipal);
+			font-family: var(--fuentePrincipal);
+			font-size: 2rem;
+			margin-bottom: 1.5em;
+		}
+		& .sociales{
+			display: flex;
+			list-style: none;
+			width: 100%;
+			margin-top: 8em;
+			flex-direction: column;
+			align-items: center;
 			@media(--tablet){
-				grid-template-columns: 1fr;
+				flex-direction: row;
+				margin-top: 0;
+				justify-content: space-around;
 			}
-			@media(--mobile){
-				padding-top: 4em;
-				height: auto;
-				& .item{
-					/*width: 80%;*/
-				}
-			}
-			& .animanos{
+			& a{
 				color: var(--colorPrincipal);
-				font-family: var(--fuentePrincipal);
-				font-size: 2rem;
-				margin-bottom: 1.5em;
+				font-size: 2.5rem;
 			}
-			& .sociales{
-				display: flex;
-				list-style: none;
-				width: 100%;
-				margin-top: 8em;
-				flex-direction: column;
-				align-items: center;
-				& a{
-					color: var(--colorPrincipal);
-					font-size: 2.5rem;
-				}
-				& .tooltip{
-					position: relative;
-					& .tiptext{
-						visibility: hidden;
-						background: black;
-						color: white;
-						text-align: center;
-						border-radius: 5px;
-						padding: 6px 1em;
-						position: absolute;
-						z-index: 1;
-						box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
-						top: -9px;
-						right: 125%;
-						font-size: 1rem;
-						opacity: 0;
-						transition: .3s;
-						width: 8em
-					}
-					&:hover .tiptext {
-					    visibility: visible;
-					    opacity: 1;
-					}
-				}
-			}
-			& > .item{
-				&:first-child{
-					display: flex;
-					flex-direction: column;
-					align-items: center;
-					width: 95%;
-					& .btn{
-						@apply --btn;
-						@apply --gradient;
-						border: none;
-
-					}
-					& .informacion{
-						display: flex;
-						width: 80%;
-						justify-content: space-between;
-						margin-top: 2em;
-						text-align: center;
-						& .info{
-							list-style: none;
-						}
-					}
-				}
-			}
-			& .iconos{
-				display: grid;
-				grid-template-columns: repeat(5,1fr);
-				grid-gap: 5em;
-				margin-bottom: 2em;
-
-				@media(min-width: 1420px){
-					grid-gap: 2em;
-				}
-				& .descripcion{
-					text-align: center;
-				}
-				& .icono{
-					&.escucha .cls-3{
-						animation: floatingLeft 1.5s;
-						animation-iteration-count: infinite;
-					}
-					&.ejecuta .rotate{
-						animation: tossing 2s;
-						animation-iteration-count: infinite;
-						transform-origin: 50%;
-						animation-timing-function: ease-in-out;
-					}
-					&.estudio .cls-3{
-						animation: aparecer 1.5s;
-						animation-timing-function: ease-in;
-						animation-iteration-count: infinite;
-						animation-direction: alternate;
-						&:nth-of-type(2){
-							animation-delay: .5s;
-						}
-					}
-					&.planea .cls-3{
-						animation-name: pulse;
-						-webkit-animation-name: pulse;	
-
-						animation-duration: 1.5s;	
-						-webkit-animation-duration: 1.5s;
-
-						animation-iteration-count: infinite;
-						-webkit-animation-iteration-count: infinite;
-						transform-origin: center;
-					}
-					&.comania .hombre{
-						animation: pulse 2s;
-						animation-iteration-count: infinite;
-						transform-origin: center bottom;
-						animation-timing-function: ease-in-out;
-					}
-				}
-			}
-			& .footer{
-				display: flex;
-				flex-direction: column;
-				align-content: center;
-				grid-column: 2 span;
-				background: var(--colorPrincipal);
-				position: absolute;
-				width: 100%;
-				bottom: 0;
-				padding: 1em;
-				box-sizing: border-box;
-				& .menu{
-					display: flex;
-					justify-content: center;
-					list-style: none;
-					@media(--mobile){
-						display: none;
-					}
-					& .item{
-						margin-right: 2em;
-						& a{
-							color: white;
-							text-decoration: none;
-							font-family: var(--fuentePrincipal);
-						}
-					}
-				}
-				& .copy{
-					display: flex;
-					justify-content: center;
+			& .tooltip{
+				position: relative;
+				& .tiptext{
+					visibility: hidden;
+					background: black;
 					color: white;
-					margin: 0;
+					text-align: center;
+					border-radius: 5px;
+					padding: 6px 1em;
+					position: absolute;
+					z-index: 1;
+					box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+					top: -9px;
+					right: 125%;
+					font-size: 1rem;
+					opacity: 0;
+					transition: .3s;
+					width: 8em
+				}
+				&:hover .tiptext {
+				    visibility: visible;
+				    opacity: 1;
 				}
 			}
 		}
+		& > .item{
+			&:first-child{
+				display: flex;
+				flex-direction: column;
+				align-items: center;
+				width: 95%;
+				& .btn{
+					@apply --btn;
+					@apply --gradient;
+					border: none;
+
+				}
+				& .informacion{
+					display: flex;
+					width: 80%;
+					justify-content: space-between;
+					margin-top: 2em;
+					text-align: center;
+					@media(--mobile){
+						width: 100%;
+						margin-bottom: 2em;
+					}
+					& .info{
+						list-style: none;
+					}
+				}
+			}
+		}
+		& .iconos{
+			display: grid;
+			grid-template-columns: repeat(5,1fr);
+			grid-gap: 5em;
+			margin-bottom: 2em;
+			@media(--tablet){
+				grid-template-columns: 1fr 1fr 1fr;
+				grid-gap: 2em 5em;
+			}
+			@media(--mobile){
+				grid-template-columns: 1fr !important;
+			}
+			@media(min-width: 1420px){
+				grid-gap: 2em;
+			}
+			& .descripcion{
+				text-align: center;
+			}
+			& .icono{
+				&.escucha .cls-3{
+					animation: floatingLeft 1.5s;
+					animation-iteration-count: infinite;
+				}
+				&.ejecuta .rotate{
+					animation: tossing 2s;
+					animation-iteration-count: infinite;
+					transform-origin: 50%;
+					animation-timing-function: ease-in-out;
+				}
+				&.estudio .cls-3{
+					animation: aparecer 1.5s;
+					animation-timing-function: ease-in;
+					animation-iteration-count: infinite;
+					animation-direction: alternate;
+					&:nth-of-type(2){
+						animation-delay: .5s;
+					}
+				}
+				&.planea .cls-3{
+					animation-name: pulse;
+					-webkit-animation-name: pulse;	
+
+					animation-duration: 1.5s;	
+					-webkit-animation-duration: 1.5s;
+
+					animation-iteration-count: infinite;
+					-webkit-animation-iteration-count: infinite;
+					transform-origin: center;
+				}
+				&.comania .hombre{
+					animation: pulse 2s;
+					animation-iteration-count: infinite;
+					transform-origin: center bottom;
+					animation-timing-function: ease-in-out;
+				}
+			}
+		}
+		& .footer{
+			display: flex;
+			flex-direction: column;
+			align-content: center;
+			grid-column: 2 span;
+			background: var(--colorPrincipal);
+			position: absolute;
+			width: 100%;
+			bottom: 0;
+			padding: 1em;
+			box-sizing: border-box;
+			& .menu{
+				display: flex;
+				justify-content: center;
+				list-style: none;
+				@media(--mobile){
+					display: none;
+				}
+				& .item{
+					margin-right: 2em;
+					& a{
+						color: white;
+						text-decoration: none;
+						font-family: var(--fuentePrincipal);
+					}
+				}
+			}
+			& .copy{
+				display: flex;
+				justify-content: center;
+				color: white;
+				margin: 0;
+			}
+		}
+	}
 }
 
 
