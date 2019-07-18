@@ -696,6 +696,9 @@ ul,figure{
 				margin-top: 0 !important;
 			}
 		}
+		@media(--mobile){
+			padding-top: 2em !important;
+		}
 		
 		& #pro .cls-1,& #elec .cls-4, & #web .cls-1,& #pro .cls-2,& #elec .cls-5,& #web .cls-2,& #movil .cls-2{
 			fill: #bfdedb;
