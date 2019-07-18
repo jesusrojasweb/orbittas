@@ -966,6 +966,9 @@ ul,figure{
 			font-family: var(--fuentePrincipal);
 			font-size: 2rem;
 			margin-bottom: 1.5em;
+			@media(--mobile){
+				font-size: 1.5rem;
+			}
 		}
 		& .sociales{
 			display: flex;
@@ -1046,23 +1049,11 @@ ul,figure{
 				grid-gap: 2em 5em;
 			}
 			@media(--mobile){
-				grid-template-columns: 1fr!important;
+				grid-template-columns: 25vw 25vw !important;
+				justify-content: center;
 			}
 			@media(min-width: 1420px){
 				grid-gap: 2em;
-			}
-			& .item{
-				@media(--mobile){
-					display: grid;
-					grid-template-columns: 2fr 1fr;
-					align-items: center;
-					& .icono{
-						grid-column-start: 2;
-					}
-					& .caracteristica{
-						grid-row-start: 1;
-					}
-				}
 			}
 			& .descripcion{
 				text-align: center;
