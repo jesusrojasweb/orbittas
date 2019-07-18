@@ -534,6 +534,9 @@ ul,figure{
 			& .imagen{
 				display: flex;
 				justify-content: center;
+				@media(--mobile){
+					display: none;
+				}
 
 				& .cls-4{
 					animation: rotate 40s;
@@ -587,6 +590,9 @@ ul,figure{
 		& .descripcion{
 			margin: 0;
 			background: var(--colorPrincipal);
+			@media(--mobile){
+				text-align: justify;
+			}
 			&:first-child{
 				margin-bottom: 1em;
 			}
