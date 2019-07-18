@@ -842,7 +842,7 @@ ul,figure{
 				background: color(var(--colorPrincipal) shade(20%));
 				border-radius: 5px;
 				@media(--mobile){
-					height: 200px;
+					height: 175px;
 				}
 				&:hover{
 					background: color(white a(10%));
