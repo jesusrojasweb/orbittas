@@ -707,6 +707,13 @@ ul,figure{
 			animation-timing-function: linear;
 		}
 		& .item{
+			@media(--mobile){
+				display: flex;
+				text-align: right;
+				& svg{
+					width: 25vw;
+				}
+			}
 			&:hover{
 				& #elec .cls-1, & #elec .cls-2{
 					fill:none;
