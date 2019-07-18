@@ -247,7 +247,7 @@ ul,figure{
 						margin: 1em 0;
 					}
 					&:nth-of-type(1){
-						top: -110%;
+						top: -200%;
 					}
 				}
 				& .item{
