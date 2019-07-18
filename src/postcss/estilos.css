@@ -400,6 +400,7 @@ ul,figure{
 		/*height: 100%;*/
 		width: 100%;
 		transition: .3s;
+		padding-top: 11em;
 		@media(--mobile){
 			padding: 0 2em;
 		}
@@ -1080,6 +1081,10 @@ ul,figure{
 					grid-column-start: 1;
 					grid-row-start: 1;
 				}
+			}
+			& .descripcion{
+
+				font-size: .65rem;
 			}
 			& .icono{
 				&.escucha .cls-3{
