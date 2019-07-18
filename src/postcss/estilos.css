@@ -337,7 +337,7 @@ ul,figure{
 	}
 	@media(--mobile){
 		height: auto !important;
-		padding: 8em 4em 6em 2em;
+		padding: 8em 3em 6em 2em;
 	}
 }
 .hero{
