@@ -859,6 +859,7 @@ ul,figure{
 			}
 			@media(--mobile){
 				margin: 0 0 4em;
+				grid-gap: 1em;
 			}
 			& .proyecto{
 				text-align: center;
@@ -876,6 +877,7 @@ ul,figure{
 				border-radius: 5px;
 				@media(--mobile){
 					height: 160px;
+					padding: 2em 1em;
 				}
 				&:hover{
 					background: color(white a(10%));
@@ -885,7 +887,7 @@ ul,figure{
 					margin: 0;
 					color: white;
 					@media(--mobile){
-						font-size: 1.1rem;
+						font-size: 1rem;
 					}
 				}
 				& .imagen{
