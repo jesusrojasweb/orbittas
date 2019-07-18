@@ -416,6 +416,8 @@ ul,figure{
 				}
 				@media(--mobile){
 					height: 50% !important;
+					padding-top: 6em;
+
 				}
 				@media(--min){
 					height: 70% !important;
@@ -425,7 +427,10 @@ ul,figure{
 				padding-top: 1.5em;
 				z-index: 1000;
 				@media(--mobile){
-					top: 55% !important;
+					position: relative !important;
+				}
+				@media(--min){
+					display: none;
 				}
 			}
 			& .title{
