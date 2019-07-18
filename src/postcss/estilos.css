@@ -169,6 +169,10 @@ ul,figure{
 					filter: brightness(0) invert(1);
 					@media(--tablet){
 						filter: none;
+						background: color(white a(70%));
+						& .item{
+							color: var(--colorPrincipal);
+						}
 					}
 				}
 				& .logo{
@@ -177,6 +181,11 @@ ul,figure{
 			}
 			& .burger{
 				filter: brightness(0) invert(1);
+			}
+			& .close{
+				@media(--tablet){
+					color: var(--colorPrincipal);
+				}
 			}
 		}
 	}
@@ -617,9 +626,6 @@ ul,figure{
 			@media(--tablet){
 				margin-top: 2em;
 			}
-			@media(--mobile){
-				grid-template-columns: 1fr;
-			}
 			@media(--desktop){
 				margin-top: 2em;
 			}
@@ -627,6 +633,10 @@ ul,figure{
 				display: flex;
 				align-items: center;
 				background: var(--colorPrincipal);
+				@media(--mobile){
+					flex-direction: column;
+					text-align: center;
+				}
 				&:nth-of-type(2){
 					& .icono{
 						width: 8%;
@@ -1057,6 +1067,19 @@ ul,figure{
 			}
 			& .descripcion{
 				text-align: center;
+			}
+			& .item:last-child{
+				display: grid;
+				grid-template-columns: 1fr 25vw;
+				grid-column: 2 span;
+				grid-gap: 2em;
+				& .icono{
+					grid-column-start: 2;
+				}
+				& .caracteristica{
+					grid-column-start: 1;
+					grid-row-start: 1;
+				}
 			}
 			& .icono{
 				&.escucha .cls-3{

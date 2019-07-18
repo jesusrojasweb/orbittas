@@ -135,6 +135,10 @@ ul,figure{
 					filter: brightness(0) invert(1);
 					@media(--tablet){
 						filter: none;
+						background: color(white a(70%));
+						& .item{
+							color: var(--colorPrincipal);
+						}
 					}
 				}
 				& .logo{
@@ -143,6 +147,11 @@ ul,figure{
 			}
 			& .burger{
 				filter: brightness(0) invert(1);
+			}
+			& .close{
+				@media(--tablet){
+					color: var(--colorPrincipal);
+				}
 			}
 		}
 	}
