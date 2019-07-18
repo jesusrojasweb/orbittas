@@ -651,6 +651,9 @@ ul,figure{
 				}
 				& .cualidad-nombre{
 					margin-left: 1em;
+					@media(--mobile){
+						margin-left: 0;
+					}
 				}
 			}
 		}
@@ -1074,6 +1077,7 @@ ul,figure{
 				grid-template-columns: 1fr 25vw;
 				grid-column: 2 span;
 				grid-gap: 2em;
+				align-items: center;
 				& .icono{
 					grid-column-start: 2;
 				}
