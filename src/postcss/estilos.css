@@ -709,7 +709,8 @@ ul,figure{
 		& .item{
 			@media(--mobile){
 				display: flex;
-				text-align: right;
+				text-align: left;
+				flex-direction: row-reverse;
 				& svg{
 					width: 25vw;
 				}
