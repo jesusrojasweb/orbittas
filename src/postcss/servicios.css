@@ -441,7 +441,7 @@ ul,figure{
 				width: 10%;
 				margin-right: 2em;
 				@media(--mobile){
-					width: 12.5%;
+					width: 10%;
 					margin-right: .5em;
 				}
 			}
@@ -450,7 +450,7 @@ ul,figure{
 				font-size: 2rem;
 				font-family: var(--fuentePrincipal);
 				@media(--mobile){
-					font-size: 1.2rem;	
+					font-size: 1rem;	
 				}
 			}
 		}
@@ -461,6 +461,9 @@ ul,figure{
 				& .item{
 					margin-bottom: 1em;
 					position: relative;
+					@media(--mobile){
+						font-size: .8rem;
+					}
 					&:before{
 						content: '';
 						width: 20px;

@@ -270,6 +270,7 @@ ul,figure{
 			grid-template-columns: 1fr;
 			height: auto;
 			grid-gap: 0;
+			padding-top: 6em;
 		}
 		& .item{
 			z-index: 1000;
