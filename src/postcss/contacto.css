@@ -87,7 +87,7 @@ ul,figure{
 					filter: brightness(0) invert(1);
 					@media(--tablet){
 						filter: none;
-						background: color(white a(70%));
+						background: color(white a(80%));
 						& .item{
 							color: var(--colorPrincipal);
 						}
@@ -155,7 +155,7 @@ ul,figure{
 					width: 100% !important;
 					margin: 0 !important;
 					height: 100vh;
-					background: color(var(--colorPrincipal) a(50%));
+					background: color(var(--colorPrincipal) a(80%));
 					flex-direction: column;
 					justify-content: center;
 					align-items: center;
