@@ -328,7 +328,8 @@ ul,figure{
 		width: 100%;
 		grid-gap: 2em;
 		@media(--mobile){
-			padding: 8em 3em 4em;
+			padding: 4em 3em 0;
+			height: 100vh !important;
 		}
 		@media(--tablet){
 			grid-template-columns: 1fr;
@@ -388,6 +389,7 @@ ul,figure{
 			grid-gap: 2em 8em;
 		}
 		@media(--mobile){
+			align-items: center;
 			grid-template-columns: 1fr !important;
 			height: auto;
 		}
@@ -402,6 +404,7 @@ ul,figure{
 		}
 		& .head{
 			grid-area: 2 / 2 / 3/ 3;
+			align-self: center;
 			&.empatia .cls-4{
 				animation: palpitar 1.5s;
 				transform-origin: 50%;
@@ -492,7 +495,12 @@ ul,figure{
 					& .nombre{
 						font-size: 1.3rem;
 						@media(--mobile){
-							font-size: 1rem;	
+							font-size: .9rem;	
+						}
+					}
+					& .cargo{
+						@media(--mobile){
+							font-size: .9rem;	
 						}
 					}
 				}

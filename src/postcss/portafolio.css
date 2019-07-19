@@ -311,7 +311,7 @@ ul,figure{
 						}
 					}
 					& span{
-						font-size: 1.5rem;
+						font-size: .8rem;
 						margin-left: .5em;
 					}
 				}
@@ -319,12 +319,11 @@ ul,figure{
 					width: 100%;
 					order: -1;
 					& .icono{
-						width: 12%;
-						margin-right: 1em;
+						display: none;
 					}
 					& a{
 						flex-direction: row;
-						font-size: 1.1rem;
+						font-size: 1.3rem;
 					}
 				}
 			}
@@ -369,6 +368,7 @@ ul,figure{
 				border-radius: 5px;
 				@media(--mobile){
 					height: 160px;
+					padding: 2em 1em;
 				}
 				&:hover{
 					background: color(white a(10%));
@@ -378,7 +378,7 @@ ul,figure{
 					margin: 0;
 					color: white;
 					@media(--mobile){
-						font-size: 1.1rem;
+						font-size: 1rem;
 					}
 				}
 				& .imagen{
@@ -388,7 +388,7 @@ ul,figure{
 					z-index: 1000;
 					color: white;
 					@media(--mobile){
-						font-size: .8rem;
+						font-size: .65rem;
 					}
 				}
 				/*&:before{

@@ -301,7 +301,10 @@ ul,figure{
 
 	& .margen{
 		position: relative;
-		
+		@media(--mobile){
+			padding: 4em 3em 0;
+			height: 100vh !important;
+		}
 		& .fondo{
 			position: absolute;
 			width: 80%;
