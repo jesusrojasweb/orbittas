@@ -1084,8 +1084,10 @@ ul,figure{
 				}
 			}
 			& .descripcion{
+				@media(--mobile){
 
-				font-size: .65rem;
+					font-size: .55rem;
+				}
 			}
 			& .icono{
 				&.escucha .cls-3{
