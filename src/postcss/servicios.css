@@ -437,7 +437,7 @@ ul,figure{
 				width: 10%;
 				margin-right: 2em;
 				@media(--mobile){
-					width: 15%;
+					width: 12.5%;
 					margin-right: .5em;
 				}
 			}
@@ -446,7 +446,7 @@ ul,figure{
 				font-size: 2rem;
 				font-family: var(--fuentePrincipal);
 				@media(--mobile){
-					font-size: 1.5rem;	
+					font-size: 1.2rem;	
 				}
 			}
 		}
