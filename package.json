@@ -9,7 +9,7 @@
   "author": "Jesus Rojas <jesusrojas.frontend@gmail.com> (http://jesusrojas.com.ve)",
   "homepage": "",
   "devDependencies": {
-    "browser-sync": "^2.23.6",
+    "browser-sync": "^2.29.1",
     "css-mqpacker": "^6.0.2",
     "cssnano": "^3.10.0",
     "gulp": "^3.9.1",
